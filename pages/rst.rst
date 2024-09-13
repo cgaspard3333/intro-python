@@ -120,3 +120,13 @@ The ``..image::`` directive can be used to display images:
     
         .. image:: images/html5.jpg
             :width: 300
+
+.. slide::
+
+YouTube
+-------
+
+The ``..youtube::`` directive can be used to embed YouTube videos:
+
+.. center::
+    .. youtube:: dQw4w9WgXcQ
