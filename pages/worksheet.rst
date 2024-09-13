@@ -25,4 +25,8 @@ Steps
 
 .. step::
 
+    The steps are stored in the local storage of your browser, so you can come back to them later.
+
+.. step::
+
     To clear all the steps, press ``!!!`` keys on your keyboard.
