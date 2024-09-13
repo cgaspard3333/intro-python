@@ -3,8 +3,8 @@ Slidey skeleton
 
 .. slide::
 
-Enseignants et support
-----------------------
+Welcome
+-------
 
 .. important::
 
