@@ -24,13 +24,13 @@ jobs:
       
       # Building
       - name: Installing apt packages
-        run: sudo apt-get install -y php
+        run: sudo apt-get install -y php build-essential
       - name: Getting composer
         run: wget https://getcomposer.org/composer.phar
       - name: Installing composer dependencies
         run: php composer.phar install
       - name: Building
-        run: php build.php
+        run: make
 
       # Deploying to GitHub pages
       - name: Upload Artifact

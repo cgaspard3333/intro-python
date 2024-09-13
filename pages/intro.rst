@@ -29,7 +29,7 @@ To build the website, run:
 
 .. code-block:: bash
 
-    php build.php
+    make
 
 You can edit and adapt the `build.php` script to your needs.
 
@@ -42,7 +42,7 @@ Run the following for on-the-fly generation:
 
 .. code-block::
 
-    bash watch.sh
+    make watch
 
 Result will be available live on `http://localhost:8080 <http://localhost:8080>`_
 

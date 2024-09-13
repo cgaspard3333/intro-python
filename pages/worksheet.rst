@@ -5,10 +5,18 @@ Worksheet
 
     You can use an important block
     
-    |archive| `This is an important download link example <https://github.com/>`_
+    |archive| `Download exercise_example.zip </files/exercise_example.zip>`_
 
 .. |archive| image:: images/archive.png
     :width: 24
+
+Zip and files
+-------------
+
+.. step::
+    To provide a zipped archive, simply create a directory in ``files/sources/``.
+
+    It will be automatically zipped to ``files/directory_name.zip``.
 
 
 Steps

@@ -28,8 +28,8 @@ $slidey->copy('images', 'images');
 // Adding zip files
 $slidey
     ->copy('favicon.ico')
-    // ->mkdir('files')
-    // ->copy(__DIR__.'/files/*.zip', 'files/')
+    ->mkdir('files')
+    ->copy(__DIR__.'/files/*.zip', 'files/')
 ;
 
 // Runs the build to the web directory
