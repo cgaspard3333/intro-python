@@ -1,6 +1,11 @@
 name: Slidey build & GitHub pages deploy
 
-on: push
+# Triggering on push and workflow dispatch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy_pages:
