@@ -1,29 +1,30 @@
-Slidey skeleton
+Introduction au Python
 ===============
 
 .. slide::
 
-Welcome
+Présentation
 -------
 
 .. important::
 
-    This is a skeleton example for the *Slidey*  
-    hybrid document/presentation system.  
-    
-    |github| `Github repository for this example <https://github.com/gregwar/slidey-skeleton>`_
+    **Objectif** : Découvrir et s'approprier le langage Python
 
-.. |github| image:: images/github.png
-    :width: 24
+.. center::
+
+    Clément GASPARD - `clement.gaspard@u-bordeaux.fr <mailto:clement.gaspard@u-bordeaux.fr>`_
+
+    Mélodie DANIEL - `melodie.daniel@u-bordeaux.fr <mailto:melodie.daniel@u-bordeaux.fr>`_
 
 .. slide::
 
-Outline
+Sommaire
 -------
 
 .. toctree::
 
-    intro
+    config_ide
+    bases
+    install_maison
     rst
-    worksheet
 

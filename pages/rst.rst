@@ -27,12 +27,6 @@ External
 
 For external links, use this syntax: ```link <https://google.com>`_``, result: `link <https://google.com>`_
 
-.. _label:
-
-Internal
-~~~~~~~~
-
-Use the ``.. _label:`` directive to create a label, and ``:doc:`link <intro#label>``` to link to it, result: :doc:`link <intro#label>`
 
 .. slide::
 
