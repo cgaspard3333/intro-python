@@ -48,7 +48,7 @@ Python est un langage de programmation :
 .. discoverList::
     * **Interprété** : Le code est exécuté directement par un programme appelé interpréteur, sans passer par une compilation complète. Cela permet de voir les résultats rapidement, mais peut être un plus lent qu’un langage compilé.
     * **Haut niveau** : Le langage est conçu pour être facile à comprendre et à écrire pour les humains. Il se rapproche du langage naturel et cache les détails techniques de la machine (comme la gestion de la mémoire).
-    * **Multi-paradigme** : Le langage permet d'utiliser plusieurs styles de programmation (ou paradigmes), comme la programmation orientée objet, la programmation fonctionnelle ou la programmation procédurale. Cela rend le langage plus flexible et adaptable à différents types de projets.
+    * **Multi-paradigme** : Le langage permet d'utiliser plusieurs styles de programmation (ou paradigmes), comme la programmation orientée objet (avec des objets munis d'atributs), la programmation fonctionnelle (avec des fonctions) ou la programmation impérative (instruction par instruction). Cela rend le langage plus flexible et adaptable à différents types de projets.
 
 .. slide::
 
@@ -238,7 +238,7 @@ Python permet de faire des opérations mathématiques de base :
     Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (N'oubliez pas de sauvegarder votre fichier avant de lancer le programme).
 
 .. success::
-    Vous savez donc maintenant comment créer, écrire et exécuter un programme Python.
+    Vous savez maintenant comment créer, écrire et exécuter un programme Python.
 
 .. slide::
 
@@ -252,4 +252,4 @@ Python permet de faire des opérations mathématiques de base :
     Écrire un programme qui demande à l'utilisateur deux nombres, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
 
 .. success::
-    Vous savez donc maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
+    Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
