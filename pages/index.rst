@@ -23,8 +23,10 @@ Sommaire
 
 .. toctree::
 
+    install_maison
     config_ide
     bases
-    install_maison
+    bases2
+    
 
 

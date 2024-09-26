@@ -1,6 +1,6 @@
 
-Installation sur votre machine personnelle
-============
+Facultatif - Installation sur votre machine personnelle
+========================================================
 
 Windows
 -------

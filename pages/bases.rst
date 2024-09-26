@@ -3,14 +3,14 @@
 Comprendre les bases
 ================
 
-Objectifs de la Séance
+Objectifs du Chapitre
 ----------------------
 
 .. important::
-
- - Découvrir Python, comprendre les bases de son fonctionnement.  
+ - Découvrir Python, comprendre ses possibles cas d'utilisation.
  - Prendre en main l’environnement de développement VSCode.  
  - Savoir écrire et exécuter des programmes simples en Python.
+ - Savoir utiliser les opérateurs arithmétiques simples.
 
 .. slide::
 
@@ -33,7 +33,7 @@ Lors de ce cours, nous utiliserons **Visual Studio Code** du fait de sa simplici
 
 Interface de Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+.. _vscode_interface:
 .. center::
 
     .. image:: images/vscode_interface.svg
@@ -71,7 +71,7 @@ Un commentaire est une ligne de texte qui n’est pas exécutée par l’interpr
 
 Utilisation : un commentaire s’écrit avec ``#`` au début de la ligne.
 
-.. success::
+.. warning::
 
     Exemple :
     .. code-block:: python
@@ -96,7 +96,7 @@ La variable possède **un nom**, **un type** et **une valeur**. (Nous verrons le
 
 .. slide::
 
-.. success::
+.. warning::
 
     Exemple :
     .. code-block:: python
@@ -114,7 +114,7 @@ Affichage des données
 
 Pour afficher des données à l'écran, on utilise la fonction ``print()``.
 
-.. success::
+.. warning::
 
     Exemple :
     .. code-block:: python
@@ -174,7 +174,7 @@ Python permet de faire des opérations mathématiques de base :
     * Division : ``/``
     * Exponentiation : ``**``
 
-.. success::
+.. warning::
     
         Exemple :
         .. code-block:: python
@@ -198,7 +198,7 @@ Python permet de faire des opérations mathématiques de base :
 
 .. slide::
 
-Exercice 1 : Créer et lancer un programme Python simple avec VSCode
+✏️ Exercice 1 : Créer et lancer un programme Python simple
 ------------------------------------------------------------
 
 .. note::
@@ -213,8 +213,43 @@ Exercice 1 : Créer et lancer un programme Python simple avec VSCode
     Les noms de fichiers et dossiers ne doivent **jamais contenir d'espaces ou de caractères spéciaux**. On se limite, généralement, aux lettres de l'alphabet, aux chiffres, au tiret (-) et à l'underscore (_).
     
 .. step::
-    Une fois ce dossier créé, créez un sous-dossier nommé ``Comprendre_les_bases`` de sorte à ce que vous ayez la structure suivante : ``Documents/Intro_Python/Comprendre_les_bases/``. Ouvrez ensuite ce dossier avec Visual Studio Code.
+    Une fois ce dossier créé, créez un sous-dossier nommé ``Comprendre_les_bases`` de sorte à ce que vous ayez la structure suivante : ``Documents/Intro_Python/Comprendre_les_bases/``. Ouvrez ensuite ce dossier dans Visual Studio Code. (``Fichier`` -> ``Ouvrir un dossier``)
 
 .. step::
-    Créez un nouveau fichier Python en cliquant sur le bouton ``+`` dans la barre latérale gauche de Visual Studio Code. Nommez ce fichier ``exercice1.py``.
+    Créez un nouveau fichier Python en cliquant sur le bouton ``+`` (voir photo ci-dessous) dans l'explorateur de Visual Studio Code. Nommez ce fichier ``exercice1.py``.
+    
+    .. image:: images/vscode_new_file.png
+        :alt: Créer un nouveau fichier Python
+        :width: 40%
 
+    .. note::
+        Notez que c'est l'extension ``.py`` qui indique que le fichier est un fichier Python. Il est donc important de toujours respecter cette extension.
+
+.. step::
+    Dans la partie éditeur de Visual Studio Code, écrivez un programme qui déclare les variables suivantes :
+    .. discoverList::
+        * ``nom`` : contenant votre nom.
+        * ``age`` : contenant votre âge.
+        * ``taille`` : contenant votre taille en mètres.
+
+    Puis, qui affiche un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
+
+    Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <bases#vscode_interface>`.
+    Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (N'oubliez pas de sauvegarder votre fichier avant de lancer le programme).
+
+.. success::
+    Vous savez donc maintenant comment créer, écrire et exécuter un programme Python.
+
+.. slide::
+
+✏️ Exercice 2 : Opérations simples
+---------------------------------
+
+.. step::
+    Créez un nouveau fichier Python nommé ``exercice2.py`` dans le dossier ``Comprendre_les_bases``.
+
+.. step::
+    Écrire un programme qui demande à l'utilisateur deux nombres, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
+
+.. success::
+    Vous savez donc maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
