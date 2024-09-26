@@ -26,5 +26,5 @@ Sommaire
     config_ide
     bases
     install_maison
-    rst
+
 

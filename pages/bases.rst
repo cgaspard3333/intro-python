@@ -36,7 +36,7 @@ Interface de Visual Studio Code
 
 .. center::
 
-    .. image:: ../images/vscode_interface.svg
+    .. image:: images/vscode_interface.svg
         :alt: Interface de Visual Studio Code
 
 .. slide::
