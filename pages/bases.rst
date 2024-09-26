@@ -8,8 +8,8 @@ Objectifs de la Séance
 
 .. important::
 
- - Découvrir Python, comprendre son fonctionnement, et prendre en main l’environnement de développement VSCode.
- 
+ - Découvrir Python, comprendre les bases de son fonctionnement.  
+ - Prendre en main l’environnement de développement VSCode.  
  - Savoir écrire et exécuter des programmes simples en Python.
 
 .. slide::
@@ -33,6 +33,11 @@ Lors de ce cours, nous utiliserons **Visual Studio Code** du fait de sa simplici
 
 Interface de Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. center::
+
+    .. image:: ../images/vscode_interface.svg
+        :alt: Interface de Visual Studio Code
 
 .. slide::
 
@@ -191,9 +196,25 @@ Python permet de faire des opérations mathématiques de base :
             print(a ** b)
             >> 125
 
+.. slide::
 
-Exercice 1 : Créer et lancer un programme Python avec VSCode
------------------------------------------------------------
+Exercice 1 : Créer et lancer un programme Python simple avec VSCode
+------------------------------------------------------------
 
+.. note::
+    Visual Studio Code a un fonctionnement qui est basé sur de la gestion de projets par dossier.  
+    Il faut donc **toujours ouvrir un dossier** pour pouvoir travailler sur un projet.  
+    Il faut **oublier l'idée d'ouvrir les fichiers un par un**, comme on le ferait avec un éditeur de texte classique.
 
+.. step::
+    Commençons par créer un dossier nommé ``Intro_Python`` dans vos Documents. C'est dans ce dossier que vous aller stocker tous vos projets de programmation que vous allez réaliser dans le cadre de ce cours.
+
+.. note::
+    Les noms de fichiers et dossiers ne doivent **jamais contenir d'espaces ou de caractères spéciaux**. On se limite, généralement, aux lettres de l'alphabet, aux chiffres, au tiret (-) et à l'underscore (_).
+    
+.. step::
+    Une fois ce dossier créé, créez un sous-dossier nommé ``Comprendre_les_bases`` de sorte à ce que vous ayez la structure suivante : ``Documents/Intro_Python/Comprendre_les_bases/``. Ouvrez ensuite ce dossier avec Visual Studio Code.
+
+.. step::
+    Créez un nouveau fichier Python en cliquant sur le bouton ``+`` dans la barre latérale gauche de Visual Studio Code. Nommez ce fichier ``exercice1.py``.
 
