@@ -1,6 +1,6 @@
 .. slide::
 
-Comprendre les bases 2
+Comprendre les bases 2 : Conditions et boucles
 ======================
 
 Objectifs du Chapitre
@@ -93,7 +93,21 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 .. success:: 
     Vous savez maintenant écrire des conditions simples.
 
-✏️ Exercice 2 : Les tables de vérité
+✏️ Exercice 2 : Le juste prix
+----------------------------
+
+.. step::
+    Écrire un programme qui demande à l’utilisateur de deviner un nombre entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
+
+    .. discoverList::
+        * Si le nombre est trop petit, "Trop petit ! Essayez encore."
+        * Si le nombre est trop grand, "Trop grand ! Essayez encore."
+        * Si c’est correct, "Bravo, vous avez trouvé !"
+
+.. success:: 
+    Vous savez maintenant importer et utiliser un module simple (random).
+
+✏️ Exercice 3 : Les tables de vérité
 --------------------------------------------------------
 
 Voici deux tableaux représentant le resultats des opérations logiques ``and`` et ``or`` :
@@ -148,3 +162,64 @@ Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer 
         +-------+-------+-------+-------+------------------+
         | False | False | **?** | **?** | **?**            |
         +-------+-------+-------+-------+------------------+
+
+.. success::
+    Vous savez maintenant manipuler les opérateurs logiques et avez découvert les tables de vérité.
+
+.. slide::
+    
+Les boucles
+-----------
+
+La boucle ``for``
+~~~~~~~~~~~~~~~~~
+
+La boucle ``for`` permet de répéter un bloc de code un nombre déterminé de fois. Elle est souvent utilisée pour parcourir des séquences (listes, chaînes de caractères, etc.)
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        for variable in séquence:
+            # Bloc de code exécuté pour chaque élément de la séquence
+            
+    .. code-block:: python
+
+        for i in range(5): # range(5) génère les nombres de 0 à 4 (5 exclus).
+            print(i)
+
+La boucle ``while``
+~~~~~~~~~~~~~~~~~~~
+
+La boucle ``while`` exécute un bloc de code tant qu’une condition est vraie. 
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        while condition:
+            # Bloc de code exécuté tant que la condition est vraie
+
+    .. code-block:: python
+
+        compteur = 0
+        while compteur < 5:
+            print(compteur)
+            compteur += 1
+
+Boucle infinie et ``break``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Une boucle infinie se produit quand la condition de sortie n’est jamais atteinte. Cela peut bloquer l’exécution du programme.
+On peut interrompre une boucle avec l’instruction ``break``.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        compteur = 0
+        while True:
+            print(compteur)
+            compteur += 1
+            if compteur == 5:
+                break
