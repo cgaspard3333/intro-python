@@ -1,6 +1,6 @@
 .. slide::
 
-Comprendre les bases
+Chapitre 1 - Comprendre les bases
 ================
 
 Objectifs du Chapitre
@@ -14,7 +14,7 @@ Objectifs du Chapitre
 
 .. slide::
 
-Environement de développement
+Environnement de développement
 -----------------------------
 
 Pour coder en Python, il est nécessaire d'avoir un environnement de développement. Il existe plusieurs IDE (Integrated Development Environment) pour développer en Python. Parmi les plus connus, on peut citer :
@@ -48,7 +48,7 @@ Python est un langage de programmation :
 .. discoverList::
     * **Interprété** : Le code est exécuté directement par un programme appelé interpréteur, sans passer par une compilation complète. Cela permet de voir les résultats rapidement, mais peut être un plus lent qu’un langage compilé.
     * **Haut niveau** : Le langage est conçu pour être facile à comprendre et à écrire pour les humains. Il se rapproche du langage naturel et cache les détails techniques de la machine (comme la gestion de la mémoire).
-    * **Multi-paradigme** : Le langage permet d'utiliser plusieurs styles de programmation (ou paradigmes), comme la programmation orientée objet (avec des objets munis d'atributs), la programmation fonctionnelle (avec des fonctions) ou la programmation impérative (instruction par instruction). Cela rend le langage plus flexible et adaptable à différents types de projets.
+    * **Multi-paradigme** : Le langage permet d'utiliser plusieurs styles de programmation (ou paradigmes), comme la programmation orientée objet (avec des objets munis d'attributs), la programmation fonctionnelle (avec des fonctions) ou la programmation impérative (instruction par instruction). Cela rend le langage plus flexible et adaptable à différents types de projets.
 
 .. slide::
 
@@ -95,7 +95,7 @@ Un commentaire multi-lignes s'écrit avec des triples guillemets ``"""``.
         print("Hello World")
 
 .. note::
-    Le raccourci clavier pour commenter/décommenter une ligne de code est ``Ctrl + /`` sur Linux  et ``Cmd + :`` sur Windows.  
+    Le raccourci clavier pour commenter/décommenter une ligne de code est ``Ctrl + /`` sur Linux  et ``Ctrl + :`` sur Windows.  
     Le raccourci clavier universel pour commenter une ligne de code est ``Ctrl + K + C`` et ``Ctrl + K + U`` pour décommenter.
 
 .. slide::
@@ -273,7 +273,10 @@ Python permet de faire des opérations mathématiques de base :
     Puis, en utilisant une seule fois la fonction ``print()`` afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
 
     Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <bases#vscode_interface>`.
-    Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (N'oubliez pas de sauvegarder votre fichier avant de lancer le programme).
+    Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (**N'oubliez pas de sauvegarder votre fichier avant de lancer le programme**).
+
+.. note:: 
+    Pour sauvegarder un fichier, vous pouvez utiliser le raccourci clavier ``Ctrl + S``.
 
 .. success::
     Vous savez maintenant comment créer, écrire et exécuter un programme Python.

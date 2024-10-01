@@ -1,6 +1,6 @@
 .. slide::
 
-Comprendre les bases 2 : Conditions et boucles
+Chapitre 2 - Comprendre les bases 2 : Conditions et boucles
 ======================
 
 Objectifs du Chapitre
@@ -101,22 +101,6 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 
 .. success:: 
     Vous savez maintenant écrire des conditions simples.
-
-.. slide::
-
-✏️ Exercice 2 : Le juste prix
-----------------------------
-
-.. step::
-    Écrire un programme qui demande à l’utilisateur de deviner un nombre entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
-
-    .. discoverList::
-        * Si le nombre est trop petit, "Trop petit ! Essayez encore."
-        * Si le nombre est trop grand, "Trop grand ! Essayez encore."
-        * Si c’est correct, "Bravo, vous avez trouvé !"
-
-.. success:: 
-    Vous savez maintenant importer et utiliser un module simple (random).
 
 .. slide::
 
@@ -243,3 +227,19 @@ On peut interrompre une boucle avec l’instruction ``break``.
             compteur += 1
             if compteur == 5:
                 break
+
+.. slide::
+
+✏️ Exercice 4 : Le juste prix
+----------------------------
+
+.. step::
+    Écrire un programme qui demande à l’utilisateur de deviner un nombre entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
+
+    .. discoverList::
+        * Si le nombre est trop petit, "Trop petit ! Essayez encore."
+        * Si le nombre est trop grand, "Trop grand ! Essayez encore."
+        * Si c’est correct, "Bravo, vous avez trouvé !"
+
+.. success:: 
+    Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
