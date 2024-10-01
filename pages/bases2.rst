@@ -36,6 +36,12 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
         else:
             # Bloc exécuté si toutes les conditions précédentes sont fausses
 
+.. note::
+    Python utilise l’indentation (l'espace en début de ligne) pour délimiter les blocs de code.
+    Cette indentation est réalisée avec la touche ``Tab`` du clavier. Le raccourci ``Shift + Tab`` permet de retirer une indentation.
+
+.. slide::
+
 Opérateurs de comparaison
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -59,6 +65,7 @@ Les opérateurs de comparaison permettent de comparer deux valeurs. Ils sont uti
         else:
             print("Vous êtes mineur.")
 
+.. slide::
 
 Opérateurs logiques
 ~~~~~~~~~~~~~~~~~~~
@@ -79,6 +86,8 @@ On peut combiner plusieurs conditions grâce aux opérateurs logiques :
         if x > 5 and y < 10:
             print("Les deux conditions sont vraies.")
 
+.. slide::
+
 ✏️ Exercice 1 : Un conseiller de mode
 ------------------------------------
 
@@ -93,6 +102,8 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 .. success:: 
     Vous savez maintenant écrire des conditions simples.
 
+.. slide::
+
 ✏️ Exercice 2 : Le juste prix
 ----------------------------
 
@@ -106,6 +117,8 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 
 .. success:: 
     Vous savez maintenant importer et utiliser un module simple (random).
+
+.. slide::
 
 ✏️ Exercice 3 : Les tables de vérité
 --------------------------------------------------------
@@ -130,6 +143,8 @@ Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer 
 .. step::
     Ecrire un programme qui affiche les résultats des opérations logiques ``and`` et ``or`` pour toutes les combinaisons possibles de valeurs de ``A`` et ``B`` et qui permet donc de compléter les tableaux ci-dessus. 
 
+.. slide::
+
 .. step::
     Faire de même pour la table de vérité de l'opération ``not(A and B)`` :
 
@@ -146,6 +161,7 @@ Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer 
         | True  | False | **?**      |
         +-------+-------+------------+
 
+.. slide::
 
 .. step::
     Ainsi que pour la table de vérité de l'opération ``not a or not b`` :
@@ -188,6 +204,8 @@ La boucle ``for`` permet de répéter un bloc de code un nombre déterminé de f
         for i in range(5): # range(5) génère les nombres de 0 à 4 (5 exclus).
             print(i)
 
+.. slide::
+
 La boucle ``while``
 ~~~~~~~~~~~~~~~~~~~
 
@@ -206,6 +224,8 @@ La boucle ``while`` exécute un bloc de code tant qu’une condition est vraie.
         while compteur < 5:
             print(compteur)
             compteur += 1
+
+.. slide::
 
 Boucle infinie et ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~

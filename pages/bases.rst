@@ -94,6 +94,12 @@ Un commentaire multi-lignes s'écrit avec des triples guillemets ``"""``.
         """
         print("Hello World")
 
+.. note::
+    Le raccourci clavier pour commenter/décommenter une ligne de code est ``Ctrl + /`` sur Linux  et ``Cmd + :`` sur Windows.  
+    Le raccourci clavier universel pour commenter une ligne de code est ``Ctrl + K + C`` et ``Ctrl + K + U`` pour décommenter.
+
+.. slide::
+
 Les variables
 ~~~~~~~~~~~~~
 
@@ -106,8 +112,6 @@ La variable possède **un nom**, **un type** et **une valeur**. (Nous verrons le
     Le nom de la variable doit être **explicite** et permettre de comprendre le role qu'elle joue dans le programme.
 
     Un nom de variable doit commencer par une lettre ou un underscore (_) et ne doit pas contenir d'espace.
-
-.. slide::
 
 .. warning::
 
@@ -186,6 +190,9 @@ Python possède plusieurs types de données courants :
     print(type(d))
     >> bool
 
+.. note::
+    En Python, il n'est pas nécessaire de déclarer le type d'une variable, le langage se charge de le déterminer automatiquement.
+
 .. slide::
 
 Les opérateurs arithmétiques simples 
@@ -199,6 +206,7 @@ Python permet de faire des opérations mathématiques de base :
     * Multiplication : ``*``
     * Division : ``/``
     * Puissance : ``**``
+    * Modulo : ``%`` (reste de la division euclidienne)
 
 .. warning::
     
@@ -221,6 +229,9 @@ Python permet de faire des opérations mathématiques de base :
     
             print(a ** b)
             >> 125
+
+            print(a % b)
+            >> 2
 
 .. slide::
 
