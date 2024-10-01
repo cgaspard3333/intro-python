@@ -1,6 +1,6 @@
 .. slide::
 
-Chapitre 2 - Comprendre les bases 2 : Conditions et boucles
+Chapitre 2 - Conditions et boucles
 ======================
 
 Objectifs du Chapitre
@@ -88,7 +88,7 @@ On peut combiner plusieurs conditions grâce aux opérateurs logiques :
 
 .. slide::
 
-✏️ Exercice 1 : Un conseiller de mode
+✏️ Exercice 3 : Un conseiller de mode
 ------------------------------------
 
 Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le chapitre précédent, vous pouvez vous en inspirer pour continuer à travailler de manière organisée tout au long de ce cours.
@@ -97,17 +97,23 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
     Rappel : Toujours ouvrir un dossier à l'ouverture de VSCode pour travailler à l'intérieur de celui-ci.
 
 .. step::
-    Écrire un programme qui aide l’utilisateur à choisir une tenue en fonction de la température donnée. Le programme demande à l’utilisateur la température extérieure et recommande une tenue en fonction de celle-ci. 
+    Écrire un programme qui aide l’utilisateur à choisir une tenue en fonction de la température qu'il donne. Le programme demande à l’utilisateur la température extérieure et recommande une tenue différente en fonction des 4 cas suivants :
+
+    .. discoverList::
+        * Si la température est inférieure à 0°C
+        * Si la température est entre 0°C et 10°C
+        * Si la température est entre 10°C et 20°C
+        * Si la température est supérieure à 20°C
 
 .. success:: 
     Vous savez maintenant écrire des conditions simples.
 
 .. slide::
 
-✏️ Exercice 3 : Les tables de vérité
+✏️ Exercice 4 : Les tables de vérité
 --------------------------------------------------------
 
-Voici deux tableaux représentant le resultats des opérations logiques ``and`` et ``or`` :
+Voici un tableaux représentant le resultats des opérations logiques ``and`` et ``or`` :
 
 .. center::
     +-------+-------+---------+--------+
@@ -122,10 +128,16 @@ Voici deux tableaux représentant le resultats des opérations logiques ``and`` 
     | True  | False | **?**   | **?**  |
     +-------+-------+---------+--------+
 
-Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer le résultat d'une opération logique en fonction des valeurs de vérité des variables ``A`` et ``B``.
+Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résultat d'une opération logique en fonction des valeurs de vérité des variables ``A`` et ``B``.
 
 .. step::
-    Ecrire un programme qui affiche les résultats des opérations logiques ``and`` et ``or`` pour toutes les combinaisons possibles de valeurs de ``A`` et ``B`` et qui permet donc de compléter les tableaux ci-dessus. 
+    Ecrire un programme qui demande à l'utilisateur les valeurs de vérité de ``A`` et ``B`` et affiche les résultats des opérations logiques ``and`` et ``or`` afin de compléter les tableaux ci-dessus. 
+
+    .. note::
+        La fonction ``bool()`` ne permet pas de convertir les chaînes de caractères ``"True"`` ou ``"False"`` en booléens. Pour cela, on utilise la fonction ``eval()``.
+
+.. step::
+    Quel est la différence entre le fonctionnement de la fonction ``bool()`` et de la fonction ``eval()`` ?
 
 .. slide::
 
@@ -230,11 +242,11 @@ On peut interrompre une boucle avec l’instruction ``break``.
 
 .. slide::
 
-✏️ Exercice 4 : Le juste prix
+✏️ Exercice 5 : Le juste prix
 ----------------------------
 
 .. step::
-    Écrire un programme qui demande à l’utilisateur de deviner un nombre entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
+    Écrire un programme qui demande à l’utilisateur de deviner un nombre entier entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
 
     .. discoverList::
         * Si le nombre est trop petit, "Trop petit ! Essayez encore."
