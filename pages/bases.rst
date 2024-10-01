@@ -143,6 +143,19 @@ Pour afficher des données à l'écran, on utilise la fonction ``print()``.
 
 .. slide::
 
+On peut aussi afficher plusieurs éléments en les séparant par des virgules.
+
+.. warning::
+
+    Exemple :
+    .. code-block:: python
+
+        # Affichage de plusieurs éléments
+        longueur = 25
+        largeur = 10
+        print("La longueur est de", longueur, "mètres et la largeur est de", largeur, "mètres.")
+        >> La longueur est de 25 mètres et la largeur est de 10 mètres.
+
 Les types de données de base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -185,7 +198,7 @@ Python permet de faire des opérations mathématiques de base :
     * Soustraction : ``-``
     * Multiplication : ``*``
     * Division : ``/``
-    * Exponentiation : ``**``
+    * Puissance : ``**``
 
 .. warning::
     
@@ -245,7 +258,8 @@ Python permet de faire des opérations mathématiques de base :
         * ``age`` : contenant votre âge.
         * ``taille`` : contenant votre taille en mètres.
 
-    Puis, qui affiche un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
+.. step::
+    Puis, en utilisant une seule fois la fonction ``print()`` afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
 
     Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <bases#vscode_interface>`.
     Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (N'oubliez pas de sauvegarder votre fichier avant de lancer le programme).
