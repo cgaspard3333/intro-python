@@ -23,7 +23,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
 .. discoverList::
     * ``if`` : vérifie une condition et exécute le bloc de code associé si elle est vraie.
     * ``elif`` : vérifie une autre condition si la première est fausse.
-    * ``else`` : exécute un bloc de code si aucune des conditions précédentes n’est vraie.
+    * ``else`` : exécute un bloc de code si toutes les conditions précédentes sont fausses
 
 .. warning::
     Exemple :
@@ -160,7 +160,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 .. slide::
 
 .. step::
-    Ainsi que pour la table de vérité de l'opération ``not a or not b`` :
+    **Sans utiliser l'ordinateur**, remplissez à la main la table de vérité de l'opération ``not a or not b`` suivante:
 
     .. center::
         +-------+-------+-------+-------+------------------+

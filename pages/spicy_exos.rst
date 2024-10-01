@@ -50,6 +50,10 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 🌶️ Exercice Sup. 3 : Les tours de Hanoï
 ---------------
 
+.. image:: images/Tower_of_Hanoi_4.gif
+    :alt: Les tours de Hanoï
+    :align: center
+
 **Consigne** : Vous devez écrire une fonction en Python pour résoudre le problème des tours de Hanoï en déplaçant des disques d'une tour à une autre en suivant certaines règles. Vous devez afficher la séquence des mouvements effectués.
 
 **Règles des Tours de Hanoï** :
