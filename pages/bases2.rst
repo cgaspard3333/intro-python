@@ -116,13 +116,13 @@ Voici deux tableaux représentant le resultats des opérations logiques ``and`` 
     +-------+-------+---------+--------+
     |   A   |   B   | A and B | A or B |
     +=======+=======+=========+========+
-    | True  | True  | True    | True   |
-    +-------+-------+---------+--------+
-    | True  | False | **?**   |  **?** |
+    | False | False | False   | False  |
     +-------+-------+---------+--------+
     | False | True  | **?**   | **?**  |
     +-------+-------+---------+--------+
-    | False | False | **?**   | **?**  |
+    | True  | True  | **?**   | **?**  |
+    +-------+-------+---------+--------+
+    | True  | False | **?**   | **?**  |
     +-------+-------+---------+--------+
 
 Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer le résultat d'une opération logique en fonction des valeurs de vérité des variables ``A`` et ``B``.
@@ -137,13 +137,13 @@ Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer 
         +-------+-------+------------+
         |   A   |   B   | not(A and B)|
         +=======+=======+============+
-        | True  | True  | **?**      |
-        +-------+-------+------------+
-        | True  | False | **?**      |
+        | False | False | **?**      |
         +-------+-------+------------+
         | False | True  | **?**      |
         +-------+-------+------------+
-        | False | False | **?**      |
+        | True  | True  | **?**      |
+        +-------+-------+------------+
+        | True  | False | **?**      |
         +-------+-------+------------+
 
 
@@ -154,13 +154,13 @@ Ces tableaux s'appelent des tables de vérité. Elles permettent de déterminer 
         +-------+-------+-------+-------+------------------+
         |   A   |   B   | not A | not B | not A or not B   |
         +=======+=======+=======+=======+==================+
-        | True  | True  | **?** | **?** | **?**            |
-        +-------+-------+-------+-------+------------------+
-        | True  | False | **?** | **?** | **?**            |
+        | False | False | **?** | **?** | **?**            |
         +-------+-------+-------+-------+------------------+
         | False | True  | **?** | **?** | **?**            |
         +-------+-------+-------+-------+------------------+
-        | False | False | **?** | **?** | **?**            |
+        | True  | True  | **?** | **?** | **?**            |
+        +-------+-------+-------+-------+------------------+
+        | True  | False | **?** | **?** | **?**            |
         +-------+-------+-------+-------+------------------+
 
 .. success::

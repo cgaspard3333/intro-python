@@ -36,7 +36,7 @@ Interface de Visual Studio Code
 .. _vscode_interface:
 .. center::
 
-    .. image:: images/vscode_interface.svg
+    .. image:: images/vscode_interface.png
         :alt: Interface de Visual Studio Code
 
 .. slide::
@@ -52,7 +52,7 @@ Python est un langage de programmation :
 
 .. slide::
 
-Il est populaire pour sa simplicité et sa lisibilité. Voici quelques domaines où Python est utilisé :
+Il est populaire pour sa simplicité et sa lisibilité et il est majoritairement utilisé pour les application suivantes : 
 
  * Développement web (Django, Flask).
  * Analyse de données (Pandas, NumPy).
@@ -69,7 +69,7 @@ Les commentaires
 
 Un commentaire est une ligne de texte qui n’est pas exécutée par l’interpréteur. Il sert à documenter le code.
 
-Utilisation : un commentaire s’écrit avec ``#`` au début de la ligne.
+Un commentaire s’écrit avec ``#`` au début de la ligne.
 
 .. warning::
 
@@ -80,6 +80,19 @@ Utilisation : un commentaire s’écrit avec ``#`` au début de la ligne.
         print("Hello World") # Ceci est un autre commentaire
 
 .. slide::
+
+Un commentaire multi-lignes s'écrit avec des triples guillemets ``"""``.
+
+.. warning::
+
+    Exemple :
+    .. code-block:: python
+
+        """
+        Ceci est un commentaire
+        sur plusieurs lignes
+        """
+        print("Hello World")
 
 Les variables
 ~~~~~~~~~~~~~
@@ -249,7 +262,7 @@ Python permet de faire des opérations mathématiques de base :
     Créez un nouveau fichier Python nommé ``exercice2.py`` dans le dossier ``Comprendre_les_bases``.
 
 .. step::
-    Écrire un programme qui demande à l'utilisateur deux nombres, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
+    Écrire un programme qui demande à l'utilisateur deux nombres entiers, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
 
 .. success::
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
