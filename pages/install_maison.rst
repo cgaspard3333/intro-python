@@ -8,8 +8,12 @@ Windows
 Installation de Python
 ~~~~~~~~~~~~~~~~~~~~~~
 
+Pour installer Python sur Windows, la façon la plus simple est de l'installer depuis le Microsoft Store en suivant ce lien : `https://apps.microsoft.com/detail/9ncvdn91xzqp?ocid=webpdpshare <https://apps.microsoft.com/detail/9ncvdn91xzqp?ocid=webpdpshare>`_
+
 Installation de VSCode
 ~~~~~~~~~~~~~~~~~~~~~~
+
+De la même manière, vous pouvez installer Visual Studio Code depuis le Microsoft Store en suivant ce lien : `https://apps.microsoft.com/detail/xp9khm4bk9fz7q?ocid=webpdpshare <https://apps.microsoft.com/detail/xp9khm4bk9fz7q?ocid=webpdpshare>`_
 
 Linux
 -----
