@@ -109,7 +109,7 @@ La variable possède **un nom**, **un type** et **une valeur**. (Nous verrons le
 
 .. note::
 
-    Le nom de la variable doit être **explicite** et permettre de comprendre le role qu'elle joue dans le programme.
+    Le nom de la variable doit être **explicite** et permettre de comprendre le rôle qu'elle joue dans le programme.
 
     Un nom de variable doit commencer par une lettre ou un underscore (_) et ne doit pas contenir d'espace.
 
@@ -160,6 +160,8 @@ On peut aussi afficher plusieurs éléments en les séparant par des virgules.
         print("La longueur est de", longueur, "mètres et la largeur est de", largeur, "mètres.")
         >> La longueur est de 25 mètres et la largeur est de 10 mètres.
 
+.. slide::
+
 Les types de données de base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -195,7 +197,7 @@ Python possède plusieurs types de données courants :
 
 .. slide::
 
-Les opérateurs arithmétiques simples 
+Les opérateurs arithmétiques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Python permet de faire des opérations mathématiques de base :
@@ -207,6 +209,7 @@ Python permet de faire des opérations mathématiques de base :
     * Division : ``/``
     * Puissance : ``**``
     * Modulo : ``%`` (reste de la division euclidienne)
+    * Division entière : ``//`` (quotient **entier** de la division euclidienne)
 
 .. warning::
     
@@ -234,6 +237,53 @@ Python permet de faire des opérations mathématiques de base :
             >> 2
 
 .. slide::
+
+
+Les opérateurs d'affectation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Vous connaissait déjà l'opérateur d'affectation ``=`` qui permet d'assigner une valeur à une variable.
+
+Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écriture de certaines opérations.
+
+.. discoverList::
+
+    * ``+=`` : Ajoute une valeur à la variable.
+    * ``-=`` : Soustrait une valeur à la variable.
+    * ``*=`` : Multiplie la variable par une valeur.
+    * ``/=`` : Divise la variable par une valeur.
+    * ``%=`` : Modifie la variable pour qu'elle contienne le reste de la division euclidienne.
+    * ``//=`` : Modifie la variable pour qu'elle contienne le quotient entier de la division euclidienne.
+
+.. warning::
+    
+        Exemple :
+        .. code-block:: python
+    
+            a = 5
+            a += 3 #equivalent à a = a + 3
+            print(a)
+            >> 8
+    
+            a -= 3 #equivalent à a = a - 3
+            print(a)
+            >> 5
+    
+            a *= 3 #equivalent à a = a * 3
+            print(a)
+            >> 15
+    
+            a /= 3 #equivalent à a = a / 3
+            print(a)
+            >> 5.0
+    
+            a %= 3 #equivalent à a = a % 3
+            print(a)
+            >> 2.0
+    
+            a //= 3 #equivalent à a = a // 3
+            print(a)
+            >> 0.0
 
 ✏️ Exercice 1 : Créer et lancer un programme Python simple
 ------------------------------------------------------------
@@ -270,7 +320,7 @@ Python permet de faire des opérations mathématiques de base :
         * ``taille`` : contenant votre taille en mètres.
 
 .. step::
-    Puis, en utilisant une seule fois la fonction ``print()`` afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
+    Puis, **en utilisant une seule fois la fonction ``print()``** afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
 
     Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <bases#vscode_interface>`.
     Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (**N'oubliez pas de sauvegarder votre fichier avant de lancer le programme**).
@@ -278,8 +328,12 @@ Python permet de faire des opérations mathématiques de base :
 .. note:: 
     Pour sauvegarder un fichier, vous pouvez utiliser le raccourci clavier ``Ctrl + S``.
 
+Avec l'usage d'une seule itération de la fonction ``print()``, le message est plutôt très long et s'affiche sur une seule ligne. 
+.. step::
+    Cherchez sur internet le caractère spécial qui permet de faire un retour à la ligne dans un même print et utilisez le pour améliorer la lisibilité de votre message. (Attention, il doit être dans une chaîne de caractères pour fonctionner).
+
 .. success::
-    Vous savez maintenant comment créer, écrire et exécuter un programme Python.
+    Vous savez maintenant comment créer, écrire et exécuter un programme Python. Vous avez également appris à faire un retour à la ligne dans un message affiché par la fonction ``print()``.
 
 .. slide::
 
@@ -291,6 +345,15 @@ Python permet de faire des opérations mathématiques de base :
 
 .. step::
     Écrire un programme qui demande à l'utilisateur deux nombres entiers, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
+
+.. note::
+    Lorsque vous exécutez votre code, vous voyez les sorties/affichages de celui-ci dans le terminal de Visual Studio Code. **Les erreurs éventuelles sont aussi affichées dans ce terminal**. Lors des différents exercices de ce cours vous allez devoir **apprendre à lire ces messages d'erreurs** pour **comprendre et corriger** les erreurs que vous avez commises.  
+    N'ayez pas peur des erreurs, elles font partie du processus d'apprentissage, et vous permettent de progresser. 
+
+    .. discoverList::
+        * En premier lieu, essayez de comprendre l'erreur par vous-même
+        * Dans un second temps, vous pouvez vous aider d'internet avec des sites de questions/réponses comme `StackOverflow <https://stackoverflow.com>`_, ou encore des sites de documentation comme `W3Schools <https://www.w3schools.com/python/>`_.
+        * En dernier recours, si vous êtes vraiment bloqués, n'héistez pas à demander de l'aide à votre enseignant.
 
 .. success::
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
