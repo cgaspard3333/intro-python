@@ -37,7 +37,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
             # Bloc exécuté si toutes les conditions précédentes sont fausses
 
 .. note::
-    Python utilise l’indentation (l'espace en début de ligne) pour délimiter les blocs de code.
+    Contrairement à d'autres langages tels que C/C++ ou même Java, Python utilise l’indentation (l'espace en début de ligne) pour délimiter les blocs de code.
     Cette indentation est réalisée avec la touche ``Tab`` du clavier. Le raccourci ``Shift + Tab`` permet de retirer une indentation.
 
 .. slide::
