@@ -14,7 +14,7 @@ Objectifs du Chapitre
 
 .. slide::
 
-Environnement de développement
+📖 Environnement de développement
 -----------------------------
 
 Pour coder en Python, il est nécessaire d'avoir un environnement de développement. Il existe plusieurs IDE (Integrated Development Environment) pour développer en Python. Parmi les plus connus, on peut citer :
@@ -41,7 +41,7 @@ Interface de Visual Studio Code
 
 .. slide::
 
-Qu'est ce que Python ?
+📖 Qu'est ce que Python ?
 -----------------------------
 
 Python est un langage de programmation : 
@@ -61,7 +61,7 @@ Il est populaire pour sa simplicité et sa lisibilité et il est majoritairement
 
 .. slide::
 
-Premiers pas avec Python
+📖 Premiers pas avec Python
 -----------------------------
 
 Les commentaires

@@ -202,3 +202,47 @@ Une grille de Sudoku 4x4 peut être représentée comme une liste de listes de c
 **Consigne** : Reprenez le code de l'exercice Sup. 3. Vous devez maintenant utiliser la bibliothèque graphique pygame pour afficher la séquence des mouvements effectués lors de la résolution du problème des tours de Hanoï.  
 Vous utiliserez 7 disques pour cet exercice.
 
+.. slide::
+⚖️ Exercice Sup. 6 : Facturation de télécommunication
+---------------
+
+Dans un tarif d’abonnement de portable, les communications sont facturées 0.15€ la minute.
+
+**Consignes** : Connaissant en heures et minutes le début et la fin de la communication, écrire un programme calculant et affichant :
+.. discoverList::
+	* la durée de la communication en heures et minutes
+	* le coût de la communication
+
+**Contraintes** :
+.. discoverList::
+	* Une communication peut commencer le jour J et se terminer le jour J+1. 
+	* Une communication ne peut durer plus de 8 heures.
+	* Le prix de la communication est demi-tarif soit 0.075 euros entre 21h30 et 8h.
+	* Une communication peut se dérouler en plage tarif normal et tarif réduit.
+
+**Tests** : Afin de vérifier la validité de votre programme, testez les cas suivants :
+.. discoverList::
+	* *Cas 1* : la communication commence avant 8h et se termine avant 8h
+		- début : 6h et fin : 7h30
+		- durée : 1h30 soit 90 minutes en demi-tarif
+		- coût : 90×0.075 = 6.75€
+
+	* *Cas 2* : la communication commence avant 8h et après 8h (mais avant 21h30) 
+		- début : 7h30 et fin : 9h30
+		- durée : 2h00 soit 30 minutes en demi-tarif et 90 minutes en plain tarif
+		- coût : 30×0.075+90×0.15 = 15.75€
+
+	* *Cas 3* : la communication commence après 8h et se termine avant 21h30
+		- début : 9h30 et fin : 10h30
+		- durée : 1h00 soit 60 minutes en plein tarif
+		- coût : 60×0.15 = 9.00€
+
+	* *Cas 4* : la communication commence après 8 h et se termine après 21h30
+		- début : 20h30 et fin : 22h30
+		- durée : 2h00 soit 60 minutes en plein tarif et 60 minutes en demi-tarif
+		- coût : 60×0.15+60×0.075 = 13.50€
+
+	* *Cas 5* : la communication commence après 21h30 h et se termine avant 8h
+		- début : 23h30 et fin : 1h30
+		- durée : 2h00 soit 120 minutes en demi-tarif
+		- coût : 120×0.075 = 9.00€

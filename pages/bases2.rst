@@ -12,7 +12,7 @@ Objectifs du Chapitre
 
 .. slide::
 
-Les conditions
+📖 Les conditions
 --------------
 
 Principe des conditions
@@ -192,8 +192,8 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
     2. Demander le temps qu'il fait.
     3. Afficher une tenue adaptée à la température et au temps.
 
-Exemple : 
 .. warning::
+    Exemple : 
     .. code-block:: python
         
             >> Quelle est la température extérieure (en °C) ? 
@@ -209,7 +209,7 @@ Exemple :
 
 .. slide::
     
-Les boucles
+📖 Les boucles
 -----------
 
 La boucle ``for``
