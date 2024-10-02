@@ -42,6 +42,38 @@ A la fin de l'installation vous pouvez accepter d'ajouter VSCode à votre apt re
 
 Pour les autres distributions Linux, consultez la documentation de Visual Studio Code pour obtenir des instructions d'installation.
 
-Configuration de VSCode
+Optionnel - Avoir plusieurs versions de Python sur votre machine
 ----------
 
+Si plusieurs version de Python sont installées sur votre machine, vous devez spécifier quelle version de Python vous souhaitez utiliser dans votre IDE.  
+En effet, lorsqu'un fichier Python est ouvert, **en bas à gauche de l'interface de VSCode**, vous pouvez voir la version de Python que vous utilisez : |python_version|
+
+.. |python_version| image:: images/vscode_python_version.png
+        :alt: Bas de page de VSCode montrant la version de Python utilisée
+        :width: 30%
+
+Si vous avez plusieurs versions de Python installées, vous pouvez cliquer sur cette version pour choisir la version que vous souhaitez utiliser.
+
+**Sous Windows**, la version par défaut est la dernière version de Python installée venant du Microsoft Store tel que présenté ci dessous :
+
+.. center::
+    .. image:: images/vscode_python_version_choice_win.png
+        :alt: Choix de la version de Python
+
+**Sous Linux**, la version par défaut est la version de Python installée par défaut sur votre distribution (Ici Python 3.12 pour Ubuntu 24.04) :
+
+.. center::
+    .. image:: images/vscode_python_version_choice_linux.png
+        :alt: Choix de la version de Python
+
+Avoir plusieurs version de Python sur votre machine peut être utile pour tester la compatibilité de votre code avec différentes versions de Python.
+
+.. note::
+    Attention, **changer cette version ne change pas la version de Python utilisée dans le terminal de VSCode.** 
+    Elle change uniquement la version de Python utilisée pour l'exécution du code en cliquant sur le bouton "Run" ou "Debug" de VSCode. Elle permet à votre IDE de savoir quelle version de Python utiliser pour les fonctionnalités telles que l'autocomplétion, la vérification de syntaxe, etc.
+
+    Pour changer la version de Python utilisée dans le terminal de VSCode, vous devez ouvrir un terminal dans VSCode et taper la commande suivante : ``python3.8`` ou ``python3.9`` par exemple.
+
+
+
+Il est aussi possible de créer des "environnements virtuels" pour isoler les dépendances de vos projets. Cela permet de travailler sur plusieurs projets avec des versions de Python différentes sans que les dépendances d'un projet n'interfèrent avec un autre projet. Cela ne sera pas traité dans ce cours mais vous pouvez consulter la documentation officielle de Python pour plus d'informations : `https://docs.python.org/3/library/venv.html <https://docs.python.org/3/library/venv.html>`_
