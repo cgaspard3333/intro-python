@@ -12,7 +12,7 @@ Objectifs du Chapitre
 
 .. slide::
 
-📖 Les conditions
+📖 Les conditions (Structures de décision)
 --------------
 
 Principe des conditions
@@ -209,7 +209,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 
 .. slide::
     
-📖 Les boucles
+📖 Les boucles (Structures itératives)
 -----------
 
 La boucle ``for``

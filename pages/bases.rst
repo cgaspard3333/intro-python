@@ -175,10 +175,13 @@ Python possède plusieurs types de données courants :
     >> int
 
 **Nombres décimaux** (*float*) :
+En informatique, les nombres décimaux sont souvent représentés en nombre à **virgule flottante**, encore appelés nombres flottants.
 .. code-block:: python
     b = 3.14
     print(type(b))
     >> float
+.. note::
+    Compte tenu de la manière dont les nombres à virgule flottante sont stockés en mémoire, les nombres flottants sont souvent approximés, ce qui peut entraîner des erreurs de calcul. Il faut donc **éviter de tester l'égalité de deux nombres flottants**.
 
 **Chaînes de caractères** (*str*) :
 .. code-block:: python
