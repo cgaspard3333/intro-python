@@ -22,7 +22,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
 
 .. discoverList::
     * ``if`` : vérifie une condition et exécute le bloc de code associé si elle est vraie.
-    * ``elif`` : vérifie une autre condition si la première est fausse et execute le bloc de code associé si celle du ``elif`` est vraie.
+    * ``elif`` : vérifie une autre condition lorsque la première est fausse et exécute le bloc de code associé si cette nouvelle condition est vraie.
     * ``else`` : exécute un bloc de code si toutes les conditions précédentes sont fausses
 
 .. warning::
