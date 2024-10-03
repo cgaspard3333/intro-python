@@ -181,7 +181,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
     Vous savez maintenant manipuler les opérateurs logiques et avez découvert les tables de vérité.
 
 .. slide::
-✏️ Exercice 4 : Un dressing encore plus intelligent
+✏️ Exercice 5 : Un dressing encore plus intelligent
 ------------------------------------
 
 **Objectif** : Améliorer le programme de l'exercice 2 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
@@ -281,6 +281,9 @@ On peut interrompre une boucle avec l’instruction ``break``.
         * Si le nombre est trop petit, "Trop petit ! Essayez encore."
         * Si le nombre est trop grand, "Trop grand ! Essayez encore."
         * Si c’est correct, "Bravo, vous avez trouvé !"
+
+.. step::
+    Cherchez sur internet et expliquer ce qu'est un module en Python et comment l'utiliser.
 
 .. success:: 
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.

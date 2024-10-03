@@ -27,6 +27,7 @@ Sommaire
     config_ide
     bases
     bases2
+    chap3
     spicy_exos
     
 

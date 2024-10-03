@@ -288,6 +288,8 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
             print(a)
             >> 0.0
 
+.. slide::
+
 ✏️ Exercice 1 : Créer et lancer un programme Python simple
 ------------------------------------------------------------
 
