@@ -1,3 +1,5 @@
+.. slide::
+
 Chapitre 3 - Fonctions, types construits et modules
 ===================================================
 
@@ -10,14 +12,16 @@ Objectifs
     - Introduction aux types construits (listes, tuples, dictionnaires).
     - Apprendre à utiliser des modules pour organiser et enrichir les programmes.
 
+.. slide::
 📖 Les fonctions
 ----------------
 
 Qu'est-ce qu'une fonction ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+    Une fonction est un **bloc de code réutilisable** qui permet d'effectuer une tâche spécifique. Elle prend en entrée des **arguments** et retourne un **résultat**. Les fonctions permettent de **découper un programme en sous-programmes** plus petits et plus faciles à gérer.  
 
-Une fonction est un **bloc de code réutilisable** qui permet d'effectuer une tâche spécifique. Elle prend en entrée des **arguments** et retourne un **résultat**. Les fonctions permettent de **découper un programme en sous-programmes** plus petits et plus faciles à gérer.  
-
+.. slide::
 **Définir une fonction**
 
 En Python, une fonction se définit avec le mot-clé ``def`` suivi du nom de la fonction, des parenthèses (qui peuvent contenir des paramètres), et d’un bloc de code indenté.
@@ -29,6 +33,7 @@ En Python, une fonction se définit avec le mot-clé ``def`` suivi du nom de la 
             # Bloc de code qui s'exécute
             return résultat  # (optionnel)
 
+.. slide::
 Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom suivi de parenthèses contenant les arguments à passer à la fonction.
 
 .. warning::
@@ -41,6 +46,7 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
         print(addition(2, 3))
         >> 5
 
+.. slide::
 **Paramètres et arugments**
 .. discoverList::
     * Les **paramètres** sont des variables définies dans la déclaration de la fonction.
@@ -60,7 +66,8 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
         >> 5
 
     ``5`` et ``3`` sont les **arguments**. Ce sont les valeurs que l'on passe à la fonction lorsque celle-ci est appelée. Ces valeurs sont affectées aux paramètres ``a`` et ``b`` à l'intérieur de la fonction.
-    
+
+.. slide::
 **Valeurs de retour (*return*)**
 
 Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si aucune valeur n'est retournée, Python renvoie ``None`` par défaut. La valeur retournée peut être de n'importe quel type (entier, chaîne de caractères, liste, etc.). La valeur retournée est la valeur par laquelle est remplacée l'appel de la fonction.
@@ -78,6 +85,7 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
 
     Dans cet exemple, la fonction ``addition`` retourne la somme des deux paramètres ``a`` et ``b``. Lorsque la fonction est appelée avec les arguments ``2`` et ``3``, elle retourne la valeur ``5`` qui est affichée par la fonction ``print()``.
 
+.. slide::
 **Portée des variables**
 
 .. note::
@@ -93,6 +101,7 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
         print(x) # La variable x n'est pas accessible en dehors de la fonction
         >> NameError: name 'x' is not defined
 
+.. slide::
 ✏️ Exercice 7 : Calculatrice simple avec fonctions
 --------------------------------------------------
 
@@ -113,19 +122,22 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
 .. step:: 
     Utiliser les fonctions précédemment créées pour afficher le résultat de l'opération demandée.
 
+.. slide::
 📖 Les types construits
 ------------------------
 
 A partir des types de base, on peut construire des types plus complexes appelés **types construits**. Les types construits les plus courants sont les listes, les p-uplets et les dictionnaires, ils sont génériques et peuvent être mis en oeuvre dans de nombreux langages de programmation. 
 
+.. slide::
 Les p-uplets (*tuple*)
 ~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+    Un p-uplet est une **collection ordonnée d'éléments**. Chaque élément peut être de n'importe quel type. Les p-uplets sont **immuables**, c'est-à-dire qu'ils ne peuvent pas être modifiés après leur création. Si les valeurs du p-uplet doivent être changées au cours de l'execution du programme alors il faut utiliser un autre type de type de variable comme une liste/tableau (voir partie suivante : :doc:`Les tableaux <chap3#tableaux>`).
 
-Un p-uplet est une **collection ordonnée d'éléments**. Chaque élément peut être de n'importe quel type. Les p-uplets sont **immuables**, c'est-à-dire qu'ils ne peuvent pas être modifiés après leur création. Si les valeurs du p-uplet doivent être changées au cours de l'execution du programme alors il faut utiliser un autre type de type de variable comme une liste/tableau (voir partie suivante : :doc:`Les tableaux <chap3#tableaux>`).
-
+.. slide::
 **Création d'un p-uplet**
 
-Pour créer un p-uplet, on utilise des parenthèses et on sépare les éléments par des virgules.
+Pour créer un p-uplet, on utilise des **parenthèses** et on sépare les éléments par des **virgules**.
 
 .. warning::
     Exemple : 
@@ -141,6 +153,7 @@ Pour créer un p-uplet, on utilise des parenthèses et on sépare les éléments
 .. warning::
     Exemple : ``p = (1,)`` et non ``p = (1)``
 
+.. slide::
 **Accès aux éléments d'un p-uplet**
 
 Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (sa position dans le p-uplet). Pour un p-uplet de taille n, les indexs des éléments vont de 0 à n-1.  
@@ -157,6 +170,7 @@ Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (s
         print(p[4]) # Permet d'accéder à l'élément en 5eme position (index 4) du p-uplet p
         >> 5
 
+.. slide::
 La fonction ``len()`` permet de connaître la taille d'un p-uplet. Elle permet par exemple d'accéder au dernier élément d'un p-uplet.
 
 .. warning::
@@ -171,6 +185,79 @@ La fonction ``len()`` permet de connaître la taille d'un p-uplet. Elle permet p
 
 .. _tableaux:
 
+.. slide::
 Les tableaux / Les listes (*list*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+    Un tableau est une collection ordonnée d'éléments qui sont organisés séquentiellements (les uns à la suite des autres). Contrairement aux p-uplets, les tableaux sont **mutables/muables**, c'est-à-dire qu'ils peuvent être modifiés après leur création.  
+    En Python, les tableaux sont appelés **listes**.
 
+.. slide::
+**Création d'une liste**
+
+Les listes sont créées en utilisant des **crochets** et en séparant les éléments par des **virgules**.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        # Création d'une liste
+        l = [1, 2, 3, 4, 5]
+        print(l)
+        >> [1, 2, 3, 4, 5]
+
+.. slide::
+**Accès aux éléments d'une liste**
+
+De la même manière que pour un p-uplet, pour accéder à un élément d'une liste, on utilise l'index de l'élément. Pour une liste de taille n, les indexs des éléments vont de 0 à n-1.  
+
+``l[i]`` permet d'accéder à l'élément à l'index ``i`` de la liste ``l``.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        l = [1, 2, 3, 4, 5]
+        print(l[0]) # Permet d'accéder à l'élément à l'index 0 de la liste l
+        >> 1
+        print(l[4]) # Permet d'accéder à l'élément en 5eme position (index 4) de la liste l
+        >> 5
+
+.. slide::
+**Modification d'une liste par affectation**
+
+Pour modifier un élément d'une liste, on utilise l'index de l'élément et on lui affecte une nouvelle valeur.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        l = [1, 2, 3, 4, 5]
+        l[1] = 10 # Modifie la valeur de l'élément à l'index 0 de la liste l
+        print(l)
+        >> [1, 10, 3, 4, 5]
+
+.. slide::
+**Ajout/suppression d'éléments d'une liste**
+.. discoverList::
+    * Pour ajouter un élément à une liste, on utilise la méthode ``append()``.
+    * Pour supprimer un élément d'une liste, on utilise la méthode ``remove()``.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        l = [1, 2, 3, 4, 5]
+        l.append(6) # Ajoute l'élément 6 à la fin de la liste l
+        print(l)
+        >> [1, 2, 3, 4, 5, 6]
+
+        l.remove(3) # Supprime l'élément 3 de la liste l
+        print(l)
+        >> [1, 2, 4, 5, 6]
+
+.. slide::
+Les dictionnaires (*dict*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+    Un dictionnaire est une collection d'éléments **non ordonnée**. Chaque élément est constitué d'une **clé** et d'une **valeur**. Les dictionnaires sont **mutables/muables**.
