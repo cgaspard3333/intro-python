@@ -181,7 +181,7 @@ Dans un tarif d’abonnement de portable, les communications sont facturées 0.1
             - Calculer les valeurs entre les éléments initialisés de gauche à droite en utilisant la relation suivante : $$P_{i,j} = P_{i-1,j} + P_{i-1,j-1}$$
 
 
-✏️ Exercices à partir du Chapitres 3
+✏️ Exercices à partir du Chapitre 3
 ---------------
 
 .. slide::
