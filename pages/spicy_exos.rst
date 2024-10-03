@@ -61,7 +61,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     >> Résultat de l addition : 2.2 + 3.5 = 5.70
 
 .. slide::
-🍀 Exercice Sup. 3 : Calculs mathématiques de base
+🍀 Exercice Sup. 3 : Résolution d’un polynome
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Objectif** : Écrire un programme qui permet de retourner le résultat de  $$f(X) = 1 + X + aX^2 + bX^3 + cX^4 + \dots + zX^n$$
