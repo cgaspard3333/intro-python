@@ -3,8 +3,8 @@
 Chapitre 3 - Fonctions, types construits et modules
 ===================================================
 
-Objectifs
----------
+🎯 Objectifs du Chapitre
+---------------------
 
 .. important:: 
     - Comprendre ce qu'est une fonction en Python et apprendre à les définir et à les utiliser.

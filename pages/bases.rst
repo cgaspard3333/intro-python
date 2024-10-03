@@ -3,7 +3,7 @@
 Chapitre 1 - Comprendre les bases
 ================
 
-Objectifs du Chapitre
+🎯 Objectifs du Chapitre
 ----------------------
 
 .. important::

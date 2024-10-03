@@ -3,7 +3,7 @@
 Chapitre 2 - Conditions et boucles
 ======================
 
-Objectifs du Chapitre
+🎯 Objectifs du Chapitre
 ----------------------
 
 .. important::
