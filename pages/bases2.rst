@@ -3,7 +3,7 @@
 Chapitre 2 - Conditions et boucles
 ======================
 
-Objectifs du Chapitre
+🎯 Objectifs du Chapitre
 ----------------------
 
 .. important::
@@ -12,7 +12,7 @@ Objectifs du Chapitre
 
 .. slide::
 
-Les conditions
+📖 Les conditions (Structures de décision)
 --------------
 
 Principe des conditions
@@ -22,7 +22,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
 
 .. discoverList::
     * ``if`` : vérifie une condition et exécute le bloc de code associé si elle est vraie.
-    * ``elif`` : vérifie une autre condition si la première est fausse.
+    * ``elif`` : vérifie une autre condition lorsque la première est fausse et exécute le bloc de code associé si cette nouvelle condition est vraie.
     * ``else`` : exécute un bloc de code si toutes les conditions précédentes sont fausses
 
 .. warning::
@@ -37,7 +37,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
             # Bloc exécuté si toutes les conditions précédentes sont fausses
 
 .. note::
-    Python utilise l’indentation (l'espace en début de ligne) pour délimiter les blocs de code.
+    Contrairement à d'autres langages tels que C/C++ ou même Java, Python utilise l’indentation (l'espace en début de ligne) pour délimiter les blocs de code.
     Cette indentation est réalisée avec la touche ``Tab`` du clavier. Le raccourci ``Shift + Tab`` permet de retirer une indentation.
 
 .. slide::
@@ -88,7 +88,7 @@ On peut combiner plusieurs conditions grâce aux opérateurs logiques :
 
 .. slide::
 
-✏️ Exercice 3 : Un conseiller de mode
+✏️ Exercice 3 : Un dressing intelligent
 ------------------------------------
 
 Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le chapitre précédent, vous pouvez vous en inspirer pour continuer à travailler de manière organisée tout au long de ce cours.
@@ -96,8 +96,10 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 .. note:: 
     Rappel : Toujours ouvrir un dossier à l'ouverture de VSCode pour travailler à l'intérieur de celui-ci.
 
+**Objectif** : Écrire un programme qui aide l’utilisateur à choisir une tenue en fonction de la température qu'il donne. 
+
 .. step::
-    Écrire un programme qui aide l’utilisateur à choisir une tenue en fonction de la température qu'il donne. Le programme demande à l’utilisateur la température extérieure et recommande une tenue différente en fonction des 4 cas suivants :
+    **Consigne** : Le programme demande à l’utilisateur la température extérieure et affiche une tenue de votre choix adaptée à la température en fonction des 4 cas suivants :
 
     .. discoverList::
         * Si la température est inférieure à 0°C
@@ -179,8 +181,35 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
     Vous savez maintenant manipuler les opérateurs logiques et avez découvert les tables de vérité.
 
 .. slide::
+✏️ Exercice 5 : Un dressing encore plus intelligent
+------------------------------------
+
+**Objectif** : Améliorer le programme de l'exercice 2 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
+
+**Consigne** : Reprenez le code de l'exercice 2. En plus de la température, vous devez offrir un choix de temps à l'utilisateur. Votre programme doit donc fonctionner de la manière suivante :
+
+    1. Demander la température extérieure.
+    2. Demander le temps qu'il fait.
+    3. Afficher une tenue adaptée à la température et au temps.
+
+.. warning::
+    Exemple : 
+    .. code-block:: python
+        
+            >> Quelle est la température extérieure (en °C) ? 
+            25
+            >> Quel temps fait-il ? (choisissez une réponse en tapant le numéro correspondant)
+            >> 1. Pluie
+            >> 2. Soleil
+            >> 3. Nuageux
+            2
+            >> Vous devriez porter un t-shirt et un short.
+
+
+
+.. slide::
     
-Les boucles
+📖 Les boucles (Structures itératives)
 -----------
 
 La boucle ``for``
@@ -242,7 +271,7 @@ On peut interrompre une boucle avec l’instruction ``break``.
 
 .. slide::
 
-✏️ Exercice 5 : Le juste prix
+✏️ Exercice 6 : Le juste prix
 ----------------------------
 
 .. step::
@@ -252,6 +281,9 @@ On peut interrompre une boucle avec l’instruction ``break``.
         * Si le nombre est trop petit, "Trop petit ! Essayez encore."
         * Si le nombre est trop grand, "Trop grand ! Essayez encore."
         * Si c’est correct, "Bravo, vous avez trouvé !"
+
+.. step::
+    Cherchez sur internet et expliquer ce qu'est un module en Python et comment l'utiliser.
 
 .. success:: 
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
