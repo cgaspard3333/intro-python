@@ -25,10 +25,9 @@ Sommaire
 
     install_maison
     config_ide
-    bases
-    bases2
+    chap1
+    chap2
     chap3
-    spicy_exos
     
 
 

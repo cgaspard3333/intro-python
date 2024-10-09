@@ -287,3 +287,12 @@ On peut interrompre une boucle avec l’instruction ``break``.
 
 .. success:: 
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
+
+.. slide::
+
+🏋️ Exercices supplémentaires
+--------------------
+
+.. toctree::
+
+    exos_sup_chap2

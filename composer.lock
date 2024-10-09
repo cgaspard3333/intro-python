@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/RST.git",
-                "reference": "dd3baac2e711340f5c0430510042fe069047a934"
+                "reference": "50b34c9f43facdeaa7e99745ca57dc17b418b1d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/RST/zipball/dd3baac2e711340f5c0430510042fe069047a934",
-                "reference": "dd3baac2e711340f5c0430510042fe069047a934",
+                "url": "https://api.github.com/repos/Gregwar/RST/zipball/50b34c9f43facdeaa7e99745ca57dc17b418b1d8",
+                "reference": "50b34c9f43facdeaa7e99745ca57dc17b418b1d8",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "issues": "https://github.com/Gregwar/RST/issues",
                 "source": "https://github.com/Gregwar/RST/tree/master"
             },
-            "time": "2023-01-12T19:01:20+00:00"
+            "time": "2024-10-03T15:22:40+00:00"
         },
         {
             "name": "gregwar/slidey",
@@ -66,12 +66,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/Slidey.git",
-                "reference": "9dec78b1b813d52e80a8f86b80a83288d6f28574"
+                "reference": "1ddaf33ba8c89587a2133a3e796b20891312254c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Slidey/zipball/9dec78b1b813d52e80a8f86b80a83288d6f28574",
-                "reference": "9dec78b1b813d52e80a8f86b80a83288d6f28574",
+                "url": "https://api.github.com/repos/Gregwar/Slidey/zipball/1ddaf33ba8c89587a2133a3e796b20891312254c",
+                "reference": "1ddaf33ba8c89587a2133a3e796b20891312254c",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "issues": "https://github.com/Gregwar/Slidey/issues",
                 "source": "https://github.com/Gregwar/Slidey/tree/master"
             },
-            "time": "2023-08-25T14:50:41+00:00"
+            "time": "2024-10-03T15:24:19+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",

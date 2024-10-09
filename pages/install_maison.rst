@@ -72,7 +72,7 @@ Avoir plusieurs version de Python sur votre machine peut être utile pour tester
     Attention, **changer cette version ne change pas la version de Python utilisée dans le terminal de VSCode.** 
     Elle change uniquement la version de Python utilisée pour l'exécution du code en cliquant sur le bouton "Run" ou "Debug" de VSCode. Elle permet à votre IDE de savoir quelle version de Python utiliser pour les fonctionnalités telles que l'autocomplétion, la vérification de syntaxe, etc.
 
-    Pour changer la version de Python utilisée dans le terminal de VSCode, vous devez ouvrir un terminal dans VSCode et taper la commande suivante : ``python3.8`` ou ``python3.9`` par exemple.
+    Pour changer la version de Python utilisée pour lancer un programme dans le terminal de VSCode, vous devez précisez la version de python avec laquelle vous voulez le lancer : ``python3.10 XXXX.py`` ou ``python3.11 XXXX.py`` par exemple.
 
 
 

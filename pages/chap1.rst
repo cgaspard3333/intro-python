@@ -327,7 +327,7 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
 .. step::
     Puis, **en utilisant une seule fois la fonction ``print()``** afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
 
-    Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <bases#vscode_interface>`.
+    Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <chap1#vscode_interface>`.
     Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (**N'oubliez pas de sauvegarder votre fichier avant de lancer le programme**).
 
 .. note:: 
