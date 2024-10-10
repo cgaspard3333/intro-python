@@ -102,7 +102,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 
 
 .. slide::
-🌶️ Exercice Sup. 9 : Le Grand Casino
+⚖️ Exercice Sup. 9 : Le Grand Casino
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Consigne** : Vous allez écrire un programme qui permet à un joueur de jouer à deux jeux de casino populaires : la roulette et le blackjack. L'utilisateur pourra parier de l'argent fictif et tenter de gagner ou de perdre en fonction des règles des deux jeux. Vous pourrez amender ensuite le Casino avec d’autres jeux de votre choix.
