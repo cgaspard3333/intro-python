@@ -96,7 +96,7 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
     .. code-block:: python
         def fonction_a():
             x = 10  # Variable locale
-        return x
+            return x
 
         print(x) # La variable x n'est pas accessible en dehors de la fonction
         >> NameError: name 'x' is not defined
