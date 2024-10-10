@@ -43,7 +43,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 
 **Consigne** : Vous devez écrire un programme qui permet à un utilisateur de jouer au jeu du pendu. Le but du jeu est de deviner un mot en proposant une lettre à la fois. L'utilisateur a un nombre limité de tentatives pour deviner le mot avant de perdre.
 .. discoverList::
-    1. Le programme doit choisir un mot de manière aléatoire dans une liste prédéfinie de mots.
+    1. Le programme doit choisir un mot de manière aléatoire dans une liste prédéfinie de mots, à vous de les choisir.
     2. Le mot à deviner doit être affiché sous forme de tirets (_) pour chaque lettre non encore devinée.
     3. À chaque tour, l'utilisateur doit entrer une lettre.
     4. Si la lettre devinée est correcte (elle fait partie du mot), elle doit être révélée à la ou les positions correspondantes dans le mot.
