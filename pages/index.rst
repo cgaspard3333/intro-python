@@ -25,6 +25,7 @@ Sommaire
 
     install_maison
     config_ide
+    github_classroom
     chap1
     chap2
     chap3
