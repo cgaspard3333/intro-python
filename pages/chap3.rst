@@ -455,7 +455,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     Vous savez maintenant manipuler des listes en Python.
 
 .. slide::
-✏️ Exercice 8 : Cours de Potion avancé
+✏️ Exercice 10 : Cours de Potion avancé
 ----------------------------------------------
 **Consigne**: Dans cet exercice, vous allez créer une application qui permet à un apprenti sorcier de préparer des potions magiques en combinant divers ingrédients. Chaque ingrédient a des propriétés spécifiques, et certaines combinaisons peuvent produire des effets magiques supplémentaires.
 
