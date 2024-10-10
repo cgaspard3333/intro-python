@@ -184,7 +184,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 ✏️ Exercice 5 : Un dressing encore plus intelligent
 ------------------------------------
 
-**Objectif** : Améliorer le programme de l'exercice 2 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
+**Objectif** : Améliorer le programme de l'exercice 3 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
 
 .. step:: reset
     **Consigne** : Reprenez le code de l'exercice 2. En plus de la température, vous devez offrir un choix de temps à l'utilisateur. Votre programme doit donc fonctionner de la manière suivante :
