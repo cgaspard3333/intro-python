@@ -271,3 +271,45 @@ Le programme ne prend pas en compte toutes les règles du jeu d'échecs. Par exe
         * Les mouvements spécifiques à chaque type de pièce ne sont pas gérés (tous les coups sont permis tant que la case d'arrivée est valide).
         * Il n'y a pas de gestion de l'échec et mat et de la promotion de pions.
         * Les joueurs doivent simplement saisir des mouvements valides (les coups non conformes sont rejetés).
+
+**Astuce** :
+.. spoiler::
+    .. discoverList::
+        * Le plateau doit être initialisé avec les pièces blanches placées sur les deux premières rangées (lignes 1 et 2) et les pièces noires sur les deux dernières rangées (lignes 7 et 8).
+        * Chaque case du plateau est représentée par une clé (comme a1, b2, etc.), et les pièces sont modélisées par des chaînes de caractères (ex: 'Pion_blanc' pour un pion blanc, 'Tour_noire' pour une tour noire).
+        * À chaque tour, le programme demande au joueur de saisir la position de départ et la position d'arrivée d'une pièce.
+        * Le programme vérifie si la position de départ contient une pièce appartenant au joueur en cours (blanc ou noir), si le mouvement ne capture pas une pièce de son propre camp, et si la destination est une case valide.
+        * Si le mouvement est valide, la pièce est déplacée sur le plateau, et c'est au tour de l'autre joueur de jouer.
+        * Le joueur blanc commence la partie. Le programme doit alterner entre les deux joueurs après chaque coup.
+        * Si un joueur tente de déplacer une pièce qui n'est pas la sienne ou d'effectuer un coup illégal, le programme doit afficher un message d'erreur et redemander la saisie.
+
+**Résultat attendu** :
+.. code-block::
+    >> Plateau d échecs:
+    >> T C F R R F C T
+    >> P P P P P P P P
+    >> . . . . . . . .
+    >> . . . . . . . .
+    >> . . . . . . . .
+    >> . . . . . . . .
+    >> P P P P P P P P
+    >> T C F R R F C T
+ 
+    >> Tour du joueur blanc.
+    >> Entrez la position de départ (ex : e2) : e2
+    >> Entrez la position d arrivée (ex : e4) : e4
+ 
+    >> Plateau d échecs:
+    >> T C F R R F C T
+    >> P P P P P P P P
+    >> . . . . . . . .
+    >> . . . . P . . .
+    >> . . . . . . . .
+    >> . . . . . . . .
+    >> P P P P . P P P
+    >> T C F R R F C T
+
+    >> Tour du joueur noir.
+    >> Entrez la position de départ (ex : e2) : e
+    >> Entrez la position d arrivée (ex : e4) : 7
+    >> Positions non valides. Réessayez.

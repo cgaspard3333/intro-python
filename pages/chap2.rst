@@ -98,7 +98,7 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 
 **Objectif** : Écrire un programme qui aide l’utilisateur à choisir une tenue en fonction de la température qu'il donne. 
 
-.. step::
+.. step:: reset
     **Consigne** : Le programme demande à l’utilisateur la température extérieure et affiche une tenue de votre choix adaptée à la température en fonction des 4 cas suivants :
 
     .. discoverList::
@@ -132,7 +132,7 @@ Voici un tableaux représentant le resultats des opérations logiques ``and`` et
 
 Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résultat d'une opération logique en fonction des valeurs de vérité des variables ``A`` et ``B``.
 
-.. step::
+.. step:: reset
     Ecrire un programme qui demande à l'utilisateur les valeurs de vérité de ``A`` et ``B`` et affiche les résultats des opérations logiques ``and`` et ``or`` afin de compléter les tableaux ci-dessus. 
 
     .. note::
@@ -186,24 +186,25 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 
 **Objectif** : Améliorer le programme de l'exercice 2 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
 
-**Consigne** : Reprenez le code de l'exercice 2. En plus de la température, vous devez offrir un choix de temps à l'utilisateur. Votre programme doit donc fonctionner de la manière suivante :
+.. step:: reset
+    **Consigne** : Reprenez le code de l'exercice 2. En plus de la température, vous devez offrir un choix de temps à l'utilisateur. Votre programme doit donc fonctionner de la manière suivante :
 
-    1. Demander la température extérieure.
-    2. Demander le temps qu'il fait.
-    3. Afficher une tenue adaptée à la température et au temps.
+        1. Demander la température extérieure.
+        2. Demander le temps qu'il fait.
+        3. Afficher une tenue adaptée à la température et au temps.
 
-.. warning::
-    Exemple : 
-    .. code-block:: python
-        
-            >> Quelle est la température extérieure (en °C) ? 
-            25
-            >> Quel temps fait-il ? (choisissez une réponse en tapant le numéro correspondant)
-            >> 1. Pluie
-            >> 2. Soleil
-            >> 3. Nuageux
-            2
-            >> Vous devriez porter un t-shirt et un short.
+    .. warning::
+        Exemple : 
+        .. code-block:: python
+            
+                >> Quelle est la température extérieure (en °C) ? 
+                25
+                >> Quel temps fait-il ? (choisissez une réponse en tapant le numéro correspondant)
+                >> 1. Pluie
+                >> 2. Soleil
+                >> 3. Nuageux
+                2
+                >> Vous devriez porter un t-shirt et un short.
 
 
 
@@ -274,7 +275,7 @@ On peut interrompre une boucle avec l’instruction ``break``.
 ✏️ Exercice 6 : Le juste prix
 ----------------------------
 
-.. step::
+.. step:: reset
     Écrire un programme qui demande à l’utilisateur de deviner un nombre entier entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
 
     .. discoverList::

@@ -345,7 +345,7 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 ✏️ Exercice 2 : Opérations simples
 ---------------------------------
 
-.. step::
+.. step:: reset
     Créez un nouveau fichier Python nommé ``exercice2.py`` dans le dossier ``Comprendre_les_bases``.
 
 .. step::
