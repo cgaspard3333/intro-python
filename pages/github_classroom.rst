@@ -1,7 +1,7 @@
-GitHub Classroom
+GitHub Classroom - Rendu des Exercices
 ===============
 
-Liens Séances
+Liens de rendu des exercices par séance
 -------------
 .. important::
 
