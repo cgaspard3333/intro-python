@@ -290,6 +290,16 @@ On peut interrompre une boucle avec l’instruction ``break``.
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
 
 .. slide::
+✅ Récapitulatif de Chapitre
+-------------------------
+
+.. center::
+
+    .. image:: images/recap_chap2.png
+        :alt: Récapitulatif du Chapitre 2
+        :width: 100%
+
+.. slide::
 
 🏋️ Exercices supplémentaires
 --------------------
