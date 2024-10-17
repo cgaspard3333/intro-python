@@ -366,7 +366,6 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
 .. note::
     Le fait d'avoir ces éléments sous forme de liste permet de les manipuler plus facilement (par exemple pour les parcourir avec une boucle).
-    En effet, comme les dictionnaires ne sont pas ordonnés, il n'est donc **pas possible de les parcourir avec une boucle** ``for`` classique par exemple.
 
 .. warning::
     Exemple :
