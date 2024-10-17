@@ -5,8 +5,9 @@ Liens Séances
 -------------
 .. important::
 
-    `Lien Séance 1 <https://classroom.github.com/a/yxjZS_Dz>`_  
-    `Lien Séance 2 <https://classroom.github.com/a/ImaJUdO4>`_  
+    `Lien Rendu Exercices - Séance 1 <https://classroom.github.com/a/yxjZS_Dz>`_  
+    `Lien Rendu Exercices - Séance 2 <https://classroom.github.com/a/ImaJUdO4>`_  
+    `Lien Rendu Exercices - Séance 3 <https://classroom.github.com/a/rXUIH43_>`_  
 
 Inscription à GitHub
 -------------------
