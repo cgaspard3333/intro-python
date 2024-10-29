@@ -10,7 +10,6 @@ Chapitre 3 - Fonctions et types construits
     - Comprendre ce qu'est une fonction en Python et apprendre à les définir et à les utiliser.
     - Découvrir l’importance de la réutilisation du code et de la modularité grâce aux fonctions.
     - Introduction aux types construits (listes, tuples, dictionnaires).
-    - Apprendre à utiliser des modules pour organiser et enrichir les programmes.
 
 .. slide::
 📖 Les fonctions
@@ -22,7 +21,8 @@ Qu'est-ce qu'une fonction ?
     Une fonction est un **bloc de code réutilisable** qui permet d'effectuer une tâche spécifique. Elle prend en entrée des **arguments** et retourne un **résultat**. Les fonctions permettent de **découper un programme en sous-programmes** plus petits et plus faciles à gérer.  
 
 .. slide::
-**Définir une fonction**
+Définir une fonction
+~~~~~~~~~~~~~~~~~~~~
 
 En Python, une fonction se définit avec le mot-clé ``def`` suivi du nom de la fonction, des parenthèses (qui peuvent contenir des paramètres), et d’un bloc de code indenté.
 
@@ -47,7 +47,8 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
         >> 5
 
 .. slide::
-**Paramètres et arugments**
+Paramètres et arguments
+~~~~~~~~~~~~~~~~~~~~~~~
 .. discoverList::
     * Les **paramètres** sont des variables définies dans la déclaration de la fonction.
     * Les **arguments** sont les valeurs que l’on passe à la fonction lorsqu’on l’appelle.
@@ -68,7 +69,8 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
     ``2`` et ``3`` sont les **arguments**. Ce sont les valeurs que l'on passe à la fonction lorsque celle-ci est appelée. Ces valeurs sont affectées aux paramètres ``a`` et ``b`` à l'intérieur de la fonction.
 
 .. slide::
-**Valeurs de retour (*return*)**
+Valeurs de retour (*return*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si aucune valeur n'est retournée, Python renvoie ``None`` par défaut. La valeur retournée peut être de n'importe quel type (entier, chaîne de caractères, liste, etc.). La valeur retournée est la valeur par laquelle est remplacée l'appel de la fonction.
 
@@ -86,7 +88,8 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
     Dans cet exemple, la fonction ``addition`` retourne la somme des deux paramètres ``a`` et ``b``. Lorsque la fonction est appelée avec les arguments ``2`` et ``3``, elle retourne la valeur ``5`` qui est affichée par la fonction ``print()``.
 
 .. slide::
-**Portée des variables**
+Portée des variables
+~~~~~~~~~~~~~~~~~~~~
 
 .. note::
     Les variables définies à l’intérieur d’une fonction sont **locales** à cette fonction. Cela signifie qu'**elles ne sont pas accessibles en dehors de la fonction**.
@@ -102,7 +105,8 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
         >> NameError: name 'x' is not defined
 
 .. slide::
-**Annotations de type**
+Annotations de type
+~~~~~~~~~~~~~~~~~~~
 
 Une fonction peut être annotée avec des types de données pour indiquer le type des paramètres et de la valeur de retour. Elles permettent de documenter le code et d'améliorer sa lisibilité. De plus, elles permettent de détecter de potentielles erreurs de typage lors de l'exécution du programme.
 .. note::
