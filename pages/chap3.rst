@@ -789,6 +789,12 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     |                        |                        |                          |                                      |
     +------------------------+------------------------+--------------------------+--------------------------------------+
 
+.. center::
+
+    .. image:: images/recap_chap3.png
+        :alt: Récapitulatif du Chapitre 3
+        :width: 100%
+
 🏋️ Exercices supplémentaires
 --------------------
 
