@@ -435,3 +435,58 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> ----------------------------------------------------------------------------------------------------------------
     >> Total facture (arrondi au supérieur) :  268 €
 
+✏️ Exercice 12 : Un bulletin météo très aléatoire
+------------------------------------------------
+
+**Objectif** : Dans cet exercice, vous allez créer un simulateur de bulletin météo qui génère aléatoirement des prévisions météorologiques pour la journée actuelle, en utilisant les bibliothèques ``random``, ``math``, et ``datetime``. Vous simulerez des informations comme la température, la vitesse du vent, les précipitations et l'heure du lever et coucher de soleil.
+
+.. note::
+    Comme pour n'importe quel exercice, il est **fortement recommandé** de le lire en entier avant de commencer à coder. Cela vous permettra de mieux comprendre les attentes et même de gagner du temps en réfléchissant à la logique de votre programme avant de commencer à l'écrire.
+
+**Consignes** :
+.. step:: reset
+    *Configurer la date* :
+
+        - Utilisez ``datetime`` pour afficher la date du jour actuel au format "JJ/MM/AAAA".
+        - Par défaut la date fournie par ``datetime`` est au format "AAAA-MM-JJ". Vous utiliserez donc internet pour trouver comment formater la date en "JJ/MM/AAAA" lors de son affichage. 
+
+.. step::
+    *Générer les prévisions météorologiques* :
+
+        - Température : Utilisez le module ``random`` pour générer une température entre -10 et 35°C.
+        - Vitesse du vent : Générez une vitesse du vent entre 0 et 100 km/h.
+        - Type de météo : Créez une **liste** de types de précipitations possibles ("Ensoleillé", "Nuageux", "Pluie", "Neige") et sélectionnez-en une au hasard dans la liste avec ``random``.
+        - Probabilité de précipitations : Utilisez le module ``random`` pour générer un pourcentage de précipitations (entre 0% et 100%).
+
+.. step::
+    *Heures de lever et coucher de soleil* :
+
+        - En utilisant **obligatoirement** les fonctions suivantes : ``datetime.combine()``, ``datetime.min.time()``, ``timedelta()`` et ``random.randint()``; générez une heure de lever de soleil entre 5h30 et 7h30, et une heure de coucher de soleil entre 18h30 et 20h30. 
+        - Pour chaque fonction vous devrez chercher sur internet comment l'utiliser.
+    
+    **Aide** :
+    .. spoiler::
+        - En effet, on souhaite garder une association entre les heures de lever et coucher de soleil et la date du jour. Pour cela, on utilise la fonction ``datetime.combine()`` qui permet de combiner une date et une heure pour obtenir un objet ``datetime`` complet. On utilise ensuite la fonction ``timedelta()`` pour ajouter un nombre d'heures et de minutes aléatoire à l'heure du lever de soleil pour obtenir l'heure du coucher de soleil.
+
+.. step::
+    *Calculer la durée de jour* :
+
+        - Utilisez ``datetime`` pour calculer la durée du jour (en heures et minutes) en soustrayant l’heure du lever de celle du coucher de soleil.
+
+.. step::
+    *Afficher le rapport météo* :
+
+        - Organisez les informations générées de manière structurée et lisible pour l’utilisateur.
+
+**Résultat attendu** :
+.. code-block::
+    >> Previsions meteo pour le 31/10/2024
+    >> -----------------------------------
+    >> Previsions meteorologiques du jour :
+    >> Temperature : 26°C
+    >> Vitesse du vent : 44 km/h
+    >> Conditions : Pluie
+    >> Probabilite de precipitations : 30%
+    >> Heure du lever de soleil : 07:44
+    >> Heure du coucher de soleil : 18:02
+    >> Duree du jour : 10:18:00
