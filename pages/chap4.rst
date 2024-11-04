@@ -296,6 +296,9 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
     - Calculer des statistiques avancées (comme le nombre moyen de buts par match, le taux de possession, et les passes réussies).
     - Utiliser des concepts comme les fonctions aléatoires, les calculs statistiques et la structuration en packages.
 
+.. note::
+    Comme pour n'importe quel exercice, il est **fortement recommandé** de le lire en entier avant de commencer à coder. Cela vous permettra de mieux comprendre les attentes et même de gagner du temps en réfléchissant à la logique de votre programme avant de commencer à l'écrire.
+
 **Consignes** :
 
 .. step:: reset
@@ -425,7 +428,8 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
     >> Taux de réussite moyen des passes : 80.80%
     >> Possession moyenne : 44.20%
 
-
+.. success::
+    Vous savez maintenant créer et utiliser des packages pour organiser vos programmes, ainsi que des modules pour regrouper des fonctions liées. Vous avez également appris à importer des modules externes et à les utiliser dans vos programmes.
 
 .. slide::
 📖 Approximer des nombres
@@ -694,9 +698,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
 **Objectif** : Dans cet exercice, vous allez créer un simulateur de bulletin météo qui génère aléatoirement des prévisions météorologiques pour la journée actuelle, en utilisant les bibliothèques ``random``, ``math``, et ``datetime``. Vous simulerez des informations comme la température, la vitesse du vent, les précipitations et l'heure du lever et coucher de soleil.
 
-.. note::
-    Comme pour n'importe quel exercice, il est **fortement recommandé** de le lire en entier avant de commencer à coder. Cela vous permettra de mieux comprendre les attentes et même de gagner du temps en réfléchissant à la logique de votre programme avant de commencer à l'écrire.
-
 **Consignes** :
 .. step:: reset
     *Configurer la date* :
@@ -730,7 +731,7 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. step::
     *Afficher le rapport météo* :
 
-        - Organisez les informations générées de manière structurée et lisible pour l’utilisateur.
+        - Organisez les informations générées de manière structurée et lisible pour l’utilisateur en **utilisant les f-strings pour l'affichage**.
 
 **Résultat attendu** :
 .. code-block::
@@ -746,4 +747,4 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> Duree du jour : 10:18:00
 
 .. success::
-    Vous savez maintenant comment utiliser des modules et leurs fonctions afin d'enrichir vos programmes.
+    Vous savez maintenant comment utiliser des modules intégrés et leurs fonctions afin d'enrichir vos programmes tout en apprenant à formater les dates et les nombres pour un affichage plus lisible.
