@@ -7,7 +7,7 @@ Chapitre 4 - Modules, Affichage avancé
 ---------------------
 
 .. important:: 
-    - Apprendre à utiliser des modules pour organiser et enrichir les programmes.
+    - Apprendre à utiliser des modules/packages pour organiser et enrichir les programmes.
     - Apprendre à installer et utiliser des modules externes avec le gestionnaire de paquets pip.
     - Découvrir des techniques avancées pour afficher les données de manière précise avec la fonction print().
     - Apprendre à arrondir et tronquer des nombres pour un affichage plus lisible.
@@ -101,7 +101,7 @@ Python possède de nombreux modules intégrés qui permettent d'ajouter des fonc
         print(datetime.now())
         >> 2021-09-15 15:30:00.000000
 
-..slide::
+.. slide::
 Installer des modules externes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -173,6 +173,257 @@ Vous pouvez créer vos propres modules en enregistrant des fonctions dans un fic
         >> 2
         print(mult(5, 3))
         >> 15
+
+
+.. slide::
+📖 Notion de package/paquetage
+------------------------------
+
+Qu'est-ce qu'un package ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    Un **package** est une collection de modules regroupés dans un dossier. Cela permet de structurer un projet en organisant les modules de manière hiérarchique et logique. Les packages sont particulièrement utiles pour les projets de grande envergure comportant plusieurs modules interdépendants.
+
+En Python, un package est simplement un dossier contenant des modules (fichiers ``.py``) et un fichier spécial nommé ``__init__.py``, qui permet à Python de reconnaître le dossier comme un package.
+
+.. slide::
+Structure d'un package
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Voici un exemple de structure de package avec un dossier ``mon_projet`` qui contient un package ``calculs``, avec deux modules ``operations.py`` et ``statistiques.py`` :
+
+.. code-block::
+    mon_projet/
+    │
+    ├── main.py                  # Fichier principal du projet
+    │
+    └── calculs/                 # Dossier du package "calculs"
+        ├── __init__.py          # Fichier spécial pour définir le package
+        ├── operations.py        # Module pour les opérations mathématiques de base
+        └── statistiques.py      # Module pour les calculs statistiques
+
+``__init__.py ``: Ce fichier peut être vide, mais il doit exister pour que Python reconnaisse le dossier comme un package. Il est possible d’y inclure du code pour initialiser le package ou pour spécifier des modules spécifiques qui seront accessibles directement depuis le package.
+
+.. slide::
+Créer et utiliser un package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Création d'un package**
+
+Supposons que nous souhaitons créer un package ``calculs`` pour regrouper des fonctions mathématiques de base et des fonctions de statistiques.
+
+On commence par créer un dossier ``calculs`` dans lequel se trouve un fichier ``__init__.py`` (il peut rester vide pour l’instant). On y ajoute deux modules ``operations.py`` et ``statistiques.py`` avec des fonctions spécifiques.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+        # Module operations.py
+        def addition(a, b):
+            return a + b
+
+        def soustraction(a, b):
+            return a - b
+
+    .. code-block:: python
+        # Module statistiques.py
+        def moyenne(liste):
+            return sum(liste) / len(liste)
+
+        def variance(liste):
+            m = moyenne(liste)
+            return sum((x - m) ** 2 for x in liste) / len(liste)
+
+.. slide::
+**Importer des modules depuis un package**
+
+Dans le fichier principal (``main.py``), on peut maintenant importer les fonctions des modules ``operations`` et ``statistiques`` du package ``calculs``.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+        # main.py
+
+        # Importation des fonctions du package calculs
+        from calculs.operations import addition, soustraction
+        from calculs.statistiques import moyenne, variance
+
+        # Utilisation des fonctions
+        resultat_addition = addition(5, 3)
+        resultat_moyenne = moyenne([1, 2, 3, 4, 5])
+
+        print("Résultat de l'addition :", resultat_addition)
+        print("Moyenne des valeurs :", resultat_moyenne)
+
+.. slide::
+**Utiliser ``__init__.py`` pour simplifier les imports**
+
+Le fichier ``__init__.py`` permet de définir ce qui sera accessible directement depuis le package. Par exemple, si vous voulez que l’on puisse accéder à ``addition`` et ``moyenne`` directement via le package ``calculs``, ajoutez ces importations dans ``__init__.py``.
+
+.. warning::
+    Exemple de contenu de ``__init__.py`` :
+    .. code-block:: python
+        from .operations import addition, soustraction
+        from .statistiques import moyenne, variance
+
+.. slide::
+Avec cette configuration, on peut maintenant importer les fonctions directement depuis ``calculs``, sans spécifier les modules :
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+        # main.py
+
+        # Importation des fonctions du package calculs
+        from calculs import addition, moyenne
+
+        # Utilisation des fonctions
+        resultat_addition = addition(5, 3)
+        resultat_moyenne = moyenne([1, 2, 3, 4, 5])
+
+        print("Résultat de l'addition :", resultat_addition)
+        print("Moyenne des valeurs :", resultat_moyenne)
+
+.. slide::
+✏️ Exercice 11 : Simulateur de statistiques sportives
+---------------------------------------
+
+**Objectif** :
+Dans cet exercice, vous allez créer un simulateur de statistiques sportives pour une équipe de football. Le simulateur utilisera un package nommé ``football_stats`` pour regrouper différentes fonctionnalités liées aux statistiques des matchs.
+
+    - Créer un package ``football_stats`` qui contient plusieurs modules pour gérer les statistiques des joueurs et des équipes.
+    - Simuler les performances d'une équipe sur plusieurs matchs.
+    - Calculer des statistiques avancées (comme le nombre moyen de buts par match, le taux de possession, et les passes réussies).
+    - Utiliser des concepts comme les fonctions aléatoires, les calculs statistiques et la structuration en packages.
+
+**Consignes** :
+
+.. step:: reset
+    **Etape 1 : Structure**  
+    Vous allez créer un package football_stats qui contiendra les modules suivants :
+    .. code-block::
+        football_stats/
+        ├── __init__.py
+        ├── match.py           # Contient les fonctions pour simuler un match et générer des statistiques
+        ├── equipe.py          # Contient les fonctions pour gérer les informations de l'équipe
+        └── statistiques.py     # Contient les fonctions pour calculer les statistiques avancées
+        main.py                 # Fichier principal pour exécuter la simulation
+
+.. step::
+    **Etape 2 : Module ``equipe.py``**  
+    Dans le module ``equipe.py``, créez une fonction pour initialiser une équipe et une autre pour afficher les informations de base de l’équipe (nom, nombre de joueurs, etc.).
+
+    Détails des fonctions dans ``equipe.py``:
+
+        - ``creer_equipe(nom, joueurs)`` : prend en entrée le nom de l’équipe et une liste de noms de joueurs et retourne un dictionnaire avec le nom de l'équipe, la liste des joueurs et le nombre de joueurs.
+        - ``afficher_equipe(equipe)`` : prend en entrée une équipe et affiche les informations de l'équipe sous un format clair.
+
+.. step::
+    **Etape 3 : Module ``match.py``**  
+    Dans ``match.py``, vous allez écrire des fonctions pour simuler un match et générer les statistiques associées. Utilisez le module ``random`` pour simuler les événements.
+
+    Détails des fonctions dans ``match.py``
+
+        - ``simuler_match(equipe)`` : simule un match pour une équipe.
+            * Génére un nombre aléatoire de buts entre 0 et 5 pour l’équipe.
+            * Génére des statistiques aléatoires de possession (entre 40% et 60%), de tirs (entre 5 et 20), et de passes réussies (entre 70% et 90%).
+        La fonction prend en entrée une équipe et retourne un dictionnaire de statistiques (buts, possession, tirs, passes réussies).
+
+        - ``afficher_statistiques_match(stats)`` : prend en entrée un dictionnaire ``stats`` (contenant les statistiques générées par ``simuler_match()``) et les affiche sous un format lisible.
+
+.. step::
+    **Etape 4 : Module ``statistiques.py``**  
+    Dans ``statistiques.py``, vous allez écrire des fonctions pour calculer des statistiques avancées pour une série de matchs, comme la moyenne de buts par match ou le taux de réussite de passes.
+
+    Détails des fonctions dans ``statistiques.py``
+
+        - ``moyenne_buts_par_match(liste_buts)`` : prend une liste des buts marqués sur plusieurs matchs et retourne la moyenne.
+        - ``taux_reussite_passes(liste_passes)`` : prend une liste de pourcentages de passes réussies et retourne le taux moyen.
+        - ``moyenne_possession(liste_possession)`` : prend une liste de pourcentages de possession et retourne la possession moyenne.
+
+.. step::
+    **Etape 5 : Utiliser le fichier ``__init__.py``**  
+    Dans ``__init__.py``, importez les fonctions principales des modules pour simplifier leur utilisation.
+
+    **Aide :**
+    .. spoiler::
+        Exemple de contenu de ``__init__.py`` :
+        .. code-block:: python
+            # football_stats/__init__.py
+
+            from .equipe import creer_equipe, afficher_equipe
+            from .match import simuler_match, afficher_statistiques_match
+            from .statistiques import moyenne_buts_par_match, taux_reussite_passes, moyenne_possession
+
+.. step::
+    **Etape 6 : Utiliser le package dans le ``main.py``**  
+    Dans main.py, vous allez :
+
+    1. Créer une équipe avec creer_equipe.
+    2. Simuler plusieurs matchs pour cette équipe.
+    3. Stocker les statistiques générées pour chaque match.
+    4. Calculer et afficher les statistiques avancées sur la série de matchs.
+
+**Résumé des fonctions à implémenter :**  
+
+- Module ``equipe.py`` :
+    * ``creer_equipe(nom, joueurs)`` : crée un dictionnaire d'équipe.
+    * ``afficher_equipe(equipe)`` : affiche les informations de l’équipe.
+- Module ``match.py`` :
+    * ``simuler_match(equipe)`` : génère des statistiques aléatoires pour un match.
+    * ``afficher_statistiques_match(stats)`` : affiche les statistiques d’un match.
+- Module statistiques.py :
+    * ``moyenne_buts_par_match(liste_buts)`` : calcule la moyenne des buts sur plusieurs matchs.
+    * ``taux_reussite_passes(liste_passes)`` : calcule le taux moyen de passes réussies.
+    * ``moyenne_possession(liste_possession)`` : calcule la possession moyenne.
+
+**Résultat attendu :**
+
+.. code-block::
+    >> --- Informations de l équipe ---
+    >> Nom de l équipe : Les Scarabés du Brésil
+    >> Nombre de joueurs : 5
+    >> Liste des joueurs :
+    >> - Alice
+    >> - Bob
+    >> - Charlie
+    >> - Diana
+    >> - Eve
+
+    >> --- Match 1 ---
+    >> Buts marqués : 5
+    >> Possession : 44%
+    >> Tirs : 19
+    >> Passes réussies : 78%
+
+    >> --- Match 2 ---
+    >> Buts marqués : 0
+    >> Possession : 48%
+    >> Tirs : 12
+    >> Passes réussies : 70%
+
+    >> --- Match 3 ---
+    >> Buts marqués : 1
+    >> Possession : 45%
+    >> Tirs : 6
+    >> Passes réussies : 82%
+
+    >> --- Match 4 ---
+    >> Buts marqués : 1
+    >> Possession : 41%
+    >> Tirs : 17
+    >> Passes réussies : 84%
+
+    >> --- Match 5 ---
+    >> Buts marqués : 4
+    >> Possession : 43%
+    >> Tirs : 13
+    >> Passes réussies : 90%
+
+    >> --- Statistiques de la saison ---
+    >> Moyenne de buts par match : 2.20
+    >> Taux de réussite moyen des passes : 80.80%
+    >> Possession moyenne : 44.20%
 
 
 
@@ -388,13 +639,13 @@ Pour afficher un nombre sous forme de pourcentage, on peut utiliser le formatage
         >> Taux de reussite : 85.75%
 
 .. slide::
-✏️ Exercice 11 : Une facture bien propre
+✏️ Exercice 12 : Une facture bien propre
 ---------------------------------------
 
 **Objectif** :
 Vous êtes chargé de développer un programme de facturation pour une entreprise de vente en ligne. Les prix des produits doivent être calculés précisément, mais les coûts totaux doivent être affichés selon différentes règles d'arrondi et de troncature en fonction des besoins de la comptabilité et des utilisateurs finaux.
 
-.. step::
+.. step:: reset
     **Demander** à l'utilisateur de saisir les informations suivantes pour **trois produits** :
 
     - Nom du produit.
@@ -435,7 +686,10 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> ----------------------------------------------------------------------------------------------------------------
     >> Total facture (arrondi au supérieur) :  268 €
 
-✏️ Exercice 12 : Un bulletin météo très aléatoire
+.. success::
+    Vous savez maintenant arrondir et tronquer des nombres pour un affichage plus lisible ainsi qu'utiliser les f-strings pour un affichage plus rapide et lisible. Vous avez également appris à aligner les éléments pour créer des tableaux formatés.
+
+✏️ Exercice 13 : Un bulletin météo très aléatoire
 ------------------------------------------------
 
 **Objectif** : Dans cet exercice, vous allez créer un simulateur de bulletin météo qui génère aléatoirement des prévisions météorologiques pour la journée actuelle, en utilisant les bibliothèques ``random``, ``math``, et ``datetime``. Vous simulerez des informations comme la température, la vitesse du vent, les précipitations et l'heure du lever et coucher de soleil.
@@ -490,3 +744,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> Heure du lever de soleil : 07:44
     >> Heure du coucher de soleil : 18:02
     >> Duree du jour : 10:18:00
+
+.. success::
+    Vous savez maintenant comment utiliser des modules et leurs fonctions afin d'enrichir vos programmes.
