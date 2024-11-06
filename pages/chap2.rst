@@ -300,7 +300,6 @@ On peut interrompre une boucle avec l’instruction ``break``.
         :width: 100%
 
 .. slide::
-
 🏋️ Exercices supplémentaires
 --------------------
 

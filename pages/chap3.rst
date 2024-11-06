@@ -301,6 +301,34 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
         >> [2, 4, 5, 6]
 
 .. slide::
+**Méthodes spécifiques aux listes**
+.. discoverList::
+    * La méthode ``sort()`` permet de trier les éléments d'une liste.
+    * La méthode ``reverse()`` permet d'inverser l'ordre des éléments d'une liste.
+    * La méthode ``index()`` permet de récupérer l'index d'un élément dans une liste.
+    * La méthode ``count()`` permet de compter le nombre d'occurrences d'un élément dans une liste.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        l = [5, 2, 8, 1, 3]
+        l.sort() # Trie les éléments de la liste l
+        print(l)
+        >> [1, 2, 3, 5, 8]
+
+        l.reverse() # Inverse l'ordre des éléments de la liste l
+        print(l)
+        >> [8, 5, 3, 2, 1]
+
+        print(l.index(5)) # Récupère l'index de l'élément 5 dans la liste l
+        >> 1
+
+        print(l.count(5)) # Compte le nombre d'occurrences de l'élément 5 dans la liste l
+        >> 1
+
+
+.. slide::
 Les dictionnaires (*dict*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
@@ -730,6 +758,16 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 .. |tableau_methodes| div::
     .. center::
     ``L1.append(element)`` ajoute ``element`` à la fin de ``L1``
+        
+    ``L1.remove(element)`` supprime la première occurrence de ``element`` dans ``L1``
+
+    ``L1.index(element)`` renvoie l'index de la première occurrence de ``element`` dans ``L1``
+
+    ``L1.count(element)`` renvoie le nombre d'occurrences de ``element`` dans ``L1``
+
+    ``L1.sort()`` trie les éléments de ``L1``
+
+    ``L1.reverse()`` inverse l'ordre des éléments de ``L1``
 
 .. |dictionnaire_methodes| div::
     .. center::
@@ -738,6 +776,11 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     ``d1.keys()`` renvoie les clés
     
     ``d1.values()`` renvoie les valeurs
+
+    ``d1.get(key)`` renvoie la valeur associée à la clé ``key``
+
+    ``d1.pop(key)`` supprime l'élément associé à la clé ``key``
+
 
 .. center::
     +------------------------+------------------------+--------------------------+--------------------------------------+
@@ -795,6 +838,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         :alt: Récapitulatif du Chapitre 3
         :width: 100%
 
+.. slide::
 🏋️ Exercices supplémentaires
 --------------------
 

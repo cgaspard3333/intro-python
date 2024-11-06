@@ -176,14 +176,14 @@ Vous pouvez créer vos propres modules en enregistrant des fonctions dans un fic
 
 
 .. slide::
-📖 Notion de package/paquetage
+📖 Notion de package/bibliothèque
 ------------------------------
 
 Qu'est-ce qu'un package ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-    Un **package** est une collection de modules regroupés dans un dossier. Cela permet de structurer un projet en organisant les modules de manière hiérarchique et logique. Les packages sont particulièrement utiles pour les projets de grande envergure comportant plusieurs modules interdépendants.
+    Un **package** ou **bibliothèque** est une collection de modules regroupés dans un dossier. Cela permet de structurer un projet en organisant les modules de manière hiérarchique et logique. Les packages sont particulièrement utiles pour les projets de grande envergure comportant plusieurs modules interdépendants.
 
 En Python, un package est simplement un dossier contenant des modules (fichiers ``.py``) et un fichier spécial nommé ``__init__.py``, qui permet à Python de reconnaître le dossier comme un package.
 
@@ -301,10 +301,11 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
 **Consignes** :
 
+.. slide::
 .. step:: reset
     **Etape 1 : Structure**  
     Vous allez créer un package football_stats qui contiendra les modules suivants :
-    .. code-block::
+    .. code-block:: bash
         football_stats/
         ├── __init__.py
         ├── match.py           # Contient les fonctions pour simuler un match et générer des statistiques
@@ -312,6 +313,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
         └── statistiques.py     # Contient les fonctions pour calculer les statistiques avancées
         main.py                 # Fichier principal pour exécuter la simulation
 
+.. slide::
 .. step::
     **Etape 2 : Module ``equipe.py``**  
     Dans le module ``equipe.py``, créez une fonction pour initialiser une équipe et une autre pour afficher les informations de base de l’équipe (nom, nombre de joueurs, etc.).
@@ -321,6 +323,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
         - ``creer_equipe(nom, joueurs)`` : prend en entrée le nom de l’équipe et une liste de noms de joueurs et retourne un dictionnaire avec le nom de l'équipe, la liste des joueurs et le nombre de joueurs.
         - ``afficher_equipe(equipe)`` : prend en entrée une équipe et affiche les informations de l'équipe sous un format clair.
 
+.. slide::
 .. step::
     **Etape 3 : Module ``match.py``**  
     Dans ``match.py``, vous allez écrire des fonctions pour simuler un match et générer les statistiques associées. Utilisez le module ``random`` pour simuler les événements.
@@ -334,6 +337,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
         - ``afficher_statistiques_match(stats)`` : prend en entrée un dictionnaire ``stats`` (contenant les statistiques générées par ``simuler_match()``) et les affiche sous un format lisible.
 
+.. slide::
 .. step::
     **Etape 4 : Module ``statistiques.py``**  
     Dans ``statistiques.py``, vous allez écrire des fonctions pour calculer des statistiques avancées pour une série de matchs, comme la moyenne de buts par match ou le taux de réussite de passes.
@@ -344,6 +348,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
         - ``taux_reussite_passes(liste_passes)`` : prend une liste de pourcentages de passes réussies et retourne le taux moyen.
         - ``moyenne_possession(liste_possession)`` : prend une liste de pourcentages de possession et retourne la possession moyenne.
 
+.. slide::
 .. step::
     **Etape 5 : Utiliser le fichier ``__init__.py``**  
     Dans ``__init__.py``, importez les fonctions principales des modules pour simplifier leur utilisation.
@@ -358,6 +363,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
             from .match import simuler_match, afficher_statistiques_match
             from .statistiques import moyenne_buts_par_match, taux_reussite_passes, moyenne_possession
 
+.. slide::
 .. step::
     **Etape 6 : Utiliser le package dans le ``main.py``**  
     Dans main.py, vous allez :
@@ -367,6 +373,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
     3. Stocker les statistiques générées pour chaque match.
     4. Calculer et afficher les statistiques avancées sur la série de matchs.
 
+.. slide::
 **Résumé des fonctions à implémenter :**  
 
 - Module ``equipe.py`` :
@@ -380,9 +387,10 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
     * ``taux_reussite_passes(liste_passes)`` : calcule le taux moyen de passes réussies.
     * ``moyenne_possession(liste_possession)`` : calcule la possession moyenne.
 
+.. slide::
 **Résultat attendu :**
 
-.. code-block::
+.. code-block:: bash
     >> --- Informations de l équipe ---
     >> Nom de l équipe : Les Scarabés du Brésil
     >> Nombre de joueurs : 5
@@ -670,6 +678,7 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. step::
     **Calculer** et **afficher** le coût total global des trois produits, en arrondissant cette somme à l'entier supérieur.
 
+.. slide::
 **Resultat attendu :**
 .. code-block:: python
     >> Nom du produit 1 : Chaise
@@ -693,18 +702,21 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. success::
     Vous savez maintenant arrondir et tronquer des nombres pour un affichage plus lisible ainsi qu'utiliser les f-strings pour un affichage plus rapide et lisible. Vous avez également appris à aligner les éléments pour créer des tableaux formatés.
 
+.. slide::
 ✏️ Exercice 13 : Un bulletin météo très aléatoire
 ------------------------------------------------
 
 **Objectif** : Dans cet exercice, vous allez créer un simulateur de bulletin météo qui génère aléatoirement des prévisions météorologiques pour la journée actuelle, en utilisant les bibliothèques ``random``, ``math``, et ``datetime``. Vous simulerez des informations comme la température, la vitesse du vent, les précipitations et l'heure du lever et coucher de soleil.
 
 **Consignes** :
+.. slide::
 .. step:: reset
     *Configurer la date* :
 
         - Utilisez ``datetime`` pour afficher la date du jour actuel au format "JJ/MM/AAAA".
         - Par défaut la date fournie par ``datetime`` est au format "AAAA-MM-JJ". Vous utiliserez donc internet pour trouver comment formater la date en "JJ/MM/AAAA" lors de son affichage. 
 
+.. slide::
 .. step::
     *Générer les prévisions météorologiques* :
 
@@ -713,6 +725,7 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
         - Type de météo : Créez une **liste** de types de précipitations possibles ("Ensoleillé", "Nuageux", "Pluie", "Neige") et sélectionnez-en une au hasard dans la liste avec ``random``.
         - Probabilité de précipitations : Utilisez le module ``random`` pour générer un pourcentage de précipitations (entre 0% et 100%).
 
+.. slide::
 .. step::
     *Heures de lever et coucher de soleil* :
 
@@ -723,16 +736,19 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     .. spoiler::
         - En effet, on souhaite garder une association entre les heures de lever et coucher de soleil et la date du jour. Pour cela, on utilise la fonction ``datetime.combine()`` qui permet de combiner une date et une heure pour obtenir un objet ``datetime`` complet. On utilise ensuite la fonction ``timedelta()`` pour ajouter un nombre d'heures et de minutes aléatoire à l'heure du lever de soleil pour obtenir l'heure du coucher de soleil.
 
+.. slide::
 .. step::
     *Calculer la durée de jour* :
 
         - Utilisez ``datetime`` pour calculer la durée du jour (en heures et minutes) en soustrayant l’heure du lever de celle du coucher de soleil.
 
+.. slide::
 .. step::
     *Afficher le rapport météo* :
 
         - Organisez les informations générées de manière structurée et lisible pour l’utilisateur en **utilisant les f-strings pour l'affichage**.
 
+.. slide::
 **Résultat attendu** :
 .. code-block::
     >> Previsions meteo pour le 31/10/2024
@@ -748,3 +764,11 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
 .. success::
     Vous savez maintenant comment utiliser des modules intégrés et leurs fonctions afin d'enrichir vos programmes tout en apprenant à formater les dates et les nombres pour un affichage plus lisible.
+
+.. slide::
+🏋️ Exercices supplémentaires
+--------------------
+
+.. toctree::
+
+    exos_sup_chap4
