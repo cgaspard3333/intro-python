@@ -8,7 +8,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Difficile : 🌶️
 
 ⚖️ Exercice 13 : Gestion de budget personnel avec des modules et formatage
----------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Objectif** :
 Créer un programme de gestion de budget personnel permettant de simuler les revenus et les dépenses mensuelles, de calculer le solde mensuel et d'afficher un résumé formaté des finances. Ce programme fera appel à des modules intégrés de Python et utilisera des techniques d'affichage avancé.
@@ -63,7 +63,7 @@ Créer un programme de gestion de budget personnel permettant de simuler les rev
 
 
 🌶️ Exercice 14 : Simulation de navigation robotique intelligente
------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Objectif** :
 Dans cet exercice, vous allez créer un programme de simulation de navigation robotique. Le programme simulera un robot se déplaçant sur une grille 10x10, évitant des obstacles et atteignant un objectif fixé. Ce programme utilisera des concepts de base en intelligence artificielle, tels que la prise de décision et la navigation autonome.
