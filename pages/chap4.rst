@@ -330,7 +330,7 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
     Détails des fonctions dans ``match.py``
 
-        - ``simuler_match(equipe)`` : simule un match pour une équipe.
+        - ``simuler_match()`` : simule un match pour une équipe.
             * Génére un nombre aléatoire de buts entre 0 et 5 pour l’équipe.
             * Génére des statistiques aléatoires de possession (entre 40% et 60%), de tirs (entre 5 et 20), et de passes réussies (entre 70% et 90%).
         La fonction prend en entrée une équipe et retourne un dictionnaire de statistiques (buts, possession, tirs, passes réussies).
