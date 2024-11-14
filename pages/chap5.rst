@@ -409,8 +409,8 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
 **Consigne** : Dans un même script Python, réalisez les actions suivantes. Pour y répondre vous pouvez en premier lieu utiliser le cours ci-dessus, puis consulter la documentation de ``numpy`` sur internet pour y trouver les fonctions nécessaires.  
 Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement demandé), les opérations vectorisées de ``numpy`` permettent de réaliser des opérations sur l'ensemble des éléments d'un array sans avoir à utiliser de boucles (et surtout le temps de calcul en est réduit).
 
-.. important::
-    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez fixer la seed à 42.
+.. note::
+    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
 
 **Questions simples** :
 
