@@ -506,6 +506,74 @@ Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement dem
     Créer un array de taille 10 aléatoire, puis échanger les lignes 3 et 6.
 
 .. slide::
+✏️ Exercice 15 : Encore et toujours la méteo !
+---------------------------------------
+
+**Objectifs** :
+Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des données météorologiques. Vous allez simuler des relevés de températures sur 30 jours, calculer des statistiques et identifier des tendances.
+
+.. note::
+    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
+
+**Consignes** :
+
+.. step:: reset
+    **Génération des données de température** :
+
+        - Utilisez ``numpy.random.normal()`` pour générer un tableau de 30 températures aléatoires, avec une moyenne de 20°C et un écart-type de 5°C.
+.. step::
+    **Calcul des statistiques descriptives** :
+    
+        - Calculez la température moyenne du mois 
+        - Calculez la température médiane
+        - Calculez l'écart-type des températures
+.. step::
+    **Analyse des températures** :
+   
+        - Créez un tableau des jours (indices) où la température est supérieure à la moyenne.
+        - Trouvez l'indice du jour le plus chaud et le jour le plus froid.
+        - Comptez le nombre de jours où la température dépasse 25°C.
+
+.. step::
+    **Affichage des résultats** :
+   
+        - Imprimez les jours où la température est supérieure à la moyenne.
+        - Affichez les numéros et les valeurs des jours les plus chauds et les plus froids.
+        - Montrez combien de jours ont une température supérieure à 25°C.
+
+.. step::
+    **Analyse comparative des températures** :
+   
+        - Ajoutez une fonctionnalité qui identifie les périodes consécutives où la température reste au-dessus de 22°C pendant au moins 2 jours.
+        - Implémentez une recherche des jours de baisse soudaine de température (plus de 5°C de chute d'un jour à l'autre).
+        - Créez un tableau de températures pour 30 jours supplémentaires, avec une moyenne de 22°C et un écart-type de 4°C.
+        - Comparez les deux tableaux de températures en affichant les jours où la température est plus élevée dans le deuxième tableau.
+
+**Résultat attendu** :
+.. code-block::
+    Données de température générées pour 30 jours : [22.48357077 19.30867849 23.23844269 27.61514928 18.82923313 18.82931522
+    27.89606408 23.83717365 17.65262807 22.71280022 17.68291154 17.67135123
+    21.20981136 10.43359878 11.37541084 17.18856235 14.9358444  21.57123666
+    15.45987962 12.93848149 27.32824384 18.8711185  20.33764102 12.87625907
+    17.27808638 20.55461295 14.24503211 21.87849009 16.99680655 18.54153125] 
+
+    Résultats des statistiques descriptives :
+    - Température moyenne : 19.06°C
+    - Température médiane : 18.83°C
+    - Écart-type des températures : 4.42°C
+
+    Analyse des températures :
+    - Jours avec température supérieure à la moyenne : [ 1  2  3  4  7  8 10 13 18 21 23 26 28]
+    - Jour le plus chaud : Jour 7 avec 27.90°C
+    - Jour le plus froid : Jour 14 avec 10.43°C
+    - Nombre de jours avec une température supérieure à 25°C : 3
+
+    Analyse comparative des températures :
+    - Périodes avec température > 22°C pendant au moins 2 jours consécutifs : [3, 7]
+    - Jours avec chute soudaine de température (> 5°C) : [5, 9, 11, 14, 19, 22, 24, 27]
+    - Jours où la température dans le deuxième tableau est plus élevée que dans le premier : [ 2  5 10 11 12 13 14 15 16 17 18 19 20 22 24 25 26 27 29 30]
+
+.. slide::
 🏋️ Exercices supplémentaires
 --------------------
 
