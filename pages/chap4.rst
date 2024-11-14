@@ -751,16 +751,16 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. slide::
 **Résultat attendu** :
 .. code-block::
-    >> Previsions meteo pour le 31/10/2024
+    >> Prévisions météo pour le 14/11/2024
     >> -----------------------------------
-    >> Previsions meteorologiques du jour :
-    >> Temperature : 26°C
-    >> Vitesse du vent : 44 km/h
+    >> Prévisions météorologiques du jour :
+    >> Température : 23°C
+    >> Vitesse du vent : 26 km/h
     >> Conditions : Pluie
-    >> Probabilite de precipitations : 30%
-    >> Heure du lever de soleil : 07:44
-    >> Heure du coucher de soleil : 18:02
-    >> Duree du jour : 10:18:00
+    >> Probabilité de précipitations : 30%
+    >> Heure du lever de soleil : 07:21
+    >> Heure du coucher de soleil : 20:07
+    >> Durée du jour : 12:46:00
 
 .. success::
     Vous savez maintenant comment utiliser des modules intégrés et leurs fonctions afin d'enrichir vos programmes tout en apprenant à formater les dates et les nombres pour un affichage plus lisible.
