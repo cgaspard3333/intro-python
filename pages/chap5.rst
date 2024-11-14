@@ -371,8 +371,8 @@ Génération de nombres aléatoires avec ``numpy``
 
         array = np.array([1, 2, 3, 4, 5])
 
-        # Echantillon de 3 éléments sans qu'un élément puisse être tiré plusieurs fois (remplacement=False
-        random_sample = np.random.choice(array, 3, replace=False) )
+        # Echantillon de 3 éléments sans qu'un élément puisse être tiré plusieurs fois (remplacement=False)
+        random_sample = np.random.choice(array, 3, replace=False)
         print(random_sample)  
         
         >> [3 1 5]
@@ -403,4 +403,102 @@ La fonction ``np.random.seed()`` permet de fixer la seed. Une fois la seed défi
 Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléatoires pour ``random_values``, car la seed a été fixée à la valeur ``42``. Si vous exécutez le code sans définir de seed, les valeurs générées seront différentes à chaque fois.
 
 .. slide::
-    
+✏️ Exercice 14 : Pratiquer avec ``numpy``
+---------------------------------------
+
+**Consigne** : Dans un même script Python, réalisez les actions suivantes. Pour y répondre vous pouvez en premier lieu utiliser le cours ci-dessus, puis consulter la documentation de ``numpy`` sur internet pour y trouver les fonctions nécessaires.  
+Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement demandé), les opérations vectorisées de ``numpy`` permettent de réaliser des opérations sur l'ensemble des éléments d'un array sans avoir à utiliser de boucles (et surtout le temps de calcul en est réduit).
+
+.. important::
+    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez fixer la seed à 42.
+
+**Questions simples** :
+
+.. step::
+    A quoi sert de fixer la seed aléatoire dans un programme ?
+
+.. step::
+    Créer un array nul de taille 100.
+
+.. step::
+    Créer un array de taille 10 avec des valeurs aléatoires entre 0 et 1.
+
+.. step::
+    Créer un array nul de taille 10 mais dont la septième valeur est égale à 1.
+
+.. step::
+    Créer un array 2D identité de taille (3, 3) (On appelle une matrice identité une matrice carrée dont tous les éléments sont nuls, sauf ceux de la diagonale principale qui sont égaux à 1).
+
+.. step:: 
+    Créer un array de taille 10 avec des valeurs entières aléatoires entre 1 et 10, puis remplacer les valeurs supérieures à 5 par 0.
+
+.. step::
+    Créer un array de taille 10 avec des valeurs aléatoires entre 1 et 10, puis remplacer les valeurs entre 3 et 7 par 0.
+
+.. step::
+    Créer un array de taille 40 aléatoire et calculer sa valeur moyenne (utiliser les fonctions de numpy)
+
+.. step::
+    Créer un array de taille 30 aléatoire et trouver ses valeur maximale et minimale (utiliser les fonctions de numpy)
+
+.. step::
+    Créer un array de taille 20 aléatoire et calculer la somme de ses valeurs (utiliser les fonctions de numpy)
+
+.. step::
+    Créer un array 2D de taille (4, 4) avec des 1 sur les bords et des 0 à l'intérieur.
+
+.. step::
+    Créer un array 2D de taille (2, 2), puis lui ajouter une bordure de 0 tout autour.
+
+.. step::
+    Créer un array 2D de taille (5, 5) avec les valeurs 1, 2, 3, 4 juste en dessous de la diagonale principale.
+
+.. step::
+    Créer un array 2D de taille (10,10) et remplir ses valeurs de sorte à créer un damier (alternance de 0 et 1) sans utiliser la fonction ``np.tile()``.
+
+.. step::
+    Créer un array 2D de taille (6, 6) et remplir ses valeurs de sorte à créer un damer en utilisant la fonction ``np.tile()``.
+
+.. step::
+    Normaliser un array de taille 50 aléatoire et expliquer ce que signifie la normalisation.
+
+.. step:: 
+    Multiplier un array 2D aléatoire de taille (5, 4) par l'array 2D aléatoire de taille (4, 2). 
+
+.. step::
+    Expliquer comment trouver des valeurs communes entre deux arrays.
+
+**Questions plus complexes** :
+
+.. step::
+    Trouver la partie entière d'un array aléatoire dont les valeurs sont uniquement positives en utilisant 3 méthodes différentes.
+
+.. step::
+    Créer un array de taille (6, 6) dont les valeurs de chaque lignes dont les nombres entiers allant de 0 à 5.
+
+.. step::
+    Créer une fonction qui génère des nombres aléatoires, puis l'utiliser pour générer un array de taille 10.
+
+.. step::
+    Créer un array de taille 15 aléatoire, puis trier ses valeurs.
+
+.. step::
+    Créer deux arrays puis vérifier s'ils sont égaux.
+
+.. step::
+    Créer un array et le rendre immuable (non modifiable).
+
+.. step::
+    Créer un array aléatoire de taille 15 puis remplacer sa valeur minimale par 100.
+
+.. step::
+    Convertir un array de float (32bits) en un array de int (32bits).
+
+.. step::
+    Expliquer comment vérifier si un array contient des colonnes nulles.
+
+.. step::
+    Comment trouver la valeur la plus fréquente dans un array ?
+
+.. step::
+    Créer un array de taille 10 aléatoire, puis échanger les lignes 3 et 6.
