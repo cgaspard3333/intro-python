@@ -476,7 +476,7 @@ Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement dem
     Trouver la partie entière d'un array aléatoire dont les valeurs sont uniquement positives en utilisant 3 méthodes différentes.
 
 .. step::
-    Créer un array de taille (6, 6) dont les valeurs de chaque lignes dont les nombres entiers allant de 0 à 5.
+    Créer un array 2D de taille (6, 6) dont les valeurs de chaque lignes dont les nombres entiers allant de 0 à 5.
 
 .. step::
     Créer une fonction qui génère des nombres aléatoires, puis l'utiliser pour générer un array de taille 10.
