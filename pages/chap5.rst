@@ -412,9 +412,10 @@ Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement dem
 .. note::
     Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
 
+.. slide::
 **Questions simples** :
 
-.. step::
+.. step:: reset
     A quoi sert de fixer la seed aléatoire dans un programme ?
 
 .. step::
@@ -468,6 +469,7 @@ Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement dem
 .. step::
     Expliquer comment trouver des valeurs communes entre deux arrays.
 
+.. slide::
 **Questions plus complexes** :
 
 .. step::
@@ -502,3 +504,11 @@ Interdiction d'utiliser des boucles ``for`` ou ``while`` (sauf explicitement dem
 
 .. step::
     Créer un array de taille 10 aléatoire, puis échanger les lignes 3 et 6.
+
+.. slide::
+🏋️ Exercices supplémentaires
+--------------------
+
+.. toctree::
+
+    exos_sup_chap5
