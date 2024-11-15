@@ -64,6 +64,7 @@ Les opérateurs de comparaison permettent de comparer deux valeurs. Ils sont uti
             print("Vous êtes majeur.")
         else:
             print("Vous êtes mineur.")
+        >> Vous êtes majeur.
 
 .. slide::
 
@@ -80,11 +81,13 @@ On peut combiner plusieurs conditions grâce aux opérateurs logiques :
 .. warning::
     Exemple :
     .. code-block:: python
-        x = 10
-        y = 5
+        x = 12
+        y = 3
 
         if x > 5 and y < 10:
             print("Les deux conditions sont vraies.")
+
+        >> Les deux conditions sont vraies.
 
 .. slide::
 
@@ -226,9 +229,11 @@ La boucle ``for`` permet de répéter un bloc de code un nombre déterminé de f
             # Bloc de code exécuté pour chaque élément de la séquence
             
     .. code-block:: python
-
-        for i in range(5): # range(5) génère les nombres de 0 à 4 (5 exclus).
+        for i in range(3):
             print(i)
+        >> 0
+        >> 1
+        >> 2
 
 .. slide::
 
@@ -247,13 +252,17 @@ La boucle ``while`` exécute un bloc de code tant qu’une condition est vraie.
     .. code-block:: python
 
         compteur = 0
-        while compteur < 5:
+        while compteur < 4:
             print(compteur)
             compteur += 1
+        >> 0
+        >> 1
+        >> 2
+        >> 3
 
 .. slide::
 
-Boucle infinie et ``break``
+Boucle infinie et sortie de boucle
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Une boucle infinie se produit quand la condition de sortie n’est jamais atteinte. Cela peut bloquer l’exécution du programme.
@@ -267,8 +276,12 @@ On peut interrompre une boucle avec l’instruction ``break``.
         while True:
             print(compteur)
             compteur += 1
-            if compteur == 5:
+            if compteur == 4:
                 break
+        >> 0
+        >> 1
+        >> 2
+        >> 3
 
 .. slide::
 
