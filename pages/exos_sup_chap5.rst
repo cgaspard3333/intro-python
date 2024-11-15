@@ -8,6 +8,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Difficile : 🌶️
 
 🍀 Exercice 16 : Résolution d’un système de n équation à n inconnues
+---------------------------------------------------------------
 
 Soit un système de n équations linéaires à n inconnues, représenté sous la forme :  
 .. math::
