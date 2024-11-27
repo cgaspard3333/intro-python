@@ -31,6 +31,7 @@ Sommaire
     chap3
     chap4
     chap5
+    chap6
     
 
 
