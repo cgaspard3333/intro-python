@@ -84,3 +84,85 @@ Dans ce jeu, un joueur choisit 6 numéros distincts parmi les 49 disponibles. Un
         >> 4 numéros corrects : 0.10%
         >> 5 numéros corrects : 0.00%
         >> 6 numéros corrects : 0.00%
+
+⚖️ Exercice 18 : Chaîne de Markov simple 
+---------------------------------------------------------------
+
+**Consignes** :
+
+Un robot se déplace dans un environnement composé de plusieurs salles, numérotées de 0 à \( n-1 \). Le robot commence dans une salle initiale, et à chaque étape, il choisit sa salle suivante selon les probabilités définies par une **matrice de transition** \( P \). 
+
+La matrice \( P \) est une matrice carrée où chaque ligne \( i \) représente la salle actuelle du robot, et chaque colonne \( j \) contient la probabilité de passer de la salle \( i \) à la salle \( j \).
+
+**Données d'entrée** :
+
+1. **Matrice de transition \( P \)** : 
+   Saisie par l'utilisateur, c'est une matrice de taille \( n \times n \). Chaque ligne doit contenir \( n \) probabilités (des nombres flottants entre 0 et 1), et la somme des probabilités sur chaque ligne doit être égale à 1.
+
+2. **Nombre d'étapes de simulation (\( N \))** : 
+   Saisi par l'utilisateur, c'est le nombre total de déplacements du robot dans l'environnement.
+
+3. **Nombre d'étapes pour estimer les probabilités stationnaires (\( M \))** : 
+   Saisi par l'utilisateur, c'est le nombre de déplacements utilisé pour estimer les probabilités d'être dans chaque salle après un grand nombre d'étapes.
+
+**Etapes à réaliser** : 
+
+.. step:: reset
+    **Simulation des déplacements** :  
+    Simuler le déplacement du robot pendant \( N \) étapes, en choisissant la salle suivante selon les probabilités de la matrice \( P \). Le robot commence dans la salle \( 0 \).
+
+.. step::
+    **Comptage des visites** :  
+    Afficher combien de fois le robot a visité chaque salle pendant les \( N \) étapes de la simulation.
+
+.. step::
+    **Estimation des probabilités stationnaires** :  
+    Simuler un très grand nombre d'étapes (\( M \)) et estimer la probabilité d'être dans chaque salle en calculant la proportion de temps passé dans chaque salle.
+
+.. step::
+    **Test du programme** :  
+    Testez votre programme avec la matrice de transition \( P \) suivante :
+
+    .. math::
+
+    P = \begin{bmatrix}
+    0.2 & 0.5 & 0.3 \\
+    0.1 & 0.6 & 0.3 \\
+    0.4 & 0.3 & 0.3
+    \end{bmatrix}
+
+    et \( N = 100 \), le programme doit :
+
+    - Simuler les déplacements du robot pendant 100 étapes.
+    - Afficher combien de fois chaque salle a été visitée.
+    - Estimer les probabilités stationnaires après \( M = 10,000 \) étapes.
+
+**Exemple de résultat attendu** :
+.. spoiler::
+    .. code-block:: text
+
+        >> Entrez la matrice de transition P (les probabilités de transition).
+        >> Combien de salles (taille de la matrice carrée) ? 3
+        >> Entrez les 3 lignes de la matrice (avec 3 probabilités chacune) :
+        >> Ligne 1 : 0.2 0.5 0.3
+        >> Ligne 2 : 0.1 0.6 0.3
+        >> Ligne 3 : 0.4 0.3 0.3
+        >> 
+        >> Matrice de transition P :
+        >>  [[0.2 0.5 0.3]
+        >>  [0.1 0.6 0.3]
+        >>  [0.4 0.3 0.3]]
+        >> 
+        >> Entrez le nombre total d'étapes pour simuler les déplacements : 100
+        >> 
+        >> Nombre de visites dans chaque salle après 100 étapes :
+        >> Salle 0: 29 visites
+        >> Salle 1: 43 visites
+        >> Salle 2: 28 visites
+        >> 
+        >> Entrez le nombre d'étapes pour estimer les probabilités : 10000
+        >> 
+        >> Probabilités stationnaires (après 10000 étapes) :
+        >> Salle 0: 0.2130
+        >> Salle 1: 0.4887
+        >> Salle 2: 0.2983
