@@ -592,22 +592,21 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
 - Importation standard : ``import numpy as np``
 
 .. slide::
-Création et Manipulation des Arrays
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Création et Manipulation des Arrays
 
-- **Créer un array à partir d'une liste :**
+    - **Créer un array à partir d'une liste :**
 
-.. code-block:: python
+    .. code-block:: python
 
-    array_1d = np.array([1, 2, 3, 4, 5])
-    array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+        array_1d = np.array([1, 2, 3, 4, 5])
+        array_2d = np.array([[1, 2, 3], [4, 5, 6]])
 
-- **Utiliser des fonctions prédéfinies :**
+    - **Utiliser des fonctions prédéfinies :**
 
-  - ``np.zeros((n, m))`` : Array de zéros de taille n x m.
-  - ``np.ones((n, m))`` : Array de uns de taille n x m.
-  - ``np.arange(start, stop, step)`` : Valeurs de start à stop avec un pas step.
-  - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre start et stop.
+        - ``np.zeros((n, m))`` : Array de zéros de taille n x m.
+        - ``np.ones((n, m))`` : Array de uns de taille n x m.
+        - ``np.arange(start, stop, step)`` : Valeurs de start à stop avec un pas step.
+        - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre start et stop.
 
 .. slide::
 Accès aux Éléments et Slicing
