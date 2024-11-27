@@ -596,7 +596,7 @@ Création et Manipulation des Arrays
 
 - **Créer un array à partir d'une liste :**
 
-  .. code-block:: python
+.. code-block:: python
 
     array_1d = np.array([1, 2, 3, 4, 5])
     array_2d = np.array([[1, 2, 3], [4, 5, 6]])
@@ -613,7 +613,7 @@ Accès aux Éléments et Slicing
 
 - Accéder aux éléments avec des indices :
 
-  .. code-block:: python
+.. code-block:: python
 
     element = array[i, j]        # i: ligne, j: colonne
     row = array[i, :]            # i-ème ligne
@@ -634,7 +634,7 @@ Opérations Mathématiques avec ``numpy``
 Fonctions d'Agrégation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-- Calcul de statistiques sur les arrays :
+- **Calcul de statistiques sur les arrays** :
 
   - Somme : ``np.sum(array)``
   - Moyenne : ``np.mean(array)``
@@ -658,14 +658,14 @@ Indexation et Filtrage Avancés
 
 - **Indexation booléenne :**
 
-  .. code-block:: python
+.. code-block:: python
 
     mask = array > valeur
     filtered_array = array[mask]
 
 - **Indexation par position :**
 
-  .. code-block:: python
+.. code-block:: python
 
     indices = [0, 2, 4]
     selected_elements = array[indices]
