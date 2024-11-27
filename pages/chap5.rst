@@ -591,6 +591,7 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
 
 - Importation standard : ``import numpy as np``
 
+.. slide::
 Création et Manipulation des Arrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -608,6 +609,7 @@ Création et Manipulation des Arrays
   - ``np.arange(start, stop, step)`` : Valeurs de start à stop avec un pas step.
   - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre start et stop.
 
+.. slide::
 Accès aux Éléments et Slicing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -619,6 +621,7 @@ Accès aux Éléments et Slicing
     row = array[i, :]            # i-ème ligne
     column = array[:, j]         # j-ème colonne
 
+.. slide::
 Opérations Mathématiques avec ``numpy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -631,6 +634,7 @@ Opérations Mathématiques avec ``numpy``
   - Racine carrée : ``np.sqrt(array)``
   - Puissance : ``np.power(array, n)``
 
+.. slide::
 Fonctions d'Agrégation
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -644,6 +648,7 @@ Fonctions d'Agrégation
 
 - Application sur des axes spécifiques avec l'argument ``axis``.
 
+.. slide::
 Manipulation de la Forme des Arrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -653,6 +658,7 @@ Manipulation de la Forme des Arrays
 
 - **Concaténer des arrays avec ``concatenate`` :** ``np.concatenate((array1, array2), axis=0)``
 
+.. slide::
 Indexation et Filtrage Avancés
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -672,6 +678,7 @@ Indexation et Filtrage Avancés
 
 - **Modification via un masque :** ``array[array > valeur] = nouvelle_valeur``
 
+.. slide::
 Génération de Nombres Aléatoires
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
