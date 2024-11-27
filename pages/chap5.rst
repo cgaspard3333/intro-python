@@ -608,86 +608,75 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
         - ``np.arange(start, stop, step)`` : Valeurs de start à stop avec un pas step.
         - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre start et stop.
 
-.. slide::
-Accès aux Éléments et Slicing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Accès aux Éléments et Slicing
 
-- Accéder aux éléments avec des indices :
+    - Accéder aux éléments avec des indices :
 
-.. code-block:: python
+    .. code-block:: python
 
-    element = array[i, j]        # i: ligne, j: colonne
-    row = array[i, :]            # i-ème ligne
-    column = array[:, j]         # j-ème colonne
+        element = array[i, j]        # i: ligne, j: colonne
+        row = array[i, :]            # i-ème ligne
+        column = array[:, j]         # j-ème colonne
 
-.. slide::
-Opérations Mathématiques avec ``numpy``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Opérations Mathématiques avec ``numpy``
 
-- **Opérations élémentaires :** Addition, soustraction, multiplication, division appliquées élément par élément. (``+, -, *, /``)
+    - **Opérations élémentaires :** Addition, soustraction, multiplication, division appliquées élément par élément. (``+, -, *, /``)
 
-- **Fonctions mathématiques avancées :**
+    - **Fonctions mathématiques avancées :**
 
-  - Exponentielle : ``np.exp(array)``
-  - Logarithme : ``np.log(array)``
-  - Racine carrée : ``np.sqrt(array)``
-  - Puissance : ``np.power(array, n)``
+        - Exponentielle : ``np.exp(array)``
+        - Logarithme : ``np.log(array)``
+        - Racine carrée : ``np.sqrt(array)``
+        - Puissance : ``np.power(array, n)``
 
-.. slide::
-Fonctions d'Agrégation
-~~~~~~~~~~~~~~~~~~~~~~
+4. Fonctions d'Agrégation
 
-- **Calcul de statistiques sur les arrays** :
+    - **Calcul de statistiques sur les arrays** :
 
-  - Somme : ``np.sum(array)``
-  - Moyenne : ``np.mean(array)``
-  - Écart-type : ``np.std(array)``
-  - Minimum/Maximum : ``np.min(array)``, ``np.max(array)``
-  - Indice du min/max : ``np.argmin(array)``, ``np.argmax(array)``
+        - Somme : ``np.sum(array)``
+        - Moyenne : ``np.mean(array)``
+        - Écart-type : ``np.std(array)``
+        - Minimum/Maximum : ``np.min(array)``, ``np.max(array)``
+        - Indice du min/max : ``np.argmin(array)``, ``np.argmax(array)``
 
-- Application sur des axes spécifiques avec l'argument ``axis``.
+    - Application sur des axes spécifiques avec l'argument ``axis``.
 
-.. slide::
-Manipulation de la Forme des Arrays
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5. Manipulation de la Forme des Arrays
 
-- **Changer la forme avec ``reshape`` :**  ``array.reshape((nouvelle_lignes, nouvelle_colonnes))``
+    - **Changer la forme avec ``reshape`` :**  ``array.reshape((nouvelle_lignes, nouvelle_colonnes))``
 
-- **Aplatir un array avec ``flatten`` :** ``array_flat = array.flatten()``
+    - **Aplatir un array avec ``flatten`` :** ``array_flat = array.flatten()``
 
-- **Concaténer des arrays avec ``concatenate`` :** ``np.concatenate((array1, array2), axis=0)``
+    - **Concaténer des arrays avec ``concatenate`` :** ``np.concatenate((array1, array2), axis=0)``
 
-.. slide::
-Indexation et Filtrage Avancés
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6. Indexation et Filtrage Avancés
 
-- **Indexation booléenne :**
+    - **Indexation booléenne :**
 
-.. code-block:: python
+        .. code-block:: python
 
-    mask = array > valeur
-    filtered_array = array[mask]
+            mask = array > valeur
+            filtered_array = array[mask]
 
-- **Indexation par position :**
+    - **Indexation par position :**
 
-.. code-block:: python
+        .. code-block:: python
 
-    indices = [0, 2, 4]
-    selected_elements = array[indices]
+            indices = [0, 2, 4]
+            selected_elements = array[indices]
 
-- **Modification via un masque :** ``array[array > valeur] = nouvelle_valeur``
+    - **Modification via un masque :** ``array[array > valeur] = nouvelle_valeur``
 
-.. slide::
-Génération de Nombres Aléatoires
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Nombres aléatoires entre 0 et 1 :** ``np.random.rand(n)``
+7. Génération de Nombres Aléatoires
 
-- **Nombres entiers aléatoires :** ``np.random.randint(debut, fin, size)``
+    - **Nombres aléatoires entre 0 et 1 :** ``np.random.rand(n)``
 
-- **Échantillonnage aléatoire :** ``np.random.choice(array, size, replace)``
+    - **Nombres entiers aléatoires :** ``np.random.randint(debut, fin, size)``
 
-- **Fixer la seed pour reproductibilité :** ``np.random.seed(fixed_seed)``
+    - **Échantillonnage aléatoire :** ``np.random.choice(array, size, replace)``
+
+    - **Fixer la seed pour reproductibilité :** ``np.random.seed(fixed_seed)``
 
 .. slide::
 🏋️ Exercices supplémentaires
