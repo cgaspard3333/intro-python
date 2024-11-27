@@ -578,47 +578,39 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
 -------------------------
 
 - **Qu'est-ce que ``numpy`` ?**
-  - Bibliothèque essentielle pour les projets de data science, calcul scientifique et apprentissage automatique.
-  - Optimisée pour le traitement de grandes quantités de données numériques.
-  - Offre des fonctionnalités pour créer et manipuler des arrays et effectuer des opérations mathématiques complexes rapidement.
+    - Bibliothèque essentielle pour les projets de data science, calcul scientifique et apprentissage automatique.
+    - Optimisée pour le traitement de grandes quantités de données numériques.
+    - Offre des fonctionnalités pour créer et manipuler des arrays et effectuer des opérations mathématiques complexes rapidement.
 
 - **Avantages de ``numpy`` :**
-  - **Efficacité** : Opérations sur les arrays plus rapides que sur les listes Python.
-  - **Syntaxe simplifiée** : Opérations mathématiques vectorisées réduisant le code.
-  - **Écosystème étendu** : Utilisé par d'autres bibliothèques comme pandas, scipy, scikit-learn.
+    - **Efficacité** : Opérations sur les arrays plus rapides que sur les listes Python.
+    - **Syntaxe simplifiée** : Opérations mathématiques vectorisées réduisant le code.
+    - **Écosystème étendu** : Utilisé par d'autres bibliothèques comme ``pandas``, ``scipy``, ``scikit-learn``.
 
-- Installation via ``pip`` : ``pip install numpy``
+.. - Installation via ``pip`` : ``pip install numpy``
+.. - Importation standard : ``import numpy as np``
 
-- Importation standard : ``import numpy as np``
-
-.. slide::
-1. Création et Manipulation des Arrays
+1. **Création et Manipulation des Arrays**
 
     - **Créer un array à partir d'une liste :**
-
-    .. code-block:: python
-
-        array_1d = np.array([1, 2, 3, 4, 5])
-        array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+        - Array 1D : ``np.array([1, 2, 3, 4, 5])``
+        - Array 2D (matrice) : ``np.array([[1, 2, 3], [4, 5, 6]])``
 
     - **Utiliser des fonctions prédéfinies :**
 
-        - ``np.zeros((n, m))`` : Array de zéros de taille n x m.
-        - ``np.ones((n, m))`` : Array de uns de taille n x m.
-        - ``np.arange(start, stop, step)`` : Valeurs de start à stop avec un pas step.
-        - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre start et stop.
+        - ``np.zeros((n, m))`` : Array de zéros de taille ``n x m``.
+        - ``np.ones((n, m))`` : Array de uns de taille ``n x m``.
+        - ``np.arange(start, stop, step)`` : Valeurs de ``start`` à ``stop`` avec un pas ``step``.
+        - ``np.linspace(start, stop, num)`` : num valeurs également espacées entre ``start`` et ``stop``.
 
-2. Accès aux Éléments et Slicing
+2. **Accès aux Éléments et Slicing**
 
-    - Accéder aux éléments avec des indices :
+    - **Accéder aux éléments avec des indices** :
+        - Par position : ``array[i, j]`` (ligne ``i``, colonne ``j``)
+        - Par ligne : ``array[i, :]`` (``:`` pour sélectionner toutes les colonnes)
+        - Par colonne : ``array[:, j]`` (``:`` pour sélectionner toutes les lignes)
 
-    .. code-block:: python
-
-        element = array[i, j]        # i: ligne, j: colonne
-        row = array[i, :]            # i-ème ligne
-        column = array[:, j]         # j-ème colonne
-
-3. Opérations Mathématiques avec ``numpy``
+3. **Opérations Mathématiques avec** ``numpy``
 
     - **Opérations élémentaires :** Addition, soustraction, multiplication, division appliquées élément par élément. (``+, -, *, /``)
 
@@ -629,7 +621,7 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
         - Racine carrée : ``np.sqrt(array)``
         - Puissance : ``np.power(array, n)``
 
-4. Fonctions d'Agrégation
+4. **Fonctions d'Agrégation**
 
     - **Calcul de statistiques sur les arrays** :
 
@@ -641,42 +633,32 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
 
     - Application sur des axes spécifiques avec l'argument ``axis``.
 
-5. Manipulation de la Forme des Arrays
+5. **Manipulation de la Forme des Arrays**
 
-    - **Changer la forme avec ``reshape`` :**  ``array.reshape((nouvelle_lignes, nouvelle_colonnes))``
+    - Changer la forme avec ``reshape`` :  ``array.reshape((nouvelle_lignes, nouvelle_colonnes))``
 
-    - **Aplatir un array avec ``flatten`` :** ``array_flat = array.flatten()``
+    - Aplatir un array avec ``flatten`` : ``array_flat = array.flatten()``
 
-    - **Concaténer des arrays avec ``concatenate`` :** ``np.concatenate((array1, array2), axis=0)``
+    - Concaténer des arrays avec ``concatenate`` : ``np.concatenate((array1, array2), axis=0)``
 
-6. Indexation et Filtrage Avancés
+6. **Indexation et Filtrage Avancés**
 
-    - **Indexation booléenne :**
+    - Indexation par masque booléen : ``array[array > 3]`` (Sélectionne les éléments supérieurs à 3)
 
-        .. code-block:: python
+    - Indexation par position : ``array[[0, 2, 4]]`` (Sélectionne les éléments aux indices 0, 2 et 4)
 
-            mask = array > valeur
-            filtered_array = array[mask]
-
-    - **Indexation par position :**
-
-        .. code-block:: python
-
-            indices = [0, 2, 4]
-            selected_elements = array[indices]
-
-    - **Modification via un masque :** ``array[array > valeur] = nouvelle_valeur``
+    - Modification via un masque : ``array[array > 4] = 3`` (Remplace les valeurs supérieures à 4 par 3)
 
 
-7. Génération de Nombres Aléatoires
+7. **Génération de Nombres Aléatoires**
 
-    - **Nombres aléatoires entre 0 et 1 :** ``np.random.rand(n)``
+    - Nombres aléatoires entre 0 et 1 : ``np.random.rand(n)``
 
-    - **Nombres entiers aléatoires :** ``np.random.randint(debut, fin, size)``
+    - Nombres entiers aléatoires : ``np.random.randint(debut, fin, size)``
 
-    - **Échantillonnage aléatoire :** ``np.random.choice(array, size, replace)``
+    - Échantillonnage aléatoire : ``np.random.choice(array, size, replace)``
 
-    - **Fixer la seed pour reproductibilité :** ``np.random.seed(fixed_seed)``
+    - Fixer la seed pour reproductibilité : ``np.random.seed(fixed_seed)``
 
 .. slide::
 🏋️ Exercices supplémentaires

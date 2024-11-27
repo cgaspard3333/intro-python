@@ -765,6 +765,23 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. success::
     Vous savez maintenant comment utiliser des modules intégrés et leurs fonctions afin d'enrichir vos programmes tout en apprenant à formater les dates et les nombres pour un affichage plus lisible.
 
+.. |code_struct_package| div::
+    .. code-block:: text
+        mon_package/
+        ├── __init__.py
+        ├── module1.py
+        └── module2.py
+
+.. |code_align| div::
+    .. code-block:: python
+        produit = "Pommes"
+        prix = 1.23
+        print(f"{'Produit':<10} {'Prix':>10}")
+        print(f"{produit:<10} {prix:>10.2f}")
+
+        >> Produit    Prix
+        >> Pommes     1.23
+
 .. slide::
 ✅ Récapitulatif de Chapitre
 ----------------------------
@@ -792,13 +809,7 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     - **Créer un module** : écrire des fonctions dans un fichier ``.py``.
     - **Créer un package** : dossier avec un fichier ``__init__.py`` et plusieurs modules.
         - **Structure d'un package** :
-
-        .. code-block:: text
-        
-            mon_package/
-            ├── __init__.py
-            ├── module1.py
-            └── module2.py
+            |code_struct_package|
 
     - **Utilisation de ``__init__.py``** :
         - Facilite les importations en spécifiant les modules accessibles.
@@ -815,24 +826,15 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
 5. **Affichage Avancé avec ``print()``**
     - **Formatage de chaînes** :
-        - **Opérateur ``%``** : ``"Âge : %d" % age``.
-        - **Méthode ``format()``** : ``"Âge : {}".format(age)``.
-        - **F-strings** (recommandé) : ``f"Âge : {age}"``.
+        - Opérateur ``%`` : ``"Âge : %d" % age``.
+        - Méthode ``format()`` : ``"Âge : {}".format(age)``.
+        - F-strings (recommandé) : ``f"Âge : {age}"``.
     - **Formatage de nombres** :
         - Nombre de décimales : ``f"{pi:.2f}"`` affiche ``pi`` avec 2 décimales.
     - **Alignement et Largeur** :
         - Alignement à gauche : ``<``, droite : ``>``, centré : ``^``.
         - Exemple :
-
-        .. code-block:: python
-
-            produit = "Pommes"
-            prix = 1.23
-            print(f"{'Produit':<10} {'Prix':>10}")
-            print(f"{produit:<10} {prix:>10.2f}")
-
-            >> Produit    Prix
-            >> Pommes     1.23
+            |code_align| 
 
     - **Affichage de pourcentages** :
         - ``f"{taux:.1%}"`` affiche le taux en pourcentage avec 1 décimale.
