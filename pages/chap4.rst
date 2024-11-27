@@ -767,8 +767,8 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
 .. slide::
 ✅ Récapitulatif de Chapitre
--------------------------
-.. slide::
+----------------------------
+
 1. **Modules en Python**
     - Un **module** est un fichier contenant du code Python réutilisable (fonctions, variables, classes).
     - **Importation de modules** :
@@ -780,7 +780,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
         - `random` : génération de nombres aléatoires.
         - `datetime` : manipulation de dates et heures.
 
-.. slide::
 2. **Modules Externes et `pip`**
     - `pip` est le gestionnaire de paquets Python pour installer des modules externes.
         - **Installer** un module : `pip install nom_du_module`.
@@ -789,7 +788,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     - Exemples de modules externes :
         - `numpy`, `pandas`, `matplotlib`.
 
-.. slide::
 3. **Création de Modules et Packages Personnalisés**
     - **Créer un module** : écrire des fonctions dans un fichier `.py`.
     - **Créer un package** : dossier avec un fichier `__init__.py` et plusieurs modules.
@@ -806,7 +804,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
         - Facilite les importations en spécifiant les modules accessibles.
         - Exemple : `from .module1 import fonction1`.
 
-.. slide::
 4. **Arrondi et Troncature des Nombres**
     - **Fonction `round()`** :
         - `round(nombre, n)` : arrondit à `n` décimales.
@@ -816,7 +813,6 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
         - `math.floor(x)` : arrondi à l'inférieur.
         - `math.trunc(x)` : troncature de la partie décimale.
 
-.. slide::
 5. **Affichage Avancé avec `print()`**
     - **Formatage de chaînes** :
         - **Opérateur `%`** : `"Âge : %d" % age`.
