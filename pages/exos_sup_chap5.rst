@@ -56,3 +56,31 @@ Vous devez écrire un programme en Python qui permet de résoudre ce système d�
         >> Valeur de la variable 1 : 1.00
         >> Valeur de la variable 2 : 0.77
         >> Valeur de la variable 3 : -0.69
+
+
+🍀 Exercice 17 : Jeu de la Loterie
+---------------------------------------------------------------
+
+Dans ce jeu, un joueur choisit 6 numéros distincts parmi les 49 disponibles. Une fois les numéros choisis, un tirage aléatoire de 6 numéros gagnants est effectué.
+.. step:: reset
+    Simulez le tirage des 6 numéros gagnants.
+.. step::
+    Simulez les choix de 1 000 joueurs, chacun choisissant 6 numéros distincts.
+.. step::
+    Pour chaque joueur, comparez ses numéros avec ceux du tirage gagnant et calculez combien de numéros il a correctement devinés (0, 1, 2, ... 6).
+.. step::
+    Affichez la probabilité d’obtenir 1, 2, 3, ..., 6 numéros corrects (par exemple, indiquez combien de joueurs parmi les 1000 ont obtenu 1 numéro correct, combien en ont obtenu 2 numéros, etc.)."
+
+**Exemple de résultat attendu**
+.. spoiler::
+    .. code-block:: bash
+        >> Numéros gagnants : [6, 11, 21, 33, 38, 47]
+
+        >> Résultats de la loterie :
+        >> 0 numéros corrects : 43.00%
+        >> 1 numéros corrects : 41.20%
+        >> 2 numéros corrects : 13.90%
+        >> 3 numéros corrects : 1.80%
+        >> 4 numéros corrects : 0.10%
+        >> 5 numéros corrects : 0.00%
+        >> 6 numéros corrects : 0.00%
