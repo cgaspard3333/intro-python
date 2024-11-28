@@ -747,15 +747,15 @@ ou encore
     Affichez le nombre de fichiers trouvés et leur chemin absolu.
 
 **Exemple de résultat attendu** :
-
->> Entrez l'extension de fichier à rechercher (ex. : .txt) : .txt 
->> Entrez le chemin du dossier à rechercher : .
->> 
->> Nombre de fichiers trouvés : 3
->> Fichiers trouvés :
->> /home/user/Exercice16/data/fruits_copy.txt
->> /home/user/Exercice16/data/fruits.txt
->> /home/user/Exercice16/data/logs/logs_28-11-2024.txt
+.. code-block::
+    >> Entrez l'extension de fichier à rechercher (ex. : .txt) : .txt 
+    >> Entrez le chemin du dossier à rechercher : .
+    >> 
+    >> Nombre de fichiers trouvés : 3
+    >> Fichiers trouvés :
+    >> /home/user/Exercice16/data/fruits_copy.txt
+    >> /home/user/Exercice16/data/fruits.txt
+    >> /home/user/Exercice16/data/logs/logs_28-11-2024.txt
 
 
 .. slide::
