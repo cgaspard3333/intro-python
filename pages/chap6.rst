@@ -665,9 +665,7 @@ ou encore
 
 .. step::
     Créez une fonction qui prend en paramètre le chemin d’un fichier et la liste de fruits.
-
-.. step::
-    Ajoutez chaque fruit de la liste dans le fichier, un fruit par ligne.
+    Ecrivez cette fonction tel que chaque fruit de la liste soit écrit dans le fichier, un fruit par ligne.
 
 .. step::
     Lancez votre programme et écrivez les fruits dans le fichier ``data/fruits.txt``.
@@ -723,6 +721,7 @@ ou encore
 
 .. step::
     Analysez tout le contenu du dossier pour :
+
         - Compter le nombre total de fichiers et de dossiers.
         - Afficher la taille totale des fichiers en octets.
 
@@ -747,7 +746,7 @@ ou encore
     Affichez le nombre de fichiers trouvés et leur chemin absolu.
 
 **Exemple de résultat attendu** :
-.. code-block::
+.. code-block:: text
     >> Entrez l'extension de fichier à rechercher (ex. : .txt) : .txt 
     >> Entrez le chemin du dossier à rechercher : .
     >> 
