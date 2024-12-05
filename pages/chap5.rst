@@ -477,7 +477,7 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
     Trouver la partie entière d'un array aléatoire dont les valeurs sont uniquement positives en utilisant 3 méthodes différentes.
 
 .. step::
-    Créer un array 2D de taille (6, 6) dont les valeurs de chaque lignes dont les nombres entiers allant de 0 à 5.
+    Créer un array 2D de taille (6, 6) dont les valeurs de chaque lignes sont les nombres entiers allant de 0 à 5.
 
 .. step::
     Créer une fonction qui génère des nombres aléatoires, puis l'utiliser pour générer un array de taille 10.
