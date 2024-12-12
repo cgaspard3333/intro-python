@@ -306,3 +306,35 @@ Implémentez un jeu interactif de Nim où deux joueurs (humains ou un humain con
 
         >> C'est au tour du joueur 1.
         >> Choisissez une pile (1, 2 ou 3) : 
+
+
+🌶️ Exercice 23 : Cryptage et Décryptage de messages avec Clés Multiples
+------------------------------------------------------
+
+Implémentez un programme qui permet de crypter et de décrypter des messages en utilisant différentes clés de chiffrement. Les messages cryptés et décryptés seront enregistrés dans des fichiers, et le programme proposera une gestion dynamique des clés utilisées. Le cryptage est un processus visant à rendre un message illisible afin de le protéger. Le décryptage permet de retrouver le message original grâce à une clé.
+
+Dans cet exercice, vous utiliserez essentiellement le chiffrement par décalage ASCII, une méthode où chaque caractère est décalé d'un certain nombre de positions dans la table ASCII, déterminé par une clé. Par exemple, si la clé est ``3``, le caractère ``A`` devient ``D``, et ``Z`` revient à ``C`` grâce à un effet circulaire.
+
+Votre programme doit permettre à l’utilisateur d’interagir avec les messages et les clés, et d’enregistrer les résultats dans des fichiers spécifiques. Vous devrez gérer les clés via un fichier ``cles.txt``, les messages cryptés dans ``message_crypte.txt`` et les messages décryptés dans ``message_decrypte.txt``.
+
+Le programme devra inclure les fonctionnalités suivantes :
+
+1. **Choix de l'opération** : Proposez à l'utilisateur un menu interactif lui permettant de choisir entre crypter ou décrypter un message.
+2. **Gestion des clés** : Gérez les clés de chiffrement/déchiffrement via un fichier ``cles.txt`` :
+   - Permettez d’afficher les clés disponibles.
+   - Ajoutez ou supprimez des clés dans ce fichier.
+3. **Cryptage** :
+   - L'utilisateur doit pouvoir choisir une clé pour crypter les messages contenus dans le fichier ``messages_a_crypter.txt``.
+   - Les messages cryptés seront enregistrés dans un fichier ``message_crypte.txt``.
+4. **Décryptage** :
+   - L'utilisateur doit pouvoir choisir une clé pour décrypter un fichier ``message_crypte.txt``.
+   - Si la clé utilisée est correcte, les messages originaux seront affichés et enregistrés dans ``message_decrypte.txt``.
+5. **Validation et gestion des erreurs** :
+   - Vérifiez que les clés saisies existent et que les fichiers nécessaires sont disponibles.
+6. **Fonctionnalités supplémentaires** :
+   - Proposez différents algorithmes de cryptage comme :
+     - **Chiffrement par substitution** : chaque caractère est remplacé par un autre selon une correspondance définie.
+     - **Chiffrement par transposition** : l'ordre des caractères dans le message est réorganisé selon une règle spécifique.
+     - **Chiffrement XOR** : chaque caractère est transformé en appliquant une opération logique XOR avec une clé binaire.
+     - **Chiffrement asymétrique** : utilisez une paire de clés (publique et privée) pour sécuriser les communications.
+   - Ajoutez une option pour afficher l’historique des messages cryptés et décryptés.
