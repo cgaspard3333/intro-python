@@ -338,3 +338,83 @@ Le programme devra inclure les fonctionnalités suivantes :
      - **Chiffrement XOR** : chaque caractère est transformé en appliquant une opération logique XOR avec une clé binaire.
      - **Chiffrement asymétrique** : utilisez une paire de clés (publique et privée) pour sécuriser les communications.
    - Ajoutez une option pour afficher l’historique des messages cryptés et décryptés.
+
+**Exemple de résultat attendu** :
+.. spoiler::
+    .. code-block:: text
+        >> === MENU PRINCIPAL ===
+        >> 1. Afficher les clés disponibles
+        >> 2. Ajouter une clé
+        >> 3. Supprimer une clé
+        >> 4. Crypter un message
+        >> 5. Décrypter un message
+        >> 6. Afficher l'historique
+        >> 7. Quitter
+        >> Entrez votre choix : 2
+        >> Entrez une nouvelle clé (nombre entier) : 3
+        >> Clé 3 ajoutée.
+ 
+        >> === MENU PRINCIPAL ===
+        >> 1. Afficher les clés disponibles
+        >> 2. Ajouter une clé
+        >> 3. Supprimer une clé
+        >> 4. Crypter un message
+        >> 5. Décrypter un message
+        >> 6. Afficher l'historique
+        >> 7. Quitter
+        >> Entrez votre choix : 4
+ 
+        >> Messages disponibles à crypter :
+        >> 1. Exemple de message à crypter 1
+        >> 2. Exemple de message à crypter 2
+        >> Entrez le numéro du message à crypter : 1
+ 
+        >> Clés disponibles :
+        >> 1. 3
+        >> 2. 5
+        >> 3. 3
+        >> Entrez le numéro de la clé à utiliser : 1
+ 
+        >> Choisissez le type de cryptage:
+        >> 1. Chiffrement par décalage ASCII
+        >> 2. Chiffrement par substitution
+        >> 3. Chiffrement par transposition
+        >> 4. Chiffrement XOR
+        >> 5. Chiffrement asymétrique
+        >> Entrez votre choix : 1
+        >> Message crypté enregistré dans message_crypte.txt.
+ 
+        >> === MENU PRINCIPAL ===
+        >> 1. Afficher les clés disponibles
+        >> 2. Ajouter une clé
+        >> 3. Supprimer une clé
+        >> 4. Crypter un message
+        >> 5. Décrypter un message
+        >> 6. Afficher l'historique
+        >> 7. Quitter
+        >> Entrez votre choix : 5
+ 
+        >> Clés disponibles :
+        >> 1. 3
+        >> 2. 5
+        >> 3. 3
+        >> Entrez le numéro de la clé à utiliser : 1
+ 
+        >> Choisissez le type de décryptage:
+        >> 1. Chiffrement par décalage ASCII
+        >> 2. Chiffrement par substitution
+        >> 3. Chiffrement par transposition
+        >> 4. Chiffrement XOR
+        >> Entrez votre choix : 1
+        >> Message décrypté enregistré dans message_decrypte.txt.
+ 
+        >> === MENU PRINCIPAL ===
+        >> 1. Afficher les clés disponibles
+        >> 2. Ajouter une clé
+        >> 3. Supprimer une clé
+        >> 4. Crypter un message
+        >> 5. Décrypter un message
+        >> 6. Afficher l'historique
+        >> 7. Quitter
+        >> Entrez votre choix : 7
+        >> Au revoir !
