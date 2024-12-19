@@ -25,6 +25,7 @@ La Programmation Orientée Objet (POO) est une manière de structurer un program
 - **Des données** (appelées **attributs**) : Ce que l'objet "possède".
 - **Des comportements** (appelés **méthodes**) : Ce que l'objet "fait".
 
+.. slide::
 1.2 Une analogie simple
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -36,6 +37,7 @@ Imaginons que vous construisez un jeu qui simule un zoo. Dans ce zoo :
 
 En POO, vous créez des "modèles" pour représenter ces animaux. Ces modèles sont appelés des **classes**.
 
+.. slide::
 1.3 Pourquoi utiliser la POO ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - **Modéliser des concepts réels** : Facilite la représentation d'entités du monde réel (ex. : voiture, utilisateur).
@@ -43,6 +45,7 @@ En POO, vous créez des "modèles" pour représenter ces animaux. Ces modèles s
 - **Modularité** : Le code est plus organisé et facile à comprendre.
 - **Évolutivité** : Plus simple à maintenir et à étendre.
 
+.. slide::
 📖 2. Les concepts de base de la POO
 ---------------------------------
 
@@ -54,6 +57,7 @@ Une **classe** est un **modèle** ou un **plan** pour créer des objets. Par exe
 .. note::
 Un **objet** est une **instance** de cette classe. Par exemple, "Léo le lion" est un objet de la classe "Animal".
 
+.. slide::
 2.2 Attributs et méthodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
@@ -65,6 +69,7 @@ Les **méthodes** sont des **fonctions** définies dans une classe, qui décrive
 .. warning::
 Ex. : Manger, dormir ou rugir pour un animal.
 
+.. slide::
 📖 3. Première classe et premier objet
 -----------------------------------
 
@@ -79,6 +84,7 @@ En Python, une classe est définie avec le mot-clé ``class``. Voici un exemple 
         class Animal:
             pass  # Pour l'instant, la classe est vide
 
+.. slide::
 3.2 Créer un objet
 ~~~~~~~~~~~~~~~~~~
 Une fois la classe définie, vous pouvez créer un **objet** (ou **instance**) de cette classe en l’appelant comme une fonction.
@@ -93,6 +99,7 @@ Une fois la classe définie, vous pouvez créer un **objet** (ou **instance**) d
         
         >> <__main__.Animal object at 0x...>
 
+.. slide::
 3.3 Ajouter des attributs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Pour ajouter des **attributs** à un objet, on peut les affecter directement après la création de l'objet.
@@ -108,6 +115,7 @@ Pour ajouter des **attributs** à un objet, on peut les affecter directement apr
         print(f"Nom : {mon_animal.nom}, Âge : {mon_animal.age}")
         >> Nom : Léo, Âge : 5
 
+.. slide::
 3.4 Ajouter un constructeur pour initialiser les attributs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Au lieu d’ajouter les attributs un par un, vous pouvez utiliser une méthode spéciale appelée **constructeur** pour les définir automatiquement à la création de l’objet. En Python, cette méthode est ``__init__``.
@@ -126,6 +134,7 @@ Au lieu d’ajouter les attributs un par un, vous pouvez utiliser une méthode s
         print(f"Nom : {mon_animal.nom}, Âge : {mon_animal.age}")
         >> Nom : Léo, Âge : 5
 
+.. slide::
 3.5 Ajouter des méthodes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Les **méthodes** sont des fonctions définies dans une classe qui décrivent les **actions d'un objet**. Elles utilisent toujours ``self`` comme premier paramètre pour accéder aux attributs de l'objet.
@@ -147,6 +156,7 @@ Les **méthodes** sont des fonctions définies dans une classe qui décrivent le
         mon_animal.parler()
         >> Léo fait un bruit.
 
+.. slide::
 .. warning::
     Exemple complet :
     .. code-block:: python
@@ -173,7 +183,7 @@ Les **méthodes** sont des fonctions définies dans une classe qui décrivent le
         >> Je suis Léo, un lion de 5 ans.
         >> Mimi est en train de manger.
 
-
+.. slide::
 📖 4. Les propriétés d'instance et l’attribut `self`
 -------------------------------------------------
 
@@ -203,6 +213,7 @@ Dans une méthode d’une classe, le mot-clé ``self`` est une référence à l'
         >> Mimi fait un bruit.
         # Ici, "chat" est passé automatiquement à la méthode comme self.
 
+.. slide::
 4.2 Différence entre attributs d'instance et attributs locaux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Un **attribut d’instance** est lié à l’objet (avec ``self.nom``). Il est accessible dans toutes les méthodes de l'objet.
@@ -228,8 +239,7 @@ Un **attribut local** est une variable définie à l’intérieur d’une métho
         print(attribut_local)  
         # Erreur : attribut_local n'existe pas en dehors de la méthode.
 
----
-
+.. slide::
 📖 5. Méthodes spéciales : ``__str__`` pour personnaliser l'affichage
 ---------------------------------------------------------------
 
@@ -260,7 +270,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
 - Faciliter le débogage et l’affichage des informations.
 
 
-
+.. slide::
 📖 6. Variables et méthodes de classe
 ---------------------------------------------
 
@@ -294,6 +304,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
         >> 2
         >> 2
 
+.. slide::
 6.2 Méthodes de classe
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
@@ -322,6 +333,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
         >> Population totale : 0
         >> Population totale : 1
 
+.. slide::
 📖 7. Héritage
 --------------
 
@@ -330,6 +342,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
 .. note::
     L’**héritage** permet de créer une nouvelle classe (appelée **classe enfant**) à partir d’une classe existante (appelée **classe parent**). La classe enfant hérite des attributs et méthodes de la classe parent, mais peut aussi ajouter ou modifier des fonctionnalités.
 
+.. slide::
 7.2 Exemple simple d’héritage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Imaginons une classe parent `Animal` et une classe enfant `Chien`.
@@ -360,7 +373,8 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
         >> Léo fait un bruit.
         >> Rex aboie.
 
-✏️ Exercice 17 : Créer une classe Personne
+.. slide::
+✏️ Exercice 17 : Classe Personne
 ------------------------------------------
 
 .. step:: reset
@@ -374,6 +388,7 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Créez un objet et affichez un message indiquant si la personne est majeure.
 
+.. slide::
 ✏️ Exercice 18 : Classe Voiture
 -------------------------------
 
@@ -390,6 +405,7 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Affichez la distance totale parcourue après plusieurs appels à ``avancer``.
 
+.. slide::
 ✏️ Exercice 19 : Gestion d’une bibliothèque
 ---------------------------------------------
 
@@ -403,6 +419,7 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Testez en créant plusieurs livres et en appelant ces méthodes.
 
+.. slide::
 ✏️ Exercice 20 : Classe Compte Bancaire
 ----------------------------------------
 
@@ -420,7 +437,8 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Testez la classe avec plusieurs opérations.
 
-✏️ Exercice 21 : Classe ``Employe`` avec variable de classe
+.. slide::
+✏️ Exercice 21 : Classe Employe avec variable de classe
 ----------------------------------------
 
 .. step:: reset
@@ -434,6 +452,7 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Créez plusieurs employés et utilisez la méthode pour afficher le nombre total d’employés créés.
 
+.. slide::
 ✏️ Exercice 22 : Usine de jouets
 --------------------------------
 
