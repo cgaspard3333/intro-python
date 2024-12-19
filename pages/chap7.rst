@@ -390,7 +390,7 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 .. step::
     Affichez la distance totale parcourue après plusieurs appels à ``avancer``.
 
-✏️ Exercice 19 : Gestion d’une bibliothèque**
+✏️ Exercice 19 : Gestion d’une bibliothèque
 ---------------------------------------------
 
 .. step:: reset
