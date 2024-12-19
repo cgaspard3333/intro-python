@@ -12,10 +12,10 @@ Chapitre 2 - Conditions et boucles
 
 .. slide::
 
-📖 Les conditions (Structures de décision)
+📖 1. Les conditions (Structures de décision)
 --------------
 
-Principe des conditions
+1.1 Principe des conditions
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Les structures conditionnelles permettent de prendre des décisions dans un programme. En fonction de certaines conditions, différentes parties du code peuvent être exécutées.
@@ -42,7 +42,7 @@ Les structures conditionnelles permettent de prendre des décisions dans un prog
 
 .. slide::
 
-Opérateurs de comparaison
+1.2 Opérateurs de comparaison
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Les opérateurs de comparaison permettent de comparer deux valeurs. Ils sont utilisés dans les conditions pour vérifier si une condition est vraie ou fausse :
@@ -68,7 +68,7 @@ Les opérateurs de comparaison permettent de comparer deux valeurs. Ils sont uti
 
 .. slide::
 
-Opérateurs logiques
+1.3 Opérateurs logiques
 ~~~~~~~~~~~~~~~~~~~
 
 On peut combiner plusieurs conditions grâce aux opérateurs logiques :
@@ -213,10 +213,10 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 
 .. slide::
     
-📖 Les boucles (Structures itératives)
+📖 2. Les boucles (Structures itératives)
 -----------
 
-La boucle ``for``
+2.1 La boucle ``for``
 ~~~~~~~~~~~~~~~~~
 
 La boucle ``for`` permet de répéter un bloc de code un nombre déterminé de fois. Elle est souvent utilisée pour parcourir des séquences (listes, chaînes de caractères, etc.)
@@ -237,7 +237,7 @@ La boucle ``for`` permet de répéter un bloc de code un nombre déterminé de f
 
 .. slide::
 
-La boucle ``while``
+2.2 La boucle ``while``
 ~~~~~~~~~~~~~~~~~~~
 
 La boucle ``while`` exécute un bloc de code tant qu’une condition est vraie. 
@@ -262,7 +262,7 @@ La boucle ``while`` exécute un bloc de code tant qu’une condition est vraie.
 
 .. slide::
 
-Boucle infinie et sortie de boucle
+2.3 Boucle infinie et sortie de boucle
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Une boucle infinie se produit quand la condition de sortie n’est jamais atteinte. Cela peut bloquer l’exécution du programme.

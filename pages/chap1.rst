@@ -14,7 +14,7 @@ Chapitre 1 - Comprendre les bases
 
 .. slide::
 
-📖 Environnement de développement
+📖 1. Environnement de développement
 -----------------------------
 
 Pour coder en Python, il est nécessaire d'avoir un environnement de développement. Il existe plusieurs IDE (Integrated Development Environment) pour développer en Python. Parmi les plus connus, on peut citer :
@@ -31,7 +31,7 @@ Lors de ce cours, nous utiliserons **Visual Studio Code** du fait de sa simplici
 
 .. slide::
 
-Interface de Visual Studio Code
+1.1 Interface de Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. _vscode_interface:
 .. center::
@@ -41,7 +41,7 @@ Interface de Visual Studio Code
 
 .. slide::
 
-📖 Qu'est ce que Python ?
+📖 2. Qu'est ce que Python ?
 -----------------------------
 
 Python est un langage de programmation : 
@@ -61,10 +61,10 @@ Il est populaire pour sa simplicité et sa lisibilité et il est majoritairement
 
 .. slide::
 
-📖 Premiers pas avec Python
+📖 3. Premiers pas avec Python
 -----------------------------
 
-Les commentaires
+3.1 Les commentaires
 ~~~~~~~~~~~~~~~~
 
 Un commentaire est une ligne de texte qui n’est pas exécutée par l’interpréteur. Il sert à documenter le code.
@@ -100,7 +100,7 @@ Un commentaire multi-lignes s'écrit avec des triples guillemets ``"""``.
 
 .. slide::
 
-Les variables
+3.2 Les variables
 ~~~~~~~~~~~~~
 
 Une variable est un espace de stockage qui permet de conserver dans le temps les données d'un programme (texte, nombre, liste, etc.) en la stockant dans la mémoire de l'ordinateur.
@@ -126,7 +126,7 @@ La variable possède **un nom**, **un type** et **une valeur**. (Nous verrons le
 
 .. slide::
 
-Affichage des données
+3.3 Affichage des données
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pour afficher des données à l'écran, on utilise la fonction ``print()``.
@@ -162,7 +162,7 @@ On peut aussi afficher plusieurs éléments en les séparant par des virgules.
 
 .. slide::
 
-Les types de données de base
+3.4 Les types de données de base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Python possède plusieurs types de données courants : 
@@ -200,7 +200,7 @@ En informatique, les nombres décimaux sont souvent représentés en nombre à *
 
 .. slide::
 
-Les opérateurs arithmétiques
+3.5 Les opérateurs arithmétiques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Python permet de faire des opérations mathématiques de base :
@@ -242,7 +242,7 @@ Python permet de faire des opérations mathématiques de base :
 .. slide::
 
 
-Les opérateurs d'affectation
+3.6 Les opérateurs d'affectation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Vous connaissait déjà l'opérateur d'affectation ``=`` qui permet d'assigner une valeur à une variable.

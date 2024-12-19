@@ -13,19 +13,19 @@ Chapitre 6 - Manipulation de fichiers et de données textuelles
 
 
 .. slide::
-📖 Arborescence des fichiers et dossiers
+📖 1. Arborescence des fichiers et dossiers
 -----------------------
 
-Qu’est-ce qu’une arborescence de fichiers ?
+1.1 Qu’est-ce qu’une arborescence de fichiers ?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 L’arborescence des fichiers est une organisation hiérarchique des fichiers et dossiers (ou répertoires) sur un système de fichiers. Chaque fichier ou dossier a une position unique dans cette hiérarchie, appelée **chemin**.
 
 .. slide::
-Chemin absolu vs chemin relatif
+1.2 Chemin absolu vs chemin relatif
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Chemin absolu**  
+**1.2.1 Chemin absolu**  
 Il commence à partir de la racine du système (``/`` sous Linux/macOS ou une lettre de disque sous Windows, comme ``C:\``).
 
 .. warning::
@@ -34,7 +34,7 @@ Il commence à partir de la racine du système (``/`` sous Linux/macOS ou une le
     - ``C:\Users\John\Documents\mon_fichier.txt`` sous Windows.
     - ``/home/john/Documents/mon_fichier.txt`` sous Linux.
 
-**Chemin relatif**  
+**1.2.2 Chemin relatif**  
 Il est relatif à un dossier de travail (ou répertoire courant).
 
 .. note::
@@ -49,7 +49,7 @@ Il est relatif à un dossier de travail (ou répertoire courant).
     - Le point ``.`` signifie le dossier courant.
 
 .. slide::
-Naviguer dans l’arborescence avec Python
+1.3 Naviguer dans l’arborescence avec Python
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Python propose le module ``os`` pour manipuler les fichiers et répertoires, et le module ``pathlib`` pour gérer les chemins de manière plus intuitive.
@@ -72,7 +72,7 @@ Nous considérons dans cette partie du cours une arborescence de fichiers/dossie
 Le répertoire de travail (ou dossier courant) sera ici ``mon_projet/``.
 
 .. slide::
-**Lister des fichiers et dossiers**
+**1.3.1 Lister des fichiers et dossiers**
 
 Pour lister les fichiers et dossiers dans un répertoire, on peut utiliser la fonction ``os.listdir()`` ou la méthode ``iterdir()`` de l’objet ``Path``.
 
@@ -108,7 +108,7 @@ Pour lister les fichiers et dossiers dans un répertoire, on peut utiliser la fo
         >> utils
 
 .. slide::
-**Changer de répertoire et vérifier le répertoire courant**
+**1.3.2 Changer de répertoire et vérifier le répertoire courant**
 
 Pour changer de répertoire, on peut utiliser la fonction ``os.chdir()`` ou la méthode ``chdir()`` de l’objet ``Path``.
 
@@ -147,7 +147,7 @@ Pour changer de répertoire, on peut utiliser la fonction ``os.chdir()`` ou la m
             # Chemin absolu du répertoire courant
 
 .. slide::
-**Verifier l'existence d'un fichier ou d'un dossier**
+**1.3.3 Verifier l'existence d'un fichier ou d'un dossier**
 
 Pour vérifier l'existence d'un fichier ou d'un dossier, on peut utiliser la fonction ``os.path.exists()`` ou la méthode ``exists()`` de l’objet ``Path``.
 
@@ -178,7 +178,7 @@ Pour vérifier l'existence d'un fichier ou d'un dossier, on peut utiliser la fon
         >> Le fichier existe : True
 
 .. slide::
-**Créer un nouveau dossier**
+**1.3.4 Créer un nouveau dossier**
 
 Pour créer un nouveau dossier, on peut utiliser la fonction ``os.mkdir()`` ou la méthode ``mkdir()`` de l’objet ``Path``.
 
@@ -219,7 +219,7 @@ Pour créer un nouveau dossier, on peut utiliser la fonction ``os.mkdir()`` ou l
         └── nouveau_dossier/         # Nouveau dossier créé
 
 .. slide::
-**Supprimer un fichier ou un dossier**
+**1.3.5 Supprimer un fichier ou un dossier**
 
 Pour supprimer un fichier ou un dossier, on peut utiliser :
     - la fonction ``os.remove()`` ou la méthode ``unlink()`` de l’objet ``Path`` pour les **fichiers**,
@@ -285,10 +285,10 @@ Pour supprimer un fichier ou un dossier, on peut utiliser :
         └── utils/                  # Répertoire pour les fonctions utilitaires
 
 .. slide::
-📖 Manipulation de fichiers textuels
+📖 2. Manipulation de fichiers textuels
 -----------------------
 
-Pourquoi manipuler des fichiers avec Python ?
+2.1 Pourquoi manipuler des fichiers avec Python ?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Les fichiers sont une méthode essentielle pour stocker et récupérer des données dans des programmes. Les fichiers texte, en particulier, sont utilisés pour :
@@ -309,10 +309,10 @@ Le contenu du fichier ``input.txt`` est le suivant :
     Un écho binaire tisse l'infini.
 
 .. slide::
-Ouverture et fermeture d’un fichier
+2.2 Ouverture et fermeture d’un fichier
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Ouverture d'un fichier**
+**2.2.1 Ouverture d'un fichier**
 
 La fonction ``open()`` est utilisée pour ouvrir un fichier en Python. Elle retourne un objet fichier qui permet d’effectuer des opérations (lecture, écriture, etc.).
 
@@ -329,7 +329,7 @@ La fonction ``open()`` est utilisée pour ouvrir un fichier en Python. Elle reto
     * ``'t'`` : Mode texte (par défaut).
 
 .. slide::
-**Fermeture d’un fichier**
+**2.2.2 Fermeture d’un fichier**
 
 Il est important de fermer un fichier après utilisation pour libérer les ressources système. Pour cela, utilisez la méthode ``close()``.
 
@@ -344,7 +344,7 @@ Il est important de fermer un fichier après utilisation pour libérer les resso
     # Le fichier est fermé et les ressources libérées
 
 .. slide::
-**Bonnes pratiques avec ``with``**
+**2.2.3 Bonnes pratiques avec ``with``**
 
 Il est recommandé d’utiliser une structure ``with`` pour garantir que le fichier est correctement fermé après utilisation. 
 
@@ -360,10 +360,10 @@ Il est recommandé d’utiliser une structure ``with`` pour garantir que le fich
         # Le fichier est automatiquement fermé à la fin du bloc with
 
 .. slide::
-Lire un fichier
+2.3 Lire un fichier
 ~~~~~~~~~~~~~~~
 
-**Lecture complète**
+**2.3.1 Lecture complète**
 
 La méthode ``read()`` permet de lire tout le contenu d’un fichier en une seule fois.
 
@@ -381,7 +381,7 @@ La méthode ``read()`` permet de lire tout le contenu d’un fichier en une seul
         >> Un écho binaire tisse l'infini.
 
 .. slide::
-**Lecture ligne par ligne**
+**2.3.2 Lecture ligne par ligne**
 
 Pour lire un fichier ligne par ligne, utilisez la méthode ``readline()`` ou itérez sur l’objet fichier.
 
@@ -413,7 +413,7 @@ Pour lire un fichier ligne par ligne, utilisez la méthode ``readline()`` ou it�
         >> Un écho binaire tisse l'infini.
         
 .. slide::
-**Lecture en tant que liste**
+**2.3.3 Lecture en tant que liste**
 
 La méthode ``readlines()`` lit tout le contenu et retourne une liste où chaque élément est une ligne du fichier.
 
@@ -433,10 +433,10 @@ La méthode ``readlines()`` lit tout le contenu et retourne une liste où chaque
     Il permet d'**indiquer au système d’exploitation la fin de la ligne**.
 
 .. slide::
-Écrire dans un fichier
+2.4 Écrire dans un fichier
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Écriture complète en écrasant le contenu existant**
+**2.4.1 Écriture complète en écrasant le contenu existant**
 
 Utilisez le mode ``'w'`` pour écrire dans un fichier ainsi que la méthode ``write()``. Attention, cela écrase le contenu existant.
 
@@ -461,7 +461,7 @@ Utilisez le mode ``'w'`` pour écrire dans un fichier ainsi que la méthode ``wr
         >> Hello, World!
 
 .. slide::
-**Écriture en ajoutant du contenu à la fin**
+**2.4.2 Écriture en ajoutant du contenu à la fin**
 
 Utilisez le mode ``'a'`` pour ajouter du contenu à un fichier existant sans écraser son contenu.
 
@@ -482,7 +482,7 @@ Utilisez le mode ``'a'`` pour ajouter du contenu à un fichier existant sans éc
         >> Nouvelle ligne
 
 .. slide::
-Bonnes pratiques pour la lecture et l'écriture de fichiers textuels
+2.5 Bonnes pratiques pour la lecture et l'écriture de fichiers textuels
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pour éviter les erreurs, vérifiez si un fichier existe avant de le lire ou de l'écrire

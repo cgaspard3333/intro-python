@@ -11,10 +11,10 @@ Chapitre 5 - Introduction à ``numpy``
     - Apprendre à créer et manipuler des tableaux (ou arrays) de données, à effectuer des opérations mathématiques efficaces et à utiliser des fonctions puissantes de numpy.
 
 .. slide::
-📖 Le package ``numpy``
+📖 1. Le package ``numpy``
 -----------------------
 
-Qu'est-ce que ``numpy`` ?
+1.1 Qu'est-ce que ``numpy`` ?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
@@ -27,7 +27,7 @@ Les avantages de numpy incluent :
 - **Large écosystème** : Utilisé par d’autres bibliothèques comme pandas, scipy, scikit-learn.
 
 .. slide::
-Installation de ``numpy``
+1.2 Installation de ``numpy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Si numpy n’est pas déjà installé, vous pouvez l’installer via ``pip`` :
@@ -41,14 +41,14 @@ Une fois installé, il est courant de l’importer avec l’abréviation ``np`` 
     import numpy as np
 
 .. slide::
-Les tableaux ``numpy``
+1.3 Les tableaux ``numpy``
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Contrairement aux listes Python, les arrays ``numpy`` sont optimisés pour contenir des données de même type (typiquement des nombres) et permettent des opérations mathématiques efficaces.
 Un array numpy peut être un tableau 1D (vecteur/liste), un tableau 2D (matrice) ou un tableau de dimensions supérieures.
 
-**Créer un tableau ``numpy``**  
-*A) A partir d'une liste Python*  
+**1.3.1 Créer un tableau ``numpy``**  
+*1.3.1.1 A partir d'une liste Python*  
 
 .. warning::
     Exemple :
@@ -74,7 +74,7 @@ Un array numpy peut être un tableau 1D (vecteur/liste), un tableau 2D (matrice)
         >> [4 5 6]]
 
 .. slide::
-*B) Avec des fonctions prédéfinies*  
+*1.3.1.2 Avec des fonctions prédéfinies*  
 
 - ``np.zeros((n, m))`` : Crée un tableau rempli de zéros de taille ``n x m``.
 - ``np.ones((n, m))`` : Crée un tableau rempli de uns de taille ``n x m``.
@@ -97,7 +97,7 @@ Un array numpy peut être un tableau 1D (vecteur/liste), un tableau 2D (matrice)
         print("Tableau avec linspace :", linspace_array)
 
 .. slide::
-**Accéder aux éléments d'un tableau**
+**1.3.2 Accéder aux éléments d'un tableau**
 
 Pour accéder aux éléments d'un tableau numpy, on utilise des indices entre crochets. Les indices commencent à 0 et peuvent être négatifs pour accéder aux éléments à partir de la fin.
 
@@ -115,12 +115,12 @@ L’accès aux éléments dans un array numpy est similaire aux listes Python, m
         >> [3, 6, 9]
 
 .. slide::
-Opérations mathématiques avec ``numpy``
+1.4 Opérations mathématiques avec ``numpy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``numpy`` permet d’effectuer des opérations mathématiques de manière vectorisée, ce qui signifie que les opérations s’appliquent directement sur tous les éléments d’un array sans besoin de boucles explicites.
 
-**Opérations élémentaires**
+**1.4.1 Opérations élémentaires**
 Les opérations comme l’addition, la soustraction, la multiplication, la division s'appliquent directement sur les arrays.
 
 .. warning::
@@ -141,7 +141,7 @@ Les opérations comme l’addition, la soustraction, la multiplication, la divis
         >> Division : [0.25 0.4  0.5 ]
 
 .. slide::
-**Opérations mathématiques avancées**
+**1.4.2 Opérations mathématiques avancées**
 numpy propose une large gamme de fonctions mathématiques pour des calculs avancés.
 
 - **Exponentielle** : ``np.exp(array)``
@@ -166,7 +166,7 @@ numpy propose une large gamme de fonctions mathématiques pour des calculs avanc
         >> Puissance : [1 4 9]
 
 .. slide::
-Fonctions d'agrégation
+1.5 Fonctions d'agrégation
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Les fonctions d'agrégation de ``numpy`` permettent de calculer des statistiques de base sur les arrays.
@@ -194,12 +194,12 @@ Ces fonctions peuvent également être appliquées sur des tableaux multidimensi
         print("Somme par ligne :", np.sum(array, axis=1))    # Somme par ligne
 
 .. slide::
-Manipulation de la forme des arrays
+1.6 Manipulation de la forme des arrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``numpy`` propose des outils puissants pour manipuler et changer la forme des arrays sans modifier leurs données.
 
-**Changer la forme d'un array avec reshape**
+**1.6.1 Changer la forme d'un array avec reshape**
 
 La fonction ``reshape`` permet de redimensionner un array tout en conservant les mêmes données.
 
@@ -214,7 +214,7 @@ La fonction ``reshape`` permet de redimensionner un array tout en conservant les
         >> [4 5 6]]
 
 .. slide::
-**Aplatir un array multidimensionnel avec ``flatten``**
+**1.6.2 Aplatir un array multidimensionnel avec ``flatten``**
 
 La fonction ``flatten`` transforme un array multidimensionnel en un array 1D.
 
@@ -228,7 +228,7 @@ La fonction ``flatten`` transforme un array multidimensionnel en un array 1D.
         >> [1 2 3 4 5 6]
 
 .. slide::
-**Concaténer des arrays avec ``concatenate``**
+**1.6.3 Concaténer des arrays avec ``concatenate``**
 
 La fonction ``concatenate`` permet de concaténer des arrays le long d'un axe donné.
 
@@ -263,12 +263,12 @@ La fonction ``concatenate`` permet de concaténer des arrays le long d'un axe do
         >> [1 2 3 4 5 6]
 
 .. slide::
-Indexation et filtrage avancés
+1.7 Indexation et filtrage avancés
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``numpy`` offre des fonctionnalités avancées pour sélectionner des éléments spécifiques dans un array en fonction de certaines conditions.
 
-**Indexation par masque booléen**
+**1.7.1 Indexation par masque booléen**
 
 L'indexation par masque booléen permet de sélectionner des éléments d'un array en fonction d'une condition donnée.
 
@@ -284,7 +284,7 @@ L'indexation par masque booléen permet de sélectionner des éléments d'un arr
         >> [4 5 6]
 
 .. slide::
-**Indexation par position**
+**1.7.2 Indexation par position**
 
 On peut sélectionner plusieurs éléments en utilisant des listes d'indices.
 
@@ -299,7 +299,7 @@ On peut sélectionner plusieurs éléments en utilisant des listes d'indices.
         >> [10 30 50]
 
 .. slide::
-**Modification d'élements via un masque**
+**1.7.3 Modification d'élements via un masque**
 
 On peut également modifier les valeurs d'un array en utilisant un masque booléen.
 
@@ -324,12 +324,12 @@ On peut également modifier les valeurs d'un array en utilisant un masque boolé
         >> [8 0 6 1 0]
     
 .. slide::
-Génération de nombres aléatoires avec ``numpy``
+1.8 Génération de nombres aléatoires avec ``numpy``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``numpy`` propose des fonctions pour générer des nombres aléatoires selon différentes distributions.
 
-**Nombres aléatoires entre 0 et 1**
+**1.8.1 Nombres aléatoires entre 0 et 1**
 
 ``np.random.rand()`` génère des nombres aléatoires à virgule flottante entre 0 et 1.
 
@@ -344,7 +344,7 @@ Génération de nombres aléatoires avec ``numpy``
         >> [0.572 0.832 0.453 0.271 0.928]
 
 .. slide::
-**Nombres aléatoires entiers**
+**1.8.2 Nombres aléatoires entiers**
 
 ``np.random.randint(start, stop, size)`` génère des nombres entiers aléatoires entre ``start`` (inclus) et ``stop`` (exclus), avec la taille spécifiée.
 
@@ -360,7 +360,7 @@ Génération de nombres aléatoires avec ``numpy``
         >> [2 6 9]]
 
 .. slide::
-**Echantillonage aléatoire**
+**1.8.3 Echantillonage aléatoire**
 
 ``np.random.choice(array, size, replace)`` permet de tirer aléatoirement des éléments d'un array avec l'array de départ (``array``), la taille de l'échantillon (``size``) et si les éléments peuvent être tirés plusieurs fois (``replace=True``).
 
@@ -378,7 +378,7 @@ Génération de nombres aléatoires avec ``numpy``
         >> [3 1 5]
 
 .. slide::
-**Graine aléatoire (seed)**
+**1.8.4 Graine aléatoire (seed)**
 
 Lorsque vous utilisez des fonctions de génération de nombres aléatoires (comme celles de ``numpy`` ou celle du module ``random``), les valeurs générées changent à chaque exécution du programme. Cependant, il peut être utile de contrôler la génération aléatoire pour reproduire des résultats identiques lors de tests ou de simulations. Cela est possible grâce à une seed (ou graine).
 

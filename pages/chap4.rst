@@ -13,16 +13,16 @@ Chapitre 4 - Modules, Affichage avancé
     - Apprendre à arrondir et tronquer des nombres pour un affichage plus lisible.
 
 .. slide::
-📖 Les modules
+📖 1. Les modules
 --------------
 
-Qu'est-ce qu'un module ?
+1.1 Qu'est-ce qu'un module ?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Un module est un fichier contenant des **définitions de fonctions**, **variables** ou **classes**, qui peuvent être réutilisées dans d'autres fichiers. Python possède de nombreux modules intégrés (comme ``math``, ``random``, ``datetime``), mais vous pouvez également créer vos propres modules.
 
 .. slide::
-Importer un module
+1.2 Importer un module
 ~~~~~~~~~~~~~~~~~~
 
 Pour utiliser un module, on l'importe dans le programme avec l'instruction ``import``. 
@@ -61,7 +61,7 @@ On peut aussi renommer un module ou une fonction importée pour simplifier son u
         >> 6.0
 
 .. slide::
-Modules intégrés
+1.3 Modules intégrés
 ~~~~~~~~~~~~~~~~
 
 Python possède de nombreux modules intégrés qui permettent d'ajouter des fonctionnalités à vos programmes. Voici quelques exemples de modules couramment utilisés :
@@ -102,7 +102,7 @@ Python possède de nombreux modules intégrés qui permettent d'ajouter des fonc
         >> 2021-09-15 15:30:00.000000
 
 .. slide::
-Installer des modules externes
+1.4 Installer des modules externes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 En plus des modules intégrés à Python, il existe de nombreux modules créés par la communauté, disponibles sur le Python Package Index (PyPI). Ces modules peuvent être installés pour étendre les capacités de Python, par exemple pour des applications de data science, de développement web, de visualisation de données, etc.
@@ -134,7 +134,7 @@ Ou le désinstaller avec la commande suivante :
 
 
 .. slide::
-Créer et utiliser ses propres modules
+1.5 Créer et utiliser ses propres modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Vous pouvez créer vos propres modules en enregistrant des fonctions dans un fichier .py, puis en les important dans un autre fichier.
@@ -176,10 +176,10 @@ Vous pouvez créer vos propres modules en enregistrant des fonctions dans un fic
 
 
 .. slide::
-📖 Notion de package/bibliothèque
+📖 2. Notion de package/bibliothèque
 ------------------------------
 
-Qu'est-ce qu'un package ?
+2.1 Qu'est-ce qu'un package ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
@@ -188,7 +188,7 @@ Qu'est-ce qu'un package ?
 En Python, un package est simplement un dossier contenant des modules (fichiers ``.py``) et un fichier spécial nommé ``__init__.py``, qui permet à Python de reconnaître le dossier comme un package.
 
 .. slide::
-Structure d'un package
+2.2 Structure d'un package
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Voici un exemple de structure de package avec un dossier ``mon_projet`` qui contient un package ``calculs``, avec deux modules ``operations.py`` et ``statistiques.py`` :
@@ -206,10 +206,10 @@ Voici un exemple de structure de package avec un dossier ``mon_projet`` qui cont
 ``__init__.py ``: Ce fichier peut être vide, mais il doit exister pour que Python reconnaisse le dossier comme un package. Il est possible d’y inclure du code pour initialiser le package ou pour spécifier des modules spécifiques qui seront accessibles directement depuis le package.
 
 .. slide::
-Créer et utiliser un package
+2.3 Créer et utiliser un package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Création d'un package**
+**2.3.1 Création d'un package**
 
 Supposons que nous souhaitons créer un package ``calculs`` pour regrouper des fonctions mathématiques de base et des fonctions de statistiques.
 
@@ -235,7 +235,7 @@ On commence par créer un dossier ``calculs`` dans lequel se trouve un fichier `
             return sum((x - m) ** 2 for x in liste) / len(liste)
 
 .. slide::
-**Importer des modules depuis un package**
+**2.3.2 Importer des modules depuis un package**
 
 Dans le fichier principal (``main.py``), on peut maintenant importer les fonctions des modules ``operations`` et ``statistiques`` du package ``calculs``.
 
@@ -256,7 +256,7 @@ Dans le fichier principal (``main.py``), on peut maintenant importer les fonctio
         print("Moyenne des valeurs :", resultat_moyenne)
 
 .. slide::
-**Utiliser ``__init__.py`` pour simplifier les imports**
+**2.3.3 Utiliser ``__init__.py`` pour simplifier les imports**
 
 Le fichier ``__init__.py`` permet de définir ce qui sera accessible directement depuis le package. Par exemple, si vous voulez que l’on puisse accéder à ``addition`` et ``moyenne`` directement via le package ``calculs``, ajoutez ces importations dans ``__init__.py``.
 
@@ -440,11 +440,11 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
     Vous savez maintenant créer et utiliser des packages pour organiser vos programmes, ainsi que des modules pour regrouper des fonctions liées. Vous avez également appris à importer des modules externes et à les utiliser dans vos programmes.
 
 .. slide::
-📖 Approximer des nombres
+📖 3. Approximer des nombres
 -------------------------
 Les nombres en Python peuvent être affichés avec une précision contrôlée. Cela est utile pour afficher des nombres décimaux de manière cohérente, par exemple avec deux chiffres après la virgule.
 
-La fonction ``round()``
+3.1 La fonction ``round()``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 La fonction round() permet d’arrondir un nombre à un nombre de décimales précisé.
@@ -468,7 +468,7 @@ Si le nombre de décimales n’est pas précisé, round() arrondit à l’entier
         >> 3
 
 .. slide::
-Les approximations avec le module ``math``
+3.2 Les approximations avec le module ``math``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pour arrondir ou tronquer un nombre sans spécifier le nombre de décimales, Python offre plusieurs fonctions dans le module math :
@@ -503,10 +503,10 @@ Pour les nombres négatifs, la différence entre ``math.floor()`` et ``math.trun
         print(math.trunc(nombre_negatif))  # Sortie : -3 (troncature sans arrondi)
 
 .. slide::
-📖 Affichage avancé avec la fonction ``print()``
+📖 4. Affichage avancé avec la fonction ``print()``
 ------------------------------------------------
 
-Rappels de base de la fonction ``print()``
+4.1 Rappels de base de la fonction ``print()``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 La fonction ``print()`` permet d'afficher des données à l'écran. Par défaut, elle prend en entrée un ou plusieurs éléments séparés par des virgules et les affiche de manière consécutive, séparés par un espace.
@@ -520,10 +520,10 @@ La fonction ``print()`` permet d'afficher des données à l'écran. Par défaut,
         >> Nom : Alice - Age : 25
 
 .. slide::
-Formatage des chaînes de caractères
+4.2 Formatage des chaînes de caractères
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**L'opérateur de formatage ``%``**
+**4.2.1 L'opérateur de formatage ``%``**
 
 Python permet de formater les chaînes avec l'opérateur ``%``, en précisant le type de variable que l’on souhaite insérer (par exemple ``%s`` pour ``str``, ``%d`` pour ``int``, ``%f`` pour ``float``).
 
@@ -536,7 +536,7 @@ Python permet de formater les chaînes avec l'opérateur ``%``, en précisant le
         >> Nom : Alice - Age : 25
 
 .. slide::
-**La méthode ``format()``**
+**4.2.2 La méthode ``format()``**
 
 La méthode ``format()`` permet de spécifier des emplacements ``{}`` où les valeurs seront insérées dans la chaîne de caractères.
 
@@ -559,7 +559,7 @@ On peut également spécifier l'ordre des valeurs à insérer en utilisant des i
         >> Age : 25 - Nom : Alice
 
 .. slide::
-**Les f-strings (``f''``)**
+**4.2.3 Les f-strings (``f''``)**
 
 Les f-strings permettent de mettre des variables directement dans la chaîne en ajoutant un f avant les guillemets. 
 .. note::
@@ -574,12 +574,12 @@ Les f-strings permettent de mettre des variables directement dans la chaîne en 
         >> Nom : Alice - Age : 25
 
 .. slide::
-Formatage de nombres flottants
+4.3 Formatage de nombres flottants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Avec le formatage avancé de ``print()``, on peut contrôler précisément l'affichage des nombres décimaux.
 
-**Formatage avec la méthode ``format()``**
+**4.3.1 Formatage avec la méthode ``format()``**
 
 Utiliser ``:.nf`` dans ``format()`` pour spécifier le nombre de décimales (``n`` étant le nombre de décimales).
 
@@ -590,7 +590,7 @@ Utiliser ``:.nf`` dans ``format()`` pour spécifier le nombre de décimales (``n
         print("Pi arrondi à 2 décimales : {:.2f}".format(pi))
         >> Pi arrondi à 2 décimales : 3.14
 
-**Formatage avec les f-strings**
+**4.3.2 Formatage avec les f-strings**
 
 Les f-strings permettent également d’afficher un nombre de décimales précis en ajoutant ``:.nf`` directement dans l'expression.
 
@@ -602,10 +602,10 @@ Les f-strings permettent également d’afficher un nombre de décimales précis
         >> Pi arrondi à 3 décimales : 3.142
 
 .. slide::
-Exemples de formatage avancé
+4.4 Exemples de formatage avancé
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Alignement**
+**4.4.1 Alignement**
 
 Il est souvent utile d'aligner les éléments pour créer des tableaux ou des rapports formatés, où le texte et les nombres sont alignés de manière uniforme. Les f-strings et la méthode format() permettent d'ajuster la largeur de chaque champ et de spécifier l'alignement des données.
 
@@ -639,7 +639,7 @@ Dans les f-strings, on peut combiner ces options avec une largeur de champ pour 
     - ``{quantite:>10}`` : La valeur ``quantité`` est également alignée à droite dans un espace de 10 caractères.
 
 .. slide::
-**Affichage des pourcentages**
+**4.4.2 Affichage des pourcentages**
 
 Pour afficher un nombre sous forme de pourcentage, on peut utiliser le formatage ``:.n%`` dans une f-string, où ``n`` représente le nombre de décimales souhaitées pour le pourcentage. Cela permet d’afficher les valeurs avec une mise en forme cohérente, tout en ajoutant le symbole ``%``.
 

@@ -12,16 +12,16 @@ Chapitre 3 - Fonctions et types construits
     - Introduction aux types construits (listes, tuples, dictionnaires).
 
 .. slide::
-📖 Les fonctions
+📖 1. Les fonctions
 ----------------
 
-Qu'est-ce qu'une fonction ?
+1.1 Qu'est-ce qu'une fonction ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Une fonction est un **bloc de code réutilisable** qui permet d'effectuer une tâche spécifique. Elle prend en entrée des **arguments** et retourne un **résultat**. Les fonctions permettent de **découper un programme en sous-programmes** plus petits et plus faciles à gérer.  
 
 .. slide::
-Définir une fonction
+1.2 Définir une fonction
 ~~~~~~~~~~~~~~~~~~~~
 
 En Python, une fonction se définit avec le mot-clé ``def`` suivi du nom de la fonction, des parenthèses (qui peuvent contenir des paramètres), et d’un bloc de code indenté.
@@ -47,7 +47,7 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
         >> 5
 
 .. slide::
-Paramètres et arguments
+1.3 Paramètres et arguments
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. discoverList::
     * Les **paramètres** sont des variables définies dans la déclaration de la fonction.
@@ -69,7 +69,7 @@ Paramètres et arguments
     ``2`` et ``3`` sont les **arguments**. Ce sont les valeurs que l'on passe à la fonction lorsque celle-ci est appelée. Ces valeurs sont affectées aux paramètres ``a`` et ``b`` à l'intérieur de la fonction.
 
 .. slide::
-Valeurs de retour (*return*)
+1.4 Valeurs de retour (*return*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si aucune valeur n'est retournée, Python renvoie ``None`` par défaut. La valeur retournée peut être de n'importe quel type (entier, chaîne de caractères, liste, etc.). La valeur retournée est la valeur par laquelle est remplacée l'appel de la fonction.
@@ -88,7 +88,7 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
     Dans cet exemple, la fonction ``addition`` retourne la somme des deux paramètres ``a`` et ``b``. Lorsque la fonction est appelée avec les arguments ``2`` et ``3``, elle retourne la valeur ``5`` qui est affichée par la fonction ``print()``.
 
 .. slide::
-Portée des variables
+1.5 Portée des variables
 ~~~~~~~~~~~~~~~~~~~~
 
 .. note::
@@ -105,7 +105,7 @@ Portée des variables
         >> NameError: name 'x' is not defined
 
 .. slide::
-Annotations de type
+1.6 Annotations de type
 ~~~~~~~~~~~~~~~~~~~
 
 Une fonction peut être annotée avec des types de données pour indiquer le type des paramètres et de la valeur de retour. Elles permettent de documenter le code et d'améliorer sa lisibilité. De plus, elles permettent de détecter de potentielles erreurs de typage lors de l'exécution du programme.
@@ -163,19 +163,19 @@ Une fonction peut être annotée avec des types de données pour indiquer le typ
     Vous savez maintenant écrire des fonctions simples en Python et vous découvrez comment gérer leur typage.
 
 .. slide::
-📖 Les types construits
+📖 2. Les types construits
 ------------------------
 
 A partir des types de base, on peut construire des types plus complexes appelés **types construits**. Les types construits les plus courants sont les listes, les p-uplets et les dictionnaires, ils sont génériques et peuvent être mis en oeuvre dans de nombreux langages de programmation. 
 
 .. slide::
-Les p-uplets (*tuple*)
+2.1 Les p-uplets (*tuple*)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Un p-uplet est une **collection ordonnée d'éléments**. Chaque élément peut être de n'importe quel type. Les p-uplets sont **immuables**, c'est-à-dire qu'ils ne peuvent pas être modifiés après leur création. Si les valeurs du p-uplet doivent être changées au cours de l'execution du programme alors il faut utiliser un autre type de variable comme une liste/tableau (voir partie suivante : :doc:`Les tableaux <chap3#tableaux>`).
 
 .. slide::
-**Création d'un p-uplet**
+**2.1.1 Création d'un p-uplet**
 
 Pour créer un p-uplet, on utilise des **parenthèses** et on sépare les éléments par des **virgules**.
 
@@ -194,7 +194,7 @@ Pour créer un p-uplet, on utilise des **parenthèses** et on sépare les élém
     Exemple : ``p = (1,)`` et non ``p = (1)``
 
 .. slide::
-**Accès aux éléments d'un p-uplet**
+**2.1.2 Accès aux éléments d'un p-uplet**
 
 Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (sa position dans le p-uplet). Pour un p-uplet de taille n, les indexs des éléments vont de 0 à n-1.  
 
@@ -226,14 +226,14 @@ La fonction ``len()`` permet de connaître la taille d'un p-uplet. Elle permet p
 .. _tableaux:
 
 .. slide::
-Les tableaux / Les listes (*list*)
+2.2 Les tableaux / Les listes (*list*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Un tableau est une collection ordonnée d'éléments qui sont organisés séquentiellements (les uns à la suite des autres). Contrairement aux p-uplets, les tableaux sont **mutables/muables**, c'est-à-dire qu'ils peuvent être modifiés après leur création.  
     En Python, les tableaux sont appelés **listes**.
 
 .. slide::
-**Création d'une liste**
+**2.2.1 Création d'une liste**
 
 Les listes sont créées en utilisant des **crochets** et en séparant les éléments par des **virgules**.
 
@@ -247,7 +247,7 @@ Les listes sont créées en utilisant des **crochets** et en séparant les élé
         >> [1, 2, 3, 4, 5]
 
 .. slide::
-**Accès aux éléments d'une liste**
+**2.2.2 Accès aux éléments d'une liste**
 
 De la même manière que pour un p-uplet, pour accéder à un élément d'une liste, on utilise l'index de l'élément. Pour une liste de taille n, les indexs des éléments vont de 0 à n-1.  
 
@@ -264,7 +264,7 @@ De la même manière que pour un p-uplet, pour accéder à un élément d'une li
         >> 5
 
 .. slide::
-**Modification d'une liste par affectation**
+**2.2.3 Modification d'une liste par affectation**
 
 Pour modifier un élément d'une liste, on utilise l'index de l'élément et on lui affecte une nouvelle valeur.
 
@@ -278,7 +278,7 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
         >> [1, 10, 3, 4, 5]
 
 .. slide::
-**Ajout/suppression d'éléments d'une liste**
+**2.2.4 Ajout/suppression d'éléments d'une liste**
 .. discoverList::
     * Pour ajouter une valeur à la fin une liste, on utilise la méthode ``append()``.
     * Pour supprimer une valeur d'une liste, on utilise la méthode ``remove()``.
@@ -301,7 +301,7 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
         >> [2, 4, 5, 6]
 
 .. slide::
-**Méthodes spécifiques aux listes**
+**2.2.5 Méthodes spécifiques aux listes**
 .. discoverList::
     * La méthode ``sort()`` permet de trier les éléments d'une liste.
     * La méthode ``reverse()`` permet d'inverser l'ordre des éléments d'une liste.
@@ -329,13 +329,13 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
 
 
 .. slide::
-Les dictionnaires (*dict*)
+2.3 Les dictionnaires (*dict*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Un dictionnaire est une collection d'éléments **non ordonnée**. Chaque élément est constitué d'une **clé** et d'une **valeur**. Les dictionnaires sont **mutables/muables**. Les clés doivent être uniques et les valeurs peuvent être de n'importe quel type.
 
 .. slide::
-**Création d'un dictionnaire**
+**2.3.1 Création d'un dictionnaire**
 
 Un nouveau dictionnaire est créé en utilisant des **accolades** et en séparant les éléments par des **virgules**. Chaque élément est constitué d'une **clé** et d'une **valeur** séparées par deux points (``clé: valeur``).
 
@@ -351,7 +351,7 @@ Un nouveau dictionnaire est créé en utilisant des **accolades** et en séparan
         #                              clés
 
 .. slide::
-**Accès aux éléments d'un dictionnaire**
+**2.3.2 Accès aux éléments d'un dictionnaire**
 
 Les éléments d'un dictionnaire ne sont pas indexés (non-ordonnés) comme les listes et p-uplets. Il est donc impossible d'accéder au n-ième élément d'un dictionnaire. Pour accéder à une valeur, on utilise la clé associée à cette valeur. C'est la raison pour laquelle les clés doivent être uniques.
 
@@ -368,7 +368,7 @@ Les éléments d'un dictionnaire ne sont pas indexés (non-ordonnés) comme les 
         >> KeyError: 0 # Renvoie une erreur car la clé 0 n'existe pas dans le dictionnaire d
 
 .. slide::
-**Modification d'un dictionnaire par affectation**
+**2.3.3 Modification d'un dictionnaire par affectation**
 
 Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnaire en utilisant la clé associée à l'élément.
 
@@ -390,7 +390,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         >> {"nom": "Dupont", "âge": 31, "ville": "Paris"}
 
 .. slide::
-**Méthodes spécifiques aux dictionnaires**
+**2.3.4 Méthodes spécifiques aux dictionnaires**
 .. discoverList::
     * La méthode ``keys()`` permet de récupérer la liste des clés d'un dictionnaire.
     * La méthode ``values()`` permet de récupérer la liste des valeurs d'un dictionnaire.
