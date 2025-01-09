@@ -11,6 +11,7 @@ Liens de rendu des exercices par séance
     `Lien Rendu Exercices - Chapitre 4 <https://classroom.github.com/a/VoesZFEC>`_ 
     `Lien Rendu Exercices - Chapitre 5 <https://classroom.github.com/a/crbxou9c>`_
     `Lien Rendu Exercices - Chapitre 6 <https://classroom.github.com/a/ghHuNQ4i>`_
+    `Lien Rendu Exercices - Chapitre 7 <https://classroom.github.com/a/8nWXH3Cv>`_
 
 Inscription à GitHub
 -------------------
