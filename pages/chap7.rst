@@ -360,6 +360,9 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 
         # Classe enfant
         class Chien(Animal):
+            def __init__(self, nom):
+                super().__init__(nom)
+                
             def parler(self):
                 print(f"{self.nom} aboie.")
 
@@ -487,10 +490,8 @@ Exemple de sortie attendue :
     >> Vous conduisez Ferrari, elle peut aller jusqu'à 300 km/h !
 
 
-.. .. slide::
-.. 🏋️ Exercices supplémentaires
-.. --------------------
+.. slide::
+🏋️ Exercices supplémentaires
+--------------------
 
-.. .. toctree::
-
-..     exos_sup_chap7
+Refaites les exercices supplémentaires des chapitres précédents en utilisant des objets.
