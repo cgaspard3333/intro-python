@@ -488,6 +488,49 @@ Exemple de sortie attendue :
 
 
 .. slide::
+
+✅ Récapitulatif de Chapitre
+-------------------------
+
+- **POO** : Une méthode pour structurer le code en organisant les données et comportements en objets.
+- **Classe** : Modèle ou plan permettant de créer des objets partageant des attributs et des méthodes communs.
+- **Objet** : Instance d'une classe, représentant une entité spécifique avec ses propres données et comportements.
+
+**Attributs et méthodes** :
+
+    - **Attributs** : Variables liées à un objet pour stocker ses données.
+    - **Méthodes** : Fonctions définies dans une classe décrivant les actions possibles d'un objet.
+
+**Constructeur (``__init__``)** :
+
+    - Permet d'initialiser automatiquement les attributs d'un objet lors de sa création.
+
+**Self** :
+
+    - Référence à l'objet actuel, nécessaire pour accéder à ses attributs et méthodes à l'intérieur de la classe.
+
+**Méthodes spéciales** :
+
+    - Exemple : ``__str__`` pour personnaliser l'affichage d'un objet.
+
+**Héritage** :
+
+    - Création de classes enfants à partir de classes parents pour réutiliser ou spécialiser le comportement.
+    - Exemple : Une classe ``Chien`` héritant d'une classe ``Animal``.
+
+**Variables et méthodes de classe** :
+
+    - **Variables de classe** : Partagées entre toutes les instances d'une classe.
+    - **Méthodes de classe** : Utilisent le décorateur ``@classmethod`` et agissent sur la classe entière.
+
+**Pourquoi utiliser la POO ?**
+
+- Facilite la **modélisation du monde réel**.
+- Encourage la **réutilisation du code** via les classes et l’héritage.
+- Favorise la **modularité** et rend le code plus **facile à maintenir**.
+
+
+.. slide::
 🏋️ Exercices supplémentaires
 ----------------------------
 
