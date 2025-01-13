@@ -184,10 +184,10 @@ Les **méthodes** sont des fonctions définies dans une classe qui décrivent le
         >> Mimi est en train de manger.
 
 .. slide::
-📖 4. Les propriétés d'instance et l’attribut `self`
+📖 4. Les propriétés d'instance et l’attribut ``self``
 -------------------------------------------------
 
-4.1 Qu’est-ce que `self` ?
+4.1 Qu’est-ce que ``self`` ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Dans une méthode d’une classe, le mot-clé ``self`` est une référence à l'objet actuel. Il permet d'accéder aux attributs et méthodes de l'objet à l'intérieur de la classe. 
 
@@ -264,7 +264,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
         print(chien)
         >> Sortie : Rex est un chien.
 
-5.2 Avantages de `__str__`
+5.2 Avantages de ``__str__``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Rendre les objets plus lisibles et compréhensibles.
 - Faciliter le débogage et l’affichage des informations.
@@ -345,7 +345,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
 .. slide::
 7.2 Exemple simple d’héritage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Imaginons une classe parent `Animal` et une classe enfant `Chien`.
+Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
 
 .. warning::
     Exemple :
@@ -360,9 +360,6 @@ Imaginons une classe parent `Animal` et une classe enfant `Chien`.
 
         # Classe enfant
         class Chien(Animal):
-            def __init__(self, nom):
-                super().__init__(nom)
-                
             def parler(self):
                 print(f"{self.nom} aboie.")
 
@@ -492,6 +489,6 @@ Exemple de sortie attendue :
 
 .. slide::
 🏋️ Exercices supplémentaires
---------------------
+----------------------------
 
-Refaites les exercices supplémentaires des chapitres précédents en utilisant des objets.
+Refaites les exercices supplémentaires des chapitres précédents en utilisant la Programmation Orientée Objet.
