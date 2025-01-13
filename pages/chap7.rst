@@ -360,6 +360,9 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
 
         # Classe enfant
         class Chien(Animal):
+            def __init__(self, nom):
+                super().__init__(nom)
+             
             def parler(self):
                 print(f"{self.nom} aboie.")
 
