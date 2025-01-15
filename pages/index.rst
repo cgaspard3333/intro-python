@@ -18,6 +18,12 @@ Présentation
 
 .. slide::
 
+.. important::
+    
+`Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
+
+.. slide::
+
 Sommaire
 -------
 
