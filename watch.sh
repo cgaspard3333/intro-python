@@ -6,6 +6,7 @@ php -S localhost:8080 -t web/ &
 
 while [ true ]
 do
-    inotifywait -e modify -r pages/
+    changed=`fswatch --event Updated -1 pages/`
+    echo "Change detected ($changed), rebuilding"
     make
 done
