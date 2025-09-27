@@ -20,7 +20,7 @@ Présentation
 
 .. important::
     
-Tous les codes que vous écrivez seront à remettre sur `Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
+Tous les codes que vous écrirez devront être remis sur `Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
 
 .. slide::
 
