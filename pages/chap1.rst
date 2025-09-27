@@ -363,12 +363,3 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 .. success::
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
 
-.. slide::
-✅ Récapitulatif de Chapitre
--------------------------
-
-.. center::
-
-    .. image:: images/recap_chap1.png
-        :alt: Récapitulatif du Chapitre 1
-        :width: 100%

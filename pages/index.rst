@@ -20,7 +20,7 @@ Présentation
 
 .. important::
     
-`Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
+Tous les codes que vous écrivez seront à remettre sur `Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
 
 .. slide::
 
@@ -33,11 +33,6 @@ Sommaire
     config_ide
     chap1
     chap2
-    chap3
-    chap4
-    chap5
-    chap6
-    chap7
     
 
 
