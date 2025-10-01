@@ -125,7 +125,7 @@ Au lieu d’ajouter les attributs un par un, vous pouvez utiliser une méthode s
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom, age):
+            def __init__(self, nom: str, age: int) -> None:
                 self.nom = nom  # Attribut nom
                 self.age = age  # Attribut âge
 
@@ -144,11 +144,11 @@ Les **méthodes** sont des fonctions définies dans une classe qui décrivent le
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom, age):
+            def __init__(self, nom: str, age: int) -> None:
                 self.nom = nom
                 self.age = age
 
-            def parler(self):
+            def parler(self) -> None:
                 print(f"{self.nom} fait un bruit.")
 
         # Créer un objet et appeler une méthode
@@ -161,15 +161,15 @@ Les **méthodes** sont des fonctions définies dans une classe qui décrivent le
     Exemple complet :
     .. code-block:: python
         class Animal:
-            def __init__(self, nom, espece, age):
+            def __init__(self, nom: str, espece: str, age: int) -> None:
                 self.nom = nom
                 self.espece = espece
                 self.age = age
 
-            def manger(self):
+            def manger(self) -> None:
                 print(f"{self.nom} est en train de manger.")
 
-            def se_presenter(self):
+            def se_presenter(self) -> None:
                 print(f"Je suis {self.nom}, un {self.espece} de {self.age} ans.")
 
         # Créer des objets
@@ -200,10 +200,10 @@ Dans une méthode d’une classe, le mot-clé ``self`` est une référence à l'
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 self.nom = nom  # Attribut d'instance
 
-            def parler(self):
+            def parler(self) -> None:
                 print(f"{self.nom} fait un bruit.")
 
         # Créer un objet
@@ -225,10 +225,10 @@ Un **attribut local** est une variable définie à l’intérieur d’une métho
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 self.nom = nom  # Attribut d'instance
 
-            def description(self):
+            def description(self) -> None:
                 attribut_local = "temporaire"  # Attribut local
                 print(f"{self.nom} a un attribut local : {attribut_local}")
 
@@ -252,11 +252,11 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom, espece):
+            def __init__(self, nom: str, espece: str) -> None:
                 self.nom = nom
                 self.espece = espece
 
-            def __str__(self):
+            def __str__(self) -> str:
                 return f"{self.nom} est un {self.espece}."
 
         # Créer un objet
@@ -286,7 +286,7 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
         class Animal:
             population = 0  # Variable de classe
 
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 self.nom = nom  # Attribut d'instance
                 Animal.population += 1  # Incrémente la population
 
@@ -317,12 +317,12 @@ La méthode spéciale ``__str__`` permet de définir ce qui sera affiché lorsqu
         class Animal:
             population = 0  # Variable de classe
 
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 self.nom = nom
                 Animal.population += 1
 
             @classmethod
-            def afficher_population(cls):
+            def afficher_population(cls) -> None:
                 print(f"Population totale : {cls.population}")
 
         # Appeler la méthode de classe
@@ -352,18 +352,18 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     .. code-block:: python
 
         class Animal:
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 self.nom = nom
 
-            def parler(self):
+            def parler(self) -> None:
                 print(f"{self.nom} fait un bruit.")
 
         # Classe enfant
         class Chien(Animal):
-            def __init__(self, nom):
+            def __init__(self, nom: str) -> None:
                 super().__init__(nom)
-             
-            def parler(self):
+
+            def parler(self) -> None:
                 print(f"{self.nom} aboie.")
 
         # Créer des objets
@@ -488,49 +488,6 @@ Exemple de sortie attendue :
     >> Vous serrez Ours en peluche, en coton, c'est si doux !
     >> Ceci est un jouet nommé Ferrari
     >> Vous conduisez Ferrari, elle peut aller jusqu'à 300 km/h !
-
-
-.. slide::
-
-✅ Récapitulatif de Chapitre
--------------------------
-
-- **POO** : Une méthode pour structurer le code en organisant les données et comportements en objets.
-- **Classe** : Modèle ou plan permettant de créer des objets partageant des attributs et des méthodes communs.
-- **Objet** : Instance d'une classe, représentant une entité spécifique avec ses propres données et comportements.
-
-**Attributs et méthodes** :
-
-    - **Attributs** : Variables liées à un objet pour stocker ses données.
-    - **Méthodes** : Fonctions définies dans une classe décrivant les actions possibles d'un objet.
-
-**Constructeur (``__init__``)** :
-
-    - Permet d'initialiser automatiquement les attributs d'un objet lors de sa création.
-
-**Self** :
-
-    - Référence à l'objet actuel, nécessaire pour accéder à ses attributs et méthodes à l'intérieur de la classe.
-
-**Méthodes spéciales** :
-
-    - Exemple : ``__str__`` pour personnaliser l'affichage d'un objet.
-
-**Héritage** :
-
-    - Création de classes enfants à partir de classes parents pour réutiliser ou spécialiser le comportement.
-    - Exemple : Une classe ``Chien`` héritant d'une classe ``Animal``.
-
-**Variables et méthodes de classe** :
-
-    - **Variables de classe** : Partagées entre toutes les instances d'une classe.
-    - **Méthodes de classe** : Utilisent le décorateur ``@classmethod`` et agissent sur la classe entière.
-
-**Pourquoi utiliser la POO ?**
-
-- Facilite la **modélisation du monde réel**.
-- Encourage la **réutilisation du code** via les classes et l’héritage.
-- Favorise la **modularité** et rend le code plus **facile à maintenir**.
 
 
 .. slide::

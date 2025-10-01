@@ -758,50 +758,6 @@ ou encore
 
 
 .. slide::
-✅ Récapitulatif de Chapitre
--------------------------
-
-**Bibliothèque os**
-
-- ``os.listdir("PATH")`` : Permet de lister les fichiers et dossiers contenus dans le répertoire désigné par le chemin ``PATH``.
-- ``os.chdir("PATH")`` : Permet de changer le répertoire courant pour celui désigné par le chemin ``PATH``.
-- ``os.getcwd()`` : Retourne le répertoire courant.
-- ``os.path.exists("PATH")`` : Permet de savoir si le fichier ou le dossier désigné par le chemin ``PATH`` existe.
-- ``os.mkdir("FOLDER_NAME")`` : Crée le dossier ``FOLDER_NAME`` dans le répertoire courant.
-- ``os.rmdir("FOLDER_NAME")`` : Supprime le dossier ``FOLDER_NAME`` dans le répertoire courant.
-- ``os.remove("FILE_NAME")`` : Supprime le fichier ``FILE_NAME`` du répertoire courant.
-
-**Bibliothèque pathlib**
-
-- ``pathlib.Path("PATH").iterdir()`` : Permet de lister les fichiers et dossiers contenus dans le répertoire désigné par le chemin ``PATH``.
-- ``pathlib.Path("PATH").chdir()`` : Permet de changer le répertoire courant pour celui désigné par le chemin ``PATH``.
-- ``pathlib.Path("PATH").cwd()`` : Retourne le répertoire courant.
-- ``pathlib.Path("PATH").exists()`` : Permet de savoir si le fichier ou le dossier désigné par le chemin ``PATH`` existe.
-- ``pathlib.Path("FOLDER_NAME").mkdir()`` : Crée le dossier ``FOLDER_NAME`` dans le répertoire courant.
-- ``pathlib.Path("FOLDER_NAME").rmdir()`` : Supprime le dossier ``FOLDER_NAME`` dans le répertoire courant.
-- ``pathlib.Path("FILE_NAME").unlink()`` : Supprime le fichier ``FILE_NAME`` du répertoire courant.
-
-**Opérations sur un fichier**
-
-- ``FILE = open("FILE_NAME", "MODE")`` : Ouvre le fichier ``FILE_NAME`` avec un certain mode dans la variable ``FILE``.
-- ``with open("PATH", "MODE") as FILE:`` : Ouvre le fichier désigné par le chemin ``PATH`` avec un certain mode dans la variable ``FILE``.
-- ``FILE.read()`` : Lit le contenu du fichier ``FILE``.
-- ``FILE.readline()`` : Lit la ligne suivante du fichier ``FILE``.
-- ``FILE.readline().strip()`` : Retire les caractères de fin de ligne (``\n``).
-- ``FILE.readlines()`` : Lit tout le contenu et retourne une liste où chaque élément est une ligne du fichier ``FILE``.
-- ``FILE.write("TEXT")`` : Écrit le texte ``TEXT`` dans le fichier ``FILE``.
-- ``FILE.close()`` : Ferme le fichier ``FILE``.
-
-**Modes d’ouverture d’un fichier**
-
-- ``"r"`` : Lecture seule (mode par défaut).
-- ``"w"`` : Écriture (écrase le fichier s’il existe).
-- ``"a"`` : Ajout (ajoute du contenu à la fin du fichier).
-- ``"x"`` : Création d’un nouveau fichier (erreur si le fichier existe déjà).
-- ``"b"`` : Mode binaire (ex. : pour les images).
-- ``"t"`` : Mode texte (par défaut).
-
-.. slide::
 🏋️ Exercices supplémentaires
 --------------------
 
