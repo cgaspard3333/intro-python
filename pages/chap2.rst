@@ -310,3 +310,14 @@ On peut interrompre une boucle avec l’instruction ``break``.
 .. toctree::
 
     exos_sup_chap2
+
+✅ Récapitulatif de Chapitre
+-------------------------
+
+.. center::
+
+    .. image:: images/recap_chap2.png
+        :alt: Récapitulatif du Chapitre 2
+        :width: 100%
+           
+       

@@ -33,6 +33,7 @@ Sommaire
     config_ide
     chap1
     chap2
+    chap3
 
 
 
