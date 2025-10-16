@@ -77,7 +77,6 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     >> Entrer la valeur de coefficient : 2
     >> Entrer la valeur de coefficient : 3
     >> Entrer la valeur de coefficient : 2
-    >> Entrer la valeur de coefficient : 1
     >> le résultat = 67
 
 
