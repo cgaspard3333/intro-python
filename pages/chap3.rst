@@ -472,7 +472,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     Affichez un message avec la liste des ingrédients choisis dans ``mon_sandwich``, par exemple :
 
       .. code-block:: python
-          Votre sandwich contient : pain, jambon, tomate.
+          Votre sandwich contient : [pain, jambon, tomate].
 
 .. step::
     **Option d'ajout d'un ingrédient spécial**  
