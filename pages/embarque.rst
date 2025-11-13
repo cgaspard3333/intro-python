@@ -23,7 +23,7 @@ Certaines différences importantes :
 
 .. discoverList::
     * Tous les modules Python classiques **ne sont pas disponibles**.
-    * D’autres modules **spécifiques au matériel** apparaissent : `umachine`, `utime`, `neopixel`, `dht`, etc.
+    * D’autres modules **spécifiques au matériel** apparaissent : ``umachine``, ``utime``, ``neopixel``, ``dht``, etc.
     * Vous programmez directement le **comportement physique** (capteurs, boutons, LEDs…).
 
 
@@ -34,23 +34,18 @@ Certaines différences importantes :
 
 Voici quelques modules que vous utiliserez dans ce chapitre :
 
-| Module                  | Rôle                                            |
-| ----------------------- | ----------------------------------------------- |
-| `machine` ou `umachine` | Accès direct aux broches (GPIO), PWM, I2C, SPI… |
-| `utime`                 | Temporisations, gestion du temps                |
-| `dht`                   | Lecture d’un capteur de température/humidité    |
-| `neopixel`              | Contrôle de LED RGB adressables                 |
-
-.. note::
-    Cherchez les documentations suivantes :
-    
-    - Module `machine.Pin`
-    - Module `utime.sleep`
-    - Module `dht.DHT22`
-    - Module `neopixel.NeoPixel`
-    
-    Vous en aurez *absolument besoin* pour les exercices.
-
++-----------------------+--------------------------------------------------+
+|        Module         |                       Rôle                       |
++=======================+==================================================+
+| machine / umachine    | Accès direct aux broches (GPIO), PWM, I2C,SPI…   |
+|                       |                                                  |
++-----------------------+--------------------------------------------------+
+| utime                 | Temporisations, gestion du temps                 |
++-----------------------+--------------------------------------------------+
+| dht                   | Lecture d’un capteur de température/humidité     |
++-----------------------+--------------------------------------------------+
+| neopixel              | Contrôle de LED RGB adressables                  |
++-----------------------+--------------------------------------------------+
 
 .. slide::
 
@@ -60,7 +55,7 @@ Voici quelques modules que vous utiliserez dans ce chapitre :
 Votre carte ROBO Pico dispose :
 
 .. discoverList::
-    * De **boutons-poussoirs** branchés sur des broches GPIO spécifiques (ex. GP20, GP21)
+    * De **boutons-poussoirs** branchés sur des broches GPIO spécifiques (ex. ``GP20``, ``GP21``)
     * De deux **LEDs RGB adressables**
     * D’une **entrée/sorties** (GPIO) pour connecter des capteurs externes (ex. DHT22)
     * D’un microcontrôleur **Raspberry Pi Pico** au centre
@@ -76,7 +71,7 @@ Dans ce chapitre, vous allez :
 .. slide::
 
 🧪 Exercice Guidé : Construire un thermomètre lumineux
-=====================================================
+----------------------------------------------------
 
 Le but final :
 
@@ -87,10 +82,9 @@ Le but final :
 .. slide::
 
 🔧 Étape 1 – Lire un bouton poussoir
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-🎯 Objectif  
-Savoir si un bouton est appuyé.
+**Objectif** : Savoir si un bouton est appuyé.
 
 .. step:: reset
     Créez un nouveau fichier Python dans VS Code.
@@ -104,10 +98,9 @@ Savoir si un bouton est appuyé.
 .. slide::
 
 🌡️ Étape 2 – Lire la température et l’humidité du DHT22
--------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-🎯 Objectif  
-Comprendre comment un module externe fonctionne.
+**Objectif** : Comprendre comment un module externe fonctionne.
 
 .. important::
     Le module `dht` n'est pas du Python standard, cherchez comment l'utiliser dans la documentation **MicroPython** : https://docs.micropython.org/en/latest/index.html
@@ -122,10 +115,9 @@ Comprendre comment un module externe fonctionne.
 .. slide::
 
 🌈 Étape 3 – Contrôler une LED 
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-🎯 Objectif  
-Comprendre comment allumer et colorer une LED RGB.
+**Objectif** : Comprendre comment allumer et colorer une LED RGB.
 
 .. step::
     En utilisant la documentation du module `neopixel`, créez un objet `NeoPixel` pour contrôler la LED.
@@ -144,10 +136,9 @@ Comprendre comment allumer et colorer une LED RGB.
 .. slide::
 
 🎛️ Étape 4 – Faire réagir la couleur à la température
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-🎯 Objectif  
-Associer une **boucle infinie**, la **lecture du capteur**, et la **LED**.
+**Objectif** : Associer une **boucle infinie**, l'**appuie du bouton poussoir**, la **lecture du capteur**, et la **LED**.
 
 .. step::
     Créez une boucle `while True:` pour faire tourner votre programme en continu.
@@ -164,35 +155,47 @@ Associer une **boucle infinie**, la **lecture du capteur**, et la **LED**.
     Utilisez plusieurs `elif` pour définir des plages de couleurs.
 
 Zones de température :
++--------------+---------+
+| Température  | Couleur |
++==============+=========+
+| < 18°C       | bleu    |
++--------------+---------+
+| 18–19°C      | cyan    |
++--------------+---------+
+| 19–20°C      | vert    |
++--------------+---------+
+| 20–21°C      | jaune   |
++--------------+---------+
+| 21–22°C      | orange  |
++--------------+---------+
+| ≥ 22°C       | rouge   |
++--------------+---------+
 
-| Température | Couleur |
-| ----------- | ------- |
-| < 18°C      | bleu    |
-| 18–19°C     | cyan    |
-| 19–20°C     | vert    |
-| 20–21°C     | jaune   |
-| 21–22°C     | orange  |
-| ≥ 22°C      | rouge   |
 
 .. step::
     Faire de même pour la LED 1, mais avec des plages d'humidité.
 
++-------------+---------+
 | Humidité    | Couleur |
-| ----------- | ------- |
++=============+=========+
 | < 40%       | violet  |
++-------------+---------+
 | 40–60%      | magenta |
++-------------+---------+
 | 60–80%      | rose    |
++-------------+---------+
 | 80–100%     | blanc   |
++-------------+---------+
+
 
 ---
 
 ⬛ Étape 5 – Ajouter le bouton d’extinction (RESET couleur)
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. slide::
 
-🎯 Objectif  
-Permettre d’éteindre la LED quand un second bouton est pressé.
+**Objectif** : Permettre d’éteindre les LEDs quand un second bouton est pressé.
 
 .. step::
     Créez un second bouton en entrée.
