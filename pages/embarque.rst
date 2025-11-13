@@ -34,18 +34,17 @@ Certaines différences importantes :
 
 Voici quelques modules que vous utiliserez dans ce chapitre :
 
-+-----------------------+--------------------------------------------------+
-|        Module         |                       Rôle                       |
-+=======================+==================================================+
-| machine / umachine    | Accès direct aux broches (GPIO), PWM, I2C,SPI…   |
-|                       |                                                  |
-+-----------------------+--------------------------------------------------+
-| utime                 | Temporisations, gestion du temps                 |
-+-----------------------+--------------------------------------------------+
-| dht                   | Lecture d’un capteur de température/humidité     |
-+-----------------------+--------------------------------------------------+
-| neopixel              | Contrôle de LED RGB adressables                  |
-+-----------------------+--------------------------------------------------+
++------------------------+--------------------------------------------------+
+|         Module         |                       Rôle                       |
++========================+==================================================+
+| ``machine / umachine`` | Accès direct aux broches (GPIO), PWM, I2C,SPI…   |
++------------------------+--------------------------------------------------+
+| ``utime``              | Temporisations, gestion du temps                 |
++------------------------+--------------------------------------------------+
+| ``dht``                | Lecture d’un capteur de température/humidité     |
++------------------------+--------------------------------------------------+
+| ``neopixel``           | Contrôle de LED RGB adressables                  |
++------------------------+--------------------------------------------------+
 
 .. slide::
 
@@ -90,10 +89,10 @@ Le but final :
     Créez un nouveau fichier Python dans VS Code.
 
 .. step::
-    Cherchez en ligne la documentation du module `machine.Pin` pour configurer une broche en **entrée** avec `Pin`.
+    Cherchez en ligne la documentation du module ``machine.Pin`` pour configurer une broche en **entrée** avec ``Pin``.
 
 .. step::
-    Testez l’état du bouton *GP21* en affichant `pin.value()` dans la console.
+    Testez l’état du bouton ``GP21`` en affichant ``pin.value()`` dans la console.
 
 .. slide::
 
@@ -102,8 +101,8 @@ Le but final :
 
 **Objectif** : Comprendre comment un module externe fonctionne.
 
-.. important::
-    Le module `dht` n'est pas du Python standard, cherchez comment l'utiliser dans la documentation **MicroPython** : https://docs.micropython.org/en/latest/index.html
+.. note::
+    Le module ``dht`` n'est pas du Python standard, cherchez comment l'utiliser dans la `Documentation MicroPython <https://docs.micropython.org/en/latest/index.html>`_
 
 .. step::
     Affichez la température et l’humidité dans la console avec les unités.
@@ -120,7 +119,7 @@ Le but final :
 **Objectif** : Comprendre comment allumer et colorer une LED RGB.
 
 .. step::
-    En utilisant la documentation du module `neopixel`, créez un objet `NeoPixel` pour contrôler la LED.
+    En utilisant la documentation du module ``neopixel``, créez un objet ``NeoPixel`` pour contrôler la LED.
     
 .. toctree::
     doc_neopixel
@@ -141,7 +140,7 @@ Le but final :
 **Objectif** : Associer une **boucle infinie**, l'**appuie du bouton poussoir**, la **lecture du capteur**, et la **LED**.
 
 .. step::
-    Créez une boucle `while True:` pour faire tourner votre programme en continu.
+    Créez une boucle ``while True:`` pour faire tourner votre programme en continu.
 
 .. step::
     Lorsque le bouton de mesure est appuyé :
@@ -152,9 +151,10 @@ Le but final :
 
 .. note::
     Inspirez-vous de vos exercices précédents.  
-    Utilisez plusieurs `elif` pour définir des plages de couleurs.
+    Utilisez plusieurs ``elif`` pour définir des plages de couleurs.
 
 Zones de température :
+
 +--------------+---------+
 | Température  | Couleur |
 +==============+=========+

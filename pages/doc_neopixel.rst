@@ -7,7 +7,7 @@ Ces LEDs se pilotent toutes via **une seule broche GPIO**, mais chaque LED peut 
 Sur la carte **ROBO Pico**, deux LEDs adressables sont connectées à la broche **GP18**.
 
 
-1. Importation du module
+Importation du module
 ------------------------
 
 Pour utiliser les LEDs NeoPixel, il faut d'abord importer le module :
@@ -17,7 +17,7 @@ Pour utiliser les LEDs NeoPixel, il faut d'abord importer le module :
     import neopixel
 
 
-2. Création d’un objet NeoPixel
+Création d’un objet NeoPixel
 ------------------------
 
 L'objet NeoPixel représente un ensemble de LEDs connectées sur une même broche.
@@ -27,7 +27,7 @@ L'objet NeoPixel représente un ensemble de LEDs connectées sur une même broch
     pixel = neopixel.NeoPixel(pin_de_la_broche, nombre_de_leds_sur_la_broche)
 
 
-3. Représentation des couleurs (RGB)
+Représentation des couleurs (RGB)
 ------------------------
 
 Chaque LED utilise des couleurs au format :
@@ -45,7 +45,7 @@ Exemples :
     BLUE = (0, 0, 255)
 
 
-4. Modifier la couleur des LEDs
+Modifier la couleur des LEDs
 ------------------------
 
 Pour changer la couleur d'une LED spécifique :
@@ -64,7 +64,7 @@ Pour changer toutes les LEDs à la fois :
     pixel.fill(GREEN)         # vert pour toutes les LEDs
 
 
-5. Appliquer les changements : ``write()``
+Appliquer les changements : ``write()``
 ------------------------
 
 Après avoir modifié les couleurs, il faut envoyer les données vers les LEDs :
