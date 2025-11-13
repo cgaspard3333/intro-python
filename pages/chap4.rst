@@ -782,6 +782,63 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
         >> Produit    Prix
         >> Pommes     1.23
 
+.. slide::
+✅ Récapitulatif de Chapitre
+----------------------------
+
+1. **Modules en Python**
+    - Un **module** est un fichier contenant du code Python réutilisable (fonctions, variables, classes).
+    - **Importation de modules** :
+        - ``import module`` : importe tout le module.
+        - ``from module import fonction`` : importe une fonction spécifique.
+        - ``import module as alias`` : importe le module avec un alias.
+    - **Modules intégrés courants** :
+        - ``math`` : fonctions mathématiques.
+        - ``random`` : génération de nombres aléatoires.
+        - ``datetime`` : manipulation de dates et heures.
+
+2. **Modules Externes et ``pip``**
+    - ``pip`` est le gestionnaire de paquets Python pour installer des modules externes.
+        - **Installer** un module : ``pip install nom_du_module``.
+        - **Mettre à jour** un module : ``pip install --upgrade nom_du_module``.
+        - **Désinstaller** un module : ``pip uninstall nom_du_module``.
+    - Exemples de modules externes :
+        - ``numpy``, ``pandas``, ``matplotlib``.
+
+3. **Création de Modules et Packages Personnalisés**
+    - **Créer un module** : écrire des fonctions dans un fichier ``.py``.
+    - **Créer un package** : dossier avec un fichier ``__init__.py`` et plusieurs modules.
+        - **Structure d'un package** :
+            |code_struct_package|
+
+    - **Utilisation de ``__init__.py``** :
+        - Facilite les importations en spécifiant les modules accessibles.
+        - Exemple : ``from .module1 import fonction1``.
+
+4. **Arrondi et Troncature des Nombres**
+    - **Fonction ``round()``** :
+        - ``round(nombre, n)`` : arrondit à ``n`` décimales.
+        - ``round(nombre)`` : arrondit à l'entier le plus proche.
+    - **Fonctions du module ``math``** :
+        - ``math.ceil(x)`` : arrondi au supérieur.
+        - ``math.floor(x)`` : arrondi à l'inférieur.
+        - ``math.trunc(x)`` : troncature de la partie décimale.
+
+5. **Affichage Avancé avec ``print()``**
+    - **Formatage de chaînes** :
+        - Opérateur ``%`` : ``"Âge : %d" % age``.
+        - Méthode ``format()`` : ``"Âge : {}".format(age)``.
+        - F-strings (recommandé) : ``f"Âge : {age}"``.
+    - **Formatage de nombres** :
+        - Nombre de décimales : ``f"{pi:.2f}"`` affiche ``pi`` avec 2 décimales.
+    - **Alignement et Largeur** :
+        - Alignement à gauche : ``<``, droite : ``>``, centré : ``^``.
+        - Exemple :
+            |code_align| 
+
+    - **Affichage de pourcentages** :
+        - ``f"{taux:.1%}"`` affiche le taux en pourcentage avec 1 décimale.
+
 
 .. slide::
 🏋️ Exercices supplémentaires
