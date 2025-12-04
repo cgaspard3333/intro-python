@@ -530,7 +530,7 @@ Pour éviter les erreurs, vérifiez si un fichier existe avant de le lire ou de 
             └── helpers.py          # Module avec des fonctions utiles
 
 .. step:: 
-    Dans le terminal de VSCode, tapez la commande ``tree`` et vérifiez que l'arborescence des fichiers est correcte vis à vis de l'arborescence ci-dessus.
+    Dans le terminal de VSCode, tapez la commande ``tree`` (sous Linux) ou ``tree /f`` (sous Windows) et vérifiez que l'arborescence des fichiers est correcte vis à vis de l'arborescence ci-dessus.
 
 .. note::
     Le code Python que vous écrirez dans les prochains exercices doit être **placé dans le fichier ``main.py``**.
