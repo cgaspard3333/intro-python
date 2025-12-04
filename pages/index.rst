@@ -36,6 +36,8 @@ Sommaire
     chap3
     chap4
     chap5
-    embarque
+    chap6
+    deboguage
+    chap7
 
 
