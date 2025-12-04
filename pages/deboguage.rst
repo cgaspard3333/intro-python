@@ -15,21 +15,21 @@ Lorsqu’on programme, il est normal de rencontrer des erreurs (bugs). Le **déb
 
 Nous allons découvrir comment utiliser le débogueur de VS Code pour un code en Python.
 
-.. slide::
-Mise en place
---------------
+.. .. slide::
+.. Mise en place
+.. --------------
 
-1. Ouvrez votre projet Python dans VS Code.
-2. Assurez-vous que l’extension **Python** est installée (éditeur → Extensions → chercher **Python** → installer).
-3. Vérifiez que l’interpréteur Python utilisé est correct :
+.. 1. Ouvrez votre projet Python dans VS Code.
+.. 2. Assurez-vous que l’extension **Python** est installée (éditeur → Extensions → chercher **Python** → installer).
+.. 3. Vérifiez que l’interpréteur Python utilisé est correct :
 
-   - Cliquez en bas à droite sur la version de Python,
-   - Sélectionnez l’environnement voulu (par ex. Python 3.x).
+..    - Cliquez en bas à droite sur la version de Python,
+..    - Sélectionnez l’environnement voulu (par ex. Python 3.x).
 
 
-.. center::
-    .. image:: images/vs_code_python_version.png
-        :alt: Choix de la version de Python
+.. .. center::
+..     .. image:: images/vs_code_python_version.png
+..         :alt: Choix de la version de Python
 
 
 .. slide::
@@ -46,7 +46,7 @@ Votre programme s’exécute, mais vous pouvez désormais le contrôler grâce a
 
 .. center::
     .. image:: images/vs_code_lancer_debug.png
-        :width: 200%
+        :width: 100%
         :alt: Lancer le débogueur dans VSCode
 
 .. slide::

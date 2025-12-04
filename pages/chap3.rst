@@ -517,11 +517,11 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
     .. discoverList::
         * ``ingredient`` (type ``str``): le nom de l'ingrédient,
-        * ``quantite`` (type ``int``): la quantité de cet ingrédient à utiliser.
+        * ``dose`` (type ``int``): le nombre de doses de cet ingrédient à utiliser.
     
     Et retourne un p-uplet contenant : 
     .. discoverList::
-        * La quantité totale de l'ingrédient (type ``int``),
+        * La quantité totale de l'ingrédient, i.e. le nombres de doses multiplié par la quantité de base (type ``int``),
         * L'unité de cette quantité (type ``str``),
         * L'effet de l'ingrédient (type ``str``).
 
@@ -545,14 +545,14 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     Définissez une fonction ``creer_potion`` qui prend deux listes comme paramètres :
     
     .. discoverList::
-        * ``ingredient_choisis`` : une liste de noms d'ingrédients choisis.
-        * ``quantites`` : une liste des quantités pour chaque ingrédient.
+        * ``list_ingredients_choisis`` : une liste de noms d'ingrédients choisis.
+        * ``list_quantites`` : une liste des quantités pour chaque ingrédient.
 
     Et retourne un p-uplet contenant : 
     .. discoverList::
         * La quantité totale de la potion en gramme (type ``int``),
         * La quantité totale de la potion en millilitre (type ``int``),
-        * Tous les effets de la potion (type ``str``).
+        * Tous les effets de la potion (type ``list[str]``).
 
     Cette fonction doit :
 
@@ -561,6 +561,9 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         2. Additionner les quantités en grammes et en millilitres séparément.
         3. Rassembler tous les effets des ingrédients choisis.
         4. Retourner la quantité totale en gramme et millilitre ainsi que les effets de la potion.
+
+    .. note::
+        N'oubliez pas de typer correctement la fonction ``creer_potion``!
 
 .. slide::
 .. step::
