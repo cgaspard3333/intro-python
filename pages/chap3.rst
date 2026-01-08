@@ -342,13 +342,13 @@ Un nouveau dictionnaire est créé en utilisant des **accolades** et en séparan
 .. warning::
     Exemple :
     .. code-block:: python
-        #                     valeurs
+        #                       clés
         #      ____________________________________
         #      |                  |               |
         d = {"nom": "Dupont", "prénom": "Jean", "âge": 30}
         #              |                   |            |
         #              ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-        #                              clés
+        #                              valeurs
 
 .. slide::
 **2.3.2 Accès aux éléments d'un dictionnaire**
