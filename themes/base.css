@@ -727,6 +727,10 @@ code, pre, kbd,
 /* L'espace autour d'un fragment de code se prend en marge, pas en
    remplissage : le fond épouse le code au lieu de flotter autour. */
 code {
+    /* Un chemin ou un identifiant long n'a aucune espace où se couper : sans
+       cela il dépasse de l'écran sur mobile. La coupure n'intervient que si
+       le fragment ne tient pas seul sur une ligne. */
+    overflow-wrap: break-word;
     padding: .1em .2em;
     margin: 0 .12em;
     background: var(--inline-code-bg);
@@ -1319,6 +1323,20 @@ body.slide-mode .contents { font-size: clamp(1rem, 1.6vw, 1.35rem); }
     /* Le nom du cours cède la place au champ de recherche. */
     .brandName { display: none; }
     .searchBox { margin-left: .5rem; }
+}
+
+@media (max-width: 560px) {
+    /* Sur un téléphone, un bloc de code qui défile latéralement cache la
+       moitié de ses lignes — et personne ne va chercher ce défilement. Il se
+       replie donc, et l'étiquette de langage s'efface pour rendre au code la
+       largeur qu'elle occupait. */
+    .codeBlock code {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        padding: .8rem 1rem;
+        font-size: .8rem;
+    }
+    .codeBlock::after { display: none; }
 }
 
 @media (max-width: 520px) {
