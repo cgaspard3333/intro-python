@@ -32,7 +32,7 @@
     --topbar-rule: #3d3730;
     --topbar-ink: #f4f0ea;
     --topbar-soft: #b6ada2;
-    --topbar-accent: #ff9f4a;
+    --topbar-accent: #f7943c;
     --topbar-accent-line: #62401f;
     --topbar-badge: #35251a;
 }
@@ -49,14 +49,14 @@
     --rule: #e6e2dd;
     --rule-strong: #cec8c1;
 
-    --accent: #bf4d09;
-    --accent-ink: #8f3806;
-    --accent-soft: #fdeee2;
-    --accent-line: #f0c19a;
+    --accent: #a8400a;
+    --accent-ink: #7e2f06;
+    --accent-soft: #fbe9db;
+    --accent-line: #eeb98d;
     --on-accent: #ffffff;
-    --link: #b4480a;
-    --link-hover: #8f3806;
-    --focus: #bf4d09;
+    --link: #a8400a;
+    --link-hover: #7e2f06;
+    --focus: #a8400a;
 
     --shadow: 0 1px 2px rgba(28, 25, 23, .07), 0 14px 34px rgba(28, 25, 23, .09);
     --inline-code-bg: #eceae6;
@@ -66,13 +66,9 @@
     --c-acquis: #10794f;    --t-acquis: #e6f4ed;
     --c-piege: #c62f3c;     --t-piege: #fbecec;
     --c-astuce: #94700a;    --t-astuce: #faf3e0;
-    --c-cle: #bf4d09;       --t-cle: #fdf0e6;
 
-    /* L'exemple est l'encadré le plus fréquent — plus de la moitié des
-       blocs colorés d'une page. Il appartient donc à la famille chaude de
-       l'accent, très désaturée : il colore sans discuter avec le reste, et
-       laisse le bleu des notes ressortir comme l'interruption qu'il est. */
-    --c-exemple: #8a6a55;   --t-exemple: #f2ede8;
+    /* Exemples et « .. warning:: » portent la couleur d'accent. */
+    --c-exemple: #a8400a;   --t-exemple: #fbe8d8;
 }
 
 /* -------------------------------------------------------- le site, sombre */
@@ -87,14 +83,14 @@
     --rule: #2f2b27;
     --rule-strong: #423d37;
 
-    --accent: #ff9f4a;
-    --accent-ink: #ffc99b;
-    --accent-soft: #2e1e0e;
-    --accent-line: #5e3a1a;
+    --accent: #f28c33;
+    --accent-ink: #ffbe8a;
+    --accent-soft: #2c1b0b;
+    --accent-line: #5c3716;
     --on-accent: #1b0e04;
-    --link: #ff9f4a;
-    --link-hover: #ffbc80;
-    --focus: #ff9f4a;
+    --link: #f28c33;
+    --link-hover: #ffae66;
+    --focus: #f28c33;
 
     --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 40px rgba(0, 0, 0, .45);
     --inline-code-bg: #282521;
@@ -104,10 +100,9 @@
     --c-acquis: #4bd79b;    --t-acquis: #10251a;
     --c-piege: #ff8585;     --t-piege: #2c1715;
     --c-astuce: #ffd166;    --t-astuce: #2c2512;
-    --c-cle: #ff9f4a;       --t-cle: #2a1a0a;
 
     /* Idem, côté sombre. */
-    --c-exemple: #b09a89;   --t-exemple: #201d1a;
+    --c-exemple: #f28c33;   --t-exemple: #2c1b0a;
 }
 
 /* ------------------------------------------------------- le code, sombre */
@@ -118,7 +113,7 @@
     --code-edge: #322d28;
     --code-ink: #e8e4de;
     --code-faint: #7d766e;
-    --code-accent: #ff9f4a;
+    --code-accent: #f28c33;
 
     --hl-comment: #7a736b;
     --hl-keyword: #ff7ab8;
@@ -137,7 +132,7 @@
     --code-edge: #e7e3de;
     --code-ink: #1b1917;
     --code-faint: #8b847c;
-    --code-accent: #bf4d09;
+    --code-accent: #a8400a;
 
     --hl-comment: #837c74;
     --hl-keyword: #b32c86;

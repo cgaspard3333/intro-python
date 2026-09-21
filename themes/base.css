@@ -530,12 +530,15 @@ h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
 
 .callout-exemple::before { font-size: .82rem; letter-spacing: -.06em; }
 
+/* Les objectifs de chapitre reprennent la carte d'informations de l'accueil :
+   une surface neutre, centrée, sans couleur — la couleur sert ailleurs. */
 .callout-cle {
-    --tint: var(--t-cle);
-    --edge: var(--c-cle);
+    --tint: var(--surface-2);
+    --edge: var(--rule);
     display: block;
     padding: 1.15rem 1.35rem;
     border-left-width: 1px;
+    border-radius: var(--radius-lg);
     text-align: center;
     font-size: 1.04em;
 }
