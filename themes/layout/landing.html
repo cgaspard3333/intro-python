@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<title>{{title}}</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<script>
+(function () {
+    var root = document.documentElement;
+    var theme = 'auto';
+    var code = 'dark';
+    try {
+        theme = localStorage.getItem('cours.theme') || theme;
+        code = localStorage.getItem('cours.code') || code;
+    } catch (e) {}
+    var dark = theme === 'dark'
+        || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.dataset.theme = dark ? 'dark' : 'light';
+    root.dataset.themeChoice = theme;
+    root.dataset.code = code === 'auto' ? (dark ? 'dark' : 'light') : code;
+    root.dataset.codeChoice = code;
+})();
+</script>
+<link rel="preload" href="assets/themes/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/themes/fonts/public-sans-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/themes/fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/themes/fonts/jetbrains-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/themes/fonts/space-grotesk-500-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/themes/fonts/jetbrains-mono-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/themes/fonts.css" />
+<link rel="stylesheet" href="assets/themes/base.css" />
+<link rel="stylesheet" href="assets/themes/theme.css" />
+<link rel="stylesheet" href="assets/themes/perso.css" />
+<script defer src="assets/themes/theme.js"></script>
+</head>
+<body class="landingPage">
+<div class="codeField" aria-hidden="true"></div>
+
+<header class="topbar">
+    <span class="brand">
+        <span class="brandMark" aria-hidden="true">&gt;&gt;&gt;</span>
+        <span class="brandName">{{shortTitle}}</span>
+    </span>
+{{settings}}
+</header>
+
+<main class="chooser" id="contenu">
+    <div class="chooserInner">
+        <p class="chooserKicker">{{subtitle}}</p>
+        <h1 class="chooserTitle">{{title}}</h1>
+
+        <div class="prompt">
+            <p class="promptLine">
+                <span class="promptCaret" aria-hidden="true">&gt;&gt;&gt;</span>
+                <code>groupe = input("Quel est ton groupe de TP&nbsp;? ")</code><span class="promptCursor" aria-hidden="true"></span>
+            </p>
+            <div class="promptChoices">{{choices}}</div>
+        </div>
+
+        <p class="chooserResume" hidden>
+            <a class="resumeLink" href="#"></a>
+        </p>
+
+        <p class="chooserHint">
+            Un lien en bas de chaque page ramène ici si tu t'es trompé de groupe.
+        </p>
+    </div>
+</main>
+
+<footer class="pageFooter chooserFooter">
+    <ul class="footerContacts">{{teachers}}</ul>
+    <p class="footerNote">Les codes rendus sont à déposer sur <a href="{{moodle}}">Moodle</a>.</p>
+</footer>
+</body>
+</html>

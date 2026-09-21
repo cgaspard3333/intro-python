@@ -1,31 +1,26 @@
-Introduction au Python
-===============
-
 .. slide::
 
-Présentation
--------
+Introduction à Python
+=====================
 
-.. important::
+.. lead::
 
-    **Objectif** : Découvrir et s'approprier le langage Python
+    Découvrir et s'approprier le langage Python.
 
-.. center::
+.. pratique::
 
-    Clément GASPARD - `clement.gaspard@u-bordeaux.fr <mailto:clement.gaspard@u-bordeaux.fr>`_
+    **Enseignants**
 
-    Mélodie DANIEL - `melodie.daniel@u-bordeaux.fr <mailto:melodie.daniel@u-bordeaux.fr>`_
+    Clément Gaspard — `clement.gaspard@u-bordeaux.fr <mailto:clement.gaspard@u-bordeaux.fr>`_
 
-.. slide::
+    Mélodie Daniel — `melodie.daniel@u-bordeaux.fr <mailto:melodie.daniel@u-bordeaux.fr>`_
 
-.. important::
-    
-Tous les codes que vous écrirez devront être remis au format zip sur `Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_  
+    **Rendu** — tous les codes que vous écrirez devront être remis au format zip sur `Moodle <https://moodle.u-bordeaux.fr/course/view.php?id=19481>`_.
 
 .. slide::
 
 Sommaire
--------
+--------
 
 .. toctree::
 
@@ -39,4 +34,3 @@ Sommaire
     chap6
     deboguage
     chap7
-

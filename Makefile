@@ -1,13 +1,16 @@
-# Dummy makefile to trigger the build script
+# Construction du site. « make » suffit ; « make dev » pour l'aperçu local.
+
 all: zips
-	@php build.php 
+	@php build.php
+
+dev:
+	@bash watch.sh
 
 clean:
-	@rm -rf web
-	make -C files clean
+	@rm -rf web .build
+	@$(MAKE) -C files clean
 
 zips:
-	@make -C files/
+	@$(MAKE) -C files/
 
-watch:
-	bash watch.sh
+.PHONY: all dev clean zips

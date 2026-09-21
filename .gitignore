@@ -1,4 +1,6 @@
-vendor/
-web/
-**.zip
+/vendor/
+/web/
+/.build/
+/.claude/
+files/*.zip
 .vscode/

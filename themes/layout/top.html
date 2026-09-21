@@ -1,0 +1,29 @@
+<a class="skipLink" href="#contenu">Aller au contenu</a>
+
+<header class="topbar">
+    <a class="brand" href="{{home}}">
+        <span class="brandMark" aria-hidden="true">&gt;&gt;&gt;</span>
+        <span class="brandName">{{shortTitle}}</span>
+    </a>
+
+    <div class="searchBox">
+        <svg class="searchIcon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.6" cy="8.6" r="5.1" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12.4 12.4L17 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <input class="searchField" type="search" placeholder="Rechercher dans le cours" aria-label="Rechercher dans le cours" autocomplete="off" />
+        <kbd class="searchHint">/</kbd>
+        <div class="searchResults" hidden></div>
+    </div>
+
+    <span class="groupBadge">{{groupLabel}}</span>
+
+{{settings}}
+
+    <button class="iconButton navToggle" type="button" aria-expanded="false" aria-controls="sommaire" aria-label="Afficher le sommaire">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+</header>
+
+<div class="layout">
+<aside class="sidebar" id="sommaire"><!--NAV:START--><!--NAV:END--></aside>
+<main class="main" id="contenu">
+<div class="core">
+<div class="{{contentsClass}}">

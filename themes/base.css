@@ -1,0 +1,1332 @@
+/**
+ * Structure et composants du cours.
+ *
+ * Ce fichier ne choisit aucune couleur ni aucune police : il consomme les
+ * variables posées par themes/theme.css.
+ */
+
+/* ------------------------------------------------------------------ socle */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Mesures de gabarit.
+   La colonne de texte prend toute la place que lui laisse le sommaire, dans
+   la limite de --measure ; le corps de texte grandit avec elle pour que le
+   nombre de caractères par ligne reste tenable. */
+:root {
+    --topbar-h: 3.25rem;
+    --sidebar-w: 17rem;
+    --page-max: 94rem;
+    --measure: min(100%, 60rem);
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--topbar-h) + 1rem);
+
+    /* Slidey pose « background-color: transparent » en ligne sur body quand il
+       repasse en mode texte : le fond se joue donc ici. */
+    background: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading);
+    font-feature-settings: "kern", "liga";
+}
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--link-hover); }
+
+:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+img { max-width: 100%; height: auto; }
+
+.skipLink {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    padding: .6rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+}
+.skipLink:focus { left: .75rem; top: .75rem; }
+
+/* ----------------------------------------------------------------- bandeau */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    height: var(--topbar-h);
+    padding: 0 clamp(.75rem, 2vw, 1.5rem);
+    background: var(--topbar-bg);
+    border-bottom: 1px solid var(--rule);
+    backdrop-filter: saturate(1.4) blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: .5rem;
+    flex: none;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: var(--display-weight);
+}
+
+.brandMark {
+    font-family: var(--font-mono);
+    font-size: .8em;
+    color: var(--accent);
+    letter-spacing: -.04em;
+}
+
+.brandName { font-size: 1.02rem; letter-spacing: var(--display-tracking); }
+
+.iconButton {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+.iconButton:hover { background: var(--surface-2); color: var(--ink); }
+.iconButton svg { width: 1.15rem; height: 1.15rem; }
+
+:root[data-theme="light"] .iconMoon,
+:root[data-theme="dark"] .iconSun { display: none; }
+
+.navToggle { display: none; }
+
+.groupBadge {
+    padding: .18rem .55rem;
+    border: 1px solid var(--accent-line);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------------ pages */
+
+.layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+    max-width: var(--page-max);
+    margin: 0 auto;
+}
+
+
+.main { min-width: 0; padding: 0 clamp(1rem, 3vw, 3rem) 4rem; }
+
+.contents {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* L'accueil d'un groupe est une grille de chapitres, pas de la prose : elle
+   occupe toute la largeur disponible. */
+.contents.is-home { max-width: 100%; }
+
+/* ------------------------------------------------------------- navigation */
+
+.sidebar {
+    position: sticky;
+    top: var(--topbar-h);
+    align-self: start;
+    max-height: calc(100vh - var(--topbar-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1.75rem .75rem 3rem 1.25rem;
+    border-right: 1px solid var(--rule);
+}
+
+/* ------------------------------------------------------------- recherche */
+
+.searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 26rem;
+    margin: 0 auto 0 clamp(.75rem, 2vw, 1.75rem);
+}
+
+.searchIcon {
+    position: absolute;
+    left: .55rem;
+    width: 1rem;
+    height: 1rem;
+    color: var(--ink-faint);
+    pointer-events: none;
+}
+
+.searchField {
+    width: 100%;
+    padding: .45rem 2rem .45rem 2rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    color: var(--ink);
+    font: inherit;
+    font-size: .85rem;
+}
+.searchField::placeholder { color: var(--ink-faint); }
+.searchField:focus { border-color: var(--accent-line); background: var(--surface); outline: none; }
+.searchBox:focus-within { outline: 2px solid var(--focus); outline-offset: 1px; border-radius: var(--radius); }
+.searchField::-webkit-search-cancel-button { filter: grayscale(1); }
+
+.searchHint {
+    position: absolute;
+    right: .5rem;
+    padding: .05rem .3rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    pointer-events: none;
+}
+.searchField:focus ~ .searchHint { display: none; }
+
+/* Les résultats s'ouvrent sous le champ, comme un menu. */
+.searchResults {
+    position: absolute;
+    top: calc(100% + .5rem);
+    left: 0;
+    z-index: 60;
+    width: max(100%, 32rem);
+    max-width: calc(100vw - 2rem);
+    max-height: min(32rem, calc(100vh - var(--topbar-h) - 2rem));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: .5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+.searchResults[hidden] { display: none; }
+
+.searchCount { margin: .1rem 0 .45rem .55rem; color: var(--ink-faint); font-size: .78rem; }
+.searchEmpty { margin: .3rem .55rem; color: var(--ink-faint); font-size: .85rem; }
+
+.searchList { margin: 0; padding: 0; list-style: none; }
+
+.searchHit {
+    display: block;
+    padding: .5rem .6rem;
+    margin-bottom: .25rem;
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+.searchHit:hover, .searchHit.is-active { background: var(--surface-2); color: var(--ink); }
+
+.hitPage { display: block; color: var(--ink-faint); font-size: .72rem; }
+.hitSection { display: block; margin: .05rem 0 .15rem; color: var(--ink); font-size: .85rem; font-weight: 600; line-height: 1.3; }
+.hitText { display: block; font-size: .78rem; line-height: 1.4; }
+.hitText mark { background: var(--accent-soft); color: var(--accent-ink); border-radius: 2px; }
+
+.navList, .navChildren, .navOutline { margin: 0; padding: 0; list-style: none; }
+
+.navLink {
+    display: flex;
+    align-items: baseline;
+    gap: .55rem;
+    padding: .34rem .55rem;
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    font-size: .9rem;
+    line-height: 1.35;
+    text-decoration: none;
+}
+.navLink:hover { background: var(--surface-2); color: var(--ink); }
+
+.navTitle { flex: 1; }
+
+.navProgress {
+    position: relative;
+    flex: none;
+    align-self: center;
+    width: 2.25rem;
+    height: .3rem;
+    border-radius: 999px;
+    background: var(--rule);
+    color: transparent;
+    overflow: hidden;
+}
+.navProgress::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(var(--p, 0));
+    transform-origin: left;
+    transition: transform .2s ease;
+}
+.navProgress[data-done="all"]::after { background: var(--c-acquis); }
+.navProgress[hidden] { display: none; }
+
+.navItem.is-current > .navLink {
+    color: var(--ink);
+    font-weight: 600;
+    background: var(--accent-soft);
+}
+
+.navChildren { margin-left: 1.75rem; }
+.navChildren .navLink { font-size: .85rem; }
+
+.navOutline { margin: .15rem 0 .5rem 1.75rem; border-left: 1px solid var(--rule); }
+.outlineLink {
+    display: block;
+    padding: .2rem .55rem;
+    color: var(--ink-faint);
+    font-size: .84rem;
+    line-height: 1.35;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+}
+.outlineLink:hover { color: var(--ink); }
+.outlineLink.is-active { color: var(--accent); border-left-color: var(--accent); }
+
+.navOutline-sub { margin: 0 0 .1rem .75rem; border-left: 0; }
+.outlineLink-sub { font-size: .79rem; opacity: .9; }
+.sidebar code { padding: 0; background: none; font-size: .93em; }
+
+.navScrim { display: none; }
+
+/* -------------------------------------------------------------- typographie */
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: var(--display-weight); line-height: 1.2; text-wrap: balance; }
+
+h1 {
+    margin: 0 0 1.75rem;
+    font-size: var(--text-h1);
+    letter-spacing: var(--display-tracking);
+}
+
+h2 {
+    margin: 2.75rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: var(--text-h2);
+}
+
+h3 { margin: 2rem 0 .65rem; font-size: var(--text-h3); }
+
+h2.is-first { border-top: 0; padding-top: 0; margin-top: 2rem; }
+
+/* Les titres de section sont typés d'après l'émoji qui les ouvre (voir
+   theme.js). Les sections « à lire » gardent un simple filet coloré ; les
+   sections « à faire » deviennent des bandeaux, pour donner un rythme à la
+   page. */
+h2[class*="sec-"] { --sec: var(--accent); --sec-tint: var(--accent-soft); }
+
+/* Les bandeaux de section partagent tous la couleur d'accent : l'émoji dit
+   déjà de quel type de section il s'agit, la couleur n'a qu'à donner le
+   rythme. Seules les pages d'exercices supplémentaires gardent une échelle
+   colorée, parce que la difficulté est une information que rien d'autre ne
+   porte. */
+h2.sec-facile { --sec: var(--c-acquis); --sec-tint: var(--t-acquis); }
+h2.sec-moyen { --sec: var(--c-attention); --sec-tint: var(--t-attention); }
+h2.sec-difficile { --sec: var(--c-piege); --sec-tint: var(--t-piege); }
+
+/* Le remplissage est en « em » : il suit la taille du titre, qui double en
+   mode diapositives. Sinon l'émoji, plus haut que la ligne de texte,
+   déborderait du bandeau. */
+h2.is-banner {
+    margin-top: 3rem;
+    padding: .45em .65em;
+    border: 0;
+    border-left: 3px solid var(--sec);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--sec-tint);
+}
+h2.is-banner.is-first { margin-top: 2rem; }
+h2.is-banner .permalink { margin-left: -1.6em; }
+
+p { margin: 0 0 1rem; }
+
+.contents ul, .contents ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+.contents li { margin-bottom: .35rem; }
+.contents li.dash { list-style: none; text-indent: -.85rem; }
+.contents li.dash::before { content: "–"; margin-right: .45rem; color: var(--ink-faint); }
+
+strong { font-weight: 600; }
+
+.center { text-align: center; }
+.center ul, .center ol { display: inline-block; text-align: left; }
+
+.permalink {
+    float: left;
+    margin-left: -1.1em;
+    color: transparent;
+    text-decoration: none;
+    font-weight: 400;
+}
+h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
+
+/* ------------------------------------------- accroche et infos pratiques */
+
+.lead {
+    max-width: 36rem;
+    margin: -.75rem 0 1.75rem;
+    color: var(--ink-soft);
+    font-size: clamp(1.15rem, 1.05rem + .4vw, 1.38rem);
+    line-height: 1.45;
+    text-wrap: balance;
+}
+.lead p { margin: 0; }
+
+.pratique {
+    display: grid;
+    gap: .3rem;
+    margin: 0 0 2.75rem;
+    padding: 1.15rem 1.4rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    background: var(--surface-2);
+    font-size: .95rem;
+    text-align: center;
+}
+.pratique p { margin: 0; }
+.pratique strong { color: var(--ink); font-weight: 600; }
+
+/* La dernière ligne — le rendu — se détache du bloc des contacts. */
+.pratique p:last-child {
+    margin-top: .55rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--rule);
+}
+
+/* Les adresses sont écrites en clair : c'est là qu'on vient les chercher. */
+.pratique a[href^="mailto:"] { font-family: var(--font-mono); font-size: .92em; }
+
+/* ------------------------------------------------------------------ toc */
+
+.toc { margin: 1rem 0 0; }
+.toc ul { margin: 0; padding: 0; list-style: none; }
+.toc > ul > li { margin-top: .9rem; }
+.toc > ul > li > a { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 1.05rem; }
+.toc ul ul { margin: .3rem 0 .3rem 1.1rem; border-left: 1px solid var(--rule); }
+.toc ul ul li { padding-left: .85rem; }
+.toc ul ul a { font-size: .95rem; color: var(--ink-soft); }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* L'avancement se lit sur le bord supérieur de la tuile. Pas de rayon ici :
+   c'est la tuile qui découpe la barre (overflow: hidden), sinon un rayon de
+   14 px sur une barre de 3 px en rognerait les extrémités. */
+.cardProgress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    overflow: hidden;
+    background: var(--rule-strong);
+}
+.cardProgress::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(var(--p, 0));
+    transform-origin: left;
+}
+.cardProgress[data-done="all"]::after { background: var(--c-acquis); }
+
+/* Reprendre là où on s'est arrêté. */
+.resumeCard {
+    display: flex;
+    align-items: baseline;
+    gap: .6rem;
+    margin: 0 0 1.25rem;
+    padding: .7rem 1rem;
+    border: 1px solid var(--accent-line);
+    border-radius: var(--radius-lg);
+    background: var(--accent-soft);
+    font-size: .92rem;
+}
+.resumeCard .resumeHint { color: var(--ink-soft); }
+.resumeCard a { font-weight: 600; text-decoration: none; }
+.resumeCard a:hover { text-decoration: underline; }
+
+
+/* -------------------------------------------------------------- encadrés */
+
+/* Grille à deux colonnes : le repère occupe la première, le contenu la
+   seconde. L'alignement sur les lignes de base place le repère exactement sur
+   la première ligne de texte, quelle que soit sa largeur. */
+.callout {
+    --tint: var(--surface-2);
+    --edge: var(--rule-strong);
+    --glyph: "";
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: .8rem;
+    align-items: baseline;
+    margin: 1.35rem 0;
+    padding: .9rem 1.1rem;
+    background: var(--tint);
+    border: 1px solid var(--edge);
+    border-left-width: 3px;
+    border-radius: var(--radius);
+}
+.callout::before {
+    grid-column: 1;
+    content: var(--glyph);
+    color: var(--edge);
+    font-family: var(--font-mono);
+    font-size: .95rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.callout > * { grid-column: 2; }
+.callout > :last-child { margin-bottom: 0; }
+.callout p { margin-bottom: .5rem; }
+
+/* Le glyphe dit à quoi sert l'encadré, pas la couleur seule : « i » pour ce
+   qu'il faut retenir, l'invite Python pour un exemple, « + » pour un coup de
+   pouce. Voir src/Kernel.php pour la directive qui mène à chaque classe. */
+.callout-note      { --tint: var(--t-note);      --edge: var(--c-note);      --glyph: "i"; }
+.callout-exemple   { --tint: var(--t-exemple);   --edge: var(--c-exemple);   --glyph: "\003E\003E\003E"; }
+.callout-attention { --tint: var(--t-attention); --edge: var(--c-attention); --glyph: "!"; }
+.callout-acquis    { --tint: var(--t-acquis);    --edge: var(--c-acquis);    --glyph: "\2713"; }
+.callout-piege     { --tint: var(--t-piege);     --edge: var(--c-piege);     --glyph: "\00D7"; }
+.callout-astuce    { --tint: var(--t-astuce);    --edge: var(--c-astuce);    --glyph: "+"; }
+
+.callout-exemple::before { font-size: .82rem; letter-spacing: -.06em; }
+
+.callout-cle {
+    --tint: var(--t-cle);
+    --edge: var(--c-cle);
+    display: block;
+    padding: 1.15rem 1.35rem;
+    border-left-width: 1px;
+    text-align: center;
+    font-size: 1.04em;
+}
+.callout-cle::before { content: none; }
+.callout-cle ul, .callout-cle ol { display: inline-block; text-align: left; }
+
+/* --------------------------------------------------- fiche récapitulative */
+
+.recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: .75rem;
+    margin: 1.5rem 0;
+}
+
+.recapCard {
+    display: flex;
+    flex-direction: column;
+    padding: .9rem 1rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+}
+
+.recapTitle {
+    margin: 0 0 .7rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-weight: var(--display-weight);
+    font-size: .95rem;
+    letter-spacing: var(--display-tracking);
+}
+
+.recapCard > :last-child { margin-bottom: 0; }
+.recapCard p { margin-bottom: .6rem; font-size: .92rem; line-height: 1.5; }
+
+.recapCard ul {
+    margin: 0 0 .6rem;
+    padding: 0;
+    list-style: none;
+    font-size: .9rem;
+}
+.recapCard li { margin-bottom: .3rem; line-height: 1.4; }
+
+/* Une liste entièrement faite de symboles s'aligne en deux colonnes. C'est
+   la liste qui porte la grille, pas chaque puce : sinon chaque ligne
+   dimensionnerait sa colonne dans son coin et rien ne s'alignerait.
+   La classe est posée par theme.js : en CSS, « code:first-child » désigne le
+   premier élément et non le premier nœud, ce qui attraperait aussi une phrase
+   dont le code est au milieu. */
+.recapCard ul.is-symbols {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: .34rem .7rem;
+    align-items: baseline;
+}
+.recapCard ul.is-symbols > li { display: contents; }
+
+/* Sans cela le fragment de code s'étire à la largeur de la colonne et
+   traîne du fond vide derrière lui. */
+.recapCard ul.is-symbols > li > code:first-child {
+    justify-self: start;
+    margin-left: 0;
+}
+
+.recapCard ul:not(.is-symbols) > li {
+    padding-left: .9rem;
+    text-indent: -.9rem;
+}
+.recapCard ul:not(.is-symbols) > li::before {
+    content: "–";
+    margin-right: .45rem;
+    color: var(--ink-faint);
+}
+
+.recapCard .codeBlock { margin: 0 0 .7rem; }
+.recapCard .codeBlock::after { display: none; }
+
+/* Les cartes peuvent être étroites : un rappel d'une ligne se replie plutôt
+   que de disparaître dans un défilement horizontal que personne ne cherche.
+   Et le bouton « copier » n'a rien à faire sur un extrait de deux mots. */
+.recapCard .codeBlock code {
+    padding: .7rem .8rem;
+    font-size: .8rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.recapCard .copyCode { display: none; }
+
+/* --------------------------------------------------------------- étapes */
+
+.stepContainer { position: relative; margin: 1.1rem 0; }
+
+/* La case vit dans la marge : le texte d'une étape reste aligné sur le reste
+   de la page. Faute de marge, elle repasse en colonne (voir plus bas). */
+.stepChecker {
+    position: absolute;
+    left: -2.4rem;
+    top: .15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    font-family: var(--font-mono);
+    font-size: .66rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+}
+
+.stepChecker input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: grid;
+    place-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    border: 1.5px solid var(--rule-strong);
+    border-radius: 4px;
+    background: var(--surface);
+    cursor: pointer;
+}
+.stepChecker input[type="checkbox"]::before {
+    content: "\2713";
+    color: var(--on-accent);
+    font-size: .78rem;
+    line-height: 1;
+    transform: scale(0);
+}
+.stepChecker input[type="checkbox"]:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+.stepChecker input[type="checkbox"]:checked::before { transform: none; }
+.stepChecker:hover input[type="checkbox"] { border-color: var(--accent); }
+
+.stepContents { transition: opacity .15s ease; }
+.stepContents > .step > :first-child { margin-top: 0; }
+.stepContents > .step > :last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------- révélables */
+
+.spoilerWrapper { margin: 1.1rem 0; }
+
+.spoilerLink {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .3rem .7rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    font-size: .88rem;
+    text-decoration: none;
+}
+.spoilerLink:hover { border-style: solid; color: var(--ink); }
+.spoilerLink::before { content: "?"; font-family: var(--font-mono); color: var(--accent); }
+
+.spoiler {
+    margin-top: .6rem;
+    padding: .85rem 1.1rem;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+}
+.spoiler > :last-child { margin-bottom: 0; }
+
+/* ----------------------------------------------------------------- code */
+
+/* JetBrains Mono fond « /= », « != » ou « >= » en un glyphe unique. Joli
+   dans un éditeur, nuisible dans un cours : l'étudiant doit voir les deux
+   caractères qu'il aura à taper. Ligatures coupées partout où la police à
+   chasse fixe est employée. */
+code, pre, kbd,
+.brandMark, .searchHint, .stepChecker, .contactMail, .promptLine,
+.choiceValue, .navProgress, .mobileControls .pill,
+.callout::before, .codeBlock::after, .spoilerLink::before,
+.toc > ul > li[data-num]::before,
+.pratique a[href^="mailto:"] {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* L'espace autour d'un fragment de code se prend en marge, pas en
+   remplissage : le fond épouse le code au lieu de flotter autour. */
+code {
+    padding: .1em .2em;
+    margin: 0 .12em;
+    background: var(--inline-code-bg);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: .88em;
+}
+
+.codeBlock {
+    position: relative;
+    margin: 1.2rem 0;
+    background: var(--code-bg);
+    border: 1px solid var(--code-edge);
+    border-radius: var(--radius-lg);
+}
+
+.codeBlock::after {
+    content: attr(data-language);
+    position: absolute;
+    top: .45rem;
+    right: .7rem;
+    color: var(--code-faint);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .03em;
+    pointer-events: none;
+}
+.codeBlock[data-language="text"]::after,
+.codeBlock[data-language="no-highlight"]::after { content: none; }
+
+.codeBlock pre { margin: 0; overflow-x: auto; }
+
+.codeBlock code {
+    display: block;
+    padding: .95rem 3.9rem .95rem 1.1rem;
+    background: none;
+    color: var(--code-ink);
+    font-size: .875rem;
+    line-height: 1.55;
+    tab-size: 4;
+}
+
+.copyCode {
+    position: absolute;
+    top: .4rem;
+    right: .45rem;
+    padding: .2rem .45rem;
+    border: 1px solid var(--code-edge);
+    border-radius: 5px;
+    background: var(--code-bg);
+    color: var(--code-faint);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+.codeBlock:hover .copyCode, .copyCode:focus-visible { opacity: 1; }
+.copyCode:hover { color: var(--code-ink); }
+.codeBlock:hover::after { opacity: 0; }
+
+.hljs-comment, .hljs-quote { color: var(--hl-comment); font-style: italic; }
+.hljs-keyword, .hljs-literal, .hljs-selector-tag, .hljs-type { color: var(--hl-keyword); }
+.hljs-number, .hljs-selector-attr, .hljs-selector-pseudo { color: var(--hl-number); }
+.hljs-string, .hljs-doctag, .hljs-regexp { color: var(--hl-string); }
+.hljs-built_in, .hljs-name, .hljs-section, .hljs-title { color: var(--hl-builtin); }
+.hljs-title.class_, .hljs-class .hljs-title, .hljs-variable, .hljs-template-variable, .hljs-selector-id { color: var(--hl-class); }
+.hljs-attr, .hljs-attribute, .hljs-meta, .hljs-symbol, .hljs-bullet { color: var(--hl-meta); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 600; }
+
+/* -------------------------------------------------------------- tableaux */
+
+.tableWrap { margin: 1.2rem 0; overflow-x: auto; }
+
+.tableWrap table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+
+.tableWrap th, .tableWrap td {
+    padding: .45rem .7rem;
+    border: 1px solid var(--rule);
+    text-align: left;
+}
+.tableWrap th { background: var(--surface-2); font-weight: 600; }
+.tableWrap tr:nth-child(even) td { background: var(--surface-2); }
+
+/* ---------------------------------------------------------------- images */
+
+.contents img { display: block; margin: 1.5rem auto; border-radius: var(--radius); }
+.contents p img { display: inline; margin: 0 .2em; vertical-align: middle; border-radius: 0; }
+
+.youtube { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: var(--radius-lg); }
+
+/* -------------------------------------------------------- page suivante */
+
+.pager {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: .75rem;
+    margin: 3.5rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.pagerLink {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    padding: .7rem .9rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    color: var(--ink);
+    text-decoration: none;
+}
+.pagerLink:hover { border-color: var(--accent-line); background: var(--accent-soft); }
+.pagerHint { color: var(--ink-faint); font-size: .76rem; }
+.pagerTitle { font-weight: 600; font-size: .95rem; }
+.pagerLink-next { text-align: right; }
+
+/* -------------------------------------------------------------- bas de page */
+
+.pageFooter {
+    max-width: var(--measure);
+    margin: 3rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-faint);
+    font-size: .85rem;
+}
+.pageFooter p { margin: 0 0 .3rem; }
+.pageFooter a { color: var(--ink-soft); }
+
+/* ------------------------------------------------------- mode diapositives */
+
+/* En mode texte, le numéro de diapositive vit dans la marge droite. À
+   gauche il se confondrait avec la numérotation des parties ; à droite, et
+   légèrement surélevé, il se lit comme une commande. Un clic lance la
+   projection sur cette diapositive. Slidey réapplique des marges en ligne à
+   chaque seconde : d'où les « !important ». */
+body:not(.slide-mode) .slideWrapper { position: relative; }
+
+body:not(.slide-mode) .slideNumber {
+    display: block !important;
+    position: absolute;
+    right: -3.9rem;
+    top: .2rem;
+    margin: 0 !important;
+    min-width: 2.8rem;
+    padding: .15rem .35rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: color .12s ease, border-color .12s ease, transform .12s ease;
+}
+body:not(.slide-mode) .slideNumber:hover,
+body:not(.slide-mode) .slideNumber:focus-visible {
+    border-color: var(--accent-line);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Plus de marge à droite : le numéro chevaucherait le texte. */
+@media (max-width: 1180px) {
+    body:not(.slide-mode) .slideNumber { display: none !important; }
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .8rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: .85rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+.pill:hover { border-color: var(--accent-line); }
+.pill svg { width: 1rem; height: 1rem; }
+
+.slideMode, .exitSlideMode { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; }
+.slideMode[hidden] { display: none; }
+.exitSlideMode { display: none; }
+.mobileControls { display: none; position: fixed; right: 1rem; bottom: 4rem; z-index: 60; gap: .3rem; }
+body.slide-mode .mobileControls { display: flex; }
+.mobileControls .pill { padding: .45rem .7rem; font-family: var(--font-mono); }
+
+/* Les exercices restent lisibles dans la page mais sortent de la projection. */
+body.slide-mode .noSlide { display: none; }
+
+body.slide-mode .topbar,
+body.slide-mode .sidebar,
+body.slide-mode .pageFooter,
+body.slide-mode .pager { display: none; }
+
+body.slide-mode .layout { grid-template-columns: minmax(0, 1fr) !important; max-width: none; }
+body.slide-mode .main { padding: 0; }
+body.slide-mode .contents { max-width: none; padding: 0; }
+
+/* Slidey fixe la hauteur du conteneur à celle de la fenêtre. Une diapositive
+   plus haute que l'écran débordait alors sur la suivante et tout se
+   chevauchait. On laisse la hauteur s'adapter, avec l'écran pour minimum :
+   une diapositive courte reste centrée, une longue pousse simplement la
+   suivante plus bas. */
+.slideEnabled {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto !important;
+    min-height: 100vh;
+}
+.slideEnabled .toc ul ul { display: none; }
+.slideEnabled img { margin: .75rem auto; max-height: 55vh; width: auto; }
+
+/* Slidey recopie la couleur de la diapositive sur le body pendant la
+   projection, ce qui noyait la page dans le blanc de la diapositive. On la
+   laisse au fond de la page : la diapositive se lit comme une feuille posée
+   dessus. */
+body.slide-mode { background-color: transparent !important; }
+
+body.slide-mode .slide {
+    width: 100%;
+    max-width: 66rem;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vh, 3rem) clamp(1.5rem, 5vw, 4rem);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+body.slide-mode h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+body.slide-mode h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+body.slide-mode h2:not(.is-banner) { border-top: 0; padding-top: 0; }
+body.slide-mode .contents { font-size: clamp(1rem, 1.6vw, 1.35rem); }
+
+/* --------------------------------------------------------- choix du groupe */
+
+/* Un lent courant de mots du cours derrière la page de choix. Assez pâle
+   pour ne jamais concurrencer le texte : on le perçoit, on ne le lit pas. */
+.codeField {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    --voile: .14;
+}
+:root[data-theme="dark"] .codeField { --voile: .17; }
+
+.codeToken {
+    position: absolute;
+    bottom: -12%;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    opacity: 0;
+    animation-name: courant;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes courant {
+    0% { transform: translateY(0); opacity: 0; }
+    14% { opacity: var(--voile); }
+    86% { opacity: var(--voile); }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .codeField { display: none; }
+}
+
+.landingPage { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Sur la page de choix du groupe, le bandeau se fond dans la page : ses
+   jetons repointent donc vers ceux du thème, sinon son texte clair
+   resterait illisible sur fond clair. */
+.landingPage .topbar {
+    --topbar-ink: var(--ink);
+    --topbar-soft: var(--ink-soft);
+    --topbar-accent: var(--accent);
+    --topbar-raised: var(--surface-2);
+    --topbar-rule: var(--rule);
+    --topbar-badge: var(--accent-soft);
+    --topbar-accent-line: var(--accent-line);
+    background: transparent;
+    border-bottom: 0;
+    backdrop-filter: none;
+}
+
+/* Sans champ de recherche pour occuper le milieu, c'est la marque qui
+   repousse les réglages vers la droite. */
+.landingPage .brand { margin-right: auto; }
+
+.chooser {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 5vw, 3rem);
+    padding-bottom: clamp(3rem, 12vh, 9rem);
+}
+.chooserInner { width: 100%; max-width: 42rem; }
+
+.chooserKicker { margin: 0 0 .5rem; color: var(--ink-faint); font-size: .9rem; }
+
+.chooserTitle {
+    margin: 0 0 2.25rem;
+    font-size: clamp(2.1rem, 6vw, 3.25rem);
+    letter-spacing: var(--display-tracking);
+}
+
+.prompt {
+    padding: 1.4rem;
+    background: var(--code-bg);
+    border: 1px solid var(--code-edge);
+    border-radius: var(--radius-lg);
+}
+
+.promptLine { margin: 0 0 1rem; font-family: var(--font-mono); font-size: .9rem; color: var(--code-ink); }
+
+/* Le curseur de l'invite : il clignote tant que la ligne se tape, puis se
+   pose en attente de la réponse. */
+.promptCursor {
+    display: none;
+    width: .5em;
+    height: 1.05em;
+    margin-left: .1em;
+    background: var(--code-accent);
+    vertical-align: -.18em;
+}
+.prompt.is-typing .promptCursor,
+.prompt.is-ready .promptCursor { display: inline-block; }
+.prompt.is-ready .promptCursor { animation: clignote 1.1s steps(1) infinite; }
+
+@keyframes clignote { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+
+/* Les réponses n'arrivent qu'une fois la question posée. */
+.prompt.is-typing .choice {
+    opacity: 0;
+    transform: translateY(.4rem);
+}
+.prompt.is-ready .choice {
+    opacity: 1;
+    transform: none;
+    transition: opacity .32s ease, transform .32s ease;
+}
+.prompt.is-ready .choice:nth-child(2) { transition-delay: .09s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .prompt.is-typing .choice { opacity: 1; transform: none; }
+    .prompt.is-ready .promptCursor { animation: none; }
+}
+.promptLine code { background: none; padding: 0; color: var(--hl-string); font-size: 1em; }
+.promptCaret { margin-right: .5rem; color: var(--hl-comment); }
+
+.promptChoices { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: .75rem; }
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--code-edge);
+    border-radius: var(--radius);
+    background: var(--code-surface);
+    color: var(--code-ink);
+    text-decoration: none;
+}
+.choice:hover, .choice:focus-visible { border-color: var(--code-accent); background: var(--code-bg); }
+
+.choiceValue { font-family: var(--font-mono); font-size: 1.3rem; color: var(--hl-string); }
+.choice:hover .choiceValue, .choice:focus-visible .choiceValue { color: var(--code-accent); }
+.choiceAction { font-size: .82rem; color: var(--code-faint); }
+
+.chooserResume { margin: 1.25rem 0 0; font-size: .9rem; }
+.resumeLink { font-weight: 600; }
+
+.chooserHint { margin: 1.5rem 0 0; max-width: 34rem; color: var(--ink-soft); font-size: .9rem; }
+
+/* La largeur de contenu est celle de .chooserInner, padding compris : les
+   deux blocs s'alignent sur le même bord gauche. */
+/* width: 100% est indispensable — « margin: 0 auto » sur un élément flex
+   annule l'étirement, et le pied de page se réduirait à son contenu. */
+.chooserFooter {
+    width: 100%;
+    max-width: calc(42rem + 2 * clamp(1rem, 5vw, 3rem));
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem) 2.5rem;
+    border-top: 0;
+}
+
+/* Les adresses s'alignent en colonne : « display: contents » laisse les
+   deux cellules de chaque ligne rejoindre la grille du <ul>. */
+.footerContacts {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    gap: .15rem 1rem;
+    margin: 0 0 .6rem;
+    padding: 0;
+    list-style: none;
+}
+.footerContacts li { display: contents; }
+.contactName { color: var(--ink-soft); }
+.contactMail { font-family: var(--font-mono); font-size: .95em; }
+
+@media (max-width: 460px) {
+    .footerContacts { grid-template-columns: auto; gap: 0; }
+    .footerContacts li + li .contactName { margin-top: .4rem; }
+}
+
+/* ------------------------------------------------- reprise de la lecture */
+
+.readingToast {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 70;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .5rem .5rem .5rem .9rem;
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    font-size: .85rem;
+    transition: opacity .4s ease, transform .4s ease;
+}
+.readingToast.is-leaving { opacity: 0; transform: translateY(.5rem); }
+
+.readingToast button {
+    padding: .3rem .7rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    font: inherit;
+    font-size: .82rem;
+    cursor: pointer;
+}
+.readingToast button:hover { background: var(--accent); color: var(--on-accent); }
+
+@media (max-width: 520px) {
+    .readingToast { left: .75rem; right: .75rem; font-size: .8rem; }
+}
+
+/* ------------------------------------------------------------- réglages */
+
+.settings { position: relative; }
+.settings summary { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: var(--radius); color: var(--ink-soft); cursor: pointer; list-style: none; }
+.settings summary::-webkit-details-marker { display: none; }
+.settings summary:hover { background: var(--surface-2); color: var(--ink); }
+.settings[open] summary { background: var(--surface-2); color: var(--ink); }
+.settings summary svg { width: 1.15rem; height: 1.15rem; }
+
+.settingsMenu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .4rem);
+    width: 19.5rem;
+    padding: .9rem;
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.settingsGroup + .settingsGroup { margin-top: .9rem; }
+
+.settingsLabel {
+    display: block;
+    margin-bottom: .4rem;
+    color: var(--ink-soft);
+    font-size: .82rem;
+}
+
+.segmented {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 2px;
+    padding: 2px;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+}
+
+.segmented button {
+    padding: .35rem .2rem;
+    border: 0;
+    border-radius: calc(var(--radius) - 3px);
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: .8rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.segmented button:hover { color: var(--ink); }
+.segmented button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+
+.settingsAction + .settingsAction { margin-top: .35rem; }
+
+.settingsAction {
+    width: 100%;
+    padding: .45rem .6rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: .84rem;
+    text-align: left;
+    cursor: pointer;
+}
+.settingsAction:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+/* Deuxième clic demandé : l'effacement ne se rattrape pas. */
+.settingsAction[data-confirm] {
+    border-color: var(--c-piege);
+    background: var(--t-piege);
+    color: var(--c-piege);
+    font-weight: 600;
+}
+.settingsAction[data-done] { border-color: var(--c-acquis); color: var(--c-acquis); }
+.settingsAction[hidden] { display: none; }
+
+/* --------------------------------------------------------------- mobile */
+
+@media (min-width: 1700px) {
+    :root { --sidebar-w: 19rem; --measure: min(100%, 66rem); }
+}
+
+@media (max-width: 1080px) {
+    :root { --sidebar-w: 15rem; }
+}
+
+@media (max-width: 900px) {
+    .searchHint { display: none; }
+    .searchResults { left: auto; right: 0; }
+}
+
+@media (max-width: 860px) {
+    .navToggle { display: grid; }
+
+    .layout { grid-template-columns: minmax(0, 1fr); }
+
+    .sidebar {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        z-index: 45;
+        width: min(21rem, 85vw);
+        max-height: calc(100vh - var(--topbar-h));
+        background: var(--surface);
+        transform: translateX(-102%);
+        transition: transform .18s ease;
+    }
+    body.nav-open .sidebar { transform: none; }
+    body.nav-open .navScrim {
+        display: block;
+        position: fixed;
+        inset: var(--topbar-h) 0 0;
+        z-index: 44;
+        background: rgba(0, 0, 0, .35);
+    }
+
+    .brandName { font-size: .95rem; }
+}
+
+@media (max-width: 1180px) {
+    /* Plus assez de marge à gauche : la case reprend une colonne. */
+    .stepContainer { display: grid; grid-template-columns: 1.9rem minmax(0, 1fr); }
+    .stepChecker { position: static; padding-top: .2rem; }
+}
+
+@media (max-width: 620px) {
+    /* Le nom du cours cède la place au champ de recherche. */
+    .brandName { display: none; }
+    .searchBox { margin-left: .5rem; }
+}
+
+@media (max-width: 520px) {
+    .main { padding-bottom: 3rem; }
+}
+
+/* --------------------------------------------------------------- impression */
+
+@media print {
+    .topbar, .sidebar, .slideMode, .exitSlideMode, .mobileControls, .pager, .footerGroup { display: none !important; }
+    .layout { grid-template-columns: 1fr !important; }
+    body { background: #fff; color: #000; }
+    .codeBlock { break-inside: avoid; }
+}

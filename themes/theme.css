@@ -1,0 +1,240 @@
+/**
+ * L'habillage du cours.
+ *
+ * Deux réglages indépendants, posés sur <html> par theme.js :
+ *   data-theme = light | dark     l'ensemble du site
+ *   data-code  = light | dark     les blocs de code seulement
+ *
+ * base.css ne connaît que les variables définies ici.
+ */
+
+:root {
+    --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --display-weight: 700;
+    --display-tracking: -.022em;
+
+    --text-base: clamp(1.0625rem, 1.01rem + .18vw, 1.19rem);
+    --leading: 1.62;
+    --text-h1: clamp(2.1rem, 1.3rem + 2.8vw, 3rem);
+    --text-h2: 1.55rem;
+    --text-h3: 1.16rem;
+
+    --radius: 8px;
+    --radius-lg: 14px;
+
+    /* Le bandeau est sombre dans les deux thèmes. Il donne son assise à la
+       page et fait ressortir l'orange de la marque et du badge, au lieu de
+       le noyer dans un lavis de la même famille. */
+    --topbar-bg: rgba(33, 29, 26, .93);
+    --topbar-raised: #2f2a25;
+    --topbar-rule: #3d3730;
+    --topbar-ink: #f4f0ea;
+    --topbar-soft: #b6ada2;
+    --topbar-accent: #ff9f4a;
+    --topbar-accent-line: #62401f;
+    --topbar-badge: #35251a;
+}
+
+/* --------------------------------------------------------- le site, clair */
+
+:root[data-theme="light"] {
+    --bg: #f5f4f2;
+    --surface: #ffffff;
+    --surface-2: #edebe7;
+    --ink: #1b1917;
+    --ink-soft: #57524c;
+    --ink-faint: #857f78;
+    --rule: #e6e2dd;
+    --rule-strong: #cec8c1;
+
+    --accent: #bf4d09;
+    --accent-ink: #8f3806;
+    --accent-soft: #fdeee2;
+    --accent-line: #f0c19a;
+    --on-accent: #ffffff;
+    --link: #b4480a;
+    --link-hover: #8f3806;
+    --focus: #bf4d09;
+
+    --shadow: 0 1px 2px rgba(28, 25, 23, .07), 0 14px 34px rgba(28, 25, 23, .09);
+    --inline-code-bg: #eceae6;
+
+    --c-note: #1d6fd0;      --t-note: #e7eefd;
+    --c-attention: #a86a00; --t-attention: #fbf2e2;
+    --c-acquis: #10794f;    --t-acquis: #e6f4ed;
+    --c-piege: #c62f3c;     --t-piege: #fbecec;
+    --c-astuce: #94700a;    --t-astuce: #faf3e0;
+    --c-cle: #bf4d09;       --t-cle: #fdf0e6;
+
+    /* L'exemple est l'encadré le plus fréquent — plus de la moitié des
+       blocs colorés d'une page. Il appartient donc à la famille chaude de
+       l'accent, très désaturée : il colore sans discuter avec le reste, et
+       laisse le bleu des notes ressortir comme l'interruption qu'il est. */
+    --c-exemple: #8a6a55;   --t-exemple: #f2ede8;
+}
+
+/* -------------------------------------------------------- le site, sombre */
+
+:root[data-theme="dark"] {
+    --bg: #13120f;
+    --surface: #1c1a17;
+    --surface-2: #262320;
+    --ink: #ece8e3;
+    --ink-soft: #a8a29a;
+    --ink-faint: #7b746c;
+    --rule: #2f2b27;
+    --rule-strong: #423d37;
+
+    --accent: #ff9f4a;
+    --accent-ink: #ffc99b;
+    --accent-soft: #2e1e0e;
+    --accent-line: #5e3a1a;
+    --on-accent: #1b0e04;
+    --link: #ff9f4a;
+    --link-hover: #ffbc80;
+    --focus: #ff9f4a;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 40px rgba(0, 0, 0, .45);
+    --inline-code-bg: #282521;
+
+    --c-note: #62b3fa;      --t-note: #14202c;
+    --c-attention: #ffc24b; --t-attention: #2c2411;
+    --c-acquis: #4bd79b;    --t-acquis: #10251a;
+    --c-piege: #ff8585;     --t-piege: #2c1715;
+    --c-astuce: #ffd166;    --t-astuce: #2c2512;
+    --c-cle: #ff9f4a;       --t-cle: #2a1a0a;
+
+    /* Idem, côté sombre. */
+    --c-exemple: #b09a89;   --t-exemple: #201d1a;
+}
+
+/* ------------------------------------------------------- le code, sombre */
+
+:root[data-code="dark"] {
+    --code-bg: #0f0e0c;
+    --code-surface: #1a1815;
+    --code-edge: #322d28;
+    --code-ink: #e8e4de;
+    --code-faint: #7d766e;
+    --code-accent: #ff9f4a;
+
+    --hl-comment: #7a736b;
+    --hl-keyword: #ff7ab8;
+    --hl-number: #ffb86b;
+    --hl-string: #3ddc97;
+    --hl-builtin: #8b7bff;
+    --hl-class: #7fd1ff;
+    --hl-meta: #ffc24b;
+}
+
+/* -------------------------------------------------------- le code, clair */
+
+:root[data-code="light"] {
+    --code-bg: #faf9f7;
+    --code-surface: #efedea;
+    --code-edge: #e7e3de;
+    --code-ink: #1b1917;
+    --code-faint: #8b847c;
+    --code-accent: #bf4d09;
+
+    --hl-comment: #837c74;
+    --hl-keyword: #b32c86;
+    --hl-number: #a9540d;
+    --hl-string: #0c7355;
+    --hl-builtin: #2563b0;
+    --hl-class: #0f6b8f;
+    --hl-meta: #8a6a00;
+}
+
+/* ------------------------------------------------------------- caractère */
+
+.topbar { border-bottom-color: var(--topbar-rule); }
+
+.topbar .brand { color: var(--topbar-ink); }
+.topbar .brandMark { color: var(--topbar-accent); }
+
+.topbar .iconButton,
+.topbar .settings summary { color: var(--topbar-soft); }
+.topbar .iconButton:hover,
+.topbar .settings summary:hover,
+.topbar .settings[open] summary { background: var(--topbar-raised); color: var(--topbar-ink); }
+
+.topbar .searchField {
+    background: var(--topbar-raised);
+    border-color: var(--topbar-rule);
+    color: var(--topbar-ink);
+}
+.topbar .searchField::placeholder { color: var(--topbar-soft); }
+.topbar .searchField:focus { background: var(--topbar-raised); border-color: var(--topbar-accent); }
+.topbar .searchIcon { color: var(--topbar-soft); }
+.topbar .searchHint { border-color: var(--topbar-rule); color: var(--topbar-soft); }
+
+.topbar .groupBadge {
+    background: var(--topbar-badge);
+    border-color: var(--topbar-accent-line);
+    color: var(--topbar-accent);
+}
+
+h1 { line-height: 1.08; }
+
+h2 { display: flex; align-items: baseline; gap: .6rem; }
+
+/* Le sommaire de l'accueil, en tuiles de chapitre. */
+
+.toc > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: .7rem;
+}
+
+.toc > ul > li {
+    position: relative;
+    margin: 0;
+    padding: .95rem 1rem 1rem;
+    overflow: hidden;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+}
+.toc > ul > li:hover { border-color: var(--accent-line); }
+
+/* Le numéro est celui du chapitre, posé par theme.js : les pages hors
+   numérotation (installation, configuration…) n'en portent pas. */
+.toc > ul > li[data-num]::before {
+    content: attr(data-num);
+    display: block;
+    margin-bottom: .35rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: .72rem;
+}
+
+.toc > ul > li > a {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: var(--display-weight);
+    font-size: 1rem;
+    line-height: 1.3;
+}
+.toc > ul > li:hover > a { color: var(--accent); }
+
+
+.toc ul ul {
+    margin: .6rem 0 0;
+    padding-top: .55rem;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+}
+.toc ul ul li { padding-left: 0; }
+.toc ul ul a { font-size: .85rem; }
+.toc ul ul li { margin-bottom: .15rem; line-height: 1.35; }
+
+/* Sur fond sombre, le bloc de saisie de l'accueil a besoin d'un contour net
+   pour se détacher du fond de page. */
+:root[data-theme="dark"] .prompt {
+    border-color: var(--accent-line);
+    box-shadow: var(--shadow);
+}

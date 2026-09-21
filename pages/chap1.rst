@@ -46,13 +46,13 @@ Lors de ce cours, nous utiliserons **Visual Studio Code** du fait de sa simplici
 
 Python est un langage de programmation : 
 .. discoverList::
-    * **Interprété** : Le code est exécuté directement par un programme appelé interpréteur, sans passer par une compilation complète. Cela permet de voir les résultats rapidement, mais peut être un plus lent qu’un langage compilé.
+    * **Interprété** : Le code est exécuté directement par un programme appelé interpréteur, sans passer par une compilation complète. Cela permet de voir les résultats rapidement, mais peut être un peu plus lent qu’un langage compilé.
     * **Haut niveau** : Le langage est conçu pour être facile à comprendre et à écrire pour les humains. Il se rapproche du langage naturel et cache les détails techniques de la machine (comme la gestion de la mémoire).
     * **Multi-paradigme** : Le langage permet d'utiliser plusieurs styles de programmation (ou paradigmes), comme la programmation orientée objet (avec des objets munis d'attributs), la programmation fonctionnelle (avec des fonctions) ou la programmation impérative (instruction par instruction). Cela rend le langage plus flexible et adaptable à différents types de projets.
 
 .. slide::
 
-Il est populaire pour sa simplicité et sa lisibilité et il est majoritairement utilisé pour les application suivantes : 
+Il est populaire pour sa simplicité et sa lisibilité et il est majoritairement utilisé pour les applications suivantes : 
 
  * Développement web (Django, Flask).
  * Analyse de données (Pandas, NumPy).
@@ -172,14 +172,14 @@ Python possède plusieurs types de données courants :
 .. code-block:: python
     a = 5
     print(type(a))
-    >> int
+    >> <class 'int'>
 
 **Nombres décimaux** (*float*) :
 En informatique, les nombres décimaux sont souvent représentés en nombre à **virgule flottante**, encore appelés nombres flottants.
 .. code-block:: python
     b = 3.14
     print(type(b))
-    >> float
+    >> <class 'float'>
 .. note::
     Compte tenu de la manière dont les nombres à virgule flottante sont stockés en mémoire, les nombres flottants sont souvent approximés, ce qui peut entraîner des erreurs de calcul. Il faut donc **éviter de tester l'égalité de deux nombres flottants**.
 
@@ -187,13 +187,13 @@ En informatique, les nombres décimaux sont souvent représentés en nombre à *
 .. code-block:: python
     c = "Salut"
     print(type(c))
-    >> str
+    >> <class 'str'>
 
 **Booléens** (*bool*) :
 .. code-block:: python
     d = True
     print(type(d))
-    >> bool
+    >> <class 'bool'>
 
 .. note::
     En Python, il n'est pas nécessaire de déclarer le type d'une variable, le langage se charge de le déterminer automatiquement.
@@ -239,13 +239,16 @@ Python permet de faire des opérations mathématiques de base :
             print(a % b)
             >> 2
 
+            print(a // b)
+            >> 1
+
 .. slide::
 
 
 3.6 Les opérateurs d'affectation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Vous connaissait déjà l'opérateur d'affectation ``=`` qui permet d'assigner une valeur à une variable.
+Vous connaissez déjà l'opérateur d'affectation ``=`` qui permet d'assigner une valeur à une variable.
 
 Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écriture de certaines opérations.
 
@@ -299,7 +302,7 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
     Il faut **oublier l'idée d'ouvrir les fichiers un par un**, comme on le ferait avec un éditeur de texte classique.
 
 .. step::
-    Commençons par créer un dossier nommé ``Intro_Python`` dans vos Documents. C'est dans ce dossier que vous aller stocker tous vos projets de programmation que vous allez réaliser dans le cadre de ce cours.
+    Commençons par créer un dossier nommé ``Intro_Python`` dans vos Documents. C'est dans ce dossier que vous allez stocker tous vos projets de programmation que vous allez réaliser dans le cadre de ce cours.
 
 .. note::
     Les noms de fichiers et dossiers ne doivent **jamais contenir d'espaces ou de caractères spéciaux**. On se limite, généralement, aux lettres de l'alphabet, aux chiffres, au tiret (-) et à l'underscore (_).
@@ -325,7 +328,7 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
         * ``taille`` : contenant votre taille en mètres.
 
 .. step::
-    Puis, **en utilisant une seule fois la fonction ``print()``** afficher un message vous présentant qui utilise ces variables, suivi ensuite du type de chacune des variables.
+    Puis, **en utilisant une seule fois la fonction ``print()``** afficher un message de présentation utilisant ces variables, suivi du type de chacune d'elles.
 
     Pour lancer votre programme, appuyez sur le bouton d'exécution du code tel que présenté :doc:`ici <chap1#vscode_interface>`.
     Ou alors, vous pouvez utiliser le terminal intégré de Visual Studio Code en tapant ``python exercice1.py``. (**N'oubliez pas de sauvegarder votre fichier avant de lancer le programme**).
@@ -349,7 +352,7 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
     Créez un nouveau fichier Python nommé ``exercice2.py`` dans le dossier ``Comprendre_les_bases``.
 
 .. step::
-    Écrire un programme qui demande à l'utilisateur deux nombres entiers, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
+    Écrire un programme qui demande à l'utilisateur deux nombres entiers, puis affiche la somme, la différence, le produit et le quotient de ces deux nombres. (Aidez-vous d'internet pour savoir comment demander des valeurs à l'utilisateur en Python, ou encore pour vous rappeler de ce qu'est un quotient 🙂).
 
 .. note::
     Lorsque vous exécutez votre code, vous voyez les sorties/affichages de celui-ci dans le terminal de Visual Studio Code. **Les erreurs éventuelles sont aussi affichées dans ce terminal**. Lors des différents exercices de ce cours vous allez devoir **apprendre à lire ces messages d'erreurs** pour **comprendre et corriger** les erreurs que vous avez commises.  
@@ -358,7 +361,7 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
     .. discoverList::
         * En premier lieu, essayez de comprendre l'erreur par vous-même
         * Dans un second temps, vous pouvez vous aider d'internet avec des sites de questions/réponses comme `StackOverflow <https://stackoverflow.com>`_, ou encore des sites de documentation comme `W3Schools <https://www.w3schools.com/python/>`_.
-        * En dernier recours, si vous êtes vraiment bloqués, n'héistez pas à demander de l'aide à votre enseignant.
+        * En dernier recours, si vous êtes vraiment bloqués, n'hésitez pas à demander de l'aide à votre enseignant.
 
 .. success::
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
@@ -367,10 +370,88 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 ✅ Récapitulatif de Chapitre
 -------------------------
 
-.. center::
+.. recap::
 
-    .. image:: images/recap_chap1.png
-        :alt: Récapitulatif du Chapitre 1
-        :width: 100%
+    .. carte:: Commentaires
+
+        Ignorés à l'exécution, ils expliquent le code.
+
+        .. code-block:: python
+
+            # sur une ligne
+
+            """
+            sur plusieurs
+            lignes
+            """
+
+    .. carte:: Variables
+
+        Un nom, un type, une valeur.
+
+        .. code-block:: python
+
+            longueur = 25
+
+        Le nom doit être explicite, commencer par une lettre ou ``_``, et ne
+        contenir ni espace ni accent.
+
+    .. carte:: Types de base
+
+        * ``int`` entier, par exemple 25
+        * ``float`` nombre à virgule, par exemple 3.14
+        * ``str`` chaîne de caractères, par exemple "Salut"
+        * ``bool`` booléen, True ou False
+        * ``type(x)`` donne le type de x
+
+    .. carte:: Affichage
+
+        .. code-block:: python
+
+            print("v =", 3, "cm", x, end=" ")
+
+        * ``,`` sépare les éléments affichés
+        * ``\n`` retour à la ligne
+        * ``\t`` tabulation
+        * ``end=`` ce qui termine l'affichage, un retour à la ligne par défaut
+
+    .. carte:: Saisie
+
+        .. code-block:: python
+
+            s = input("Saisir une valeur : ")
+
+        ``input()`` renvoie **toujours** une chaîne. À convertir ensuite :
+
+        * ``int(s)`` en entier
+        * ``float(s)`` en flottant
+        * ``eval(s)`` en booléen
+
+    .. carte:: Opérations arithmétiques
+
+        * ``+`` Addition
+        * ``-`` Soustraction
+        * ``*`` Multiplication
+        * ``/`` Division
+        * ``**`` Puissance
+        * ``%`` Modulo, le reste de la division euclidienne
+        * ``//`` Division entière, le quotient
+
+    .. carte:: Opérateurs d'affectation
+
+        * ``=`` Affecte une valeur
+        * ``+=`` Ajoute à la variable
+        * ``-=`` Soustrait à la variable
+        * ``*=`` Multiplie la variable
+        * ``/=`` Divise la variable
+        * ``%=`` Garde le reste
+        * ``//=`` Garde le quotient entier
+
+    .. carte:: À ne pas oublier
+
+        * Les flottants sont approchés : ne testez jamais leur égalité.
+        * La fonction ``input()`` renvoie une chaîne, même si l'utilisateur tape un nombre.
+        * Un fichier Python s'enregistre avec l'extension ``.py``
+        * Ni espace ni accent dans les noms de fichiers et de dossiers.
         
         

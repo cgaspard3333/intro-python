@@ -1,0 +1,10 @@
+/**
+ * Vos propres règles CSS.
+ *
+ * Ce fichier est chargé en dernier : ce que vous écrivez ici l'emporte sur
+ * l'habillage. Pratique pour un ajustement ponctuel sans toucher au reste.
+ *
+ * Exemple :
+ *
+ *     .contents .attention-rentree { color: var(--c-piege); }
+ */
