@@ -1,3 +1,4 @@
+.. GROUPE B
 .. slide::
 
 Chapitre 2 - Conditions et boucles
@@ -9,6 +10,7 @@ Chapitre 2 - Conditions et boucles
 .. important::
     - Apprendre à écrire des programmes dynamiques en utilisant des conditions (``if``, ``else``) et des boucles (``for``, ``while``).
     - Comprendre l’importance des structures de contrôle pour gérer le flux d'exécution d'un programme.
+.. FIN GROUPE
 
 .. slide::
 
@@ -94,7 +96,11 @@ On peut combiner plusieurs conditions grâce aux opérateurs logiques :
 ✏️ Exercice 3 : Un dressing intelligent
 ------------------------------------
 
+.. GROUPE A
+Un exemple d'organisation de vos dossiers/fichiers vous a été donné plus haut dans ce chapitre, vous pouvez vous en inspirer pour continuer à travailler de manière organisée tout au long de ce cours.
+.. GROUPE B
 Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le chapitre précédent, vous pouvez vous en inspirer pour continuer à travailler de manière organisée tout au long de ce cours.
+.. FIN GROUPE
 
 .. note:: 
     Rappel : Toujours ouvrir un dossier à l'ouverture de VSCode pour travailler à l'intérieur de celui-ci.
@@ -144,6 +150,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 .. step::
     Quelle est la différence entre le fonctionnement de la fonction ``bool()`` et de la fonction ``eval()`` ?
 
+.. GROUPE B
 .. slide::
 
 .. step::
@@ -161,6 +168,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
         +-------+-------+------------+
         | True  | False | **?**      |
         +-------+-------+------------+
+.. FIN GROUPE
 
 .. slide::
 
@@ -190,11 +198,15 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 **Objectif** : Améliorer le programme de l'exercice 3 en ajoutant à la température une condition sur le temps (pluie, soleil, nuageux).
 
 .. step:: reset
+    .. GROUPE A
+    **Consigne** : Reprenez le code de l'exercice 3 et ajoutez un choix de temps (pluie, soleil, nuageux) : la tenue affichée doit tenir compte de la température **et** du temps.
+    .. GROUPE B
     **Consigne** : Reprenez le code de l'exercice 3. En plus de la température, vous devez offrir un choix de temps à l'utilisateur. Votre programme doit donc fonctionner de la manière suivante :
 
         1. Demander la température extérieure.
         2. Demander le temps qu'il fait.
         3. Afficher une tenue adaptée à la température et au temps.
+    .. FIN GROUPE
 
     .. warning::
         Exemple : 
@@ -303,8 +315,13 @@ On peut interrompre une boucle avec l’instruction ``break``.
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
 
 .. slide::
+.. GROUPE A
+✅ Récapitulatif — conditions et boucles
+----------------------------------------
+.. GROUPE B
 ✅ Récapitulatif de Chapitre
 -------------------------
+.. FIN GROUPE
 
 .. center::
 

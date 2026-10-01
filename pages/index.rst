@@ -27,7 +27,9 @@ Sommaire
     install_maison
     config_ide
     chap1
+    .. GROUPE B
     chap2
+    .. FIN GROUPE
     chap3
     chap4
     chap5

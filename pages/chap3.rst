@@ -157,7 +157,11 @@ Une fonction peut être annotée avec des types de données pour indiquer le typ
 **Notes** : 
 .. discoverList::
     * Ne pas oublier de gérer les cas d'erreur (division par zéro, opération non reconnue, etc.).
+    .. GROUPE A
+    * Cet exercice est le même que l'Exercice Sup. 2 du Chapitre 1 mais en utilisant des fonctions.
+    .. GROUPE B
     * Cet exercice est le même que l'Exercice Sup. 2 du Chapitre 2 mais en utilisant des fonctions.
+    .. FIN GROUPE
 
 .. success::
     Vous savez maintenant écrire des fonctions simples en Python et vous découvrez comment gérer leur typage.

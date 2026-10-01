@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 1 - Les bases, les conditions et les boucles
+=====================================================
+.. GROUPE B
 Chapitre 1 - Comprendre les bases
 ================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ----------------------
@@ -11,6 +16,10 @@ Chapitre 1 - Comprendre les bases
  - Prendre en main l’environnement de développement VSCode.  
  - Savoir écrire et exécuter des programmes simples en Python.
  - Savoir utiliser les opérateurs arithmétiques simples.
+ .. GROUPE A
+ - Écrire des programmes dynamiques en utilisant des conditions (``if``, ``else``) et des boucles (``for``, ``while``).
+ - Comprendre l'importance des structures de contrôle pour gérer le flux d'exécution d'un programme.
+ .. FIN GROUPE
 
 .. slide::
 
@@ -301,6 +310,14 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
     Il faut donc **toujours ouvrir un dossier** pour pouvoir travailler sur un projet.  
     Il faut **oublier l'idée d'ouvrir les fichiers un par un**, comme on le ferait avec un éditeur de texte classique.
 
+.. GROUPE A
+.. step::
+    Créez l'arborescence ``Documents/Intro_Python/Comprendre_les_bases/``, ouvrez le dossier ``Comprendre_les_bases`` dans Visual Studio Code (``Fichier`` -> ``Ouvrir un dossier``), puis créez-y un fichier nommé ``exercice1.py``.
+
+.. note::
+    Les noms de fichiers et dossiers ne doivent **jamais contenir d'espaces ou de caractères spéciaux** : on se limite aux lettres de l'alphabet, aux chiffres, au tiret (-) et à l'underscore (_). C'est l'extension ``.py`` qui indique que le fichier est un fichier Python.
+
+.. GROUPE B
 .. step::
     Commençons par créer un dossier nommé ``Intro_Python`` dans vos Documents. C'est dans ce dossier que vous allez stocker tous vos projets de programmation que vous allez réaliser dans le cadre de ce cours.
 
@@ -319,6 +336,8 @@ Il existe d'autres opérateurs d'affectation qui permettent de simplifier l'écr
 
     .. note::
         Notez que c'est l'extension ``.py`` qui indique que le fichier est un fichier Python. Il est donc important de toujours respecter cette extension.
+
+.. FIN GROUPE
 
 .. step::
     Dans la partie éditeur de Visual Studio Code, écrivez un programme qui déclare les variables suivantes :
@@ -367,8 +386,13 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
 
 .. slide::
+.. GROUPE A
+✅ Récapitulatif — les bases
+---------------------------
+.. GROUPE B
 ✅ Récapitulatif de Chapitre
 -------------------------
+.. FIN GROUPE
 
 .. recap::
 
@@ -455,3 +479,7 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
         * Ni espace ni accent dans les noms de fichiers et de dossiers.
         
         
+
+.. GROUPE A
+.. INCLURE chap2 +3
+.. FIN GROUPE
