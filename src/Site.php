@@ -174,6 +174,11 @@ class Site extends Builder
 
         foreach (glob($targetDirectory.'/*.html') as $file) {
             $contents = file_get_contents($file);
+
+            // Le moteur écrit un « <html> » nu. La langue sert aux lecteurs
+            // d'écran, et la césure du texte justifié en dépend.
+            $contents = str_replace("<html>\n", "<html lang=\"fr\">\n", $contents);
+
             $navigation = '<!--NAV:START-->'.$this->renderNavigation($entries, basename($file)).'<!--NAV:END-->';
 
             // Un remplacement par fonction : le sommaire peut contenir

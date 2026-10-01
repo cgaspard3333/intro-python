@@ -151,7 +151,39 @@ img { max-width: 100%; height: auto; }
     max-width: var(--measure);
     margin: 0 auto;
     padding-top: clamp(1.5rem, 4vw, 3rem);
+
+    /* La césure est demandée partout : les navigateurs qui savent la faire
+       en français resserrent d'autant les lignes. */
+    hyphens: auto;
 }
+
+/* Le texte n'est justifié qu'à partir du moment où la ligne est assez longue
+   pour l'absorber. En colonne étroite — un téléphone — la justification sans
+   césure ouvre des rivières blanches ; le drapeau à droite est alors plus
+   lisible. */
+@media (min-width: 620px) {
+    .contents { text-align: justify; }
+}
+
+/* L'accueil d'un groupe n'a pas de prose suivie à justifier : une accroche,
+   une carte d'informations et une grille de titres courts. */
+.contents.is-home { text-align: left; }
+
+/* Ce qui n'est pas de la prose suivie ne se justifie pas. */
+.contents h1,
+.contents h2,
+.contents h3,
+.contents .lead,
+.contents .codeBlock,
+.contents .recapCard,
+.contents .tableWrap,
+.contents .pager,
+.contents .stepChecker {
+    text-align: left;
+    hyphens: none;
+}
+
+.contents code { hyphens: none; }
 
 /* L'accueil d'un groupe est une grille de chapitres, pas de la prose : elle
    occupe toute la largeur disponible. */
