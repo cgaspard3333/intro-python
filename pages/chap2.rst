@@ -118,7 +118,7 @@ Un exemple d'organisation de vos dossiers/fichiers vous a été donné dans le c
 ✏️ Exercice 4 : Les tables de vérité
 --------------------------------------------------------
 
-Voici un tableaux représentant le resultats des opérations logiques ``and`` et ``or`` :
+Voici un tableau représentant les résultats des opérations logiques ``and`` et ``or`` :
 
 .. center::
     +-------+-------+---------+--------+
@@ -136,13 +136,13 @@ Voici un tableaux représentant le resultats des opérations logiques ``and`` et
 Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résultat d'une opération logique en fonction des valeurs de vérité des variables ``A`` et ``B``.
 
 .. step:: reset
-    Ecrire un programme qui demande à l'utilisateur les valeurs de vérité de ``A`` et ``B`` et affiche les résultats des opérations logiques ``and`` et ``or`` afin de compléter les tableaux ci-dessus. 
+    Écrire un programme qui demande à l'utilisateur les valeurs de vérité de ``A`` et ``B`` et affiche les résultats des opérations logiques ``and`` et ``or`` afin de compléter les tableaux ci-dessus. 
 
     .. note::
         La fonction ``bool()`` ne permet pas de convertir les chaînes de caractères ``"True"`` ou ``"False"`` en booléens. Pour cela, on utilise la fonction ``eval()``.
 
 .. step::
-    Quel est la différence entre le fonctionnement de la fonction ``bool()`` et de la fonction ``eval()`` ?
+    Quelle est la différence entre le fonctionnement de la fonction ``bool()`` et de la fonction ``eval()`` ?
 
 .. slide::
 
@@ -165,7 +165,7 @@ Ce tableau s'appelle une table de vérité. Elle permet de déterminer le résul
 .. slide::
 
 .. step::
-    **Sans utiliser l'ordinateur**, remplissez à la main la table de vérité de l'opération ``not a or not b`` suivante:
+    **Sans utiliser l'ordinateur**, remplissez à la main la table de vérité de l'opération ``not A or not B`` suivante :
 
     .. center::
         +-------+-------+-------+-------+------------------+
@@ -289,7 +289,7 @@ On peut interrompre une boucle avec l’instruction ``break``.
 ----------------------------
 
 .. step:: reset
-    Écrire un programme qui demande à l’utilisateur de deviner un nombre entier entre 1 et 20 en utilisant le module ``random``. En fonction de sa réponse, il affiche :
+    Écrire un programme qui tire au sort un nombre entier entre 1 et 20 avec le module ``random``, puis demande à l’utilisateur de le deviner. En fonction de sa réponse, le programme affiche :
 
     .. discoverList::
         * Si le nombre est trop petit, "Trop petit ! Essayez encore."
@@ -297,7 +297,7 @@ On peut interrompre une boucle avec l’instruction ``break``.
         * Si c’est correct, "Bravo, vous avez trouvé !"
 
 .. step::
-    Cherchez sur internet et expliquer ce qu'est un module en Python et comment l'utiliser.
+    Cherchez sur internet et expliquez ce qu'est un module en Python et comment l'utiliser.
 
 .. success:: 
     Vous savez maintenant importer et utiliser un module simple (random) ainsi que vous servir d'une boucle ``while``.
