@@ -385,14 +385,13 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 .. success::
     Vous savez maintenant comment utiliser des opérateurs arithmétiques simples et comment demander des informations à l'utilisateur de votre programme.
 
-.. slide::
 .. GROUPE A
-✅ Récapitulatif — les bases
----------------------------
-.. GROUPE B
+.. INCLURE chap2 +3
+.. FIN GROUPE
+
+.. slide::
 ✅ Récapitulatif de Chapitre
 -------------------------
-.. FIN GROUPE
 
 .. recap::
 
@@ -471,15 +470,93 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
         * ``%=`` Garde le reste
         * ``//=`` Garde le quotient entier
 
+    .. GROUPE A
+    .. carte:: Opérateurs de comparaison
+
+        * ``==`` Égal à
+        * ``!=`` Différent de
+        * ``<`` Inférieur à
+        * ``>`` Supérieur à
+        * ``<=`` Inférieur ou égal à
+        * ``>=`` Supérieur ou égal à
+
+    .. carte:: Opérateurs logiques
+
+        * ``and`` Vrai si les deux conditions sont vraies
+        * ``or`` Vrai si au moins une des conditions est vraie
+        * ``not`` Inverse la condition
+
+    .. carte:: Conditions
+
+        .. code-block:: python
+
+            if condition:
+                # exécuté si la condition est vraie
+            elif autre_condition:
+                # exécuté si la première est fausse et celle-ci vraie
+            else:
+                # exécuté dans tous les autres cas
+
+        Les deux-points ouvrent le bloc, l'indentation le délimite.
+
+    .. carte:: Boucle while
+
+        .. code-block:: python
+
+            while condition:
+                # répété tant que la condition est vraie
+
+        * ``break`` Sort immédiatement de la boucle
+        * ``continue`` Passe à l'itération suivante
+
+    .. carte:: Boucle for
+
+        .. code-block:: python
+
+            for variable in sequence:
+                # répété pour chaque élément de la séquence
+
+        ``range(debut, fin, pas)`` engendre une suite d'entiers. Par défaut
+        ``debut`` vaut 0 et ``pas`` vaut 1, et ``fin`` est toujours exclu :
+        ``range(3)`` donne 0, 1 et 2.
+
+        ``break`` et ``continue`` s'utilisent aussi dans une boucle ``for``.
+
+    .. carte:: Tables de vérité
+
+        +-------+-------+-------+-------+---------+--------+--------------+----------------+
+        |   A   |   B   | not A | not B | A and B | A or B | not(A and B) | not A or not B |
+        +=======+=======+=======+=======+=========+========+==============+================+
+        | False | False | True  | True  | False   | False  | True         | True           |
+        +-------+-------+-------+-------+---------+--------+--------------+----------------+
+        | False | True  | True  | False | False   | True   | True         | True           |
+        +-------+-------+-------+-------+---------+--------+--------------+----------------+
+        | True  | True  | False | False | True    | True   | False        | False          |
+        +-------+-------+-------+-------+---------+--------+--------------+----------------+
+        | True  | False | False | True  | False   | True   | True         | True           |
+        +-------+-------+-------+-------+---------+--------+--------------+----------------+
+
+    .. FIN GROUPE
+
     .. carte:: À ne pas oublier
 
         * Les flottants sont approchés : ne testez jamais leur égalité.
         * La fonction ``input()`` renvoie une chaîne, même si l'utilisateur tape un nombre.
         * Un fichier Python s'enregistre avec l'extension ``.py``
         * Ni espace ni accent dans les noms de fichiers et de dossiers.
+        .. GROUPE A
+        * L'indentation délimite les blocs : ce qui appartient à un ``if`` ou à une boucle est décalé d'un cran.
+        * ``=`` affecte une valeur, ``==`` compare deux valeurs.
+        .. FIN GROUPE
         
         
 
 .. GROUPE A
-.. INCLURE chap2 +3
+.. slide::
+🏋️ Exercices supplémentaires
+--------------------
+
+.. toctree::
+
+    exos_sup_chap2
 .. FIN GROUPE

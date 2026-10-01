@@ -606,6 +606,10 @@ h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
     letter-spacing: var(--display-tracking);
 }
 
+/* Une carte qui porte un tableau prend toute la largeur : à 16rem, un
+   tableau de huit colonnes ne serait qu'une bande à faire défiler. */
+.recapCard:has(table) { grid-column: 1 / -1; }
+
 .recapCard > :last-child { margin-bottom: 0; }
 .recapCard p { margin-bottom: .6rem; font-size: .92rem; line-height: 1.5; }
 

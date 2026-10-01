@@ -211,10 +211,10 @@ Le `+3` décale la numérotation des titres de la page reprise : `📖 1.` devie
 RST sont touchées ; un `2.1` au fil d'une phrase ne bouge pas.
 
 La page reprise garde son propre fichier : on continue de l'éditer à un seul
-endroit. Ce qui ne doit pas apparaître deux fois — son titre, ses objectifs —
-s'encadre d'un `.. GROUPE`. Mieux vaut inclure en fin de page : au-delà du
-point d'inclusion, les numéros de ligne des messages d'erreur ne
-correspondent plus au fichier que vous éditez.
+endroit. Ce qui ne doit pas apparaître deux fois — son titre, ses objectifs,
+son récapitulatif — s'encadre d'un `.. GROUPE`. Mieux vaut inclure au plus
+près de la fin : au-delà du point d'inclusion, les numéros de ligne des
+messages d'erreur ne correspondent plus au fichier que vous éditez.
 
 Deux points de vigilance :
 
