@@ -17,8 +17,16 @@ return array(
     // « pages » limite le sommaire d'un groupe aux pages indiquées : les
     // autres ne sont ni listées, ni construites. Sans cette clé, le groupe
     // reçoit le sommaire complet. Ajouter une page ici la publie.
+    //
+    // La liste vaut pour tous les sommaires, y compris ceux qui sont à
+    // l'intérieur d'une page : les sous-pages à garder s'y écrivent aussi.
     'groups' => array(
-        array('id' => 'A', 'slug' => 'groupe-a', 'label' => 'Groupe A'),
+        array('id' => 'A', 'slug' => 'groupe-a', 'label' => 'Groupe A', 'pages' => array(
+            'install_maison',
+            'config_ide',
+            'chap1',
+            'exos_sup_chap2',
+        )),
         array('id' => 'B', 'slug' => 'groupe-b', 'label' => 'Groupe B', 'pages' => array(
             'install_maison',
             'config_ide',
