@@ -28,7 +28,10 @@ $target = $root.'/web';
 $config = require $root.'/site.php';
 $config['dev'] = (bool) getenv('DEV');
 
-$preprocessor = new Cours\Preprocessor($root.'/pages');
+$preprocessor = new Cours\Preprocessor(
+    $root.'/pages',
+    array_map(function ($group) { return $group['id']; }, $config['groups'])
+);
 
 // Coloration syntaxique : le paquet complet de highlight.js pèse 900 ko pour
 // près de 200 langages. On n'assemble que ceux du cours.

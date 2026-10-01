@@ -176,6 +176,30 @@ Pour une page entière plutôt qu'un passage, il suffit de la nommer :
 `pages/exos_sup_chap3.groupeB.rst` remplace `pages/exos_sup_chap3.rst` pour le
 groupe B, et pour lui seul.
 
+Un marqueur qui nomme un groupe qui n'existe pas est signalé à la
+construction : sans cela, un `.. GROUPE B` mal orthographié ferait disparaître
+un passage sans rien dire.
+
+
+### Mettre un passage de côté
+
+```rst
+.. MASQUER
+✅ Récapitulatif de Chapitre
+-------------------------
+…
+.. FIN MASQUER
+```
+
+Rien de ce qui est encadré ne part, dans aucun groupe. Le passage reste dans
+le fichier et revient en retirant les deux lignes — de quoi préparer une
+section avant de la publier, ou en retirer une le temps d'un TP.
+
+L'intérieur est opaque : les marqueurs de groupe qui s'y trouvent sont mis de
+côté avec le reste, donc un récapitulatif qui varie d'un groupe à l'autre se
+masque d'un seul bloc. Un `.. MASQUER` laissé ouvert est signalé à la
+construction.
+
 
 ### Le sommaire d'un groupe
 

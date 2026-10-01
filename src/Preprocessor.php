@@ -30,6 +30,16 @@ namespace Cours;
  *    devient « 4. », « 2.1 » devient « 5.1 ». Seuls les titres sont touchés —
  *    un « 2.1 » au fil d'une phrase ne bouge pas.
  *
+ * Pour mettre un passage de côté sans le supprimer, quel que soit le groupe :
+ *
+ *        .. MASQUER
+ *        pas encore publié
+ *        .. FIN MASQUER
+ *
+ *    Rien de ce qui est encadré n'est lu : les marqueurs de groupe qui s'y
+ *    trouvent sont eux-mêmes mis de côté, et le passage revient en retirant
+ *    les deux lignes.
+ *
  * S'y ajoute le sommaire : un groupe dont la configuration donne une liste de
  * pages ne voit que celles-là. Les entrées de « .. toctree:: » qui n'y sont
  * pas sont retirées, et les pages correspondantes ne sont donc pas
@@ -43,14 +53,23 @@ class Preprocessor
     const OPEN = '/^\s*\.\.\s+GROUPE\s+([A-Za-z0-9]+(?:\s*[,+]\s*[A-Za-z0-9]+)*)\s*$/i';
     const CLOSE = '/^\s*\.\.\s+(?:FIN\s+GROUPE|GROUPE\s+TOUS)\s*$/i';
     const TOC = '/^(\s*)\.\.\s+toctree::/';
+    const HIDE = '/^\s*\.\.\s+MASQUER\s*$/i';
+    const SHOW = '/^\s*\.\.\s+FIN\s+MASQUER\s*$/i';
     const INCLUDE = '/^\s*\.\.\s+INCLURE\s+([A-Za-z0-9_.\-]+)(?:\s*\+\s*([0-9]+))?\s*$/i';
 
     private $source;
+    private $known;
     private $warnings = array();
 
-    public function __construct($source)
+    /**
+     * $known : les identifiants de groupe qui existent. Un marqueur qui en
+     * nomme un autre est signalé — sans quoi « .. GROUPE B » mal orthographié
+     * ferait disparaître un passage sans rien dire.
+     */
+    public function __construct($source, array $known = array())
     {
         $this->source = rtrim($source, '/');
+        $this->known = $known;
     }
 
     public function getWarnings()
@@ -139,13 +158,34 @@ class Preprocessor
         $lines = preg_split("/\r\n|\n|\r/", $contents);
         $active = null;
         $openedAt = null;
+        $aside = null;
         $toc = null;
         $out = array();
 
         foreach ($lines as $number => $line) {
+            if (preg_match(self::HIDE, $line)) {
+                $aside = $number + 1;
+                $out[] = '';
+                continue;
+            }
+
+            if (preg_match(self::SHOW, $line)) {
+                $aside = null;
+                $out[] = '';
+                continue;
+            }
+
+            // Ce qui est mis de côté est opaque : même les marqueurs de
+            // groupe qui s'y trouvent restent lettre morte.
+            if ($aside !== null) {
+                $out[] = '';
+                continue;
+            }
+
             if (preg_match(self::OPEN, $line, $match)) {
                 $active = preg_split('/\s*[,+]\s*/', $match[1]);
                 $openedAt = $number + 1;
+                $this->checkNames($active, $path, $openedAt);
                 $out[] = '';
                 continue;
             }
@@ -187,6 +227,11 @@ class Preprocessor
         if ($active !== null) {
             $this->warnings[] = basename($path).' : bloc « .. GROUPE » ouvert ligne '
                 .$openedAt.' et jamais refermé par « .. FIN GROUPE ».';
+        }
+
+        if ($aside !== null) {
+            $this->warnings[] = basename($path).' : bloc « .. MASQUER » ouvert ligne '
+                .$aside.' et jamais refermé par « .. FIN MASQUER ».';
         }
 
         return implode("\n", $out);
@@ -259,6 +304,25 @@ class Preprocessor
             },
             $contents
         );
+    }
+
+    /**
+     * Signale un marqueur qui nomme un groupe inconnu.
+     */
+    private function checkNames(array $wanted, $path, $line)
+    {
+        if (!$this->known) {
+            return;
+        }
+
+        foreach ($wanted as $one) {
+            if ($this->targets($this->known, $one)) {
+                continue;
+            }
+
+            $this->warnings[] = basename($path).' ligne '.$line.' : « .. GROUPE '
+                .trim($one).' » ne désigne aucun groupe ; le passage ne part nulle part.';
+        }
     }
 
     /**
