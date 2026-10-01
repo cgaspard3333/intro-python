@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 5 - Manipulation de fichiers et de données textuelles
+=====================================
+.. GROUPE B
 Chapitre 6 - Manipulation de fichiers et de données textuelles
 =====================================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ---------------------

@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 2 - Fonctions et types construits
+==========================================
+.. GROUPE B
 Chapitre 3 - Fonctions et types construits
 ==========================================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ---------------------

@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 3 - Modules, Affichage avancé
+======================================
+.. GROUPE B
 Chapitre 4 - Modules, Affichage avancé
 ======================================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ---------------------

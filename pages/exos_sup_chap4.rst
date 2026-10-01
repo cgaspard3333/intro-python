@@ -158,6 +158,10 @@ Dans cet exercice, vous allez créer un programme de simulation de navigation ro
 🌶️ Exercice Sup. 15 : Le Vrai Jeu d'Echecs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. GROUPE A
+**Consigne** : A partir du code de l'Exercice Sup. 11 du Chapitre 2, créez un jeu d'échecs complet.
+.. GROUPE B
 **Consigne** : A partir du code de l'Exercice Sup. 12 du Chapitre 3, créez un jeu d'échecs complet. 
+.. FIN GROUPE
 
 **Règles du Jeu d'Echecs** : Vous pouvez trouver les règles du jeu d'échecs `ici <https://www.apprendre-les-echecs-24h.com/apprendre-a-jouer-aux-echecs/regles-jeu-dechecs/>`_.

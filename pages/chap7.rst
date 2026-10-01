@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 6 - Introduction à la Programmation Orientée Objet (POO)
+=====================================
+.. GROUPE B
 Chapitre 7 - Introduction à la Programmation Orientée Objet (POO)
 =====================================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ---------------------

@@ -1,7 +1,12 @@
 .. slide::
 
+.. GROUPE A
+Chapitre 4 - Introduction à ``numpy``
+=====================================
+.. GROUPE B
 Chapitre 5 - Introduction à ``numpy``
 =====================================
+.. FIN GROUPE
 
 🎯 Objectifs du Chapitre
 ---------------------
