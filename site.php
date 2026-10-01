@@ -31,6 +31,8 @@ return array(
             'install_maison',
             'config_ide',
             'chap1',
+            'chap2',
+            'exos_sup_chap2',
         )),
     ),
 
