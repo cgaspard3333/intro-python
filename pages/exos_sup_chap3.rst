@@ -8,8 +8,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Difficile : 🌶️
 
 .. slide::
+.. GROUPE A
+🍀 Exercice Sup. 5 : Le Jeu du Devin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🍀 Exercice Sup. 6 : Le Jeu du Devin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Consigne** : Vous devez écrire un programme qui permet de trouver un nombre entier saisi par l'utilisateur en faisant le moins d'itération possible (en faisant le moins de tentatives possible).
 
@@ -38,8 +43,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
         >> J ai deviné le nombre en 7 essais ! C était bien 33.
 
 .. slide::
+.. GROUPE A
+🍀 Exercice Sup. 6 : Le Jeu du Pendu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🍀 Exercice Sup. 7 : Le Jeu du Pendu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Consigne** : Vous devez écrire un programme qui permet à un utilisateur de jouer au jeu du pendu. Le but du jeu est de deviner un mot en proposant une lettre à la fois. L'utilisateur a un nombre limité de tentatives pour deviner le mot avant de perdre.
 .. discoverList::
@@ -59,8 +69,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Si une lettre choisie à plusieurs reprise par l’utilisateur est incorrecte, le nombre de tentatives restentes à jouer ne diminue qu’une seule fois.
 
 .. slide::
+.. GROUPE A
+⚖️ Exercice Sup. 7 : Les tours de Hanoï
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 ⚖️ Exercice Sup. 8 : Les tours de Hanoï
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 .. image:: images/Tower_of_Hanoi_4.gif
     :alt: Les tours de Hanoï
@@ -102,8 +117,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 
 
 .. slide::
+.. GROUPE A
+⚖️ Exercice Sup. 8 : Le Grand Casino
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 ⚖️ Exercice Sup. 9 : Le Grand Casino
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Consigne** : Vous allez écrire un programme qui permet à un joueur de jouer à deux jeux de casino populaires : la roulette et le blackjack. L'utilisateur pourra parier de l'argent fictif et tenter de gagner ou de perdre en fonction des règles des deux jeux. Vous pourrez amender ensuite le Casino avec d’autres jeux de votre choix.
 
@@ -148,8 +168,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 
 
 .. slide::
+.. GROUPE A
+🌶️ Exercice Sup. 9 : Sudoku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🌶️ Exercice Sup. 10 : Sudoku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 **Consigne** : Vous devez écrire un programme en Python pour résoudre un jeu de Sudoku 4x4. Vous devez afficher la solution du jeu.
 
 Une grille de Sudoku 4x4 peut être représentée comme une liste de listes de cette manière :
@@ -256,8 +281,13 @@ Une grille de Sudoku 4x4 peut être représentée comme une liste de listes de c
             """
 
 .. slide::
+.. GROUPE A
+🌶️ Exercice Sup. 10 : Le Carré Magique
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🌶️ Exercice Sup. 11 : Le Carré Magique
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Consigne** : Vous devez écrire un programme en Python pour résoudre un carré magique d'ordre n saisi au clavier par l'utilisateur et afficher la solution.
 
@@ -302,8 +332,13 @@ Une grille de Sudoku 4x4 peut être représentée comme une liste de listes de c
     >> La constante magique est 65.
 
 .. slide::
+.. GROUPE A
+🌶️ Exercice Sup. 11 : Le Jeu d'Echecs "Simple"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🌶️ Exercice Sup. 12 : Le Jeu d'Echecs "Simple"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Consigne** : Implémentez un jeu d'échecs, permettant à deux joueurs de déplacer leurs pièces à tour de rôle, en saisissant au clavier les coups à jouer. Le jeu doit afficher un échiquier avec les pièces blanches en bas et les pièces noires en haut, comme dans une véritable partie d'échecs. Vous pouvez coloriser les affichage en utilisant `Colorama <https://pypi.org/project/colorama/>`_ (qui s’installe avec ``pip install colorama``). Par exemple, vous pouvez utiliser la couleur rouge pour les pièces noires.
 

@@ -26,6 +26,8 @@ return array(
             'config_ide',
             'chap1',
             'exos_sup_chap2',
+            'chap3',
+            'exos_sup_chap3',
         )),
         array('id' => 'B', 'slug' => 'groupe-b', 'label' => 'Groupe B', 'pages' => array(
             'install_maison',

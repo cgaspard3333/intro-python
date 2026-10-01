@@ -603,6 +603,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 .. success::
     Vous savez maintenant manipuler les types construits ainsi que les fonctions en Python d'un niveau intermédiaire.
 
+.. MASQUER
 .. slide::
 ✅ Récapitulatif de Chapitre
 -------------------------
@@ -842,6 +843,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     .. image:: images/recap_chap3.png
         :alt: Récapitulatif du Chapitre 3
         :width: 100%
+.. FIN MASQUER
 
 .. slide::
 🏋️ Exercices supplémentaires
