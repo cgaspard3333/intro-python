@@ -30,6 +30,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     >> Saisir une année : 2021
     >> L année 2021 n est pas bissextile
 
+.. GROUPE B
 .. slide::
 🍀 Exercice Sup. 2 : Calculs mathématiques de base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,10 +57,16 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     >>    4 pour réaliser la division de 2.20 et 3.50
     >> 1
     >> Résultat de l addition : 2.2 + 3.5 = 5.70
+.. FIN GROUPE
 
 .. slide::
+.. GROUPE A
+🍀 Exercice Sup. 2 : Résolution d’un polynome
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🍀 Exercice Sup. 3 : Résolution d’un polynome
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Objectif** : Écrire un programme qui permet de retourner le résultat de  $$f(X) = 1 + X + aX^2 + bX^3 + cX^4 + \dots + zX^n$$
 
@@ -81,8 +88,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 
 
 .. slide::
+.. GROUPE A
+⚖️ Exercice Sup. 3 : Facturation de télécommunication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 ⚖️ Exercice Sup. 4 : Facturation de télécommunication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 Dans un tarif d’abonnement de portable, les communications sont facturées 0.15€ la minute.
 
@@ -139,8 +151,13 @@ Dans un tarif d’abonnement de portable, les communications sont facturées 0.1
 
 
 .. slide::
+.. GROUPE A
+⚖️ Exercice Sup. 4 : Triangle de Pascal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 ⚖️ Exercice Sup. 5 : Triangle de Pascal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 .. step::
     Ecrire un programme qui construit et affiche le triangle de Pascal de degré n (Limiter le degré à 13)
     .. warning::
