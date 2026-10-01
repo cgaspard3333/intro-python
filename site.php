@@ -13,9 +13,17 @@ return array(
     'subtitle' => 'Université de Bordeaux',
 
     // Les deux groupes. Le « slug » est le nom du dossier dans web/.
+    //
+    // « pages » limite le sommaire d'un groupe aux pages indiquées : les
+    // autres ne sont ni listées, ni construites. Sans cette clé, le groupe
+    // reçoit le sommaire complet. Ajouter une page ici la publie.
     'groups' => array(
-        array('id' => 1, 'slug' => 'groupe1', 'label' => 'Groupe 1'),
-        array('id' => 2, 'slug' => 'groupe2', 'label' => 'Groupe 2'),
+        array('id' => 'A', 'slug' => 'groupe-a', 'label' => 'Groupe A'),
+        array('id' => 'B', 'slug' => 'groupe-b', 'label' => 'Groupe B', 'pages' => array(
+            'install_maison',
+            'config_ide',
+            'chap1',
+        )),
     ),
 
     // Contacts affichés sur la page d'accueil

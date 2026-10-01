@@ -111,7 +111,7 @@ class Site extends Builder
             '{{home}}' => $environment->relativeUrl('/index.html'),
             '{{shortTitle}}' => htmlspecialchars($this->config['shortTitle']),
             '{{settings}}' => file_get_contents($this->root.'/themes/layout/settings.html'),
-            '{{groupId}}' => $this->group['id'],
+            '{{groupId}}' => htmlspecialchars($this->group['id']),
             '{{groupLabel}}' => htmlspecialchars($this->group['label']),
             '{{chooser}}' => '../index.html',
             '{{teachers}}' => $this->teachers(),

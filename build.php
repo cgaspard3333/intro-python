@@ -4,8 +4,8 @@
  * Construit le site dans web/ :
  *
  *     web/index.html      choix du groupe
- *     web/groupe1/…       le cours du groupe 1
- *     web/groupe2/…       le cours du groupe 2
+ *     web/groupe-a/…      le cours du groupe A
+ *     web/groupe-b/…      le cours du groupe B
  *
  * Variable d'environnement :
  *     DEV=1   mode local : rechargement automatique du navigateur
@@ -51,7 +51,7 @@ if (!is_dir($target)) {
 
 foreach ($config['groups'] as $group) {
     $sources = $root.'/.build/pages-'.$group['slug'];
-    $preprocessor->prepare($group['id'], $sources);
+    $preprocessor->prepare($group, $sources);
 
     echo '* '.$group['label']."\n";
 

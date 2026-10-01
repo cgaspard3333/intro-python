@@ -37,8 +37,17 @@ php -S "localhost:$PORT" -t web/ >/dev/null 2>&1 &
 server=$!
 
 printf '\n  Cours       http://localhost:%s/\n' "$PORT"
-printf '  Groupe 1    http://localhost:%s/groupe1/\n' "$PORT"
-printf '  Groupe 2    http://localhost:%s/groupe2/\n\n' "$PORT"
+
+# Les adresses des groupes viennent de site.php : renommer un groupe là-bas
+# suffit.
+php -r '
+    $config = require "site.php";
+
+    foreach ($config["groups"] as $group) {
+        printf("  %-11s http://localhost:%s/%s/\n", $group["label"], $argv[1], $group["slug"]);
+    }
+' "$PORT"
+printf '\n'
 printf '  Ctrl+C pour arrêter.\n\n'
 
 fingerprint() {

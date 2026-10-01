@@ -8,8 +8,8 @@ d'un site complet par groupe :
 
 ```
 web/index.html      choix du groupe
-web/groupe1/…       le cours tel que le voit le groupe 1
-web/groupe2/…       le cours tel que le voit le groupe 2
+web/groupe-a/…      le cours tel que le voit le groupe A
+web/groupe-b/…      le cours tel que le voit le groupe B
 ```
 
 Le contenu des deux sites vient des mêmes fichiers `pages/*.rst`. Un fichier
@@ -145,13 +145,13 @@ Tout ce qui est écrit normalement part dans les deux groupes. Pour qu'un
 passage ne parte que dans l'un d'eux, on l'encadre :
 
 ```rst
-.. GROUPE 1
+.. GROUPE A
 ✏️ Exercice 3 : Un dressing intelligent
 ---------------------------------------
 
 **Consigne** : …
 
-.. GROUPE 2
+.. GROUPE B
 ✏️ Exercice 3 : Un dressing intelligent
 ---------------------------------------
 
@@ -162,9 +162,9 @@ passage ne parte que dans l'un d'eux, on l'encadre :
 
 Les règles :
 
-- `.. GROUPE 1` ouvre un passage réservé au groupe 1. Il se termine au
+- `.. GROUPE A` ouvre un passage réservé au groupe A. Il se termine au
   marqueur suivant : un autre `.. GROUPE`, ou `.. FIN GROUPE`.
-- `.. GROUPE 1,2` vise plusieurs groupes à la fois.
+- `.. GROUPE A,B` vise plusieurs groupes à la fois.
 - `.. FIN GROUPE` revient au contenu commun. Ne pas l'oublier : la
   construction affiche un avertissement si un bloc reste ouvert.
 - Les marqueurs s'écrivent à l'indentation du contenu qu'ils encadrent. Ils
@@ -173,15 +173,55 @@ Les règles :
   ligne des messages d'erreur restent ceux du fichier que vous éditez.
 
 Pour une page entière plutôt qu'un passage, il suffit de la nommer :
-`pages/exos_sup_chap3.groupe2.rst` remplace `pages/exos_sup_chap3.rst` pour le
-groupe 2, et pour lui seul.
+`pages/exos_sup_chap3.groupeB.rst` remplace `pages/exos_sup_chap3.rst` pour le
+groupe B, et pour lui seul.
+
+
+### Le sommaire d'un groupe
+
+Un groupe reçoit par défaut tout le sommaire de `pages/index.rst`. La clé
+`pages` de `site.php` le restreint :
+
+```php
+array('id' => 'B', 'slug' => 'groupe-b', 'label' => 'Groupe B', 'pages' => array(
+    'install_maison',
+    'config_ide',
+    'chap1',
+)),
+```
+
+Les pages absentes de cette liste ne sont ni listées ni construites — le
+moteur ne suit que ce qui est au sommaire. Ajouter un nom à la liste publie la
+page. Sans la clé `pages`, le groupe a tout.
+
+Une entrée de `.. toctree::` peut aussi être encadrée par les marqueurs
+ci-dessus, pour qu'une page n'apparaisse qu'au sommaire d'un groupe.
+
+
+### Reprendre une page dans une autre
+
+```rst
+.. INCLURE chap2 +3
+```
+
+insère à cet endroit le contenu de `pages/chap2.rst`, filtré pour le même
+groupe — c'est ainsi que le groupe A lit les chapitres 1 et 2 d'une traite.
+Le `+3` décale la numérotation des titres de la page reprise : `📖 1.` devient
+`📖 4.`, `2.1` devient `5.1`. Seules les lignes qui sont réellement des titres
+RST sont touchées ; un `2.1` au fil d'une phrase ne bouge pas.
+
+La page reprise garde son propre fichier : on continue de l'éditer à un seul
+endroit. Ce qui ne doit pas apparaître deux fois — son titre, ses objectifs —
+s'encadre d'un `.. GROUPE`. Mieux vaut inclure en fin de page : au-delà du
+point d'inclusion, les numéros de ligne des messages d'erreur ne
+correspondent plus au fichier que vous éditez.
 
 Deux points de vigilance :
 
 - Garder les mêmes titres de section dans les deux versions autant que
   possible : le sommaire et les liens `#ancre` s'appuient dessus.
 - Vérifier les deux groupes avant de publier : `./watch.sh` les construit tous
-  les deux, sur `/groupe1/` et `/groupe2/`. Le bandeau rappelle le groupe
+  les deux, sur `/groupe-a/` et `/groupe-b/`. Le bandeau rappelle le groupe
   affiché sans permettre d'en changer ; le lien de bas de page ramène au choix
   initial.
 
