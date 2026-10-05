@@ -608,6 +608,10 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 .. success::
     Vous savez maintenant manipuler les types construits ainsi que les fonctions en Python d'un niveau intermédiaire.
 
+.. GROUPE A
+.. INCLURE exos_casino_sudoku
+.. FIN GROUPE
+
 .. MASQUER
 .. slide::
 ✅ Récapitulatif de Chapitre

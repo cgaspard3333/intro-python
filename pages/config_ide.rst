@@ -1,7 +1,7 @@
 .. slide::
 
 Configuration de l'Environnement de Développement (IDE) VSCode
-============
+==============================================================
 
 .. |extension| image:: images/vscode_extension.png
     :width: 24

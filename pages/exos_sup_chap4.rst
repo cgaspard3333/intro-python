@@ -159,7 +159,7 @@ Dans cet exercice, vous allez créer un programme de simulation de navigation ro
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GROUPE A
-**Consigne** : A partir du code de l'Exercice Sup. 11 du Chapitre 2, créez un jeu d'échecs complet.
+**Consigne** : A partir du code de l'Exercice Sup. 9 du Chapitre 2, créez un jeu d'échecs complet.
 .. GROUPE B
 **Consigne** : A partir du code de l'Exercice Sup. 12 du Chapitre 3, créez un jeu d'échecs complet. 
 .. FIN GROUPE
