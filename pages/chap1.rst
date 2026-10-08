@@ -389,7 +389,6 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 .. INCLURE chap2 +3
 .. FIN GROUPE
 
-.. MASQUER
 .. slide::
 ✅ Récapitulatif de Chapitre
 -------------------------
@@ -551,7 +550,6 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
         .. FIN GROUPE
         
         
-.. FIN MASQUER
 
 .. GROUPE A
 .. slide::

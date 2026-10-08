@@ -35,6 +35,8 @@ return array(
             'chap1',
             'chap2',
             'exos_sup_chap2',
+            'chap3',
+            'exos_sup_chap3',
         )),
     ),
 
