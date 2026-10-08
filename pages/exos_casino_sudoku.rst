@@ -5,8 +5,8 @@
 
 .. slide::
 .. GROUPE A
-✏️ Exercice 11 : Le Grand Casino
---------------------------------
+✏️ Exercice 10bis : Le Grand Casino
+-----------------------------------
 
 Pour terminer ce chapitre, deux exercices plus conséquents qui mobilisent tout ce que vous avez vu jusqu'ici : conditions, boucles, fonctions et types construits.
 
@@ -59,8 +59,8 @@ Pour terminer ce chapitre, deux exercices plus conséquents qui mobilisent tout 
 
 .. slide::
 .. GROUPE A
-✏️ Exercice 12 : Sudoku
------------------------
+✏️ Exercice 10ter : Sudoku
+--------------------------
 .. GROUPE B
 🌶️ Exercice Sup. 10 : Sudoku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
