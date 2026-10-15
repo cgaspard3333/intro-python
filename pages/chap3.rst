@@ -25,6 +25,27 @@ Chapitre 3 - Fonctions et types construits
 .. note::
     Une fonction est un **bloc de code réutilisable** qui permet d'effectuer une tâche spécifique. Elle prend en entrée des **arguments** et retourne un **résultat**. Les fonctions permettent de **découper un programme en sous-programmes** plus petits et plus faciles à gérer.  
 
+Sans fonction, un même calcul se réécrit à chaque endroit où on en a besoin. S'il est faux, il est faux partout, et il faut penser à le corriger partout.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        print("Moyenne de Léa :", (12 + 15 + 9) / 3)
+        print("Moyenne de Tom :", (8 + 14 + 11) / 3)
+
+    Avec une fonction, le calcul est écrit une seule fois. Le corriger, c'est corriger une seule ligne, et le programme dit ce qu'il fait plutôt que comment il le fait.
+
+    .. code-block:: python
+
+        def moyenne(a, b, c):
+            return (a + b + c) / 3
+
+        print("Moyenne de Léa :", moyenne(12, 15, 9))
+        print("Moyenne de Tom :", moyenne(8, 14, 11))
+        >> Moyenne de Léa : 12.0
+        >> Moyenne de Tom : 11.0
+
 .. slide::
 1.2 Définir une fonction
 ~~~~~~~~~~~~~~~~~~~~
@@ -93,6 +114,30 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
     Dans cet exemple, la fonction ``addition`` retourne la somme des deux paramètres ``a`` et ``b``. Lorsque la fonction est appelée avec les arguments ``2`` et ``3``, elle retourne la valeur ``5`` qui est affichée par la fonction ``print()``.
 
 .. slide::
+``return`` et ``print()`` sont souvent confondus, et ce n'est pas du tout la même chose. ``print()`` **affiche** une valeur à l'écran, puis l'oublie. ``return`` la **renvoie** à l'endroit d'où la fonction a été appelée, qui peut alors la stocker, la comparer ou s'en servir dans un autre calcul.
+
+.. warning::
+    Exemple : une fonction qui affiche au lieu de retourner ne renvoie rien, c'est-à-dire ``None``.
+    .. code-block:: python
+
+        def double_affiche(n):
+            print(n * 2)
+
+        resultat = double_affiche(5) + 1
+        >> 10
+        >> TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+
+    Le ``10`` s'est bien affiché, mais ``double_affiche(5)`` ne vaut rien : il n'y a rien à ajouter à ``1``. Avec ``return``, la valeur revient et le calcul se poursuit.
+
+    .. code-block:: python
+
+        def double_retourne(n):
+            return n * 2
+
+        print(double_retourne(5) + 1)
+        >> 11
+
+.. slide::
 1.5 Portée des variables
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -104,9 +149,13 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
     .. code-block:: python
         def fonction_a():
             x = 10  # Variable locale
+            print("dans la fonction, x vaut", x)
             return x
 
-        print(x) # La variable x n'est pas accessible en dehors de la fonction
+        fonction_a() # La fonction est bien exécutée
+        >> dans la fonction, x vaut 10
+
+        print(x) # Mais x n'existe que le temps de l'appel
         >> NameError: name 'x' is not defined
 
 .. slide::
@@ -230,6 +279,22 @@ La fonction ``len()`` permet de connaître la taille d'un p-uplet. Elle permet p
         print(p[len(p)-1]) # Permet d'accéder au dernier élément du p-uplet p
         >> 10
 
+.. slide::
+**2.1.3 Un p-uplet ne se modifie pas**
+
+C'est ce que veut dire **immuable** : une fois le p-uplet créé, aucun de ses éléments ne peut être remplacé. Python refuse l'affectation.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        p = (1, 2, 3)
+        p[0] = 9
+        >> TypeError: 'tuple' object does not support item assignment
+
+.. note::
+    On choisit donc un p-uplet pour un groupe de valeurs qui ne doit **pas** changer — des coordonnées, une date, les trois composantes d'une couleur. Dès qu'il faut ajouter, retirer ou remplacer un élément, c'est une liste qu'il faut.
+
 .. _tableaux:
 
 .. slide::
@@ -307,6 +372,22 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
         print(l)
         >> [2, 4, 5, 6]
 
+.. note::
+    Attention : ``remove()`` prend la **valeur** à supprimer, et non sa position. Elle ne retire que la première rencontrée. Pour supprimer par position, on utilise ``del``.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        l = [10, 20, 30, 20]
+        l.remove(20) # Retire le premier 20, pas l'élément d'index 20
+        print(l)
+        >> [10, 30, 20]
+
+        del l[0] # Retire l'élément d'index 0
+        print(l)
+        >> [30, 20]
+
 .. slide::
 **2.2.5 Méthodes spécifiques aux listes**
 .. discoverList::
@@ -314,6 +395,7 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
     * La méthode ``reverse()`` permet d'inverser l'ordre des éléments d'une liste.
     * La méthode ``index()`` permet de récupérer l'index d'un élément dans une liste.
     * La méthode ``count()`` permet de compter le nombre d'occurrences d'un élément dans une liste.
+    * L'opérateur ``in`` indique si une valeur se trouve dans la liste, et répond ``True`` ou ``False``.
 
 .. warning::
     Exemple :
@@ -333,6 +415,9 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
 
         print(l.count(5)) # Compte le nombre d'occurrences de l'élément 5 dans la liste l
         >> 1
+
+        print(5 in l) # Indique si la valeur 5 se trouve dans la liste l
+        >> True
 
 
 .. slide::
@@ -419,6 +504,45 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
         print(d.items()) # Récupère la liste des couples clé-valeur du dictionnaire d
         >> dict_items([('nom', 'Dupont'), ('prénom', 'Jean'), ('âge', 30)])
+
+.. slide::
+**2.3.5 Parcourir un dictionnaire**
+
+Parcourir un dictionnaire avec une boucle ``for`` donne ses **clés**. On s'en sert pour atteindre chaque valeur. ``items()`` donne directement les deux à la fois, ce qui évite de revenir chercher la valeur.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        d = {"nom": "Dupont", "âge": 30}
+
+        for cle in d: # La boucle parcourt les clés
+            print(cle, "->", d[cle])
+        >> nom -> Dupont
+        >> âge -> 30
+
+        for cle, valeur in d.items(): # Les deux à la fois
+            print(cle, "->", valeur)
+        >> nom -> Dupont
+        >> âge -> 30
+
+.. slide::
+**2.3.6 Vérifier qu'une clé existe**
+
+Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opérateur ``in`` permet de regarder avant d'accéder.
+
+.. note::
+    ``in`` cherche parmi les **clés**, pas parmi les valeurs : ``"Dupont" in d`` répond ``False`` alors que ``"Dupont"`` est bien dans le dictionnaire.
+
+.. warning::
+    Exemple :
+    .. code-block:: python
+
+        d = {"nom": "Dupont", "âge": 30}
+        print("nom" in d)
+        >> True
+        print("Dupont" in d)
+        >> False
 
 .. slide::
 ✏️ Exercice 8 : Manipulation de p-uplets colorés
