@@ -319,11 +319,9 @@ On peut interrompre une boucle avec l’instruction ``break``.
 ✅ Récapitulatif de Chapitre
 -------------------------
 
-.. center::
+.. recap::
 
-    .. image:: images/recap_chap2.png
-        :alt: Récapitulatif du Chapitre 2
-        :width: 100%
+    .. INCLURE cartes_conditions_boucles
 
 .. slide::
 🏋️ Exercices supplémentaires

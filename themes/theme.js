@@ -156,6 +156,18 @@
         });
     }
 
+    /* Les « True » et « False » d'une table de vérité : le contenu d'une
+       cellule ne se choisit pas en CSS, on pose donc la marque ici. */
+    function markTruthValues() {
+        document.querySelectorAll('.recapCard td').forEach(function (cellule) {
+            var valeur = cellule.textContent.trim();
+
+            if (valeur === 'True' || valeur === 'False') {
+                cellule.dataset.bool = valeur.toLowerCase();
+            }
+        });
+    }
+
     /* --------------------------------------------------- sommaire mobile */
 
     function setupNav() {
@@ -1089,6 +1101,7 @@
     setupMenus();
     typeSections();
     markSymbolItems();
+    markTruthValues();
     setupNav();
     setupSearch();
     setupNavScroll();

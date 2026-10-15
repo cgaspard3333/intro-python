@@ -852,6 +852,20 @@ code {
 .tableWrap th { background: var(--surface-2); font-weight: 600; }
 .tableWrap tr:nth-child(even) td { background: var(--surface-2); }
 
+/* Une table de vérité se lit en colonnes : distinguer les deux valeurs
+   laisse la structure apparaître sans lire chaque cellule. La classe est
+   posée par theme.js, le contenu d'une cellule n'étant pas sélectionnable
+   en CSS. Ces règles viennent après celles du dessus pour les emporter à
+   spécificité égale. */
+.recapCard .tableWrap td[data-bool] {
+    font-family: var(--font-mono);
+    font-size: .88em;
+    text-align: center;
+    letter-spacing: -.01em;
+}
+.recapCard .tableWrap td[data-bool="true"] { color: var(--c-acquis); background: var(--t-acquis); }
+.recapCard .tableWrap td[data-bool="false"] { color: var(--c-piege); background: var(--t-piege); }
+
 /* ---------------------------------------------------------------- images */
 
 .contents img { display: block; margin: 1.5rem auto; border-radius: var(--radius); }
