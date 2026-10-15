@@ -68,7 +68,7 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
     ``a`` et ``b`` sont les **paramètres** de la fonction. Ce sont des variables locales à la fonction qui reçoivent des valeurs lorsque la fonction est appelée. 
 
     .. code-block:: python
-        print(addition(2, 3))  # 2 et 3 sont les **arguments** passés à la fonction
+        print(addition(2, 3))  # 2 et 3 sont les arguments passés à la fonction
         >> 5
 
     ``2`` et ``3`` sont les **arguments**. Ce sont les valeurs que l'on passe à la fonction lorsque celle-ci est appelée. Ces valeurs sont affectées aux paramètres ``a`` et ``b`` à l'intérieur de la fonction.
@@ -77,7 +77,7 @@ Pour **appeler** une fonction (c'est à dire l'exécuter), on utilise son nom su
 1.4 Valeurs de retour (*return*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si aucune valeur n'est retournée, Python renvoie ``None`` par défaut. La valeur retournée peut être de n'importe quel type (entier, chaîne de caractères, liste, etc.). La valeur retournée est la valeur par laquelle est remplacée l'appel de la fonction.
+Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si aucune valeur n'est retournée, Python renvoie ``None`` par défaut. La valeur retournée peut être de n'importe quel type (entier, chaîne de caractères, liste, etc.). La valeur retournée est la valeur par laquelle est remplacé l'appel de la fonction.
 
 .. warning::
     Exemple :
@@ -113,7 +113,7 @@ Une fonction peut **retourner** une valeur avec l’instruction ``return``. Si a
 1.6 Annotations de type
 ~~~~~~~~~~~~~~~~~~~
 
-Une fonction peut être annotée avec des types de données pour indiquer le type des paramètres et de la valeur de retour. Elles permettent de documenter le code et d'améliorer sa lisibilité. De plus, elles permettent de détecter de potentielles erreurs de typage lors de l'exécution du programme.
+Une fonction peut être annotée avec des types de données pour indiquer le type des paramètres et de la valeur de retour. Elles permettent de documenter le code et d'améliorer sa lisibilité. Python ne les vérifie pas à l'exécution : ce sont votre éditeur et les outils d'analyse qui s'en servent pour signaler les erreurs de typage **avant** de lancer le programme.
 .. note::
     **Les annotations de type (ou encore typage) font partie des bonnes méthodes de programmation que vous devez adopter.** Il faudra donc les utiliser dans chaque fonction que vous écrirez dans vos programmes.
 
@@ -138,7 +138,7 @@ Une fonction peut être annotée avec des types de données pour indiquer le typ
 
 **Objectif** : Écrire un programme qui permet de réaliser des opérations arithmétiques simples (addition, soustraction, multiplication, division) à l'aide de fonctions.
 
-**Etapes à suivre** :
+**Étapes à suivre** :
 
 .. step:: 
     Créer une fonction ``addition(a, b)`` qui prend en paramètre deux nombres entiers et retourne leur somme.
@@ -179,7 +179,7 @@ A partir des types de base, on peut construire des types plus complexes appelés
 2.1 Les p-uplets (*tuple*)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
-    Un p-uplet est une **collection ordonnée d'éléments**. Chaque élément peut être de n'importe quel type. Les p-uplets sont **immuables**, c'est-à-dire qu'ils ne peuvent pas être modifiés après leur création. Si les valeurs du p-uplet doivent être changées au cours de l'execution du programme alors il faut utiliser un autre type de variable comme une liste/tableau (voir partie suivante : :doc:`Les tableaux <chap3#tableaux>`).
+    Un p-uplet est une **collection ordonnée d'éléments**. Chaque élément peut être de n'importe quel type. Les p-uplets sont **immuables**, c'est-à-dire qu'ils ne peuvent pas être modifiés après leur création. Si les valeurs du p-uplet doivent être changées au cours de l'exécution du programme alors il faut utiliser un autre type de variable comme une liste/tableau (voir partie suivante : :doc:`Les tableaux <chap3#tableaux>`).
 
 .. slide::
 **2.1.1 Création d'un p-uplet**
@@ -203,7 +203,7 @@ Pour créer un p-uplet, on utilise des **parenthèses** et on sépare les élém
 .. slide::
 **2.1.2 Accès aux éléments d'un p-uplet**
 
-Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (sa position dans le p-uplet). Pour un p-uplet de taille n, les indexs des éléments vont de 0 à n-1.  
+Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (sa position dans le p-uplet). Pour un p-uplet de taille n, les index des éléments vont de 0 à n-1.  
 
 ``p[i]`` permet d'accéder à l'élément à l'index ``i`` du p-uplet ``p``.
 
@@ -214,7 +214,7 @@ Pour accéder à un élément d'un p-uplet, on utilise l'index de l'élément (s
         p = (1, 2, 3, 4, 5)
         print(p[0]) # Permet d'accéder à l'élément à l'index 0 du p-uplet p
         >> 1
-        print(p[4]) # Permet d'accéder à l'élément en 5eme position (index 4) du p-uplet p
+        print(p[4]) # Permet d'accéder à l'élément en 5e position (index 4) du p-uplet p
         >> 5
 
 .. slide::
@@ -236,7 +236,7 @@ La fonction ``len()`` permet de connaître la taille d'un p-uplet. Elle permet p
 2.2 Les tableaux / Les listes (*list*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
-    Un tableau est une collection ordonnée d'éléments qui sont organisés séquentiellements (les uns à la suite des autres). Contrairement aux p-uplets, les tableaux sont **mutables/muables**, c'est-à-dire qu'ils peuvent être modifiés après leur création.  
+    Un tableau est une collection ordonnée d'éléments qui sont organisés séquentiellement (les uns à la suite des autres). Contrairement aux p-uplets, les tableaux sont **mutables/muables**, c'est-à-dire qu'ils peuvent être modifiés après leur création.  
     En Python, les tableaux sont appelés **listes**.
 
 .. slide::
@@ -256,7 +256,7 @@ Les listes sont créées en utilisant des **crochets** et en séparant les élé
 .. slide::
 **2.2.2 Accès aux éléments d'une liste**
 
-De la même manière que pour un p-uplet, pour accéder à un élément d'une liste, on utilise l'index de l'élément. Pour une liste de taille n, les indexs des éléments vont de 0 à n-1.  
+De la même manière que pour un p-uplet, pour accéder à un élément d'une liste, on utilise l'index de l'élément. Pour une liste de taille n, les index des éléments vont de 0 à n-1.  
 
 ``l[i]`` permet d'accéder à l'élément à l'index ``i`` de la liste ``l``.
 
@@ -267,7 +267,7 @@ De la même manière que pour un p-uplet, pour accéder à un élément d'une li
         l = [1, 2, 3, 4, 5]
         print(l[0]) # Permet d'accéder à l'élément à l'index 0 de la liste l
         >> 1
-        print(l[4]) # Permet d'accéder à l'élément en 5eme position (index 4) de la liste l
+        print(l[4]) # Permet d'accéder à l'élément en 5e position (index 4) de la liste l
         >> 5
 
 .. slide::
@@ -287,7 +287,7 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
 .. slide::
 **2.2.4 Ajout/suppression d'éléments d'une liste**
 .. discoverList::
-    * Pour ajouter une valeur à la fin une liste, on utilise la méthode ``append()``.
+    * Pour ajouter une valeur à la fin d'une liste, on utilise la méthode ``append()``.
     * Pour supprimer une valeur d'une liste, on utilise la méthode ``remove()``.
 
 .. warning::
@@ -339,7 +339,7 @@ Pour modifier un élément d'une liste, on utilise l'index de l'élément et on 
 2.3 Les dictionnaires (*dict*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
-    Un dictionnaire est une collection d'éléments **non ordonnée**. Chaque élément est constitué d'une **clé** et d'une **valeur**. Les dictionnaires sont **mutables/muables**. Les clés doivent être uniques et les valeurs peuvent être de n'importe quel type.
+    Un dictionnaire est une collection d'éléments **non indexée** : on n'y accède pas par une position, mais par une clé. Chaque élément est constitué d'une **clé** et d'une **valeur**. Les dictionnaires sont **mutables/muables** et conservent l'ordre dans lequel les éléments y ont été ajoutés. Les clés doivent être uniques et les valeurs peuvent être de n'importe quel type.
 
 .. slide::
 **2.3.1 Création d'un dictionnaire**
@@ -360,7 +360,7 @@ Un nouveau dictionnaire est créé en utilisant des **accolades** et en séparan
 .. slide::
 **2.3.2 Accès aux éléments d'un dictionnaire**
 
-Les éléments d'un dictionnaire ne sont pas indexés (non-ordonnés) comme les listes et p-uplets. Il est donc impossible d'accéder au n-ième élément d'un dictionnaire. Pour accéder à une valeur, on utilise la clé associée à cette valeur. C'est la raison pour laquelle les clés doivent être uniques.
+Les éléments d'un dictionnaire ne sont pas indexés, contrairement à ceux des listes et des p-uplets. Il est donc impossible d'accéder au n-ième élément d'un dictionnaire, même s'il garde l'ordre dans lequel les éléments y ont été ajoutés. Pour accéder à une valeur, on utilise la clé associée à cette valeur. C'est la raison pour laquelle les clés doivent être uniques.
 
 ``d[clé]`` permet d'accéder à la valeur associée à la clé ``clé`` du dictionnaire ``d``.
 
@@ -386,15 +386,15 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         d = {"nom": "Dupont", "prénom": "Jean", "âge": 30}
         d["âge"] = 31 # Modifie la valeur associée à la clé "âge" du dictionnaire d
         print(d)
-        >> {"nom": "Dupont", "prénom": "Jean", "âge": 31}
+        >> {'nom': 'Dupont', 'prénom': 'Jean', 'âge': 31}
 
         d["ville"] = "Paris" # Ajoute un nouvel élément au dictionnaire d
         print(d)
-        >> {"nom": "Dupont", "prénom": "Jean", "âge": 31, "ville": "Paris"}
+        >> {'nom': 'Dupont', 'prénom': 'Jean', 'âge': 31, 'ville': 'Paris'}
 
         del d["prénom"] # Supprime l'élément associé à la clé "prénom" du dictionnaire d
         print(d)
-        >> {"nom": "Dupont", "âge": 31, "ville": "Paris"}
+        >> {'nom': 'Dupont', 'âge': 31, 'ville': 'Paris'}
 
 .. slide::
 **2.3.4 Méthodes spécifiques aux dictionnaires**
@@ -452,8 +452,8 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
 ---
 
-✏️ Exercice 9: "Créer mon sandwich parfait"
---------------------------------------------
+✏️ Exercice 9 : "Créer mon sandwich parfait"
+---------------------------------------------
 
 **Consigne** : Vous allez créer un programme qui aide à créer un sandwich personnalisé en fonction de différents ingrédients.
 
@@ -495,7 +495,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 .. slide::
 ✏️ Exercice 10 : Cours de Potion avancé
 ----------------------------------------------
-**Consigne**: Dans cet exercice, vous allez créer une application qui permet à un apprenti sorcier de préparer des potions magiques en combinant divers ingrédients. Chaque ingrédient a des propriétés spécifiques, et certaines combinaisons peuvent produire des effets magiques supplémentaires.
+**Consigne** : Dans cet exercice, vous allez créer une application qui permet à un apprenti sorcier de préparer des potions magiques en combinant divers ingrédients. Chaque ingrédient a des propriétés spécifiques, et certaines combinaisons peuvent produire des effets magiques supplémentaires.
 
 .. slide::
 .. step:: reset
@@ -505,7 +505,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     .. discoverList::
         * Un nom,
         * Une quantité de base,
-        * Unité (grammes ou millilitres),
+        * Une unité (grammes ou millilitres),
         * Une propriété magique
     
     Les ingrédients existent avec une quantité de base (dose unitaire) tels que :
@@ -523,12 +523,12 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     Définissez une fonction ``calculer_quantite`` qui prend deux arguments :
 
     .. discoverList::
-        * ``ingredient`` (type ``str``): le nom de l'ingrédient,
-        * ``dose`` (type ``int``): le nombre de doses de cet ingrédient à utiliser.
+        * ``ingredient`` (type ``str``) : le nom de l'ingrédient,
+        * ``dose`` (type ``int``) : le nombre de doses de cet ingrédient à utiliser.
     
     Et retourne un p-uplet contenant : 
     .. discoverList::
-        * La quantité totale de l'ingrédient, i.e. le nombres de doses multiplié par la quantité de base (type ``int``),
+        * La quantité totale de l'ingrédient, c'est-à-dire le nombre de doses multiplié par la quantité de base (type ``int``),
         * L'unité de cette quantité (type ``str``),
         * L'effet de l'ingrédient (type ``str``).
 
@@ -541,8 +541,8 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
 **Aide pour le typage de la fonction** :
 .. code-block:: python
-    def calculer_quantite(ingredient: str, quantite: int) -> tuple[int, str, str]:
-    # Code de la fonction
+    def calculer_quantite(ingredient: str, dose: int) -> tuple[int, str, str]:
+        # Code de la fonction
 
 
 .. slide::
@@ -557,8 +557,8 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
     Et retourne un p-uplet contenant : 
     .. discoverList::
-        * La quantité totale de la potion en gramme (type ``int``),
-        * La quantité totale de la potion en millilitre (type ``int``),
+        * La quantité totale de la potion en grammes (type ``int``),
+        * La quantité totale de la potion en millilitres (type ``int``),
         * Tous les effets de la potion (type ``list[str]``).
 
     Cette fonction doit :
@@ -567,10 +567,10 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         1. Appeler ``calculer_quantite`` pour chaque ingrédient sélectionné.
         2. Additionner les quantités en grammes et en millilitres séparément.
         3. Rassembler tous les effets des ingrédients choisis.
-        4. Retourner la quantité totale en gramme et millilitre ainsi que les effets de la potion.
+        4. Retourner la quantité totale en grammes et en millilitres ainsi que les effets de la potion.
 
     .. note::
-        N'oubliez pas de typer correctement la fonction ``creer_potion``!
+        N'oubliez pas de typer correctement la fonction ``creer_potion`` !
 
 .. slide::
 .. step::
@@ -583,16 +583,16 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
         * Enfin, utilisez les valeurs retournées par ``creer_potion`` pour afficher la quantité totale et les effets de la potion.
 
 .. slide::
-**Resulat attendu** :
+**Résultat attendu** :
 .. code-block::
     >> Bienvenue dans le laboratoire de potions magiques !
     >> Vous allez pouvoir créer une potion en combinant différents ingrédients.
     >> 
     >> Ingrédients disponibles :
-    >> 1. Poudre de Lune, 10grammes, guérison
-    >> 2. Écailles de Dragon, 5grammes, force
-    >> 3. Larmes de Licorne, 2millilitres, invisibilité
-    >> 4. Herbes Mystiques, 8grammes, sérénité
+    >> 1. Poudre de Lune, 10 grammes, guérison
+    >> 2. Écailles de Dragon, 5 grammes, force
+    >> 3. Larmes de Licorne, 2 millilitres, invisibilité
+    >> 4. Herbes Mystiques, 8 grammes, sérénité
     >> Choisissez un ingrédient (1-4) ou tapez 'fin' pour terminer : 1
     >> Entrez la quantité (en doses) : 5
     >> Choisissez un ingrédient (1-4) ou tapez 'fin' pour terminer : 3
@@ -633,19 +633,19 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
 .. |puplet_construction| div::
     .. center::
-    P-uplet vide: ``t = ()``
+    P-uplet vide : ``t = ()``
     
     ``t1 = (1, 8, 5)``
 
 .. |tableau_construction| div::
     .. center::
-    Liste vide: ``L = []``
+    Liste vide : ``L = []``
     
     ``L1 = [1, 8, 5]``
 
 .. |dictionnaire_construction| div::
     .. center::
-    Dictionnaire vide: ``D = {}``
+    Dictionnaire vide : ``D = {}``
     
     ``d1 = {1: 'Paul', 2: 'Tom', 3: 'Nadia'}``
 
@@ -665,7 +665,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
 
 .. |dictionnaire_elements| div::
     .. center::
-    Les clés peuvent être de tout type, à condition d’être non modifiables: *int, str, tuple*
+    Les clés peuvent être de tout type, à condition d’être non modifiables : *int, str, tuple*
     
     ``d2 = {4: 'Léa', 5: 'Téo'}``
 
@@ -748,7 +748,7 @@ Il est possible de modifier, ajouter ou supprimer des éléments d'un dictionnai
     .. center::
     On peut modifier les valeurs, mais pas les clés
     
-    Exemple: ``d1[2] = 'Joe'`` remplace ``'Tom'`` par ``'Joe'``
+    Exemple : ``d1[2] = 'Joe'`` remplace ``'Tom'`` par ``'Joe'``
 
 ---
 
