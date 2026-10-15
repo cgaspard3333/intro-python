@@ -431,7 +431,8 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 
         .. code-block:: python
 
-            print("v =", 3, "cm", x, end=" ")
+            print("v =", 3, "cm")
+            print("suite", end=" ")
 
         * ``,`` sépare les éléments affichés
         * ``\n`` retour à la ligne
@@ -442,7 +443,7 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
 
         .. code-block:: python
 
-            s = input("Saisir une valeur : ")
+            s = input("Valeur : ")
 
         ``input()`` renvoie **toujours** une chaîne. À convertir ensuite :
 
@@ -480,10 +481,6 @@ Avec l'usage d'une seule itération de la fonction ``print()``, le message est p
         * La fonction ``input()`` renvoie une chaîne, même si l'utilisateur tape un nombre.
         * Un fichier Python s'enregistre avec l'extension ``.py``
         * Ni espace ni accent dans les noms de fichiers et de dossiers.
-        .. GROUPE A
-        * L'indentation délimite les blocs : ce qui appartient à un ``if`` ou à une boucle est décalé d'un cran.
-        * ``=`` affecte une valeur, ``==`` compare deux valeurs.
-        .. FIN GROUPE
         
         
 

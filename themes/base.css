@@ -584,6 +584,11 @@ h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: .75rem;
     margin: 1.5rem 0;
+
+    /* Chaque fiche s'arrête à son contenu. Étirées sur la hauteur de la
+       plus haute de leur rangée, les plus courtes traînaient un grand
+       blanc — jusqu'à cent pixels sur un écran large. */
+    align-items: start;
 }
 
 .recapCard {

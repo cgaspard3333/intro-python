@@ -23,21 +23,24 @@
 
         .. code-block:: python
 
-            if condition:
-                # exécuté si la condition est vraie
-            elif autre_condition:
-                # exécuté si la première est fausse et celle-ci vraie
+            if age < 18:
+                print("mineur")
+            elif age < 65:
+                print("majeur")
             else:
-                # exécuté dans tous les autres cas
+                print("senior")
 
-        Les deux-points ouvrent le bloc, l'indentation le délimite.
+        Les deux-points ouvrent le bloc, l'indentation le délimite. ``elif`` et ``else`` sont facultatifs, et ``elif`` peut se répéter.
 
     .. carte:: Boucle while
 
         .. code-block:: python
 
-            while condition:
-                # répété tant que la condition est vraie
+            n = 0
+            while n < 3:
+                n = n + 1
+
+        Répétée tant que la condition est vraie.
 
         * ``break`` Sort immédiatement de la boucle
         * ``continue`` Passe à l'itération suivante
@@ -46,14 +49,19 @@
 
         .. code-block:: python
 
-            for variable in sequence:
-                # répété pour chaque élément de la séquence
+            for i in range(3):
+                print(i)
 
-        ``range(debut, fin, pas)`` engendre une suite d'entiers. Par défaut
-        ``debut`` vaut 0 et ``pas`` vaut 1, et ``fin`` est toujours exclu :
-        ``range(3)`` donne 0, 1 et 2.
+        Répétée pour chaque élément. ``range(3)`` donne 0, 1 et 2 : la borne de fin est **exclue**. On peut aussi préciser le début et le pas.
 
-        ``break`` et ``continue`` s'utilisent aussi dans une boucle ``for``.
+        ``break`` et ``continue`` s'utilisent aussi ici.
+
+    .. carte:: Pièges à éviter
+
+        * ``=`` affecte une valeur, ``==`` compare deux valeurs.
+        * Les deux-points et l'indentation délimitent le bloc : les oublier change le sens du programme.
+        * ``input()`` renvoie une chaîne. Sans conversion, ``"10" < "9"`` est **vrai** : ce sont des textes qui sont comparés, pas des nombres.
+        * Une boucle ``while`` dont la condition ne change jamais ne s'arrête pas.
 
     .. carte:: Tables de vérité
 
