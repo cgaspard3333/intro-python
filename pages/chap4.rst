@@ -325,8 +325,8 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
     Détails des fonctions dans ``equipe.py``:
 
-        - ``creer_equipe(nom, joueurs)`` : prend en entrée le nom de l’équipe et une liste de noms de joueurs et retourne un dictionnaire avec le nom de l'équipe, la liste des joueurs et le nombre de joueurs.
-        - ``afficher_equipe(equipe)`` : prend en entrée une équipe et affiche les informations de l'équipe sous un format clair.
+        - ``creer_equipe(nom: str, joueurs: list[str]) -> dict`` : prend en entrée le nom de l’équipe et une liste de noms de joueurs et retourne un dictionnaire avec le nom de l'équipe, la liste des joueurs et le nombre de joueurs.
+        - ``afficher_equipe(equipe: dict) -> None`` : prend en entrée une équipe et affiche les informations de l'équipe sous un format clair.
 
 .. slide::
 .. step::
@@ -335,12 +335,12 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
     Détails des fonctions dans ``match.py``
 
-        - ``simuler_match()`` : simule un match pour une équipe.
+        - ``simuler_match(equipe: dict) -> dict[str, int]`` : simule un match pour une équipe.
             * Génére un nombre aléatoire de buts entre 0 et 5 pour l’équipe.
             * Génére des statistiques aléatoires de possession (entre 40% et 60%), de tirs (entre 5 et 20), et de passes réussies (entre 70% et 90%).
         La fonction prend en entrée une équipe et retourne un dictionnaire de statistiques (buts, possession, tirs, passes réussies).
 
-        - ``afficher_statistiques_match(stats)`` : prend en entrée un dictionnaire ``stats`` (contenant les statistiques générées par ``simuler_match()``) et les affiche sous un format lisible.
+        - ``afficher_statistiques_match(stats: dict[str, int]) -> None`` : prend en entrée un dictionnaire ``stats`` (contenant les statistiques générées par ``simuler_match``) et les affiche sous un format lisible.
 
 .. slide::
 .. step::
@@ -349,9 +349,9 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 
     Détails des fonctions dans ``statistiques.py``
 
-        - ``moyenne_buts_par_match(liste_buts)`` : prend une liste des buts marqués sur plusieurs matchs et retourne la moyenne.
-        - ``taux_reussite_passes(liste_passes)`` : prend une liste de pourcentages de passes réussies et retourne le taux moyen.
-        - ``moyenne_possession(liste_possession)`` : prend une liste de pourcentages de possession et retourne la possession moyenne.
+        - ``moyenne_buts_par_match(liste_buts: list[int]) -> float`` : prend une liste des buts marqués sur plusieurs matchs et retourne la moyenne.
+        - ``taux_reussite_passes(liste_passes: list[int]) -> float`` : prend une liste de pourcentages de passes réussies et retourne le taux moyen.
+        - ``moyenne_possession(liste_possession: list[int]) -> float`` : prend une liste de pourcentages de possession et retourne la possession moyenne.
 
 .. slide::
 .. step::
@@ -382,15 +382,15 @@ Dans cet exercice, vous allez créer un simulateur de statistiques sportives pou
 **Résumé des fonctions à implémenter :**  
 
 - Module ``equipe.py`` :
-    * ``creer_equipe(nom, joueurs)`` : crée un dictionnaire d'équipe.
-    * ``afficher_equipe(equipe)`` : affiche les informations de l’équipe.
+    * ``creer_equipe(nom: str, joueurs: list[str]) -> dict`` : crée un dictionnaire d'équipe.
+    * ``afficher_equipe(equipe: dict) -> None`` : affiche les informations de l’équipe.
 - Module ``match.py`` :
-    * ``simuler_match(equipe)`` : génère des statistiques aléatoires pour un match.
-    * ``afficher_statistiques_match(stats)`` : affiche les statistiques d’un match.
+    * ``simuler_match(equipe: dict) -> dict[str, int]`` : génère des statistiques aléatoires pour un match.
+    * ``afficher_statistiques_match(stats: dict[str, int]) -> None`` : affiche les statistiques d’un match.
 - Module statistiques.py :
-    * ``moyenne_buts_par_match(liste_buts)`` : calcule la moyenne des buts sur plusieurs matchs.
-    * ``taux_reussite_passes(liste_passes)`` : calcule le taux moyen de passes réussies.
-    * ``moyenne_possession(liste_possession)`` : calcule la possession moyenne.
+    * ``moyenne_buts_par_match(liste_buts: list[int]) -> float`` : calcule la moyenne des buts sur plusieurs matchs.
+    * ``taux_reussite_passes(liste_passes: list[int]) -> float`` : calcule le taux moyen de passes réussies.
+    * ``moyenne_possession(liste_possession: list[int]) -> float`` : calcule la possession moyenne.
 
 .. slide::
 **Résultat attendu :**
@@ -683,7 +683,24 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. step::
     **Calculer** et **afficher** le coût total global des trois produits, en arrondissant cette somme à l'entier supérieur.
 
+.. GROUPE B
+.. step::
+    **Dater** la facture : affichez en tête la date et l'heure de son édition au format "JJ/MM/AAAA à HHhMM" (par exemple : 14/11/2026 à 10h03) en utilisant le module ``datetime``.
+    Par défaut, la date et l'heure fournies par ``datetime`` sont au format "AAAA-MM-JJ HH:MM:SS.ffffff" : cherchez sur internet comment les formater lors de leur affichage.
+
+.. step::
+    **Afficher** la date limite de paiement, 30 jours après la date de la facture. Cherchez sur internet comment utiliser la fonction ``timedelta()`` du module ``datetime`` pour ajouter des jours à une date.
+
+.. step::
+    **Fixer l'heure limite** : le paiement doit être reçu au plus tard à 18h00 le jour de l'échéance. En utilisant **obligatoirement** les fonctions ``datetime.combine()`` et ``datetime.min.time()``, construisez la date et l'heure de minuit le jour de l'échéance, puis ajoutez-lui 18 heures avec ``timedelta()``. Affichez cette limite au format "JJ/MM/AAAA à HHhMM".
+
+    **Aide** :
+    .. spoiler::
+        ``datetime.min.time()`` donne l'heure 00h00 (minuit). ``datetime.combine()`` associe une date et une heure pour obtenir un objet ``datetime`` complet, auquel on peut ensuite ajouter des heures et des minutes avec ``timedelta()``.
+
+.. FIN GROUPE
 .. slide::
+.. GROUPE A
 **Resultat attendu :**
 .. code-block:: python
     >> Nom du produit 1 : Chaise
@@ -703,10 +720,37 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> Lampe                     14.50          4           58.00         58         58         58           58.00
     >> ----------------------------------------------------------------------------------------------------------------
     >> Total facture (arrondi au supérieur) :  268 €
+.. GROUPE B
+**Resultat attendu :**
+.. code-block:: python
+    >> Nom du produit 1 : Chaise
+    >> Prix unitaire de Chaise (€) : 29.95
+    >> Quantité de Chaise : 3
+    >> Nom du produit 2 : Table
+    >> Prix unitaire de Table (€) : 59.99
+    >> Quantité de Table : 2
+    >> Nom du produit 3 : Lampe
+    >> Prix unitaire de Lampe (€) : 14.50
+    >> Quantité de Lampe : 4
+
+    >> Facture éditée le 14/11/2026 à 10h03
+    >> Produit       Prix Unitaire (€)   Quantité  Total Brut (€)  A.Sup (€)  A.Inf (€)  Tronc (€)    Arrondi2 (€)
+    >> ----------------------------------------------------------------------------------------------------------------
+    >> Chaise                    29.95          3           89.85         90         89         89           89.85
+    >> Table                     59.99          2          119.98        120        119        119          119.98
+    >> Lampe                     14.50          4           58.00         58         58         58           58.00
+    >> ----------------------------------------------------------------------------------------------------------------
+    >> Total facture (arrondi au supérieur) :  268 €
+    >> À régler avant le 14/12/2026 à 18h00
+.. FIN GROUPE
 
 .. success::
     Vous savez maintenant arrondir et tronquer des nombres pour un affichage plus lisible ainsi qu'utiliser les f-strings pour un affichage plus rapide et lisible. Vous avez également appris à aligner les éléments pour créer des tableaux formatés.
+    .. GROUPE B
+    Enfin, vous savez afficher une date et une heure, calculer une nouvelle date et construire une heure précise avec le module ``datetime``.
+    .. FIN GROUPE
 
+.. GROUPE A
 .. slide::
 ✏️ Exercice 13 : Un bulletin météo très aléatoire
 ------------------------------------------------
@@ -769,7 +813,9 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
 .. success::
     Vous savez maintenant comment utiliser des modules intégrés et leurs fonctions afin d'enrichir vos programmes tout en apprenant à formater les dates et les nombres pour un affichage plus lisible.
+.. FIN GROUPE
 
+.. MASQUER
 .. |code_struct_package| div::
     .. code-block:: text
         mon_package/
@@ -843,6 +889,7 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 
     - **Affichage de pourcentages** :
         - ``f"{taux:.1%}"`` affiche le taux en pourcentage avec 1 décimale.
+.. FIN MASQUER
 
 
 .. slide::
