@@ -28,6 +28,8 @@ return array(
             'exos_sup_chap2',
             'chap3',
             'exos_sup_chap3',
+            'chap4',
+            'exos_sup_chap4',
         )),
         array('id' => 'B', 'slug' => 'groupe-b', 'label' => 'Groupe B', 'pages' => array(
             'install_maison',
@@ -37,6 +39,8 @@ return array(
             'exos_sup_chap2',
             'chap3',
             'exos_sup_chap3',
+            'chap4',
+            'exos_sup_chap4',
         )),
     ),
 

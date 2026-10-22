@@ -7,8 +7,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Moyen : ⚖️
     * Difficile : 🌶️
 
-⚖️ Exercice 13 : Gestion de budget personnel avec des modules et formatage
+.. GROUPE A
+⚖️ Exercice Sup. 10 : Gestion de budget personnel avec des modules et formatage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
+⚖️ Exercice Sup. 13 : Gestion de budget personnel avec des modules et formatage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Objectif** :
 Créer un programme de gestion de budget personnel permettant de simuler les revenus et les dépenses mensuelles, de calculer le solde mensuel et d'afficher un résumé formaté des finances. Ce programme fera appel à des modules intégrés de Python et utilisera des techniques d'affichage avancé.
@@ -62,8 +67,13 @@ Créer un programme de gestion de budget personnel permettant de simuler les rev
 - Organisez le code pour assurer une lisibilité optimale.
 
 
-🌶️ Exercice 14 : Simulation de navigation robotique intelligente
+.. GROUPE A
+🌶️ Exercice Sup. 11 : Simulation de navigation robotique intelligente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
+🌶️ Exercice Sup. 14 : Simulation de navigation robotique intelligente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 **Objectif** :
 Dans cet exercice, vous allez créer un programme de simulation de navigation robotique. Le programme simulera un robot se déplaçant sur une grille 10x10, évitant des obstacles et atteignant un objectif fixé. Ce programme utilisera des concepts de base en intelligence artificielle, tels que la prise de décision et la navigation autonome.
@@ -155,8 +165,13 @@ Dans cet exercice, vous allez créer un programme de simulation de navigation ro
 
 
 .. slide::
+.. GROUPE A
+🌶️ Exercice Sup. 12 : Le Vrai Jeu d'Echecs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. GROUPE B
 🌶️ Exercice Sup. 15 : Le Vrai Jeu d'Echecs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. FIN GROUPE
 
 .. GROUPE A
 **Consigne** : A partir du code de l'Exercice Sup. 9 du Chapitre 2, créez un jeu d'échecs complet.
