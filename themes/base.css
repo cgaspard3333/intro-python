@@ -862,6 +862,10 @@ code {
 .hljs-built_in, .hljs-name, .hljs-section, .hljs-title { color: var(--hl-builtin); }
 .hljs-title.class_, .hljs-class .hljs-title, .hljs-variable, .hljs-template-variable, .hljs-selector-id { color: var(--hl-class); }
 .hljs-attr, .hljs-attribute, .hljs-meta, .hljs-symbol, .hljs-bullet { color: var(--hl-meta); }
+/* Ce que le terminal affiche garde l'encre du bloc, sans coloration : ce
+   n'est pas du code, et l'absence de couleur suffit à le dire. */
+.codeSortie { color: var(--code-ink); }
+
 .hljs-emphasis { font-style: italic; }
 .hljs-strong { font-weight: 600; }
 

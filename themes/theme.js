@@ -253,6 +253,68 @@
         });
     }
 
+    /* Dans un bloc, une ligne qui commence par « >> » est ce que le terminal
+       affiche, pas du code : la colorer en Python ferait passer le « 5 » de
+       « >> 5 » pour un littéral et « NameError » pour un identifiant. On
+       découpe donc le bloc en tronçons — source, sortie, source — et seuls
+       les premiers sont colorés. Par tronçon et non ligne à ligne, pour que
+       le contexte tienne : une chaîne sur plusieurs lignes, par exemple. */
+    function estSortie(ligne) {
+        return /^\s*>>/.test(ligne);
+    }
+
+    function colorerBlocs() {
+        if (typeof window.hljs === 'undefined') { return; }
+
+        document.querySelectorAll('.codeBlock pre > code').forEach(function (code) {
+            var trouve = code.className.match(/\b(python-repl|python|bash)\b/);
+            var langue = trouve && trouve[1];
+
+            if (!langue || !window.hljs.getLanguage(langue)) { return; }
+
+            var lignes = code.textContent.split('\n');
+
+            if (!lignes.some(estSortie)) {
+                window.hljs.highlightElement(code);
+                return;
+            }
+
+            var troncons = [];
+
+            lignes.forEach(function (ligne) {
+                var sortie = estSortie(ligne);
+                var dernier = troncons[troncons.length - 1];
+
+                if (!dernier || dernier.sortie !== sortie) {
+                    troncons.push(dernier = {sortie: sortie, lignes: []});
+                }
+
+                dernier.lignes.push(ligne);
+            });
+
+            var piece = document.createDocumentFragment();
+
+            troncons.forEach(function (troncon, rang) {
+                if (rang) { piece.appendChild(document.createTextNode('\n')); }
+
+                var texte = troncon.lignes.join('\n');
+                var marque = document.createElement('span');
+
+                if (troncon.sortie) {
+                    marque.className = 'codeSortie';
+                    marque.textContent = texte;
+                } else {
+                    marque.innerHTML = window.hljs.highlight(texte, {language: langue}).value;
+                }
+
+                piece.appendChild(marque);
+            });
+
+            code.textContent = '';
+            code.appendChild(piece);
+        });
+    }
+
     /* --------------------------------------------------- sommaire mobile */
 
     function setupNav() {
@@ -1207,5 +1269,5 @@
     setupLiveReload();
     bootSlidey();
 
-    if (typeof window.hljs !== 'undefined') { window.hljs.highlightAll(); }
+    colorerBlocs();
 })();
