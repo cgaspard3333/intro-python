@@ -750,7 +750,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
 
 .. |dictionnaire_notation| div::
     .. center::
-    ``{1: 'Paul', 2: 'Tom', 3: 'Nadia'}``
+    ``{1: "Paul", 2: "Tom", 3: "Nadia"}``
 
 .. (groupe suivant)
 
@@ -770,7 +770,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     .. center::
     Dictionnaire vide : ``D = {}``
     
-    ``d1 = {1: 'Paul', 2: 'Tom', 3: 'Nadia'}``
+    ``d1 = {1: "Paul", 2: "Tom", 3: "Nadia"}``
 
 .. (groupe suivant)
 
@@ -790,7 +790,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     .. center::
     Les clés peuvent être de tout type, à condition d’être non modifiables : *int, str, tuple*
     
-    ``d2 = {4: 'Léa', 5: 'Téo'}``
+    ``d2 = {4: "Léa", 5: "Téo"}``
 
 .. (groupe suivant)
 
@@ -854,7 +854,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     .. center::
     On peut modifier les valeurs, mais pas les clés
     
-    Exemple : ``d1[2] = 'Joe'`` remplace ``'Tom'`` par ``'Joe'``
+    Exemple : ``d1[2] = "Joe"`` remplace ``'Tom'`` par ``'Joe'``
 
 .. (groupe suivant)
 

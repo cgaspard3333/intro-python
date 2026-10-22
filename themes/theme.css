@@ -47,6 +47,7 @@
     --inline-ink: #1b1917;
     --inline-keyword: #b32c86;
     --inline-literal: #a9540d;
+    --inline-string: #0c7355;
     --inline-builtin: #2563b0;
     --ink: #1b1917;
     --ink-soft: #57524c;
@@ -86,6 +87,7 @@
     --inline-ink: #e8e4de;
     --inline-keyword: #ff7ab8;
     --inline-literal: #ffb86b;
+    --inline-string: #3ddc97;
     --inline-builtin: #8b7bff;
     --ink: #ece8e3;
     --ink-soft: #a8a29a;

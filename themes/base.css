@@ -783,6 +783,7 @@ code, pre, kbd,
    chose : mots-clés, littéraux et fonctions natives. */
 .contents code .pyMot { color: var(--inline-keyword); }
 .contents code .pyValeur { color: var(--inline-literal); }
+.contents code .pyTexte { color: var(--inline-string); }
 .contents code .pyNatif { color: var(--inline-builtin); }
 
 /* L'espace autour d'un fragment de code se prend en marge, pas en

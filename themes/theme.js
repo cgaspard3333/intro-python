@@ -213,16 +213,27 @@
         document.querySelectorAll('.contents code').forEach(function (code) {
             if (code.closest('.codeBlock') || code.children.length) { return; }
 
-            var morceaux = code.textContent.split(/([A-Za-z_][A-Za-z0-9_]*)/);
+            // Une chaîne entre guillemets, ou un identifiant entier. Les
+            // triples guillemets passent avant, sans quoi on y verrait une
+            // chaîne vide suivie d'un guillemet orphelin.
+            var morceaux = code.textContent.split(
+                /("""|'''|"[^"]*"|'[^']*'|[A-Za-z_][A-Za-z0-9_]*)/);
             var piece = document.createDocumentFragment();
             var colore = false;
 
             morceaux.forEach(function (bout, rang) {
-                var classe = rang % 2 === 1 ? MOTS_PYTHON[bout] : null;
+                var classe = null;
+
+                if (rang % 2 === 1) {
+                    classe = /^["']/.test(bout) ? 'pyTexte' : MOTS_PYTHON[bout];
+                }
 
                 // Un mot derrière un point est un attribut, pas une fonction
                 // native : « d1.items() » n'est pas « items ».
-                if (classe && /\.\s*$/.test(morceaux[rang - 1] || '')) { classe = null; }
+                // Un mot derrière un point est un attribut, pas une fonction
+                // native : « d1.items() » n'est pas « items ».
+                if (classe && classe !== 'pyTexte'
+                    && /\.\s*$/.test(morceaux[rang - 1] || '')) { classe = null; }
 
                 if (classe) {
                     var marque = document.createElement('span');
