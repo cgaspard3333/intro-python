@@ -43,6 +43,11 @@
     --bg: #f5f4f2;
     --surface: #ffffff;
     --surface-2: #edebe7;
+    --inline-code-bg: #eceae6;
+    --inline-ink: #1b1917;
+    --inline-keyword: #b32c86;
+    --inline-literal: #a9540d;
+    --inline-builtin: #2563b0;
     --ink: #1b1917;
     --ink-soft: #57524c;
     --ink-faint: #857f78;
@@ -59,7 +64,7 @@
     --focus: #a8400a;
 
     --shadow: 0 1px 2px rgba(28, 25, 23, .07), 0 14px 34px rgba(28, 25, 23, .09);
-    --inline-code-bg: #eceae6;
+    --stripe: #faf4f1;
 
     --c-note: #1d6fd0;      --t-note: #e7eefd;
     --c-attention: #a86a00; --t-attention: #fbf2e2;
@@ -77,6 +82,11 @@
     --bg: #13120f;
     --surface: #1c1a17;
     --surface-2: #262320;
+    --inline-code-bg: #282521;
+    --inline-ink: #e8e4de;
+    --inline-keyword: #ff7ab8;
+    --inline-literal: #ffb86b;
+    --inline-builtin: #8b7bff;
     --ink: #ece8e3;
     --ink-soft: #a8a29a;
     --ink-faint: #7b746c;
@@ -93,7 +103,7 @@
     --focus: #f28c33;
 
     --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 40px rgba(0, 0, 0, .45);
-    --inline-code-bg: #282521;
+    --stripe: #171410;
 
     --c-note: #62b3fa;      --t-note: #14202c;
     --c-attention: #ffc24b; --t-attention: #2c2411;
@@ -176,12 +186,24 @@ h1 { line-height: 1.08; }
 
 h2 { display: flex; align-items: baseline; gap: .6rem; }
 
-/* Le sommaire de l'accueil, en tuiles de chapitre. */
+/* Le sommaire de l'accueil, en tuiles de chapitre. La grille lui est
+   réservée : en bas d'un chapitre, le même sommaire ne compte qu'une entrée,
+   qui se retrouvait coincée dans une colonne de 14 rem avec tous ses titres
+   repliés sur deux lignes. */
 
-.toc > ul {
+.contents.is-home .toc > ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: .7rem;
+}
+
+.contents:not(.is-home) .toc > ul > li + li { margin-top: .7rem; }
+
+/* Au large, les titres annoncés tiennent en deux colonnes plutôt qu'en une
+   longue pile. */
+@media (min-width: 60rem) {
+    .contents:not(.is-home) .toc ul ul { columns: 2; column-gap: 1.6rem; }
+    .contents:not(.is-home) .toc ul ul li { break-inside: avoid; }
 }
 
 .toc > ul > li {

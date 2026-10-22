@@ -168,6 +168,80 @@
         });
     }
 
+    /* Le lien de spoiler est posé par slidey après coup : on écoute au
+       niveau du document, et on marque son état pour que le chevron suive.
+       La position réelle est relue après l'animation de repli. */
+    function setupSpoilers() {
+        document.addEventListener('click', function (evenement) {
+            var lien = evenement.target.closest && evenement.target.closest('.spoilerLink');
+            if (!lien) { return; }
+
+            lien.classList.toggle('is-open');
+
+            window.setTimeout(function () {
+                var cible = document.getElementById('spoiler' + lien.getAttribute('rel'));
+                if (cible) { lien.classList.toggle('is-open', cible.offsetParent !== null); }
+            }, 420);
+        });
+    }
+
+    /* Un fragment en ligne n'est pas forcément du code Python : la moitié
+       d'entre eux sont des raccourcis clavier ou des noms de fichiers. On ne
+       colore donc que les mots qui ne peuvent pas être autre chose, et on
+       les cherche à l'intérieur du fragment : « for x in t1: » en contient
+       deux. Découper sur les identifiants entiers protège « Intro_Python »,
+       qui n'est pas le mot-clé « in ». */
+    var MOTS_PYTHON = {};
+
+    (function () {
+        var cles = ('False None True and as assert async await break class continue def '
+            + 'del elif else except finally for from global if import in is lambda '
+            + 'nonlocal not or pass raise return try while with yield').split(' ');
+        var natives = ('abs all any bool chr dict dir enumerate eval filter float format '
+            + 'input int isinstance len list map max min open ord print range repr '
+            + 'reversed round set sorted str sum tuple type zip').split(' ');
+
+        cles.forEach(function (m) { MOTS_PYTHON[m] = 'pyMot'; });
+        natives.forEach(function (m) { MOTS_PYTHON[m] = 'pyNatif'; });
+
+        // True, False et None sont des valeurs réservées, pas des mots de
+        // structure : ils prennent la couleur des nombres, comme dans un bloc.
+        ['True', 'False', 'None'].forEach(function (m) { MOTS_PYTHON[m] = 'pyValeur'; });
+    })();
+
+    function colorInlineCode() {
+        document.querySelectorAll('.contents code').forEach(function (code) {
+            if (code.closest('.codeBlock') || code.children.length) { return; }
+
+            var morceaux = code.textContent.split(/([A-Za-z_][A-Za-z0-9_]*)/);
+            var piece = document.createDocumentFragment();
+            var colore = false;
+
+            morceaux.forEach(function (bout, rang) {
+                var classe = rang % 2 === 1 ? MOTS_PYTHON[bout] : null;
+
+                // Un mot derrière un point est un attribut, pas une fonction
+                // native : « d1.items() » n'est pas « items ».
+                if (classe && /\.\s*$/.test(morceaux[rang - 1] || '')) { classe = null; }
+
+                if (classe) {
+                    var marque = document.createElement('span');
+                    marque.className = classe;
+                    marque.textContent = bout;
+                    piece.appendChild(marque);
+                    colore = true;
+                } else if (bout) {
+                    piece.appendChild(document.createTextNode(bout));
+                }
+            });
+
+            if (colore) {
+                code.textContent = '';
+                code.appendChild(piece);
+            }
+        });
+    }
+
     /* --------------------------------------------------- sommaire mobile */
 
     function setupNav() {
@@ -1102,6 +1176,8 @@
     typeSections();
     markSymbolItems();
     markTruthValues();
+    setupSpoilers();
+    colorInlineCode();
     setupNav();
     setupSearch();
     setupNavScroll();

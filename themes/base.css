@@ -739,7 +739,19 @@ h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
     text-decoration: none;
 }
 .spoilerLink:hover { border-style: solid; color: var(--ink); }
-.spoilerLink::before { content: "?"; font-family: var(--font-mono); color: var(--accent); }
+/* Un chevron plutôt qu'un point d'interrogation : le lien déplie du
+   contenu, il ne pose pas une question. Tracé en bordures, donc sans
+   dépendre d'un glyphe de police. */
+.spoilerLink::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: .42em solid var(--accent);
+    border-top: .3em solid transparent;
+    border-bottom: .3em solid transparent;
+    transition: transform .18s ease;
+}
+.spoilerLink.is-open::before { transform: rotate(90deg); }
 
 .spoiler {
     margin-top: .6rem;
@@ -758,12 +770,20 @@ h2:hover .permalink, h3:hover .permalink { color: var(--ink-faint); }
 code, pre, kbd,
 .brandMark, .searchHint, .stepChecker, .contactMail, .promptLine,
 .choiceValue, .navProgress, .mobileControls .pill,
-.callout::before, .codeBlock::after, .spoilerLink::before,
+.callout::before, .codeBlock::after,
 .toc > ul > li[data-num]::before,
 .pratique a[href^="mailto:"] {
     font-variant-ligatures: none;
     font-feature-settings: "liga" 0, "calt" 0;
 }
+
+/* Un fragment en ligne porte les mêmes couleurs qu'un bloc. Tout n'y est
+   pas du Python — plus de la moitié sont des raccourcis clavier ou des noms
+   de fichiers — alors theme.js ne marque que ce qui ne peut pas être autre
+   chose : mots-clés, littéraux et fonctions natives. */
+.contents code .pyMot { color: var(--inline-keyword); }
+.contents code .pyValeur { color: var(--inline-literal); }
+.contents code .pyNatif { color: var(--inline-builtin); }
 
 /* L'espace autour d'un fragment de code se prend en marge, pas en
    remplissage : le fond épouse le code au lieu de flotter autour. */
@@ -776,6 +796,7 @@ code {
     margin: 0 .12em;
     background: var(--inline-code-bg);
     border-radius: 4px;
+    color: var(--inline-ink);
     font-family: var(--font-mono);
     font-size: .88em;
 }
@@ -834,8 +855,8 @@ code {
 .codeBlock:hover::after { opacity: 0; }
 
 .hljs-comment, .hljs-quote { color: var(--hl-comment); font-style: italic; }
-.hljs-keyword, .hljs-literal, .hljs-selector-tag, .hljs-type { color: var(--hl-keyword); }
-.hljs-number, .hljs-selector-attr, .hljs-selector-pseudo { color: var(--hl-number); }
+.hljs-keyword, .hljs-selector-tag, .hljs-type { color: var(--hl-keyword); }
+.hljs-literal, .hljs-number, .hljs-selector-attr, .hljs-selector-pseudo { color: var(--hl-number); }
 .hljs-string, .hljs-doctag, .hljs-regexp { color: var(--hl-string); }
 .hljs-built_in, .hljs-name, .hljs-section, .hljs-title { color: var(--hl-builtin); }
 .hljs-title.class_, .hljs-class .hljs-title, .hljs-variable, .hljs-template-variable, .hljs-selector-id { color: var(--hl-class); }
@@ -855,13 +876,17 @@ code {
     text-align: left;
 }
 .tableWrap th { background: var(--surface-2); font-weight: 600; }
-.tableWrap tr:nth-child(even) td { background: var(--surface-2); }
+.tableWrap tr:nth-child(even) td { background: var(--stripe); }
 
 /* Une table de vérité se lit en colonnes : distinguer les deux valeurs
    laisse la structure apparaître sans lire chaque cellule. La classe est
    posée par theme.js, le contenu d'une cellule n'étant pas sélectionnable
    en CSS. Ces règles viennent après celles du dessus pour les emporter à
    spécificité égale. */
+/* Dans un tableau de fiche, les colonnes sont étroites et le texte se
+   replie : centré, chaque ligne repartait d'un endroit différent. */
+.recapCard .tableWrap .center { text-align: left; }
+
 .recapCard .tableWrap td[data-bool] {
     font-family: var(--font-mono);
     font-size: .88em;
