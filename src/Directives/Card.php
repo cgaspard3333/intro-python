@@ -30,8 +30,18 @@ class Card extends SubDirective
     public function processSub(Parser $parser, $document, $variable, $data, array $options)
     {
         $titre = trim((string) $data);
-        $entete = $titre === '' ? '' : '<p class="recapTitle">'.htmlspecialchars($titre).'</p>';
+        $entete = $titre === '' ? '' : '<p class="recapTitle">'.$this->titre($titre).'</p>';
 
         return new WrapperNode($document, '<div class="recapCard">'.$entete, '</div>');
+    }
+
+    /**
+     * Le titre d'une carte n'est pas du RST : le moteur le livre tel quel.
+     * On y reconnaît tout de même les doubles apostrophes inverses, pour que
+     * « ``return`` ou ``print()`` » s'habille comme partout ailleurs.
+     */
+    private function titre($titre)
+    {
+        return preg_replace('/``(.+?)``/', '<code>$1</code>', htmlspecialchars($titre));
     }
 }

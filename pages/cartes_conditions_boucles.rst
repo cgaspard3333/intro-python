@@ -32,7 +32,7 @@
 
         Les deux-points ouvrent le bloc, l'indentation le délimite. ``elif`` et ``else`` sont facultatifs, et ``elif`` peut se répéter.
 
-    .. carte:: Boucle while
+    .. carte:: Boucle ``while``
 
         .. code-block:: python
 
@@ -45,7 +45,7 @@
         * ``break`` Sort immédiatement de la boucle
         * ``continue`` Passe à l'itération suivante
 
-    .. carte:: Boucle for
+    .. carte:: Boucle ``for``
 
         .. code-block:: python
 
