@@ -736,7 +736,6 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
 .. INCLURE exos_casino_sudoku
 .. FIN GROUPE
 
-.. MASQUER
 .. slide::
 ✅ Récapitulatif de Chapitre
 -------------------------
@@ -753,7 +752,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     .. center::
     ``{1: 'Paul', 2: 'Tom', 3: 'Nadia'}``
 
----
+.. (groupe suivant)
 
 .. |puplet_construction| div::
     .. center::
@@ -773,7 +772,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     ``d1 = {1: 'Paul', 2: 'Tom', 3: 'Nadia'}``
 
----
+.. (groupe suivant)
 
 .. |puplet_elements| div::
     .. center::
@@ -793,7 +792,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     ``d2 = {4: 'Léa', 5: 'Téo'}``
 
----
+.. (groupe suivant)
 
 .. |puplet_lecture| div::
     .. center::
@@ -817,7 +816,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     ``d1[1]`` renvoie ``'Paul'``
 
----
+.. (groupe suivant)
 
 .. |puplet_concatenation| div::
     .. center::
@@ -837,24 +836,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     ``d1 + d2`` renvoie une erreur de type
 
----
-
-.. |puplet_multiplication| div::
-    .. center::
-    ``2 * t1`` renvoie ``(1, 8, 5, 1, 8, 5)``
-
-.. |tableau_multiplication| div::
-    .. center::
-    ``2 * L1`` renvoie ``[1, 8, 5, 1, 8, 5]``
-
-.. |dictionnaire_multiplication| div::
-    .. center::
-       
-    **Non**
-
-    ``2 * d1`` renvoie une erreur
-
----
+.. (groupe suivant)
 
 .. |puplet_modifiable| div::
     .. center::
@@ -874,7 +856,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     Exemple : ``d1[2] = 'Joe'`` remplace ``'Tom'`` par ``'Joe'``
 
----
+.. (groupe suivant)
 
 .. |puplet_longueur| div::
     .. center::
@@ -888,95 +870,178 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     .. center::
     ``len(d1)`` renvoie ``3``
 
----
+.. (groupe suivant)
 
 .. |puplet_methodes| div::
     .. center::
-    Pas de méthode spécifique à connaître
+    Aucune en propre
 
 .. |tableau_methodes| div::
     .. center::
-    ``L1.append(element)`` ajoute ``element`` à la fin de ``L1``
-        
-    ``L1.remove(element)`` supprime la première occurrence de ``element`` dans ``L1``
+    ``L.append(x)`` ajoute ``x`` à la fin
 
-    ``L1.index(element)`` renvoie l'index de la première occurrence de ``element`` dans ``L1``
+    ``L.remove(x)`` supprime le premier ``x``
 
-    ``L1.count(element)`` renvoie le nombre d'occurrences de ``element`` dans ``L1``
+    ``L.index(x)`` index du premier ``x``
 
-    ``L1.sort()`` trie les éléments de ``L1``
+    ``L.count(x)`` nombre de ``x``
 
-    ``L1.reverse()`` inverse l'ordre des éléments de ``L1``
+    ``L.sort()`` trie la liste
+
+    ``L.reverse()`` inverse l'ordre
 
 .. |dictionnaire_methodes| div::
     .. center::
-    ``d1.items()`` renvoie la collection d’objets
-    
-    ``d1.keys()`` renvoie les clés
-    
-    ``d1.values()`` renvoie les valeurs
+    ``d.keys()`` les clés
 
-    ``d1.get(key)`` renvoie la valeur associée à la clé ``key``
+    ``d.values()`` les valeurs
 
-    ``d1.pop(key)`` supprime l'élément associé à la clé ``key``
+    ``d.items()`` les couples clé-valeur
 
+    ``d.get(cle)`` la valeur, sans erreur si absente
 
-.. center::
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    |                        | **P-uplet**            | **Tableau (liste)**      | **Dictionnaire**                     |
-    +========================+========================+==========================+======================================+
-    | **Notation**           | |puplet_notation|      | |tableau_notation|       | |dictionnaire_notation|              |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Construction**       | |puplet_construction|  | |tableau_construction|   | |dictionnaire_construction|          |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Les élements**       | |puplet_elements|      | |tableau_elements|       | |dictionnaire_elements|              |
-    | **internes peuvent**   |                        |                          |                                      |
-    | **être de différents** |                        |                          |                                      |
-    | **types**              |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Lecture du contenu** | |puplet_lecture|       | |tableau_lecture|        | |dictionnaire_lecture|               |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Concaténation**      | |puplet_concatenation| | |tableau_concatenation|  | |dictionnaire_concatenation|         |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Multiplication**     | |puplet_multiplication|| |tableau_multiplication| | |dictionnaire_multiplication|        |
-    | **par un entier**      |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Modifiable par**     | |puplet_modifiable|    | |tableau_modifiable|     | |dictionnaire_modifiable|            |
-    | **affectation**        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Longueur**           | |puplet_longueur|      | |tableau_longueur|       | |dictionnaire_longueur|              |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
-    | **Méthodes**           | |puplet_methodes|      | |tableau_methodes|       | |dictionnaire_methodes|              |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    |                        |                        |                          |                                      |
-    +------------------------+------------------------+--------------------------+--------------------------------------+
+    ``d.pop(cle)`` supprime et renvoie la valeur
 
-.. center::
+.. |puplet_parcours| div::
+    .. center::
+    ``for x in t1:`` donne chaque élément
 
-    .. image:: images/recap_chap3.png
-        :alt: Récapitulatif du Chapitre 3
-        :width: 100%
-.. FIN MASQUER
+.. |tableau_parcours| div::
+    .. center::
+    ``for x in L1:`` donne chaque élément
+
+.. |dictionnaire_parcours| div::
+    .. center::
+    ``for cle in d1:`` donne les clés
+
+    ``for cle, valeur in d1.items():`` donne les deux
+
+.. (groupe suivant)
+
+.. |puplet_appartenance| div::
+    .. center::
+    ``8 in t1`` renvoie ``True``
+
+    ``3 in t1`` renvoie ``False``
+
+.. |tableau_appartenance| div::
+    .. center::
+    ``8 in L1`` renvoie ``True``
+
+    ``3 in L1`` renvoie ``False``
+
+.. |dictionnaire_appartenance| div::
+    .. center::
+    ``1 in d1`` renvoie ``True`` : ``in`` cherche parmi les **clés**
+
+    ``'Paul' in d1`` renvoie ``False``
+
+.. (groupe suivant)
+
+.. recap::
+
+    .. carte:: Définir une fonction
+
+        .. code-block:: python
+
+            def moyenne(a, b, c):
+                return (a + b + c) / 3
+
+        Les deux-points ouvrent le bloc, l'indentation le délimite. Sans ``return``, la fonction renvoie ``None``.
+
+    .. carte:: Paramètres et arguments
+
+        * ``a, b, c`` Les paramètres, nommés à la définition
+        * ``moyenne(12, 15, 9)`` Les arguments, donnés à l'appel
+
+        Un argument est affecté au paramètre de même rang, le temps de l'appel.
+
+    .. carte:: ``return`` ou ``print()``
+
+        ``print()`` affiche la valeur, puis l'oublie. ``return`` la renvoie là où la fonction a été appelée.
+
+        .. code-block:: python
+
+            total = moyenne(12, 15, 9)
+
+        Avec ``print()`` à la place de ``return``, ``total`` vaudrait ``None``.
+
+    .. carte:: Portée des variables
+
+        Une variable créée dans une fonction n'existe que le temps de l'appel. Y accéder depuis l'extérieur lève une ``NameError``.
+
+        Pour récupérer une valeur calculée dans une fonction, il faut la ``return``.
+
+    .. carte:: Annotations de type
+
+        .. code-block:: python
+
+            def double(n: int) -> int:
+
+        Python ne les vérifie pas à l'exécution : elles documentent le code et servent à l'éditeur et aux outils d'analyse.
+
+    .. carte:: Pièges à éviter
+
+        * Une fonction sans ``return`` renvoie ``None``.
+        * ``remove()`` prend la **valeur** à supprimer, ``del`` sa **position**.
+        * ``in`` cherche parmi les **clés** d'un dictionnaire, jamais parmi les valeurs.
+        * Un p-uplet ne se modifie pas : pour ajouter ou remplacer, il faut une liste.
+
+    .. carte:: P-uplet, liste ou dictionnaire ?
+
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        |                        | **P-uplet**            | **Tableau (liste)**      | **Dictionnaire**                     |
+        +========================+========================+==========================+======================================+
+        | **Notation**           | |puplet_notation|      | |tableau_notation|       | |dictionnaire_notation|              |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Construction**       | |puplet_construction|  | |tableau_construction|   | |dictionnaire_construction|          |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Éléments de types**  | |puplet_elements|      | |tableau_elements|       | |dictionnaire_elements|              |
+        | **différents**         |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Lecture du contenu** | |puplet_lecture|       | |tableau_lecture|        | |dictionnaire_lecture|               |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Parcours**           | |puplet_parcours|      | |tableau_parcours|       | |dictionnaire_parcours|              |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Appartenance**       | |puplet_appartenance|  | |tableau_appartenance|   | |dictionnaire_appartenance|          |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Concaténation**      | |puplet_concatenation| | |tableau_concatenation|  | |dictionnaire_concatenation|         |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Modifiable par**     | |puplet_modifiable|    | |tableau_modifiable|     | |dictionnaire_modifiable|            |
+        | **affectation**        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Longueur**           | |puplet_longueur|      | |tableau_longueur|       | |dictionnaire_longueur|              |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
+        | **Méthodes**           | |puplet_methodes|      | |tableau_methodes|       | |dictionnaire_methodes|              |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        |                        |                        |                          |                                      |
+        +------------------------+------------------------+--------------------------+--------------------------------------+
 
 .. slide::
 🏋️ Exercices supplémentaires
