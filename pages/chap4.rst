@@ -683,25 +683,8 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
 .. step::
     **Calculer** et **afficher** le coût total global des trois produits, en arrondissant cette somme à l'entier supérieur.
 
-.. GROUPE B
-.. step::
-    **Dater** la facture : affichez en tête la date et l'heure de son édition au format "JJ/MM/AAAA à HHhMM" (par exemple : 14/11/2026 à 10h03) en utilisant le module ``datetime``.
-    Par défaut, la date et l'heure fournies par ``datetime`` sont au format "AAAA-MM-JJ HH:MM:SS.ffffff" : cherchez sur internet comment les formater lors de leur affichage.
-
-.. step::
-    **Afficher** la date limite de paiement, 30 jours après la date de la facture. Cherchez sur internet comment utiliser la fonction ``timedelta()`` du module ``datetime`` pour ajouter des jours à une date.
-
-.. step::
-    **Fixer l'heure limite** : le paiement doit être reçu au plus tard à 18h00 le jour de l'échéance. En utilisant **obligatoirement** les fonctions ``datetime.combine()`` et ``datetime.min.time()``, construisez la date et l'heure de minuit le jour de l'échéance, puis ajoutez-lui 18 heures avec ``timedelta()``. Affichez cette limite au format "JJ/MM/AAAA à HHhMM".
-
-    **Aide** :
-    .. spoiler::
-        ``datetime.min.time()`` donne l'heure 00h00 (minuit). ``datetime.combine()`` associe une date et une heure pour obtenir un objet ``datetime`` complet, auquel on peut ensuite ajouter des heures et des minutes avec ``timedelta()``.
-
-.. FIN GROUPE
 .. slide::
-.. GROUPE A
-**Resultat attendu :**
+**Résultat attendu :**
 .. code-block:: python
     >> Nom du produit 1 : Chaise
     >> Prix unitaire de Chaise (€) : 29.95
@@ -720,8 +703,33 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> Lampe                     14.50          4           58.00         58         58         58           58.00
     >> ----------------------------------------------------------------------------------------------------------------
     >> Total facture (arrondi au supérieur) :  268 €
+
+.. success::
+    Vous savez maintenant arrondir et tronquer des nombres pour un affichage plus lisible ainsi qu'utiliser les f-strings pour un affichage plus rapide et lisible. Vous avez également appris à aligner les éléments pour créer des tableaux formatés.
+
 .. GROUPE B
-**Resultat attendu :**
+.. slide::
+✏️ Exercice 13 : Une facture datée
+----------------------------------
+
+**Objectif** : Reprendre la facture de l'exercice précédent et l'horodater.
+
+.. step::
+    **Dater** la facture : affichez en tête la date et l'heure de son édition au format "JJ/MM/AAAA à HHhMM" (par exemple : 14/11/2026 à 10h03) en utilisant le module ``datetime``.
+    Par défaut, la date et l'heure fournies par ``datetime`` sont au format "AAAA-MM-JJ HH:MM:SS.ffffff" : cherchez sur internet comment les formater lors de leur affichage.
+
+.. step::
+    **Afficher** la date limite de paiement, 30 jours après la date de la facture. Cherchez sur internet comment utiliser la fonction ``timedelta()`` du module ``datetime`` pour ajouter des jours à une date.
+
+.. step::
+    **Fixer l'heure limite** : le paiement doit être reçu au plus tard à 18h00 le jour de l'échéance. En utilisant **obligatoirement** les fonctions ``datetime.combine()`` et ``datetime.min.time()``, construisez la date et l'heure de minuit le jour de l'échéance, puis ajoutez-lui 18 heures avec ``timedelta()``. Affichez cette limite au format "JJ/MM/AAAA à HHhMM".
+
+    **Aide** :
+    .. spoiler::
+        ``datetime.min.time()`` donne l'heure 00h00 (minuit). ``datetime.combine()`` associe une date et une heure pour obtenir un objet ``datetime`` complet, auquel on peut ensuite ajouter des heures et des minutes avec ``timedelta()``.
+
+.. slide::
+**Résultat attendu :**
 .. code-block:: python
     >> Nom du produit 1 : Chaise
     >> Prix unitaire de Chaise (€) : 29.95
@@ -742,13 +750,10 @@ Vous êtes chargé de développer un programme de facturation pour une entrepris
     >> ----------------------------------------------------------------------------------------------------------------
     >> Total facture (arrondi au supérieur) :  268 €
     >> À régler avant le 14/12/2026 à 18h00
-.. FIN GROUPE
 
 .. success::
-    Vous savez maintenant arrondir et tronquer des nombres pour un affichage plus lisible ainsi qu'utiliser les f-strings pour un affichage plus rapide et lisible. Vous avez également appris à aligner les éléments pour créer des tableaux formatés.
-    .. GROUPE B
-    Enfin, vous savez afficher une date et une heure, calculer une nouvelle date et construire une heure précise avec le module ``datetime``.
-    .. FIN GROUPE
+    Vous savez maintenant afficher une date et une heure, calculer une nouvelle date et construire une heure précise avec le module ``datetime``.
+.. FIN GROUPE
 
 .. GROUPE A
 .. slide::
