@@ -160,6 +160,8 @@ class Preprocessor
         $openedAt = null;
         $aside = null;
         $toc = null;
+        $tocAt = null;
+        $tocKept = false;
         $out = array();
 
         foreach ($lines as $number => $line) {
@@ -202,12 +204,17 @@ class Preprocessor
 
             if (preg_match(self::TOC, $line, $match)) {
                 $toc = strlen($match[1]);
+                $tocAt = count($out);
+                $tocKept = false;
             } elseif ($toc !== null && trim($line) !== '') {
                 if (strlen($line) - strlen(ltrim($line)) <= $toc) {
                     // Désindenté : le sommaire est fini.
+                    $this->closeToc($out, $toc, $tocAt, $tocKept, $path, $published);
                     $toc = null;
                 } elseif ($published !== null && !in_array(trim($line), $published, true)) {
                     $keep = false;
+                } else {
+                    $tocKept = true;
                 }
             }
 
@@ -224,6 +231,8 @@ class Preprocessor
             $out[] = $keep ? $line : '';
         }
 
+        $this->closeToc($out, $toc, $tocAt, $tocKept, $path, $published);
+
         if ($active !== null) {
             $this->warnings[] = basename($path).' : bloc « .. GROUPE » ouvert ligne '
                 .$openedAt.' et jamais refermé par « .. FIN GROUPE ».';
@@ -235,6 +244,32 @@ class Preprocessor
         }
 
         return implode("\n", $out);
+    }
+
+    /**
+     * Ferme un « .. toctree:: » : s'il ne lui reste aucune entrée, la
+     * directive part avec elles. Le moteur n'accepte pas un sommaire vide —
+     * il s'arrête sur une erreur fatale au lieu de construire la page.
+     */
+    private function closeToc(array &$out, $toc, $tocAt, $tocKept, $path, $published)
+    {
+        if ($toc === null || $tocKept || $tocAt === null) {
+            return;
+        }
+
+        $out[$tocAt] = '';
+
+        // Une page absente du sommaire du groupe n'est pas construite : son
+        // propre sommaire vide ne regarde personne.
+        $page = preg_replace('/\.groupe[A-Za-z0-9]+$/i', '', basename($path, '.rst'));
+
+        if ($published !== null && !in_array($page, $published, true)) {
+            return;
+        }
+
+        $this->warnings[] = basename($path).' : un « .. toctree:: » perd toutes ses'
+            .' entrées pour ce groupe ; la directive est retirée, mais le titre'
+            .' qui l\'annonce reste.';
     }
 
     /**
