@@ -7,8 +7,13 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
     * Moyen : ⚖️
     * Difficile : 🌶️
 
+.. GROUPE A
+🍀 Exercice Sup. 13 : Résolution d’un système de n équation à n inconnues
+---------------------------------------------------------------
+.. GROUPE B
 🍀 Exercice 16 : Résolution d’un système de n équation à n inconnues
 ---------------------------------------------------------------
+.. FIN GROUPE
 
 Soit un système de n équations linéaires à n inconnues, représenté sous la forme :  
 .. math::
@@ -58,8 +63,13 @@ Vous devez écrire un programme en Python qui permet de résoudre ce système d�
         >> Valeur de la variable 3 : -0.69
 
 
+.. GROUPE A
+🍀 Exercice Sup. 14 : Jeu de la Loterie
+---------------------------------------------------------------
+.. GROUPE B
 🍀 Exercice 17 : Jeu de la Loterie
 ---------------------------------------------------------------
+.. FIN GROUPE
 
 Dans ce jeu, un joueur choisit 6 numéros distincts parmi les 49 disponibles. Une fois les numéros choisis, un tirage aléatoire de 6 numéros gagnants est effectué.
 .. step:: reset
@@ -85,8 +95,13 @@ Dans ce jeu, un joueur choisit 6 numéros distincts parmi les 49 disponibles. Un
         >> 5 numéros corrects : 0.00%
         >> 6 numéros corrects : 0.00%
 
-⚖️ Exercice 18 : Chaîne de Markov simple 
+.. GROUPE A
+⚖️ Exercice Sup. 15 : Chaîne de Markov simple
 ---------------------------------------------------------------
+.. GROUPE B
+⚖️ Exercice 18 : Chaîne de Markov simple
+---------------------------------------------------------------
+.. FIN GROUPE
 
 **Consignes** :
 
@@ -166,3 +181,17 @@ La matrice \( P \) est une matrice carrée où chaque ligne \( i \) représente 
         >> Salle 0: 0.2130
         >> Salle 1: 0.4887
         >> Salle 2: 0.2983
+
+.. GROUPE A
+.. slide::
+⚖️ Exercice Sup. 16 : Encore un peu de ``numpy``
+-------------------------------------------------
+
+**Consigne** : Ces questions prolongent l'Exercice 14. Comme dans celui-ci, n'utilisez pas de boucle ``for`` ou ``while``, fixez la seed à 42 dès que vous créez un array aléatoire, et consultez la documentation de ``numpy`` pour trouver les fonctions nécessaires.
+
+.. step:: reset
+    Créer un array 2D de taille (6, 6) dont chaque ligne contient les nombres entiers allant de 0 à 5. Créer ensuite un array 2D aléatoire de taille (10, 10), puis échanger ses lignes 3 et 6.
+
+.. step::
+    Créer un array et le rendre immuable (non modifiable).
+.. FIN GROUPE

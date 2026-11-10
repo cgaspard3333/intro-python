@@ -382,8 +382,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
         >> Rex aboie.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 18 : Classe Personne
+------------------------------------------
+.. GROUPE B
 ✏️ Exercice 17 : Classe Personne
 ------------------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Définissez une classe ``Personne`` avec les attributs ``nom`` et ``age``.
@@ -397,8 +402,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     Créez un objet et affichez un message indiquant si la personne est majeure.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 19 : Classe Voiture
+-------------------------------
+.. GROUPE B
 ✏️ Exercice 18 : Classe Voiture
 -------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Définissez une classe ``Voiture`` avec les attributs ``marque``, ``modele`` et ``annee``.
@@ -414,8 +424,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     Affichez la distance totale parcourue après plusieurs appels à ``avancer``.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 20 : Gestion d’une bibliothèque
+---------------------------------------------
+.. GROUPE B
 ✏️ Exercice 19 : Gestion d’une bibliothèque
 ---------------------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Créez une classe ``Livre`` avec les attributs ``titre``, ``auteur`` et ``disponible`` (booléen).
@@ -428,8 +443,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     Testez en créant plusieurs livres et en appelant ces méthodes.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 21 : Classe Compte Bancaire
+----------------------------------------
+.. GROUPE B
 ✏️ Exercice 20 : Classe Compte Bancaire
 ----------------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Créez une classe ``CompteBancaire`` avec :
@@ -446,8 +466,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     Testez la classe avec plusieurs opérations.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 22 : Classe Employe avec variable de classe
+-------------------------------------------------------
+.. GROUPE B
 ✏️ Exercice 21 : Classe Employe avec variable de classe
 ----------------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Créez une classe ``Employe`` avec les attributs ``nom`` et ``salaire``.
@@ -461,8 +486,13 @@ Imaginons une classe parent ``Animal`` et une classe enfant ``Chien``.
     Créez plusieurs employés et utilisez la méthode pour afficher le nombre total d’employés créés.
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 23 : Usine de jouets
+--------------------------------
+.. GROUPE B
 ✏️ Exercice 22 : Usine de jouets
 --------------------------------
+.. FIN GROUPE
 
 .. step:: reset
     Créez une classe ``Jouet`` avec :

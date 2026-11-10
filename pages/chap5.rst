@@ -418,6 +418,67 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
 .. note::
     Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
 
+.. GROUPE A
+.. slide::
+**Questions simples** :
+
+.. step:: reset
+    À quoi sert de fixer la seed aléatoire dans un programme ?
+
+.. step::
+    Créer :
+
+    - un array nul de taille 100 ;
+    - un array de taille 10 avec des valeurs aléatoires entre 0 et 1 ;
+    - un array nul de taille 10 dont la septième valeur est égale à 1.
+
+.. step::
+    Créer deux matrices particulières :
+
+    - un array 2D identité de taille (3, 3) (on appelle matrice identité une matrice carrée dont tous les éléments sont nuls, sauf ceux de la diagonale principale qui sont égaux à 1) ;
+    - un array 2D de taille (5, 5) avec les valeurs 1, 2, 3, 4 juste en dessous de la diagonale principale.
+
+.. step::
+    Modifier des valeurs avec un masque :
+
+    - créer un array de taille 10 avec des valeurs entières aléatoires entre 1 et 10, puis remplacer les valeurs supérieures à 5 par 0 ;
+    - dans un nouvel array du même type, remplacer les valeurs comprises entre 3 et 7 par 0 ;
+    - créer un array aléatoire de taille 15, puis remplacer sa valeur minimale par 100.
+
+.. step::
+    Créer un array aléatoire de taille 40, puis calculer sa moyenne, ses valeurs minimale et maximale, et la somme de ses valeurs (avec les fonctions de ``numpy``).
+
+.. step::
+    Travailler sur les bords d'un array 2D :
+
+    - créer un array 2D de taille (4, 4) avec des 1 sur les bords et des 0 à l'intérieur ;
+    - créer un array 2D de taille (2, 2), puis lui ajouter une bordure de 0 tout autour.
+
+.. step::
+    Créer deux damiers (alternance de 0 et de 1) : un de taille (10, 10) sans utiliser la fonction ``np.tile()``, puis un de taille (6, 6) en l'utilisant.
+
+.. step::
+    Normaliser un array aléatoire de taille 50 et expliquer ce que signifie la normalisation.
+
+.. step::
+    Multiplier un array 2D aléatoire de taille (5, 4) par un array 2D aléatoire de taille (4, 2). Quelle est la forme du résultat ?
+
+.. slide::
+**Questions plus complexes** :
+
+.. step::
+    Trouver la partie entière d'un array aléatoire dont les valeurs sont uniquement positives, en utilisant 3 méthodes différentes. Convertir ensuite un array de float (32 bits) en un array de int (32 bits).
+
+.. step::
+    Créer une fonction qui génère des nombres aléatoires, l'utiliser pour générer un array de taille 15, puis trier ses valeurs.
+
+.. step::
+    Créer deux arrays, vérifier s'ils sont égaux, puis trouver leurs valeurs communes.
+
+.. step::
+    Expliquer comment vérifier si un array 2D contient des colonnes nulles, puis comment trouver la valeur la plus fréquente d'un array.
+
+.. GROUPE B
 .. slide::
 **Questions simples** :
 
@@ -510,6 +571,7 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
 
 .. step::
     Créer un array de taille 10 aléatoire, puis échanger les lignes 3 et 6.
+.. FIN GROUPE
 
 .. slide::
 ✏️ Exercice 15 : Encore et toujours la méteo !
@@ -579,6 +641,111 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
     >> - Jours avec chute soudaine de température (> 5°C) : [5, 9, 11, 14, 19, 22, 24, 27]
     >> - Jours où la température dans le deuxième tableau est plus élevée que dans le premier : [ 2  5 10 11 12 13 14 15 16 17 18 19 20 22 24 25 26 27 29 30]
 
+.. GROUPE A
+.. slide::
+✏️ Exercice 16 : ``numpy`` au service de l'IA
+---------------------------------------------
+
+**Objectif** : Les systèmes d'IA qui vous recommandent des films ou des musiques reposent sur des calculs très simples, répétés des millions de fois : des **produits de matrices**. Dans cet exercice, vous allez construire un petit système de recommandation de films, **entièrement avec** ``numpy``.
+
+.. note::
+    Chaque film est décrit par cinq notes entre 0 et 1 : sa part d'action, de comédie, de romance, de science-fiction et d'horreur. Les goûts d'un spectateur sont décrits de la même façon.
+    Le **score** d'un film pour un spectateur est la somme des produits critère par critère : (action du film × goût pour l'action) + (comédie du film × goût pour la comédie) + … Plus le score est élevé, plus le film correspond aux goûts du spectateur.
+
+.. note::
+    **Aucune boucle** ``for`` **ou** ``while`` n'est autorisée dans cet exercice : chaque étape se résout avec les opérations de ``numpy``.
+
+.. slide::
+.. step:: reset
+    **Les données** : recopiez le catalogue, les goûts des spectateurs et le tableau des films déjà vus :
+
+    .. code-block:: python
+
+        films = np.array(["Mission Explosive", "Rire aux éclats", "Coup de foudre", "Action et sentiments",
+                          "Galaxie lointaine", "La maison hantée", "Zombies en vacances", "Amour sur Mars"])
+        spectateurs = np.array(["Alice", "Bilal", "Chloé", "David", "Emma"])
+
+        # Une ligne par film : action, comédie, romance, science-fiction, horreur
+        F = np.array([[0.9, 0.1, 0.0, 0.3, 0.1],
+                      [0.1, 0.9, 0.2, 0.0, 0.0],
+                      [0.0, 0.3, 0.9, 0.0, 0.0],
+                      [0.7, 0.2, 0.6, 0.1, 0.0],
+                      [0.5, 0.1, 0.1, 0.9, 0.1],
+                      [0.2, 0.1, 0.0, 0.1, 0.9],
+                      [0.3, 0.7, 0.1, 0.0, 0.6],
+                      [0.1, 0.3, 0.7, 0.8, 0.0]])
+
+        # Une colonne par spectateur, une ligne par critère (dans le même ordre que F)
+        G = np.array([[0.8, 0.1, 0.0, 0.3, 0.7],
+                      [0.1, 0.9, 0.2, 0.4, 0.0],
+                      [0.4, 0.2, 0.9, 0.0, 0.3],
+                      [0.7, 0.0, 0.3, 0.1, 0.9],
+                      [0.0, 0.3, 0.0, 0.9, 0.1]])
+
+        # vus[i, j] vaut 1 si le spectateur j a déjà vu le film i
+        vus = np.array([[1, 0, 0, 0, 1],
+                        [0, 1, 0, 0, 0],
+                        [0, 0, 1, 0, 0],
+                        [0, 0, 0, 0, 1],
+                        [1, 0, 0, 0, 0],
+                        [0, 0, 0, 1, 0],
+                        [0, 0, 0, 0, 0],
+                        [0, 0, 1, 0, 1]])
+
+.. step::
+    **Les scores** : calculez en une seule instruction le tableau des scores de tous les films pour tous les spectateurs. Quelle est sa forme ? Que représente la case de la ligne ``i`` et de la colonne ``j`` ?
+
+.. step::
+    **Les films déjà vus** : on ne recommande pas un film déjà vu. Construisez un nouveau tableau de scores dans lequel le score de chaque film déjà vu par un spectateur est remplacé par -1.
+
+.. step::
+    **Le top 3** : pour chaque spectateur, déterminez les trois films à lui recommander, du meilleur au moins bon, puis affichez un tableau qui associe à chaque spectateur les titres de ses trois films.
+
+.. slide::
+.. step::
+    **Des goûts proches** : pour comparer les goûts de deux spectateurs, on divise d'abord chaque colonne de ``G`` par sa **norme** (la racine carrée de la somme des carrés de ses éléments). Le produit de la transposée de cette nouvelle matrice par la matrice elle-même donne alors un tableau (5, 5) de **similarités** : la case ``(j, k)`` vaut 1 si les spectateurs ``j`` et ``k`` ont exactement les mêmes goûts, et s'approche de 0 si leurs goûts n'ont rien en commun. Calculez ce tableau, puis trouvez les deux spectateurs **différents** dont les goûts sont les plus proches.
+
+.. step::
+    **« Les spectateurs qui vous ressemblent ont aimé… »** : trouvez le spectateur dont les goûts sont les plus proches de ceux d'Alice, puis affichez les films qu'il a vus et qu'Alice n'a pas encore vus.
+
+.. step::
+    **Pourquoi numpy ?** Un vrai catalogue contient des millions de films. Générez-en un million au hasard (5 critères par film, seed fixée à 42), calculez les scores de tous ces films pour les 5 spectateurs et mesurez la durée de ce calcul. Le même calcul écrit avec des boucles Python prend environ 3 secondes : combien de fois ``numpy`` est-il plus rapide ?
+
+.. slide::
+**Résultat attendu** (la durée dépend de votre machine) :
+
+.. code-block:: bash
+    >> Forme du tableau des scores : (8, 5)
+    >> [[0.94 0.21 0.11 0.43 0.91]
+    >>  [0.25 0.86 0.36 0.39 0.13]
+    >>  [0.39 0.45 0.87 0.12 0.27]
+    >>  [0.89 0.37 0.61 0.3  0.76]
+    >>  [1.08 0.19 0.38 0.37 1.2 ]
+    >>  [0.24 0.38 0.05 0.92 0.32]
+    >>  [0.35 0.86 0.23 0.91 0.3 ]
+    >>  [0.95 0.42 0.93 0.23 1.  ]]
+    >> Top 3 de chaque spectateur :
+    >> [['Alice' 'Amour sur Mars' 'Action et sentiments' 'Coup de foudre']
+    >>  ['Bilal' 'Zombies en vacances' 'Coup de foudre' 'Amour sur Mars']
+    >>  ['Chloé' 'Action et sentiments' 'Galaxie lointaine' 'Rire aux éclats']
+    >>  ['David' 'Zombies en vacances' 'Mission Explosive' 'Rire aux éclats']
+    >>  ['Emma' 'Galaxie lointaine' 'La maison hantée' 'Zombies en vacances']]
+    >> Similarité des goûts :
+    >> [[1.   0.22 0.53 0.3  0.97]
+    >>  [0.22 1.   0.38 0.65 0.14]
+    >>  [0.53 0.38 1.   0.11 0.47]
+    >>  [0.3  0.65 0.11 1.   0.32]
+    >>  [0.97 0.14 0.47 0.32 1.  ]]
+    >> Goûts les plus proches : Alice et Emma (0.97)
+    >> Plus proche voisin d'Alice : Emma
+    >> Films à proposer à Alice : ['Action et sentiments' 'Amour sur Mars']
+    >> Scores d'un million de films pour 5 spectateurs : (1000000, 5) en 0.023 s
+
+.. success::
+    Vous avez construit un petit système de recommandation sans écrire une seule boucle : scores, filtrage par masque, tri, normalisation et similarité ne sont que des opérations sur des matrices. C'est ce qui permet aux systèmes d'IA de traiter des millions de données en une fraction de seconde.
+.. FIN GROUPE
+
+.. MASQUER
 .. slide::
 ✅ Récapitulatif de Chapitre
 -------------------------
@@ -665,6 +832,7 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
     - Échantillonnage aléatoire : ``np.random.choice(array, size, replace)``
 
     - Fixer la seed pour reproductibilité : ``np.random.seed(fixed_seed)``
+.. FIN MASQUER
 
 
 .. slide::

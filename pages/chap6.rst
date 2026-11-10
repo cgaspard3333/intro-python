@@ -510,8 +510,13 @@ Pour éviter les erreurs, vérifiez si un fichier existe avant de le lire ou de 
         # Le fichier est lu s'il existe, sinon un message est affiché
 
 .. slide::
+.. GROUPE A
+✏️ Exercice 17 : Manipulation de fichiers
+-----------------------------------------
+.. GROUPE B
 ✏️ Exercice 16 : Manipulation de fichiers
 ---------------------------------------
+.. FIN GROUPE
 
 **Objectif** : Cet exercice est composé de plusieurs petits exercices pour vous entraîner à manipuler et traiter des fichiers avec Python.
 
@@ -546,7 +551,11 @@ Vous pouvez utiliser ``os`` ou ``pathlib`` à votre convenance.
 .. note::
     Utilisez la documentation des modules ``os`` et ``pathlib`` sur internet pour vous aider. **Une partie des fonctions et méthodes à utiliser ne sont pas présentées dans le cour**s. 
 
+.. GROUPE A
+**Exercice 17.1** : Lister et identifier les fichiers et dossiers
+.. GROUPE B
 **Exercice 16.1** : Lister et identifier les fichiers et dossiers
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur d’entrer le chemin d’un dossier. (ex. : ``data/``)
@@ -575,7 +584,11 @@ ou encore
     >> Dossier : data
     >> Dossier : utils
 
+.. GROUPE A
+**Exercice 17.2** : Création de dossiers
+.. GROUPE B
 **Exercice 16.2** : Création de dossiers
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur un chemin pour créer un nouveau dossier.
@@ -595,7 +608,11 @@ ou encore
     >> Entrez le chemin du dossier à créer : data/logs2
     >> Le dossier a été créé avec succès.
 
+.. GROUPE A
+**Exercice 17.3** : Recherche d’un fichier spécifique
+.. GROUPE B
 **Exercice 16.3** : Recherche d’un fichier spécifique
+.. FIN GROUPE
 .. step:: reset
     Demandez à l’utilisateur d’entrer le nom d’un fichier et le dossier dans lequel rechercher.
 
@@ -620,7 +637,11 @@ ou encore
     >> Entrez le dossier de recherche : data/
     >> Fichier non trouvé.
 
+.. GROUPE A
+**Exercice 17.4** : Suppression d’un fichier
+.. GROUPE B
 **Exercice 16.4** : Suppression d’un fichier
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur un chemin de fichier.
@@ -638,7 +659,11 @@ ou encore
     >> Entrez le chemin du fichier à supprimer : data/legumes.txt
     >> Le fichier a été supprimé avec succès.
 
+.. GROUPE A
+**Exercice 17.5** : Arborescence complète d'un dossier
+.. GROUPE B
 **Exercice 16.5** : Arborescence complète d'un dossier
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur d’entrer le chemin d’un dossier.
@@ -663,7 +688,11 @@ ou encore
     >>         helpers.py
     >>         __init__.py
 
+.. GROUPE A
+**Exercice 17.6** : Ecriture dans un fichier
+.. GROUPE B
 **Exercice 16.6** : Ecriture dans un fichier
+.. FIN GROUPE
 
 .. step:: reset
     Déclarez dans votre code une variable de type liste contenant des fruits.
@@ -690,7 +719,11 @@ ou encore
     >> Mangue
     >> Fraise
 
+.. GROUPE A
+**Exercice 17.7** : Copie d’un fichier
+.. GROUPE B
 **Exercice 16.7** : Copie d’un fichier
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur le chemin du fichier à copier et le chemin de destination.
@@ -719,7 +752,11 @@ ou encore
     >> Mangue
     >> Fraise
 
+.. GROUPE A
+**Exercice 17.8** : Statistiques sur un répertoire
+.. GROUPE B
 **Exercice 16.8** : Statistiques sur un répertoire
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur d’entrer le chemin d’un dossier.
@@ -739,7 +776,11 @@ ou encore
     >> Nombre de dossiers : 2
     >> Taille totale des fichiers : 68 octets
 
+.. GROUPE A
+**Exercice 17.9** : Recherche de fichiers par extension
+.. GROUPE B
 **Exercice 16.9** : Recherche de fichiers par extension
+.. FIN GROUPE
 
 .. step:: reset
     Demandez à l’utilisateur d’entrer une extension de fichier (ex. : ``.txt``) et un dossier dans lequel rechercher.
