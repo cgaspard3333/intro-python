@@ -644,10 +644,10 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
 .. step::
     **Partie 2** : Calculer les quantités  
 
-    Définissez une fonction ``calculer_quantite`` qui prend deux arguments :
+    Définissez une fonction ``calculer_quantite_totale`` qui prend deux arguments :
 
     .. discoverList::
-        * ``ingredient`` (type ``str``) : le nom de l'ingrédient,
+        * ``nom_ingredient`` (type ``str``) : le nom de l'ingrédient,
         * ``dose`` (type ``int``) : le nombre de doses de cet ingrédient à utiliser.
     
     Et retourne un p-uplet contenant : 
@@ -665,7 +665,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
 
 **Aide pour le typage de la fonction** :
 .. code-block:: python
-    def calculer_quantite(ingredient: str, dose: int) -> tuple[int, str, str]:
+    def calculer_quantite_totale(nom_ingredient: str, dose: int) -> tuple[int, str, str]:
         # Code de la fonction
 
 
@@ -676,8 +676,8 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     Définissez une fonction ``creer_potion`` qui prend deux listes comme paramètres :
     
     .. discoverList::
-        * ``list_ingredients_choisis`` : une liste de noms d'ingrédients choisis.
-        * ``list_doses`` : une liste du nombre de doses choisi pour chaque ingrédient.
+        * ``liste_ingredients_choisis`` : une liste de noms d'ingrédients choisis.
+        * ``liste_doses`` : une liste du nombre de doses choisi pour chaque ingrédient.
 
     Et retourne un p-uplet contenant : 
     .. discoverList::
@@ -688,7 +688,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     Cette fonction doit :
 
     .. discoverList::
-        1. Appeler ``calculer_quantite`` pour chaque ingrédient sélectionné.
+        1. Appeler ``calculer_quantite_totale`` pour chaque ingrédient sélectionné.
         2. Additionner les quantités en grammes et en millilitres séparément.
         3. Rassembler tous les effets des ingrédients choisis.
         4. Retourner la quantité totale en grammes et en millilitres ainsi que les effets de la potion.
