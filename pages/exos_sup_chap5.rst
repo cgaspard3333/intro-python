@@ -11,7 +11,7 @@ Sur cette page se trouvent des exercices supplémentaires pour vous entraîner. 
 🍀 Exercice Sup. 13 : Résolution d’un système de n équation à n inconnues
 ---------------------------------------------------------------
 .. GROUPE B
-🍀 Exercice 16 : Résolution d’un système de n équation à n inconnues
+🍀 Exercice Sup. 16 : Résolution d’un système de n équation à n inconnues
 ---------------------------------------------------------------
 .. FIN GROUPE
 
@@ -67,7 +67,7 @@ Vous devez écrire un programme en Python qui permet de résoudre ce système d�
 🍀 Exercice Sup. 14 : Jeu de la Loterie
 ---------------------------------------------------------------
 .. GROUPE B
-🍀 Exercice 17 : Jeu de la Loterie
+🍀 Exercice Sup. 17 : Jeu de la Loterie
 ---------------------------------------------------------------
 .. FIN GROUPE
 
@@ -99,7 +99,7 @@ Dans ce jeu, un joueur choisit 6 numéros distincts parmi les 49 disponibles. Un
 ⚖️ Exercice Sup. 15 : Chaîne de Markov simple
 ---------------------------------------------------------------
 .. GROUPE B
-⚖️ Exercice 18 : Chaîne de Markov simple
+⚖️ Exercice Sup. 18 : Chaîne de Markov simple
 ---------------------------------------------------------------
 .. FIN GROUPE
 
