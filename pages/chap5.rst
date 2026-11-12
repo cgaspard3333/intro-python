@@ -416,7 +416,7 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
     **Interdiction d'utiliser des boucles ``for`` ou ``while``** (sauf explicitement demandé), les opérations vectorisées de ``numpy`` permettent de réaliser des opérations sur l'ensemble des éléments d'un array sans avoir à utiliser de boucles (et surtout le temps de calcul en est réduit).
 
 .. note::
-    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
+    Appelez ``numpy.random.seed(42)`` **une seule fois, au tout début de votre programme**. Toutes les valeurs tirées ensuite seront les mêmes à chaque exécution, et vos résultats pourront être comparés à ceux de l'énoncé. Refixer la graine avant chaque tirage redonnerait au contraire les mêmes nombres encore et encore.
 
 .. GROUPE A
 .. slide::
@@ -483,7 +483,7 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
 **Questions simples** :
 
 .. step:: reset
-    A quoi sert de fixer la seed aléatoire dans un programme ?
+    À quoi sert de fixer la seed aléatoire dans un programme ?
 
 .. step::
     Créer un array nul de taille 100.
@@ -492,96 +492,55 @@ Chaque fois que vous exécuterez ce code, il produira les mêmes valeurs aléato
     Créer un array de taille 10 avec des valeurs aléatoires entre 0 et 1.
 
 .. step::
-    Créer un array nul de taille 10 mais dont la septième valeur est égale à 1.
+    Créer un array nul de taille 10 dont la septième valeur est égale à 1.
 
 .. step::
-    Créer un array 2D identité de taille (3, 3) (On appelle une matrice identité une matrice carrée dont tous les éléments sont nuls, sauf ceux de la diagonale principale qui sont égaux à 1).
-
-.. step:: 
     Créer un array de taille 10 avec des valeurs entières aléatoires entre 1 et 10, puis remplacer les valeurs supérieures à 5 par 0.
 
 .. step::
-    Créer un array de taille 10 avec des valeurs aléatoires entre 1 et 10, puis remplacer les valeurs entre 3 et 7 par 0.
+    Dans un nouvel array du même type, remplacer les valeurs comprises entre 3 et 7 par 0.
 
 .. step::
-    Créer un array de taille 40 aléatoire et calculer sa valeur moyenne (utiliser les fonctions de numpy)
+    Créer un array aléatoire de taille 15, puis remplacer sa valeur minimale par 100.
 
 .. step::
-    Créer un array de taille 30 aléatoire et trouver ses valeur maximale et minimale (utiliser les fonctions de numpy)
+    Créer un array aléatoire de taille 40, puis calculer sa moyenne, ses valeurs minimale et maximale, et la somme de ses valeurs, en utilisant les fonctions de ``numpy``.
+
+.. slide::
+**Passer à deux dimensions** :
 
 .. step::
-    Créer un array de taille 20 aléatoire et calculer la somme de ses valeurs (utiliser les fonctions de numpy)
+    Créer un array 2D identité de taille (3, 3) (on appelle matrice identité une matrice carrée dont tous les éléments sont nuls, sauf ceux de la diagonale principale qui sont égaux à 1).
 
 .. step::
     Créer un array 2D de taille (4, 4) avec des 1 sur les bords et des 0 à l'intérieur.
 
 .. step::
-    Créer un array 2D de taille (2, 2), puis lui ajouter une bordure de 0 tout autour.
-
-.. step::
-    Créer un array 2D de taille (5, 5) avec les valeurs 1, 2, 3, 4 juste en dessous de la diagonale principale.
-
-.. step::
-    Créer un array 2D de taille (10,10) et remplir ses valeurs de sorte à créer un damier (alternance de 0 et 1) sans utiliser la fonction ``np.tile()``.
-
-.. step::
-    Créer un array 2D de taille (6, 6) et remplir ses valeurs de sorte à créer un damer en utilisant la fonction ``np.tile()``.
-
-.. step::
-    Normaliser un array de taille 50 aléatoire et expliquer ce que signifie la normalisation.
-
-.. step:: 
-    Multiplier un array 2D aléatoire de taille (5, 4) par l'array 2D aléatoire de taille (4, 2). 
-
-.. step::
-    Expliquer comment trouver des valeurs communes entre deux arrays.
+    Multiplier un array 2D aléatoire de taille (5, 4) par un array 2D aléatoire de taille (4, 2). Quelle est la forme du résultat, et pourquoi ?
 
 .. slide::
-**Questions plus complexes** :
+**Pour finir** :
 
 .. step::
-    Trouver la partie entière d'un array aléatoire dont les valeurs sont uniquement positives en utilisant 3 méthodes différentes.
+    Normaliser un array aléatoire de taille 50, et expliquer ce que signifie la normalisation.
 
 .. step::
-    Créer un array 2D de taille (6, 6) dont les valeurs de chaque lignes sont les nombres entiers allant de 0 à 5.
+    Trier les valeurs d'un array aléatoire de taille 15.
 
 .. step::
-    Créer une fonction qui génère des nombres aléatoires, puis l'utiliser pour générer un array de taille 10.
+    Convertir un array de float (32 bits) en un array d'int (32 bits).
 
-.. step::
-    Créer un array de taille 15 aléatoire, puis trier ses valeurs.
-
-.. step::
-    Créer deux arrays puis vérifier s'ils sont égaux.
-
-.. step::
-    Créer un array et le rendre immuable (non modifiable).
-
-.. step::
-    Créer un array aléatoire de taille 15 puis remplacer sa valeur minimale par 100.
-
-.. step::
-    Convertir un array de float (32bits) en un array de int (32bits).
-
-.. step::
-    Expliquer comment vérifier si un array contient des colonnes nulles.
-
-.. step::
-    Comment trouver la valeur la plus fréquente dans un array ?
-
-.. step::
-    Créer un array de taille 10 aléatoire, puis échanger les lignes 3 et 6.
 .. FIN GROUPE
 
 .. slide::
-✏️ Exercice 15 : Encore et toujours la méteo !
----------------------------------------
+✏️ Exercice 15 : Encore et toujours la météo !
+----------------------------------------------
 
 **Objectifs** :
 Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des données météorologiques. Vous allez simuler des relevés de températures sur 30 jours, calculer des statistiques et identifier des tendances.
 
 .. note::
-    Tout au long de l'exercice, dès qu'il sera demandé de créer un array aléatoire, vous devrez **fixer la seed à 42**.
+    Appelez ``numpy.random.seed(42)`` **une seule fois, au tout début de votre programme**. Toutes les valeurs tirées ensuite seront les mêmes à chaque exécution, et vos résultats pourront être comparés à ceux de l'énoncé. Refixer la graine avant chaque tirage redonnerait au contraire les mêmes nombres encore et encore.
 
 **Consignes** :
 
@@ -596,29 +555,25 @@ Dans cet exercice, vous allez utiliser **numpy** pour analyser et manipuler des 
         - Calculez la température médiane
         - Calculez l'écart-type des températures
 .. step::
-    **Analyse des températures** :
-   
-        - Créez un tableau des jours (indices) où la température est supérieure à la moyenne.
-        - Trouvez l'indice du jour le plus chaud et le jour le plus froid.
-        - Comptez le nombre de jours où la température dépasse 25°C.
+    **Analyse des températures** : calculez puis affichez
+
+        - les jours où la température est supérieure à la moyenne ;
+        - le jour le plus chaud et le jour le plus froid, avec leur température ;
+        - le nombre de jours où la température dépasse 25°C.
+
+    Les jours se comptent à partir de 1, alors que les indices d'un array commencent à 0.
 
 .. step::
-    **Affichage des résultats** :
-   
-        - Imprimez les jours où la température est supérieure à la moyenne.
-        - Affichez les numéros et les valeurs des jours les plus chauds et les plus froids.
-        - Montrez combien de jours ont une température supérieure à 25°C.
+    **Comparaison avec un second mois** : créez un tableau de 30 températures supplémentaires, de moyenne 22°C et d'écart-type 4°C, puis affichez les jours où il fait plus chaud que dans le premier tableau.
 
 .. step::
-    **Analyse comparative des températures** :
-   
-        - Ajoutez une fonctionnalité qui identifie les périodes consécutives où la température reste au-dessus de 22°C pendant au moins 2 jours.
-        - Implémentez une recherche des jours de baisse soudaine de température (plus de 5°C de chute d'un jour à l'autre).
-        - Créez un tableau de températures pour 30 jours supplémentaires, avec une moyenne de 22°C et un écart-type de 4°C.
-        - Comparez les deux tableaux de températures en affichant les jours où la température est plus élevée dans le deuxième tableau.
+    **Périodes de chaleur** : trouvez les périodes où la température reste au-dessus de 22°C pendant au moins 2 jours de suite, et affichez le jour où chacune commence.
+
+.. step::
+    **Chutes soudaines** : trouvez les jours où la température perd plus de 5°C par rapport à la veille.
 
 **Résultat attendu** :
-.. code-block:: bash
+.. code-block:: text
     >> Données de température générées pour 30 jours : [22.48357077 19.30867849 23.23844269 27.61514928 18.82923313 18.82931522
     >> 27.89606408 23.83717365 17.65262807 22.71280022 17.68291154 17.67135123
     >> 21.20981136 10.43359878 11.37541084 17.18856235 14.9358444  21.57123666
