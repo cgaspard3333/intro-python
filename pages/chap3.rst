@@ -677,7 +677,7 @@ Accéder à une clé absente arrête le programme sur une ``KeyError``. L'opéra
     
     .. discoverList::
         * ``list_ingredients_choisis`` : une liste de noms d'ingrédients choisis.
-        * ``list_quantites`` : une liste des quantités pour chaque ingrédient.
+        * ``list_doses`` : une liste du nombre de doses choisi pour chaque ingrédient.
 
     Et retourne un p-uplet contenant : 
     .. discoverList::
